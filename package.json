@@ -1,6 +1,6 @@
 {
   "name": "knetik_platform_api_documentation_latest",
-  "version": "latest",
+  "version": "1.0.0",
   "description": "This_is_the_spec_for_the_Knetik_API___Use_this_in_conjunction_with_the_documentation_found_at_httpsknetikcloud_com",
   "license": "Unlicense",
   "main": "src/index.js",
