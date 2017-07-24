@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CartShippingAddressRequest
+# KnetikPlatformApiDocumentationLatest.CartShippingAddressRequest
 
 ## Properties
 Name | Type | Description | Notes

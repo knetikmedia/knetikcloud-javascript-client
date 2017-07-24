@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Discount
+# KnetikPlatformApiDocumentationLatest.Discount
 
 ## Properties
 Name | Type | Description | Notes

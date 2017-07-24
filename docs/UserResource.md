@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UserResource
+# KnetikPlatformApiDocumentationLatest.UserResource
 
 ## Properties
 Name | Type | Description | Notes
@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **gender** | **String** | The user&#39;s gender (private) | [optional] 
 **id** | **Number** | The id of the user | [optional] 
 **languageCode** | **String** | The ISO3 code for the user&#39;s currency (private) | [optional] 
+**lastActivity** | **Number** | The date the user last interacted with the API (private) | [optional] 
 **lastName** | **String** | The user&#39;s last name (private) | [optional] 
 **lastUpdated** | **Number** | The date the user&#39;s info was last updated as a unix timestamp | [optional] 
 **memberSince** | **Number** | The user&#39;s date of registration as a unix timestamp | [optional] 

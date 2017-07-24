@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceCommentResource
+# KnetikPlatformApiDocumentationLatest.PageResourceCommentResource
 
 ## Properties
 Name | Type | Description | Notes

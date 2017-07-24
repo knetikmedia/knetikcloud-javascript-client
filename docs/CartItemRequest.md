@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CartItemRequest
+# KnetikPlatformApiDocumentationLatest.CartItemRequest
 
 ## Properties
 Name | Type | Description | Notes

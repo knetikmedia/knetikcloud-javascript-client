@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsWalletsApi
+# KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -21,25 +21,28 @@ Returns the user&#39;s wallet for the given currency code
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var userId = 56; // Number | The ID of the user for whom wallet is being retrieved
 
 var currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
 
-apiInstance.getUserWallet(userId, currencyCode).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserWallet(userId, currencyCode, callback);
 ```
 
 ### Parameters
@@ -70,14 +73,14 @@ Retrieve a user&#39;s wallet transactions
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var userId = 56; // Number | The ID of the user for whom wallet transactions are being retrieved
 
@@ -92,12 +95,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserWalletTransactions(userId, currencyCode, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserWalletTransactions(userId, currencyCode, opts, callback);
 ```
 
 ### Parameters
@@ -135,23 +141,26 @@ List all of a user&#39;s wallets
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var userId = 56; // Number | The ID of the user for whom wallets are being retrieved
 
-apiInstance.getUserWallets(userId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserWallets(userId, callback);
 ```
 
 ### Parameters
@@ -181,20 +190,23 @@ Retrieves a summation of wallet balances by currency code
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
-apiInstance.getWalletBalances().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWalletBalances(callback);
 ```
 
 ### Parameters
@@ -221,14 +233,14 @@ Retrieve wallet transactions across the system
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var opts = { 
   'filterInvoice': 56, // Number | Filter for transactions from a specific invoice
@@ -243,12 +255,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getWalletTransactions(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWalletTransactions(opts, callback);
 ```
 
 ### Parameters
@@ -288,26 +303,29 @@ Retrieve a list of wallets across the system
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getWallets(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getWallets(opts, callback);
 ```
 
 ### Parameters
@@ -339,28 +357,31 @@ Updates the balance for a user&#39;s wallet
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsWalletsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsWalletsApi();
 
 var userId = 56; // Number | The ID of the user for whom wallet is being modified
 
 var currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
 
 var opts = { 
-  'request': new KnetikcloudSdk.WalletAlterRequest() // WalletAlterRequest | The requested balance modification to be made to the user's wallet
+  'request': new KnetikPlatformApiDocumentationLatest.WalletAlterRequest() // WalletAlterRequest | The requested balance modification to be made to the user's wallet
 };
-apiInstance.updateWalletBalance(userId, currencyCode, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateWalletBalance(userId, currencyCode, opts, callback);
 ```
 
 ### Parameters

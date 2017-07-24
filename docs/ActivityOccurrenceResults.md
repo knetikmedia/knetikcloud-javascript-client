@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ActivityOccurrenceResults
+# KnetikPlatformApiDocumentationLatest.ActivityOccurrenceResults
 
 ## Properties
 Name | Type | Description | Notes

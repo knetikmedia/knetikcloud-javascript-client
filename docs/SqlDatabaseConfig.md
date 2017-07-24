@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SqlDatabaseConfig
+# KnetikPlatformApiDocumentationLatest.SqlDatabaseConfig
 
 ## Properties
 Name | Type | Description | Notes

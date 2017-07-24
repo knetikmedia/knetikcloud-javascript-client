@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BehaviorDefinitionResource
+# KnetikPlatformApiDocumentationLatest.BehaviorDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

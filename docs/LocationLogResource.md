@@ -1,4 +1,4 @@
-# KnetikcloudSdk.LocationLogResource
+# KnetikPlatformApiDocumentationLatest.LocationLogResource
 
 ## Properties
 Name | Type | Description | Notes

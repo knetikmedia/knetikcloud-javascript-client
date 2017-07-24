@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Behavior
+# KnetikPlatformApiDocumentationLatest.Behavior
 
 ## Properties
 Name | Type | Description | Notes

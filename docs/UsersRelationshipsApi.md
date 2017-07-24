@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UsersRelationshipsApi
+# KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,24 +19,27 @@ Create a user relationship
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersRelationshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi();
 
 var opts = { 
-  'relationship': new KnetikcloudSdk.UserRelationshipResource() // UserRelationshipResource | The new relationship
+  'relationship': new KnetikPlatformApiDocumentationLatest.UserRelationshipResource() // UserRelationshipResource | The new relationship
 };
-apiInstance.createUserRelationship(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createUserRelationship(opts, callback);
 ```
 
 ### Parameters
@@ -66,23 +69,26 @@ Delete a user relationship
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersRelationshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi();
 
 var id = 789; // Number | The id of the relationship
 
-apiInstance.deleteUserRelationship(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteUserRelationship(id, callback);
 ```
 
 ### Parameters
@@ -112,23 +118,26 @@ Get a user relationship
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersRelationshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi();
 
 var id = 789; // Number | The id of the relationship
 
-apiInstance.getUserRelationship(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserRelationship(id, callback);
 ```
 
 ### Parameters
@@ -158,26 +167,29 @@ Get a list of user relationships
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersRelationshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserRelationships(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserRelationships(opts, callback);
 ```
 
 ### Parameters
@@ -209,26 +221,29 @@ Update a user relationship
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersRelationshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersRelationshipsApi();
 
 var id = 789; // Number | The id of the relationship
 
 var opts = { 
-  'relationship': new KnetikcloudSdk.UserRelationshipResource() // UserRelationshipResource | The new relationship
+  'relationship': new KnetikPlatformApiDocumentationLatest.UserRelationshipResource() // UserRelationshipResource | The new relationship
 };
-apiInstance.updateUserRelationship(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateUserRelationship(id, opts, callback);
 ```
 
 ### Parameters

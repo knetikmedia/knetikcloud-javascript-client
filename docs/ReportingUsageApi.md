@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ReportingUsageApi
+# KnetikPlatformApiDocumentationLatest.ReportingUsageApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -20,14 +20,14 @@ Returns aggregated endpoint usage information by day
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
@@ -40,12 +40,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsageByDay(startDate, endDate, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageByDay(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -81,14 +84,14 @@ Returns aggregated endpoint usage information by hour
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
@@ -101,12 +104,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsageByHour(startDate, endDate, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageByHour(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -142,14 +148,14 @@ Returns aggregated endpoint usage information by minute
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
@@ -162,12 +168,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsageByMinute(startDate, endDate, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageByMinute(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -203,14 +212,14 @@ Returns aggregated endpoint usage information by month
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
@@ -223,12 +232,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsageByMonth(startDate, endDate, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageByMonth(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -264,14 +276,14 @@ Returns aggregated endpoint usage information by year
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
@@ -284,12 +296,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsageByYear(startDate, endDate, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageByYear(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -325,25 +340,28 @@ Returns list of endpoints called (method and url)
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingUsageApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
 
 var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
 var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-apiInstance.getUsageEndpoints(startDate, endDate).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUsageEndpoints(startDate, endDate, callback);
 ```
 
 ### Parameters

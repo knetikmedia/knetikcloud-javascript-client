@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BillingReport
+# KnetikPlatformApiDocumentationLatest.BillingReport
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ClientResource
+# KnetikPlatformApiDocumentationLatest.ClientResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.InventorySubscriptionResource
+# KnetikPlatformApiDocumentationLatest.InventorySubscriptionResource
 
 ## Properties
 Name | Type | Description | Notes

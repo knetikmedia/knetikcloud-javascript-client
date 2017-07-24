@@ -1,4 +1,4 @@
-# KnetikcloudSdk.RoleResource
+# KnetikPlatformApiDocumentationLatest.RoleResource
 
 ## Properties
 Name | Type | Description | Notes

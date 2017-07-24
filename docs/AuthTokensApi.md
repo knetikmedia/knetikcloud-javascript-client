@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AuthTokensApi
+# KnetikPlatformApiDocumentationLatest.AuthTokensApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,25 +17,28 @@ Delete tokens by username, client id, or both
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.AuthTokensApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthTokensApi();
 
 var opts = { 
   'username': "username_example", // String | The username of the user
   'clientId': "clientId_example" // String | The id of the client
 };
-apiInstance.deleteTokens(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteTokens(opts, callback);
 ```
 
 ### Parameters
@@ -66,25 +69,28 @@ Get a single token by username and client id
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.AuthTokensApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthTokensApi();
 
 var username = "username_example"; // String | The username of the user
 
 var clientId = "clientId_example"; // String | The id of the client
 
-apiInstance.getToken(username, clientId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getToken(username, clientId, callback);
 ```
 
 ### Parameters
@@ -117,14 +123,14 @@ Token value not shown
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.AuthTokensApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthTokensApi();
 
 var opts = { 
   'filterClientId': "filterClientId_example", // String | Filters for token whose client id matches provided string
@@ -133,12 +139,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getTokens(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTokens(opts, callback);
 ```
 
 ### Parameters

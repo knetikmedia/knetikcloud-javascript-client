@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AvailableSettingResource
+# KnetikPlatformApiDocumentationLatest.AvailableSettingResource
 
 ## Properties
 Name | Type | Description | Notes

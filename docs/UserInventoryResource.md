@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UserInventoryResource
+# KnetikPlatformApiDocumentationLatest.UserInventoryResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CouponItem
+# KnetikPlatformApiDocumentationLatest.CouponItem
 
 ## Properties
 Name | Type | Description | Notes

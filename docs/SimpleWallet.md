@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SimpleWallet
+# KnetikPlatformApiDocumentationLatest.SimpleWallet
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceCatalogSale
+# KnetikPlatformApiDocumentationLatest.PageResourceCatalogSale
 
 ## Properties
 Name | Type | Description | Notes

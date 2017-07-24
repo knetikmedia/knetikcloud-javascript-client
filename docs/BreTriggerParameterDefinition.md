@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreTriggerParameterDefinition
+# KnetikPlatformApiDocumentationLatest.BreTriggerParameterDefinition
 
 ## Properties
 Name | Type | Description | Notes

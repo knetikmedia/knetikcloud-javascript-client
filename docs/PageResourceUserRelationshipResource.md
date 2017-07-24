@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceUserRelationshipResource
+# KnetikPlatformApiDocumentationLatest.PageResourceUserRelationshipResource
 
 ## Properties
 Name | Type | Description | Notes

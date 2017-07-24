@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ImageGroupPropertyDefinitionResource
+# KnetikPlatformApiDocumentationLatest.ImageGroupPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

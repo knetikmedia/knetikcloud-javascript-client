@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TemplateEmailResource
+# KnetikPlatformApiDocumentationLatest.TemplateEmailResource
 
 ## Properties
 Name | Type | Description | Notes

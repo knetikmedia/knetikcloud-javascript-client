@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceUserInventoryResource
+# KnetikPlatformApiDocumentationLatest.PageResourceUserInventoryResource
 
 ## Properties
 Name | Type | Description | Notes

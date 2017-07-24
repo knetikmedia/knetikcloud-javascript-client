@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SkuRequest
+# KnetikPlatformApiDocumentationLatest.SkuRequest
 
 ## Properties
 Name | Type | Description | Notes

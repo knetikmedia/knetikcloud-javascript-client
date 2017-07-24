@@ -1,4 +1,4 @@
-# KnetikcloudSdk.FlagResource
+# KnetikPlatformApiDocumentationLatest.FlagResource
 
 ## Properties
 Name | Type | Description | Notes

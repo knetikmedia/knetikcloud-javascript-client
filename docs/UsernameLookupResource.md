@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UsernameLookupResource
+# KnetikPlatformApiDocumentationLatest.UsernameLookupResource
 
 ## Properties
 Name | Type | Description | Notes

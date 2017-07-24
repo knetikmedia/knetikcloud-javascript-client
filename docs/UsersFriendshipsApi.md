@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UsersFriendshipsApi
+# KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -22,25 +22,28 @@ As a user, either creates or confirm a pending request. As an admin, call this e
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me' if logged in
 
 var id = 56; // Number | The id of the user to befriend
 
-apiInstance.addFriend(userId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addFriend(userId, id, callback);
 ```
 
 ### Parameters
@@ -71,14 +74,14 @@ Get friends list
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me'
 
@@ -86,12 +89,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getFriends(userId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFriends(userId, opts, callback);
 ```
 
 ### Parameters
@@ -125,23 +131,26 @@ This is a unique invite token that allows direct connection to the request user.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me' if logged in
 
-apiInstance.getInviteToken(userId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getInviteToken(userId, callback);
 ```
 
 ### Parameters
@@ -173,14 +182,14 @@ Invites that the specified user received
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me'
 
@@ -188,12 +197,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getInvites(userId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getInvites(userId, opts, callback);
 ```
 
 ### Parameters
@@ -227,26 +239,29 @@ Immediately connects the requested user with the user mapped by the provided inv
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me' if logged in
 
 var opts = { 
   'token': "token_example" // String | The invite token
 };
-apiInstance.redeemFriendshipToken(userId, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.redeemFriendshipToken(userId, opts, callback);
 ```
 
 ### Parameters
@@ -277,25 +292,28 @@ Remove or decline a friend
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UsersFriendshipsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersFriendshipsApi();
 
 var userId = "userId_example"; // String | The id of the user or 'me' if logged in
 
 var id = 56; // Number | The id of the user to befriend
 
-apiInstance.removeOrDeclineFriend(userId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeOrDeclineFriend(userId, id, callback);
 ```
 
 ### Parameters

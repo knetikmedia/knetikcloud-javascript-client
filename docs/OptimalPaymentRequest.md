@@ -1,4 +1,4 @@
-# KnetikcloudSdk.OptimalPaymentRequest
+# KnetikPlatformApiDocumentationLatest.OptimalPaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

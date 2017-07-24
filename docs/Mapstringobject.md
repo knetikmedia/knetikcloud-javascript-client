@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Mapstringobject
+# KnetikPlatformApiDocumentationLatest.Mapstringobject
 
 ## Properties
 Name | Type | Description | Notes

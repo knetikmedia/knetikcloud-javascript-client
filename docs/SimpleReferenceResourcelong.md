@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SimpleReferenceResourcelong
+# KnetikPlatformApiDocumentationLatest.SimpleReferenceResourcelong
 
 ## Properties
 Name | Type | Description | Notes

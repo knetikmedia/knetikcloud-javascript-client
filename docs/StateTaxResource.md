@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StateTaxResource
+# KnetikPlatformApiDocumentationLatest.StateTaxResource
 
 ## Properties
 Name | Type | Description | Notes

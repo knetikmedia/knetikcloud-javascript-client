@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Schedule
+# KnetikPlatformApiDocumentationLatest.Schedule
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.FulfillmentApi
+# KnetikPlatformApiDocumentationLatest.FulfillmentApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,24 +19,27 @@ Create a fulfillment type
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.FulfillmentApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.FulfillmentApi();
 
 var opts = { 
-  'type': new KnetikcloudSdk.FulfillmentType() // FulfillmentType | The fulfillment type
+  'type': new KnetikPlatformApiDocumentationLatest.FulfillmentType() // FulfillmentType | The fulfillment type
 };
-apiInstance.createFulfillmentType(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createFulfillmentType(opts, callback);
 ```
 
 ### Parameters
@@ -66,23 +69,26 @@ Delete a fulfillment type
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.FulfillmentApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.FulfillmentApi();
 
 var id = 56; // Number | The id
 
-apiInstance.deleteFulfillmentType(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteFulfillmentType(id, callback);
 ```
 
 ### Parameters
@@ -112,18 +118,21 @@ Get a single fulfillment type
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.FulfillmentApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.FulfillmentApi();
 
 var id = 56; // Number | The id
 
-apiInstance.getFulfillmentType(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFulfillmentType(id, callback);
 ```
 
 ### Parameters
@@ -153,21 +162,24 @@ List and search fulfillment types
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.FulfillmentApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.FulfillmentApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getFulfillmentTypes(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getFulfillmentTypes(opts, callback);
 ```
 
 ### Parameters
@@ -199,26 +211,29 @@ Update a fulfillment type
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.FulfillmentApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.FulfillmentApi();
 
 var id = 56; // Number | The id
 
 var opts = { 
-  'fulfillmentType': new KnetikcloudSdk.FulfillmentType() // FulfillmentType | The fulfillment type
+  'fulfillmentType': new KnetikPlatformApiDocumentationLatest.FulfillmentType() // FulfillmentType | The fulfillment type
 };
-apiInstance.updateFulfillmentType(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateFulfillmentType(id, opts, callback);
 ```
 
 ### Parameters

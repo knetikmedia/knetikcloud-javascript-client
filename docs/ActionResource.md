@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ActionResource
+# KnetikPlatformApiDocumentationLatest.ActionResource
 
 ## Properties
 Name | Type | Description | Notes

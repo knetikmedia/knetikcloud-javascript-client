@@ -1,4 +1,4 @@
-# KnetikcloudSdk.IntegerOperationResource
+# KnetikPlatformApiDocumentationLatest.IntegerOperationResource
 
 ## Properties
 Name | Type | Description | Notes

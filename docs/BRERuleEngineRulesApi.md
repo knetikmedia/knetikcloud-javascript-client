@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BRERuleEngineRulesApi
+# KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -23,24 +23,27 @@ Rules define which actions to run when a given event verifies the specified cond
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var opts = { 
-  'breRule': new KnetikcloudSdk.BreRule() // BreRule | The BRE rule object
+  'breRule': new KnetikPlatformApiDocumentationLatest.BreRule() // BreRule | The BRE rule object
 };
-apiInstance.createBRERule(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createBRERule(opts, callback);
 ```
 
 ### Parameters
@@ -72,23 +75,26 @@ May fail if there are existing rules against it. Cannot delete core rules
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var id = "id_example"; // String | The id of the rule
 
-apiInstance.deleteBRERule(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteBRERule(id, callback);
 ```
 
 ### Parameters
@@ -118,24 +124,27 @@ Returns a string representation of the provided expression
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var opts = { 
-  'expression': new KnetikcloudSdk.Expressionobject() // Expressionobject | The expression
+  'expression': new KnetikPlatformApiDocumentationLatest.Expressionobject() // Expressionobject | The expression
 };
-apiInstance.getBREExpressionAsString(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBREExpressionAsString(opts, callback);
 ```
 
 ### Parameters
@@ -165,23 +174,26 @@ Get a single rule
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var id = "id_example"; // String | The id of the rule
 
-apiInstance.getBRERule(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBRERule(id, callback);
 ```
 
 ### Parameters
@@ -211,14 +223,14 @@ List rules
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var opts = { 
   'filterName': "filterName_example", // String | Filter for rules containing the given name
@@ -230,12 +242,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBRERules(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBRERules(opts, callback);
 ```
 
 ### Parameters
@@ -274,26 +289,29 @@ This is helpful for turning off systems rules which cannot be deleted or modifie
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var id = "id_example"; // String | The id of the rule
 
 var opts = { 
-  'enabled': new KnetikcloudSdk.BooleanResource() // BooleanResource | The boolean value
+  'enabled': new KnetikPlatformApiDocumentationLatest.BooleanResource() // BooleanResource | The boolean value
 };
-apiInstance.setBRERule(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.setBRERule(id, opts, callback);
 ```
 
 ### Parameters
@@ -326,26 +344,29 @@ Cannot update system rules
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineRulesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineRulesApi();
 
 var id = "id_example"; // String | The id of the rule
 
 var opts = { 
-  'breRule': new KnetikcloudSdk.BreRule() // BreRule | The BRE rule object
+  'breRule': new KnetikPlatformApiDocumentationLatest.BreRule() // BreRule | The BRE rule object
 };
-apiInstance.updateBRERule(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateBRERule(id, opts, callback);
 ```
 
 ### Parameters

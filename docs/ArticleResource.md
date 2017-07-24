@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ArticleResource
+# KnetikPlatformApiDocumentationLatest.ArticleResource
 
 ## Properties
 Name | Type | Description | Notes

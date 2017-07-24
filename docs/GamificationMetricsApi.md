@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GamificationMetricsApi
+# KnetikPlatformApiDocumentationLatest.GamificationMetricsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,24 +17,27 @@ Post a new score/stat for an activity occurrence without ending the occurrence i
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationMetricsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationMetricsApi();
 
 var opts = { 
-  'metric': new KnetikcloudSdk.MetricResource() // MetricResource | The new metric
+  'metric': new KnetikPlatformApiDocumentationLatest.MetricResource() // MetricResource | The new metric
 };
-apiInstance.addMetric(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addMetric(opts, callback);
 ```
 
 ### Parameters

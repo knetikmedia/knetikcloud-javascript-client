@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SavedAddressResource
+# KnetikPlatformApiDocumentationLatest.SavedAddressResource
 
 ## Properties
 Name | Type | Description | Notes

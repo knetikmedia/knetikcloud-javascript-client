@@ -1,4 +1,4 @@
-# KnetikcloudSdk.MapResource
+# KnetikPlatformApiDocumentationLatest.MapResource
 
 ## Properties
 Name | Type | Description | Notes

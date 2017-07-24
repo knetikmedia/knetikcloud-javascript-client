@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsPayPalClassicApi
+# KnetikPlatformApiDocumentationLatest.PaymentsPayPalClassicApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -20,24 +20,27 @@ Returns the token that should be used to forward the user to PayPal so they can 
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsPayPalClassicApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.CreateBillingAgreementRequest() // CreateBillingAgreementRequest | The request to create a PayPal billing agreement
+  'request': new KnetikPlatformApiDocumentationLatest.CreateBillingAgreementRequest() // CreateBillingAgreementRequest | The request to create a PayPal billing agreement
 };
-apiInstance.createPayPalBillingAgreementUrl(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createPayPalBillingAgreementUrl(opts, callback);
 ```
 
 ### Parameters
@@ -69,24 +72,27 @@ Returns the token that should be used to forward the user to PayPal so they can 
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsPayPalClassicApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.CreatePayPalPaymentRequest() // CreatePayPalPaymentRequest | The request to create a PayPal payment token
+  'request': new KnetikPlatformApiDocumentationLatest.CreatePayPalPaymentRequest() // CreatePayPalPaymentRequest | The request to create a PayPal payment token
 };
-apiInstance.createPayPalExpressCheckout(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createPayPalExpressCheckout(opts, callback);
 ```
 
 ### Parameters
@@ -118,24 +124,27 @@ Returns the ID of the new payment method created for the user for the billing ag
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsPayPalClassicApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.FinalizeBillingAgreementRequest() // FinalizeBillingAgreementRequest | The request to finalize a PayPal billing agreement
+  'request': new KnetikPlatformApiDocumentationLatest.FinalizeBillingAgreementRequest() // FinalizeBillingAgreementRequest | The request to finalize a PayPal billing agreement
 };
-apiInstance.finalizePayPalBillingAgreement(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.finalizePayPalBillingAgreement(opts, callback);
 ```
 
 ### Parameters
@@ -167,24 +176,27 @@ The invoice will be marked paid/failed by asynchronous IPN callback.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsPayPalClassicApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.FinalizePayPalPaymentRequest() // FinalizePayPalPaymentRequest | The request to finalize the payment
+  'request': new KnetikPlatformApiDocumentationLatest.FinalizePayPalPaymentRequest() // FinalizePayPalPaymentRequest | The request to finalize the payment
 };
-apiInstance.finalizePayPalCheckout(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.finalizePayPalCheckout(opts, callback);
 ```
 
 ### Parameters

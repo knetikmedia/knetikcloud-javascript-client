@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceForwardLog
+# KnetikPlatformApiDocumentationLatest.PageResourceForwardLog
 
 ## Properties
 Name | Type | Description | Notes

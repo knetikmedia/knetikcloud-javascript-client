@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceWalletTransactionResource
+# KnetikPlatformApiDocumentationLatest.PageResourceWalletTransactionResource
 
 ## Properties
 Name | Type | Description | Notes

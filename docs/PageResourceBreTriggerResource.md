@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceBreTriggerResource
+# KnetikPlatformApiDocumentationLatest.PageResourceBreTriggerResource
 
 ## Properties
 Name | Type | Description | Notes

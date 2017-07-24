@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GamificationLeaderboardsApi
+# KnetikPlatformApiDocumentationLatest.GamificationLeaderboardsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,9 +19,9 @@ The context type identifies the type of entity (i.e., &#39;activity&#39;) being 
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.GamificationLeaderboardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLeaderboardsApi();
 
 var contextType = "contextType_example"; // String | The context type for the leaderboard
 
@@ -32,12 +32,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "score:DESC,updated:ASC,user_id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getLeaderboard(contextType, contextId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLeaderboard(contextType, contextId, opts, callback);
 ```
 
 ### Parameters
@@ -73,14 +76,14 @@ The context type identifies the type of entity (i.e., &#39;activity&#39;) being 
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLeaderboardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLeaderboardsApi();
 
 var contextType = "contextType_example"; // String | The context type for the leaderboard
 
@@ -88,12 +91,15 @@ var contextId = "contextId_example"; // String | The context id for the leaderbo
 
 var id = "id_example"; // String | The id of a user
 
-apiInstance.getLeaderboardRank(contextType, contextId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLeaderboardRank(contextType, contextId, id, callback);
 ```
 
 ### Parameters
@@ -125,15 +131,18 @@ Get a list of available leaderboard strategy names
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.GamificationLeaderboardsApi();
-apiInstance.getLeaderboardStrategies().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLeaderboardsApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLeaderboardStrategies(callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TokenDetailsResource
+# KnetikPlatformApiDocumentationLatest.TokenDetailsResource
 
 ## Properties
 Name | Type | Description | Notes

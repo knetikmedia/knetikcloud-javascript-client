@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BRERuleEngineTriggersApi
+# KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -21,24 +21,27 @@ Customer added triggers will not be fired automatically or have rules associated
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi();
 
 var opts = { 
-  'breTriggerResource': new KnetikcloudSdk.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
+  'breTriggerResource': new KnetikPlatformApiDocumentationLatest.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
 };
-apiInstance.createBRETrigger(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createBRETrigger(opts, callback);
 ```
 
 ### Parameters
@@ -70,23 +73,26 @@ May fail if there are existing rules against it. Cannot delete core triggers
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi();
 
 var eventName = "eventName_example"; // String | The trigger event name
 
-apiInstance.deleteBRETrigger(eventName).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteBRETrigger(eventName, callback);
 ```
 
 ### Parameters
@@ -116,23 +122,26 @@ Get a single trigger
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi();
 
 var eventName = "eventName_example"; // String | The trigger event name
 
-apiInstance.getBRETrigger(eventName).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBRETrigger(eventName, callback);
 ```
 
 ### Parameters
@@ -162,14 +171,14 @@ List triggers
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi();
 
 var opts = { 
   'filterSystem': true, // Boolean | Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
@@ -180,12 +189,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBRETriggers(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBRETriggers(opts, callback);
 ```
 
 ### Parameters
@@ -223,26 +235,29 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineTriggersApi();
 
 var eventName = "eventName_example"; // String | The trigger event name
 
 var opts = { 
-  'breTriggerResource': new KnetikcloudSdk.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
+  'breTriggerResource': new KnetikPlatformApiDocumentationLatest.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
 };
-apiInstance.updateBRETrigger(eventName, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateBRETrigger(eventName, opts, callback);
 ```
 
 ### Parameters

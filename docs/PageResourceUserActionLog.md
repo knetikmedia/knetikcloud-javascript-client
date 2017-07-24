@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceUserActionLog
+# KnetikPlatformApiDocumentationLatest.PageResourceUserActionLog
 
 ## Properties
 Name | Type | Description | Notes

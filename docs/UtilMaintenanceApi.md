@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UtilMaintenanceApi
+# KnetikPlatformApiDocumentationLatest.UtilMaintenanceApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,20 +18,23 @@ Delete maintenance info
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UtilMaintenanceApi();
-apiInstance.deleteMaintenance().then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilMaintenanceApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteMaintenance(callback);
 ```
 
 ### Parameters
@@ -60,15 +63,18 @@ Get current maintenance info. 404 if no maintenance.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.UtilMaintenanceApi();
-apiInstance.getMaintenance().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilMaintenanceApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getMaintenance(callback);
 ```
 
 ### Parameters
@@ -95,24 +101,27 @@ Set current maintenance info
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UtilMaintenanceApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilMaintenanceApi();
 
 var opts = { 
-  'maintenance': new KnetikcloudSdk.Maintenance() // Maintenance | The maintenance object
+  'maintenance': new KnetikPlatformApiDocumentationLatest.Maintenance() // Maintenance | The maintenance object
 };
-apiInstance.setMaintenance(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.setMaintenance(opts, callback);
 ```
 
 ### Parameters
@@ -142,24 +151,27 @@ Update current maintenance info
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.UtilMaintenanceApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilMaintenanceApi();
 
 var opts = { 
-  'maintenance': new KnetikcloudSdk.Maintenance() // Maintenance | The maintenance object
+  'maintenance': new KnetikPlatformApiDocumentationLatest.Maintenance() // Maintenance | The maintenance object
 };
-apiInstance.updateMaintenance(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateMaintenance(opts, callback);
 ```
 
 ### Parameters

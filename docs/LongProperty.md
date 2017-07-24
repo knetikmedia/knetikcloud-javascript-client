@@ -1,4 +1,4 @@
-# KnetikcloudSdk.LongProperty
+# KnetikPlatformApiDocumentationLatest.LongProperty
 
 ## Properties
 Name | Type | Description | Notes

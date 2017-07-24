@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PredicateResource
+# KnetikPlatformApiDocumentationLatest.PredicateResource
 
 ## Properties
 Name | Type | Description | Notes

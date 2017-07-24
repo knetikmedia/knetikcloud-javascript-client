@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GamificationTriviaApi
+# KnetikPlatformApiDocumentationLatest.GamificationTriviaApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -44,26 +44,29 @@ Add an answer to a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
 var opts = { 
-  'answer': new KnetikcloudSdk.AnswerResource() // AnswerResource | The new answer
+  'answer': new KnetikPlatformApiDocumentationLatest.AnswerResource() // AnswerResource | The new answer
 };
-apiInstance.addQuestionAnswers(questionId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addQuestionAnswers(questionId, opts, callback);
 ```
 
 ### Parameters
@@ -94,26 +97,29 @@ Add a tag to a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
 var opts = { 
   'tag': "tag_example" // String | The new tag
 };
-apiInstance.addQuestionTag(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addQuestionTag(id, opts, callback);
 ```
 
 ### Parameters
@@ -146,14 +152,14 @@ All questions that dont&#39;t have the tag and match filters will have it added.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'tag': "tag_example", // String | The tag to add
@@ -166,12 +172,15 @@ var opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.addTagToQuestionsBatch(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addTagToQuestionsBatch(opts, callback);
 ```
 
 ### Parameters
@@ -211,24 +220,27 @@ Set up a job to import a set of trivia questions from a cvs file at a remote url
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.ImportJobResource() // ImportJobResource | The new import job
+  'request': new KnetikPlatformApiDocumentationLatest.ImportJobResource() // ImportJobResource | The new import job
 };
-apiInstance.createImportJob(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createImportJob(opts, callback);
 ```
 
 ### Parameters
@@ -258,24 +270,27 @@ Create a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
-  'question': new KnetikcloudSdk.QuestionResource() // QuestionResource | The new question
+  'question': new KnetikPlatformApiDocumentationLatest.QuestionResource() // QuestionResource | The new question
 };
-apiInstance.createQuestion(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createQuestion(opts, callback);
 ```
 
 ### Parameters
@@ -307,24 +322,27 @@ Question templates define a type of question and the properties they have
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
-  'questionTemplateResource': new KnetikcloudSdk.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
+  'questionTemplateResource': new KnetikPlatformApiDocumentationLatest.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
 };
-apiInstance.createQuestionTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createQuestionTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -356,23 +374,26 @@ Also deletes all questions that were imported by it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = 789; // Number | The id of the job
 
-apiInstance.deleteImportJob(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteImportJob(id, callback);
 ```
 
 ### Parameters
@@ -402,23 +423,26 @@ Delete a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
-apiInstance.deleteQuestion(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteQuestion(id, callback);
 ```
 
 ### Parameters
@@ -448,25 +472,28 @@ Remove an answer from a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
 var id = "id_example"; // String | The id of the answer
 
-apiInstance.deleteQuestionAnswers(questionId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteQuestionAnswers(questionId, id, callback);
 ```
 
 ### Parameters
@@ -499,26 +526,29 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteQuestionTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteQuestionTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -549,23 +579,26 @@ Get an import job
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = 789; // Number | The id of the job
 
-apiInstance.getImportJob(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getImportJob(id, callback);
 ```
 
 ### Parameters
@@ -595,14 +628,14 @@ Get a list of import job
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'filterVendor': "filterVendor_example", // String | Filter for jobs by vendor id
@@ -613,12 +646,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getImportJobs(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getImportJobs(opts, callback);
 ```
 
 ### Parameters
@@ -654,23 +690,26 @@ Get a single question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
-apiInstance.getQuestion(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestion(id, callback);
 ```
 
 ### Parameters
@@ -700,25 +739,28 @@ Get an answer for a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
 var id = "id_example"; // String | The id of the answer
 
-apiInstance.getQuestionAnswer(questionId, id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionAnswer(questionId, id, callback);
 ```
 
 ### Parameters
@@ -749,23 +791,26 @@ List the answers available for a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
-apiInstance.getQuestionAnswers(questionId).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionAnswers(questionId, callback);
 ```
 
 ### Parameters
@@ -797,24 +842,27 @@ The &#39;since&#39; parameter is important to avoid getting a full list of all q
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'since': 789 // Number | Timestamp in seconds
 };
-apiInstance.getQuestionDeltas(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionDeltas(opts, callback);
 ```
 
 ### Parameters
@@ -844,23 +892,26 @@ List the tags for a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
-apiInstance.getQuestionTags(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionTags(id, callback);
 ```
 
 ### Parameters
@@ -890,23 +941,26 @@ Get a single question template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getQuestionTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionTemplate(id, callback);
 ```
 
 ### Parameters
@@ -936,26 +990,29 @@ List and search question templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getQuestionTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -987,14 +1044,14 @@ List and search questions
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
@@ -1009,12 +1066,15 @@ var opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.getQuestions(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestions(opts, callback);
 ```
 
 ### Parameters
@@ -1056,14 +1116,14 @@ This is also provided by the list endpoint so you don&#39;t need to call this fo
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
@@ -1074,12 +1134,15 @@ var opts = {
   'filterType': "filterType_example", // String | Filter for questions with specified type.  Allowable values: ('TEXT', 'IMAGE', 'VIDEO', 'AUDIO')
   'filterPublished': true // Boolean | Filter for questions currenctly published or not
 };
-apiInstance.getQuestionsCount(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getQuestionsCount(opts, callback);
 ```
 
 ### Parameters
@@ -1117,25 +1180,28 @@ Will process the CSV file and add new questions asynchronously. The status of th
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = 789; // Number | The id of the job
 
 var publishNow = true; // Boolean | Whether the new questions should be published live immediately
 
-apiInstance.processImportJob(id, publishNow).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.processImportJob(id, publishNow, callback);
 ```
 
 ### Parameters
@@ -1166,25 +1232,28 @@ Remove a tag from a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
 var tag = "tag_example"; // String | The tag to remove
 
-apiInstance.removeQuestionTag(id, tag).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeQuestionTag(id, tag, callback);
 ```
 
 ### Parameters
@@ -1217,14 +1286,14 @@ ll questions that have the tag and match filters will have it removed. The retur
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var tag = "tag_example"; // String | The tag to remove
 
@@ -1238,12 +1307,15 @@ var opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.removeTagToQuestionsBatch(tag, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.removeTagToQuestionsBatch(tag, opts, callback);
 ```
 
 ### Parameters
@@ -1283,26 +1355,29 @@ For performance reasons, search &amp; category filters are mutually exclusive. I
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for tags starting with the given text
   'filterCategory': "filterCategory_example", // String | Filter for tags on questions from a specific category
   'filterImportId': 789 // Number | Filter for tags on questions from a specific import job
 };
-apiInstance.searchQuestionTags(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.searchQuestionTags(opts, callback);
 ```
 
 ### Parameters
@@ -1336,26 +1411,29 @@ Changes should be made before process is started for there to be any effect.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = 789; // Number | The id of the job
 
 var opts = { 
-  'request': new KnetikcloudSdk.ImportJobResource() // ImportJobResource | The updated job
+  'request': new KnetikPlatformApiDocumentationLatest.ImportJobResource() // ImportJobResource | The updated job
 };
-apiInstance.updateImportJob(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateImportJob(id, opts, callback);
 ```
 
 ### Parameters
@@ -1386,26 +1464,29 @@ Update a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the question
 
 var opts = { 
-  'question': new KnetikcloudSdk.QuestionResource() // QuestionResource | The updated question
+  'question': new KnetikPlatformApiDocumentationLatest.QuestionResource() // QuestionResource | The updated question
 };
-apiInstance.updateQuestion(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateQuestion(id, opts, callback);
 ```
 
 ### Parameters
@@ -1436,28 +1517,31 @@ Update an answer for a question
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var questionId = "questionId_example"; // String | The id of the question
 
 var id = "id_example"; // String | The id of the answer
 
 var opts = { 
-  'answer': new KnetikcloudSdk.AnswerResource() // AnswerResource | The updated answer
+  'answer': new KnetikPlatformApiDocumentationLatest.AnswerResource() // AnswerResource | The updated answer
 };
-apiInstance.updateQuestionAnswer(questionId, id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateQuestionAnswer(questionId, id, opts, callback);
 ```
 
 ### Parameters
@@ -1489,26 +1573,29 @@ Update a question template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'questionTemplateResource': new KnetikcloudSdk.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
+  'questionTemplateResource': new KnetikPlatformApiDocumentationLatest.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
 };
-apiInstance.updateQuestionTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateQuestionTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -1541,17 +1628,17 @@ Will update all questions that match filters used (or all questions in system if
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationTriviaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationTriviaApi();
 
 var opts = { 
-  'question': new KnetikcloudSdk.QuestionResource(), // QuestionResource | New values for a set of question fields
+  'question': new KnetikPlatformApiDocumentationLatest.QuestionResource(), // QuestionResource | New values for a set of question fields
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
   'filterIdset': "filterIdset_example", // String | Filter for documents whose id is in the comma separated list provided
   'filterCategory': "filterCategory_example", // String | Filter for questions with specified category, by id
@@ -1560,12 +1647,15 @@ var opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.updateQuestionsInBulk(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateQuestionsInBulk(opts, callback);
 ```
 
 ### Parameters

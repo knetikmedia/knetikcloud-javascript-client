@@ -1,4 +1,4 @@
-# KnetikcloudSdk.RawSMSResource
+# KnetikPlatformApiDocumentationLatest.RawSMSResource
 
 ## Properties
 Name | Type | Description | Notes

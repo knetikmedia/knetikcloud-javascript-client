@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreEventLog
+# KnetikPlatformApiDocumentationLatest.BreEventLog
 
 ## Properties
 Name | Type | Description | Notes

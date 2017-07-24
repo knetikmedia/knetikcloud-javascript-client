@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Order
+# KnetikPlatformApiDocumentationLatest.Order
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.DatePropertyDefinitionResource
+# KnetikPlatformApiDocumentationLatest.DatePropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

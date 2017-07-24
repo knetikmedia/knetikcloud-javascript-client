@@ -1,4 +1,4 @@
-# KnetikcloudSdk.EventContextResource
+# KnetikPlatformApiDocumentationLatest.EventContextResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceDeviceResource
+# KnetikPlatformApiDocumentationLatest.PageResourceDeviceResource
 
 ## Properties
 Name | Type | Description | Notes

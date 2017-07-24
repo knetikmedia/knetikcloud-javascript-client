@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ItemTemplateResource
+# KnetikPlatformApiDocumentationLatest.ItemTemplateResource
 
 ## Properties
 Name | Type | Description | Notes

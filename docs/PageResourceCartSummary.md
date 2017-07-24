@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceCartSummary
+# KnetikPlatformApiDocumentationLatest.PageResourceCartSummary
 
 ## Properties
 Name | Type | Description | Notes

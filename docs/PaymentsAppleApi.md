@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsAppleApi
+# KnetikPlatformApiDocumentationLatest.PaymentsAppleApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,19 +17,22 @@ Mark an invoice paid using Apple payment receipt. A receipt will only be accepte
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.PaymentsAppleApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsAppleApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.ApplyPaymentRequest() // ApplyPaymentRequest | The request for paying an invoice through an Apple receipt
+  'request': new KnetikPlatformApiDocumentationLatest.ApplyPaymentRequest() // ApplyPaymentRequest | The request for paying an invoice through an Apple receipt
 };
-apiInstance.verifyAppleReceipt(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.verifyAppleReceipt(opts, callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceBreEventLog
+# KnetikPlatformApiDocumentationLatest.PageResourceBreEventLog
 
 ## Properties
 Name | Type | Description | Notes

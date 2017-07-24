@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CategoriesApi
+# KnetikPlatformApiDocumentationLatest.CategoriesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -25,24 +25,27 @@ Create a new category
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var opts = { 
-  'category': new KnetikcloudSdk.CategoryResource() // CategoryResource | The category to create
+  'category': new KnetikPlatformApiDocumentationLatest.CategoryResource() // CategoryResource | The category to create
 };
-apiInstance.createCategory(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCategory(opts, callback);
 ```
 
 ### Parameters
@@ -74,24 +77,27 @@ Templates define a type of category and the properties they have
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var opts = { 
-  'template': new KnetikcloudSdk.TemplateResource() // TemplateResource | The template to create
+  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The template to create
 };
-apiInstance.createCategoryTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCategoryTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -121,23 +127,26 @@ Delete an existing category
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the category to be deleted
 
-apiInstance.deleteCategory(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteCategory(id, callback);
 ```
 
 ### Parameters
@@ -169,26 +178,29 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteCategoryTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteCategoryTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -219,9 +231,9 @@ List and search categories with optional filters
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for categories whose names begin with provided string
@@ -230,12 +242,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCategories(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCategories(opts, callback);
 ```
 
 ### Parameters
@@ -269,18 +284,21 @@ Get a single category
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the category to retrieve
 
-apiInstance.getCategory(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCategory(id, callback);
 ```
 
 ### Parameters
@@ -310,23 +328,26 @@ Get a single category template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getCategoryTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCategoryTemplate(id, callback);
 ```
 
 ### Parameters
@@ -356,26 +377,29 @@ List and search category templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCategoryTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCategoryTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -407,20 +431,23 @@ List all trivia tags in the system
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getTags(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTags(opts, callback);
 ```
 
 ### Parameters
@@ -451,26 +478,29 @@ Update an existing category
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the category
 
 var opts = { 
-  'category': new KnetikcloudSdk.CategoryResource() // CategoryResource | The category to update
+  'category': new KnetikPlatformApiDocumentationLatest.CategoryResource() // CategoryResource | The category to update
 };
-apiInstance.updateCategory(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCategory(id, opts, callback);
 ```
 
 ### Parameters
@@ -501,26 +531,29 @@ Update a category template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CategoriesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CategoriesApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'template': new KnetikcloudSdk.TemplateResource() // TemplateResource | The updated template information
+  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The updated template information
 };
-apiInstance.updateCategoryTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCategoryTemplate(id, opts, callback);
 ```
 
 ### Parameters

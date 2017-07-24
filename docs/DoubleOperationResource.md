@@ -1,4 +1,4 @@
-# KnetikcloudSdk.DoubleOperationResource
+# KnetikPlatformApiDocumentationLatest.DoubleOperationResource
 
 ## Properties
 Name | Type | Description | Notes

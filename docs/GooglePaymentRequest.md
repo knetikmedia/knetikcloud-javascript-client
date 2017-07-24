@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GooglePaymentRequest
+# KnetikPlatformApiDocumentationLatest.GooglePaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

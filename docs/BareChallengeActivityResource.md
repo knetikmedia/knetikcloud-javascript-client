@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BareChallengeActivityResource
+# KnetikPlatformApiDocumentationLatest.BareChallengeActivityResource
 
 ## Properties
 Name | Type | Description | Notes

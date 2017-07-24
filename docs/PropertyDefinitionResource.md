@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PropertyDefinitionResource
+# KnetikPlatformApiDocumentationLatest.PropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

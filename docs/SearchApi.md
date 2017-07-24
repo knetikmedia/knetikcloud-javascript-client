@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SearchApi
+# KnetikPlatformApiDocumentationLatest.SearchApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -21,14 +21,14 @@ Mainly intended for internal use.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.SearchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SearchApi();
 
 var type = "type_example"; // String | The index type
 
@@ -37,12 +37,15 @@ var id = "id_example"; // String | The ID of the object
 var opts = { 
   '_object': null // Object | The object to add
 };
-apiInstance.addSearchIndex(type, id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addSearchIndex(type, id, opts, callback);
 ```
 
 ### Parameters
@@ -76,24 +79,27 @@ Add a new type mapping to connect data from one index to another, or discover an
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.SearchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SearchApi();
 
 var opts = { 
-  'mappings': [new KnetikcloudSdk.SearchReferenceMapping()] // [SearchReferenceMapping] | The mappings to add
+  'mappings': [new KnetikPlatformApiDocumentationLatest.SearchReferenceMapping()] // [SearchReferenceMapping] | The mappings to add
 };
-apiInstance.addSearchMappings(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addSearchMappings(opts, callback);
 ```
 
 ### Parameters
@@ -125,25 +131,28 @@ Mainly intended for internal use. Requires SEARCH_ADMIN.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.SearchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SearchApi();
 
 var type = "type_example"; // String | The index type
 
 var id = "id_example"; // String | The ID of the object to delete
 
-apiInstance.deleteSearchIndex(type, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteSearchIndex(type, id, callback);
 ```
 
 ### Parameters
@@ -176,23 +185,26 @@ Mainly intended for internal use
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.SearchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SearchApi();
 
 var type = "type_example"; // String | The index type
 
-apiInstance.deleteSearchIndexes(type).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteSearchIndexes(type, callback);
 ```
 
 ### Parameters
@@ -224,9 +236,9 @@ The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.SearchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SearchApi();
 
 var type = "type_example"; // String | The index type
 
@@ -235,12 +247,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.searchIndex(type, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.searchIndex(type, opts, callback);
 ```
 
 ### Parameters

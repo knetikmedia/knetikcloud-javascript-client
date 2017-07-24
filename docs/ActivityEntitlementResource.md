@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ActivityEntitlementResource
+# KnetikPlatformApiDocumentationLatest.ActivityEntitlementResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreTriggerResource
+# KnetikPlatformApiDocumentationLatest.BreTriggerResource
 
 ## Properties
 Name | Type | Description | Notes

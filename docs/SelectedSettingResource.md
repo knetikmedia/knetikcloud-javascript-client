@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SelectedSettingResource
+# KnetikPlatformApiDocumentationLatest.SelectedSettingResource
 
 ## Properties
 Name | Type | Description | Notes

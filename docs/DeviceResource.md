@@ -1,4 +1,4 @@
-# KnetikcloudSdk.DeviceResource
+# KnetikPlatformApiDocumentationLatest.DeviceResource
 
 ## Properties
 Name | Type | Description | Notes

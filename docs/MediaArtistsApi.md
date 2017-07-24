@@ -1,4 +1,4 @@
-# KnetikcloudSdk.MediaArtistsApi
+# KnetikPlatformApiDocumentationLatest.MediaArtistsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -26,24 +26,27 @@ Adds a new artist in the system. Use specific media contributions endpoint to ad
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var opts = { 
-  'artistResource': new KnetikcloudSdk.ArtistResource() // ArtistResource | The new artist
+  'artistResource': new KnetikPlatformApiDocumentationLatest.ArtistResource() // ArtistResource | The new artist
 };
-apiInstance.addArtist(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addArtist(opts, callback);
 ```
 
 ### Parameters
@@ -75,24 +78,27 @@ Artist Templates define a type of artist and the properties they have
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var opts = { 
-  'artistTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The artist template resource object
+  'artistTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The artist template resource object
 };
-apiInstance.createArtistTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createArtistTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -122,23 +128,26 @@ Removes an artist from the system IF no resources are attached to it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = 789; // Number | The artist id
 
-apiInstance.deleteArtist(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteArtist(id, callback);
 ```
 
 ### Parameters
@@ -170,26 +179,29 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteArtistTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteArtistTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -220,21 +232,24 @@ Loads a specific artist details
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = 789; // Number | The artist id
 
 var opts = { 
   'showContributions': 56 // Number | The number of contributions to show fetch
 };
-apiInstance.getArtist(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArtist(id, opts, callback);
 ```
 
 ### Parameters
@@ -265,23 +280,26 @@ Get a single artist template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getArtistTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArtistTemplate(id, callback);
 ```
 
 ### Parameters
@@ -311,26 +329,29 @@ List and search artist templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArtistTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArtistTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -362,9 +383,9 @@ Search for artists
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var opts = { 
   'filterArtistsByName': "filterArtistsByName_example", // String | Filter for artists which name *STARTS* with the given string
@@ -372,12 +393,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArtists(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getArtists(opts, callback);
 ```
 
 ### Parameters
@@ -410,26 +434,29 @@ Modifies an artist details
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = 789; // Number | The artist id
 
 var opts = { 
-  'artistResource': new KnetikcloudSdk.ArtistResource() // ArtistResource | The new artist
+  'artistResource': new KnetikPlatformApiDocumentationLatest.ArtistResource() // ArtistResource | The new artist
 };
-apiInstance.updateArtist(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateArtist(id, opts, callback);
 ```
 
 ### Parameters
@@ -460,26 +487,29 @@ Update an artist template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaArtistsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaArtistsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'artistTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The artist template resource object
+  'artistTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The artist template resource object
 };
-apiInstance.updateArtistTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateArtistTemplate(id, opts, callback);
 ```
 
 ### Parameters

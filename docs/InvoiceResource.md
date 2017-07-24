@@ -1,4 +1,4 @@
-# KnetikcloudSdk.InvoiceResource
+# KnetikPlatformApiDocumentationLatest.InvoiceResource
 
 ## Properties
 Name | Type | Description | Notes

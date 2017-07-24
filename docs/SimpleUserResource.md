@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SimpleUserResource
+# KnetikPlatformApiDocumentationLatest.SimpleUserResource
 
 ## Properties
 Name | Type | Description | Notes

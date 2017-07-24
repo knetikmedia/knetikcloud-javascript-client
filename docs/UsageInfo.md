@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UsageInfo
+# KnetikPlatformApiDocumentationLatest.UsageInfo
 
 ## Properties
 Name | Type | Description | Notes

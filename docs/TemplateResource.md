@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TemplateResource
+# KnetikPlatformApiDocumentationLatest.TemplateResource
 
 ## Properties
 Name | Type | Description | Notes

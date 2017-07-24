@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TierResource
+# KnetikPlatformApiDocumentationLatest.TierResource
 
 ## Properties
 Name | Type | Description | Notes

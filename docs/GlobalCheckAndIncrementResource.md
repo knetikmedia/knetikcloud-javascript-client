@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GlobalCheckAndIncrementResource
+# KnetikPlatformApiDocumentationLatest.GlobalCheckAndIncrementResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CurrencyResource
+# KnetikPlatformApiDocumentationLatest.CurrencyResource
 
 ## Properties
 Name | Type | Description | Notes

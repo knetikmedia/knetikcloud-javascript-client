@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CampaignsApi
+# KnetikPlatformApiDocumentationLatest.CampaignsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -27,26 +27,29 @@ Add a challenge to a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = 789; // Number | The id of the campaign
 
 var opts = { 
   'challengeId': 789 // Number | The id of the challenge
 };
-apiInstance.addChallengeToCampaign(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addChallengeToCampaign(id, opts, callback);
 ```
 
 ### Parameters
@@ -77,24 +80,27 @@ Create a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var opts = { 
-  'campaignResource': new KnetikcloudSdk.CampaignResource() // CampaignResource | The campaign resource object
+  'campaignResource': new KnetikPlatformApiDocumentationLatest.CampaignResource() // CampaignResource | The campaign resource object
 };
-apiInstance.createCampaign(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCampaign(opts, callback);
 ```
 
 ### Parameters
@@ -126,24 +132,27 @@ Campaign Templates define a type of campaign and the properties they have
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var opts = { 
-  'campaignTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The campaign template resource object
+  'campaignTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The campaign template resource object
 };
-apiInstance.createCampaignTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCampaignTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -173,23 +182,26 @@ Delete a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = 789; // Number | The campaign id
 
-apiInstance.deleteCampaign(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteCampaign(id, callback);
 ```
 
 ### Parameters
@@ -221,26 +233,29 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteCampaignTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteCampaignTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -271,18 +286,21 @@ Returns a single campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = 789; // Number | The campaign id
 
-apiInstance.getCampaign(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCampaign(id, callback);
 ```
 
 ### Parameters
@@ -312,9 +330,9 @@ List the challenges associated with a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = 789; // Number | The campaign id
 
@@ -325,12 +343,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaignChallenges(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCampaignChallenges(id, opts, callback);
 ```
 
 ### Parameters
@@ -365,23 +386,26 @@ Get a single campaign template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getCampaignTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCampaignTemplate(id, callback);
 ```
 
 ### Parameters
@@ -411,26 +435,29 @@ List and search campaign templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaignTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCampaignTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -462,9 +489,9 @@ List and search campaigns
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var opts = { 
   'filterActive': true, // Boolean | Filter for campaigns that are active
@@ -472,12 +499,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaigns(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCampaigns(opts, callback);
 ```
 
 ### Parameters
@@ -510,25 +540,28 @@ Remove a challenge from a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var campaignId = 789; // Number | The campaign id
 
 var id = 789; // Number | The challenge id
 
-apiInstance.removeChallengeFromCampaign(campaignId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeChallengeFromCampaign(campaignId, id, callback);
 ```
 
 ### Parameters
@@ -559,26 +592,29 @@ Update a campaign
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = 789; // Number | The campaign id
 
 var opts = { 
-  'campaignResource': new KnetikcloudSdk.CampaignResource() // CampaignResource | The campaign resource object
+  'campaignResource': new KnetikPlatformApiDocumentationLatest.CampaignResource() // CampaignResource | The campaign resource object
 };
-apiInstance.updateCampaign(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCampaign(id, opts, callback);
 ```
 
 ### Parameters
@@ -609,26 +645,29 @@ Update an campaign template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'campaignTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The campaign template resource object
+  'campaignTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The campaign template resource object
 };
-apiInstance.updateCampaignTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCampaignTemplate(id, opts, callback);
 ```
 
 ### Parameters

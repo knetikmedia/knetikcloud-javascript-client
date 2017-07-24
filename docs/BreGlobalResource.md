@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreGlobalResource
+# KnetikPlatformApiDocumentationLatest.BreGlobalResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.VendorEmailLookupResource
+# KnetikPlatformApiDocumentationLatest.VendorEmailLookupResource
 
 ## Properties
 Name | Type | Description | Notes

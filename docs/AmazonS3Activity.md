@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AmazonS3Activity
+# KnetikPlatformApiDocumentationLatest.AmazonS3Activity
 
 ## Properties
 Name | Type | Description | Notes

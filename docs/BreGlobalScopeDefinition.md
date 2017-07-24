@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreGlobalScopeDefinition
+# KnetikPlatformApiDocumentationLatest.BreGlobalScopeDefinition
 
 ## Properties
 Name | Type | Description | Notes

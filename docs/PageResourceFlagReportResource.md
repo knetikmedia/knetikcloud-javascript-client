@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceFlagReportResource
+# KnetikPlatformApiDocumentationLatest.PageResourceFlagReportResource
 
 ## Properties
 Name | Type | Description | Notes

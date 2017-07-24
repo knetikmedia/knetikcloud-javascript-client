@@ -1,4 +1,4 @@
-# KnetikcloudSdk.OauthAccessTokenResource
+# KnetikPlatformApiDocumentationLatest.OauthAccessTokenResource
 
 ## Properties
 Name | Type | Description | Notes

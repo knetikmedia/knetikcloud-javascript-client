@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SubscriptionPlan
+# KnetikPlatformApiDocumentationLatest.SubscriptionPlan
 
 ## Properties
 Name | Type | Description | Notes

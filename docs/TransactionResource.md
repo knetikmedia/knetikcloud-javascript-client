@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TransactionResource
+# KnetikPlatformApiDocumentationLatest.TransactionResource
 
 ## Properties
 Name | Type | Description | Notes

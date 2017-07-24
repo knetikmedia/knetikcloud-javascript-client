@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StoreVendorsApi
+# KnetikPlatformApiDocumentationLatest.StoreVendorsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -24,24 +24,27 @@ Create a vendor
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var opts = { 
-  'vendor': new KnetikcloudSdk.VendorResource() // VendorResource | The vendor
+  'vendor': new KnetikPlatformApiDocumentationLatest.VendorResource() // VendorResource | The vendor
 };
-apiInstance.createVendor(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createVendor(opts, callback);
 ```
 
 ### Parameters
@@ -73,24 +76,27 @@ Vendor Templates define a type of vendor and the properties they have.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var opts = { 
-  'vendorTemplateResource': new KnetikcloudSdk.ItemTemplateResource() // ItemTemplateResource | The new vendor template
+  'vendorTemplateResource': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The new vendor template
 };
-apiInstance.createVendorTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createVendorTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -120,23 +126,26 @@ Delete a vendor
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = 56; // Number | The id of the vendor
 
-apiInstance.deleteVendor(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVendor(id, callback);
 ```
 
 ### Parameters
@@ -166,26 +175,29 @@ Delete a vendor template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteVendorTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVendorTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -216,18 +228,21 @@ Get a single vendor
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = 56; // Number | The id of the vendor
 
-apiInstance.getVendor(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVendor(id, callback);
 ```
 
 ### Parameters
@@ -259,23 +274,26 @@ Vendor Templates define a type of vendor and the properties they have.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getVendorTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVendorTemplate(id, callback);
 ```
 
 ### Parameters
@@ -305,26 +323,29 @@ List and search vendor templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getVendorTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVendorTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -356,9 +377,9 @@ List and search vendors
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var opts = { 
   'filterName': "filterName_example", // String | Filters vendors by name starting with the text provided in the filter
@@ -366,12 +387,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getVendors(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVendors(opts, callback);
 ```
 
 ### Parameters
@@ -404,26 +428,29 @@ Update a vendor
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = 56; // Number | The id of the vendor
 
 var opts = { 
-  'vendor': new KnetikcloudSdk.VendorResource() // VendorResource | The vendor
+  'vendor': new KnetikPlatformApiDocumentationLatest.VendorResource() // VendorResource | The vendor
 };
-apiInstance.updateVendor(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateVendor(id, opts, callback);
 ```
 
 ### Parameters
@@ -454,26 +481,29 @@ Update a vendor template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreVendorsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreVendorsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'vendorTemplateResource': new KnetikcloudSdk.ItemTemplateResource() // ItemTemplateResource | The vendor template resource object
+  'vendorTemplateResource': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The vendor template resource object
 };
-apiInstance.updateVendorTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateVendorTemplate(id, opts, callback);
 ```
 
 ### Parameters

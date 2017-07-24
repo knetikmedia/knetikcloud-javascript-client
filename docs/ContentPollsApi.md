@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ContentPollsApi
+# KnetikPlatformApiDocumentationLatest.ContentPollsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -26,26 +26,29 @@ Add your vote to a poll
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The poll id
 
 var opts = { 
   'answerKey': "answerKey_example" // String | The answer key
 };
-apiInstance.answerPoll(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.answerPoll(id, opts, callback);
 ```
 
 ### Parameters
@@ -78,24 +81,27 @@ Polls are blobs of text with titles, a category and assets. Formatting and displ
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var opts = { 
-  'pollResource': new KnetikcloudSdk.PollResource() // PollResource | The poll object
+  'pollResource': new KnetikPlatformApiDocumentationLatest.PollResource() // PollResource | The poll object
 };
-apiInstance.createPoll(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createPoll(opts, callback);
 ```
 
 ### Parameters
@@ -127,24 +133,27 @@ Poll templates define a type of poll and the properties they have
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var opts = { 
-  'pollTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The poll template resource object
+  'pollTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The poll template resource object
 };
-apiInstance.createPollTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createPollTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -174,23 +183,26 @@ Delete an existing poll
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The poll id
 
-apiInstance.deletePoll(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deletePoll(id, callback);
 ```
 
 ### Parameters
@@ -222,26 +234,29 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deletePollTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deletePollTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -272,18 +287,21 @@ Get a single poll
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The poll id
 
-apiInstance.getPoll(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPoll(id, callback);
 ```
 
 ### Parameters
@@ -313,23 +331,26 @@ Get poll answer
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The poll id
 
-apiInstance.getPollAnswer(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPollAnswer(id, callback);
 ```
 
 ### Parameters
@@ -359,23 +380,26 @@ Get a single poll template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getPollTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPollTemplate(id, callback);
 ```
 
 ### Parameters
@@ -405,26 +429,29 @@ List and search poll templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getPollTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPollTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -458,9 +485,9 @@ Get a list of polls with optional filtering. Assets will not be filled in on the
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var opts = { 
   'filterCategory': "filterCategory_example", // String | Filter for polls from a specific category by id
@@ -470,12 +497,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getPolls(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getPolls(opts, callback);
 ```
 
 ### Parameters
@@ -510,26 +540,29 @@ Update an existing poll
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The poll id
 
 var opts = { 
-  'pollResource': new KnetikcloudSdk.PollResource() // PollResource | The poll object
+  'pollResource': new KnetikPlatformApiDocumentationLatest.PollResource() // PollResource | The poll object
 };
-apiInstance.updatePoll(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updatePoll(id, opts, callback);
 ```
 
 ### Parameters
@@ -560,26 +593,29 @@ Update a poll template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ContentPollsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentPollsApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'pollTemplateResource': new KnetikcloudSdk.TemplateResource() // TemplateResource | The poll template resource object
+  'pollTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The poll template resource object
 };
-apiInstance.updatePollTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updatePollTemplate(id, opts, callback);
 ```
 
 ### Parameters

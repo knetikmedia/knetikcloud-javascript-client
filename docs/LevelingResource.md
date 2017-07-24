@@ -1,4 +1,4 @@
-# KnetikcloudSdk.LevelingResource
+# KnetikPlatformApiDocumentationLatest.LevelingResource
 
 ## Properties
 Name | Type | Description | Notes

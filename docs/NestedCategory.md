@@ -1,4 +1,4 @@
-# KnetikcloudSdk.NestedCategory
+# KnetikPlatformApiDocumentationLatest.NestedCategory
 
 ## Properties
 Name | Type | Description | Notes

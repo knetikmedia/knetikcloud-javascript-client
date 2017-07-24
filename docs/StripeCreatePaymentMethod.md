@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StripeCreatePaymentMethod
+# KnetikPlatformApiDocumentationLatest.StripeCreatePaymentMethod
 
 ## Properties
 Name | Type | Description | Notes

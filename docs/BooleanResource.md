@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BooleanResource
+# KnetikPlatformApiDocumentationLatest.BooleanResource
 
 ## Properties
 Name | Type | Description | Notes

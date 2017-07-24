@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UtilVersionApi
+# KnetikPlatformApiDocumentationLatest.UtilVersionApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -15,15 +15,18 @@ Get current version info
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.UtilVersionApi();
-apiInstance.getVersion().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilVersionApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVersion(callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.IntegerProperty
+# KnetikPlatformApiDocumentationLatest.IntegerProperty
 
 ## Properties
 Name | Type | Description | Notes

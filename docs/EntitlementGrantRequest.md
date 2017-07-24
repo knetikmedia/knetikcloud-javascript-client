@@ -1,4 +1,4 @@
-# KnetikcloudSdk.EntitlementGrantRequest
+# KnetikPlatformApiDocumentationLatest.EntitlementGrantRequest
 
 ## Properties
 Name | Type | Description | Notes

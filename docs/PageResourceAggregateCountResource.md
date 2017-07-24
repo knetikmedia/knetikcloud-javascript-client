@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceAggregateCountResource
+# KnetikPlatformApiDocumentationLatest.PageResourceAggregateCountResource
 
 ## Properties
 Name | Type | Description | Notes

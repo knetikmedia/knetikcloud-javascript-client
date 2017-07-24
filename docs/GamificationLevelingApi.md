@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GamificationLevelingApi
+# KnetikPlatformApiDocumentationLatest.GamificationLevelingApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -24,24 +24,27 @@ Create a level schema
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var opts = { 
-  'level': new KnetikcloudSdk.LevelingResource() // LevelingResource | The level schema definition
+  'level': new KnetikPlatformApiDocumentationLatest.LevelingResource() // LevelingResource | The level schema definition
 };
-apiInstance.createLevel(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createLevel(opts, callback);
 ```
 
 ### Parameters
@@ -71,23 +74,26 @@ Delete a level
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var name = "name_example"; // String | The level schema name
 
-apiInstance.deleteLevel(name).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteLevel(name, callback);
 ```
 
 ### Parameters
@@ -117,23 +123,26 @@ Retrieve a level
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var name = "name_example"; // String | The level schema name
 
-apiInstance.getLevel(name).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLevel(name, callback);
 ```
 
 ### Parameters
@@ -163,20 +172,23 @@ Get the list of triggers that can be used to trigger a leveling progress update
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
-apiInstance.getLevelTriggers().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLevelTriggers(callback);
 ```
 
 ### Parameters
@@ -205,14 +217,14 @@ Get a list of levels schemas with optional filtering
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var opts = { 
   'filterName': "filterName_example", // String | Filter for level schemas whose name contains a given string
@@ -220,12 +232,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getLevels(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getLevels(opts, callback);
 ```
 
 ### Parameters
@@ -258,25 +273,28 @@ Get a user&#39;s progress for a given level schema
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var userId = 56; // Number | The id of the user
 
 var name = "name_example"; // String | The level schema name
 
-apiInstance.getUserLevel(userId, name).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserLevel(userId, name, callback);
 ```
 
 ### Parameters
@@ -309,14 +327,14 @@ Filtering and sorting is based on the LevelingResource object, not the UserLevel
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var userId = 56; // Number | The id of the user
 
@@ -326,12 +344,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserLevels(userId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserLevels(userId, opts, callback);
 ```
 
 ### Parameters
@@ -367,14 +388,14 @@ If no progress record yet exists for the user, it will be created. Otherwise the
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var userId = 56; // Number | The id of the user
 
@@ -383,12 +404,15 @@ var name = "name_example"; // String | The level schema name
 var opts = { 
   'progress': 56 // Number | The amount of progress to add
 };
-apiInstance.incrementProgress(userId, name, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.incrementProgress(userId, name, opts, callback);
 ```
 
 ### Parameters
@@ -422,14 +446,14 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var userId = 56; // Number | The id of the user
 
@@ -438,12 +462,15 @@ var name = "name_example"; // String | The level schema name
 var opts = { 
   'progress': 56 // Number | The new progress amount
 };
-apiInstance.setProgress(userId, name, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.setProgress(userId, name, opts, callback);
 ```
 
 ### Parameters
@@ -475,26 +502,29 @@ Update a level
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.GamificationLevelingApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationLevelingApi();
 
 var name = "name_example"; // String | The level schema name
 
 var opts = { 
-  'newLevel': new KnetikcloudSdk.LevelingResource() // LevelingResource | The level schema definition
+  'newLevel': new KnetikPlatformApiDocumentationLatest.LevelingResource() // LevelingResource | The level schema definition
 };
-apiInstance.updateLevel(name, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateLevel(name, opts, callback);
 ```
 
 ### Parameters

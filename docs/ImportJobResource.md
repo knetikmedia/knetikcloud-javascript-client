@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ImportJobResource
+# KnetikPlatformApiDocumentationLatest.ImportJobResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.RawEmailResource
+# KnetikPlatformApiDocumentationLatest.RawEmailResource
 
 ## Properties
 Name | Type | Description | Notes

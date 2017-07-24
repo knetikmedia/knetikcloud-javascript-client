@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ContributionResource
+# KnetikPlatformApiDocumentationLatest.ContributionResource
 
 ## Properties
 Name | Type | Description | Notes

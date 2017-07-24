@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreRule
+# KnetikPlatformApiDocumentationLatest.BreRule
 
 ## Properties
 Name | Type | Description | Notes

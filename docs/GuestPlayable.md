@@ -1,4 +1,4 @@
-# KnetikcloudSdk.GuestPlayable
+# KnetikPlatformApiDocumentationLatest.GuestPlayable
 
 ## Properties
 Name | Type | Description | Notes

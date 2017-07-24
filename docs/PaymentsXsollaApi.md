@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsXsollaApi
+# KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -16,24 +16,27 @@ Create a payment token that should be used to forward the user to Xsolla so they
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsXsollaApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.XsollaPaymentRequest() // XsollaPaymentRequest | The payment request to be sent to XSolla
+  'request': new KnetikPlatformApiDocumentationLatest.XsollaPaymentRequest() // XsollaPaymentRequest | The payment request to be sent to XSolla
 };
-apiInstance.createXsollaTokenUrl(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createXsollaTokenUrl(opts, callback);
 ```
 
 ### Parameters
@@ -65,15 +68,18 @@ Only used by Xsolla to call back to JSAPI after processing user payment action
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.PaymentsXsollaApi();
-apiInstance.receiveXsollaNotification().then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.receiveXsollaNotification(callback);
 ```
 
 ### Parameters

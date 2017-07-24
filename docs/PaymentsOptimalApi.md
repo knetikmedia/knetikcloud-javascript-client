@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsOptimalApi
+# KnetikPlatformApiDocumentationLatest.PaymentsOptimalApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,24 +17,27 @@ Will return the url for a hosted payment endpoint to post to. See Optimal docume
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsOptimalApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsOptimalApi();
 
 var opts = { 
-  'request': new KnetikcloudSdk.OptimalPaymentRequest() // OptimalPaymentRequest | The payment request to initiate
+  'request': new KnetikPlatformApiDocumentationLatest.OptimalPaymentRequest() // OptimalPaymentRequest | The payment request to initiate
 };
-apiInstance.silentPostOptimal(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.silentPostOptimal(opts, callback);
 ```
 
 ### Parameters

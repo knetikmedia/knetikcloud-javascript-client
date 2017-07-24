@@ -1,4 +1,4 @@
-# KnetikcloudSdk.S3Config
+# KnetikPlatformApiDocumentationLatest.S3Config
 
 ## Properties
 Name | Type | Description | Notes

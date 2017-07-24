@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StoreSalesApi
+# KnetikPlatformApiDocumentationLatest.StoreSalesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,24 +19,27 @@ Create a sale
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreSalesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSalesApi();
 
 var opts = { 
-  'catalogSale': new KnetikcloudSdk.CatalogSale() // CatalogSale | The catalog sale object
+  'catalogSale': new KnetikPlatformApiDocumentationLatest.CatalogSale() // CatalogSale | The catalog sale object
 };
-apiInstance.createCatalogSale(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCatalogSale(opts, callback);
 ```
 
 ### Parameters
@@ -66,23 +69,26 @@ Delete a sale
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreSalesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSalesApi();
 
 var id = 56; // Number | The id of the sale
 
-apiInstance.deleteCatalogSale(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteCatalogSale(id, callback);
 ```
 
 ### Parameters
@@ -112,23 +118,26 @@ Get a single sale
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreSalesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSalesApi();
 
 var id = 56; // Number | The id of the sale
 
-apiInstance.getCatalogSale(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCatalogSale(id, callback);
 ```
 
 ### Parameters
@@ -158,26 +167,29 @@ List and search sales
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreSalesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSalesApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCatalogSales(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCatalogSales(opts, callback);
 ```
 
 ### Parameters
@@ -209,26 +221,29 @@ Update a sale
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreSalesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSalesApi();
 
 var id = 56; // Number | The id of the sale
 
 var opts = { 
-  'catalogSale': new KnetikcloudSdk.CatalogSale() // CatalogSale | The catalog sale object
+  'catalogSale': new KnetikPlatformApiDocumentationLatest.CatalogSale() // CatalogSale | The catalog sale object
 };
-apiInstance.updateCatalogSale(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateCatalogSale(id, opts, callback);
 ```
 
 ### Parameters

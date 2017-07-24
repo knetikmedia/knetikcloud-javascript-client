@@ -1,4 +1,4 @@
-# KnetikcloudSdk.DispositionsApi
+# KnetikPlatformApiDocumentationLatest.DispositionsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,24 +19,27 @@ Add a new disposition
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.DispositionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.DispositionsApi();
 
 var opts = { 
-  'disposition': new KnetikcloudSdk.DispositionResource() // DispositionResource | The new disposition record
+  'disposition': new KnetikPlatformApiDocumentationLatest.DispositionResource() // DispositionResource | The new disposition record
 };
-apiInstance.addDisposition(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addDisposition(opts, callback);
 ```
 
 ### Parameters
@@ -66,23 +69,26 @@ Delete a disposition
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.DispositionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.DispositionsApi();
 
 var id = 789; // Number | The id of the disposition record
 
-apiInstance.deleteDisposition(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteDisposition(id, callback);
 ```
 
 ### Parameters
@@ -112,18 +118,21 @@ Returns a disposition
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.DispositionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.DispositionsApi();
 
 var id = 789; // Number | The id of the disposition record
 
-apiInstance.getDisposition(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getDisposition(id, callback);
 ```
 
 ### Parameters
@@ -153,20 +162,23 @@ Returns a list of disposition counts
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.DispositionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.DispositionsApi();
 
 var opts = { 
   'filterContext': "filterContext_example", // String | Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context=video:47
   'filterOwner': "filterOwner_example" // String | Filter for dispositions from a specific user by id or 'me'
 };
-apiInstance.getDispositionCounts(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getDispositionCounts(opts, callback);
 ```
 
 ### Parameters
@@ -197,9 +209,9 @@ Returns a page of dispositions
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.DispositionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.DispositionsApi();
 
 var opts = { 
   'filterContext': "filterContext_example", // String | Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context=video:47
@@ -208,12 +220,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getDispositions(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getDispositions(opts, callback);
 ```
 
 ### Parameters

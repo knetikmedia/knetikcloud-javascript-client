@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StoreShoppingCartsApi
+# KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -27,26 +27,29 @@ Adds a custom discount to the cart
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
-  'customDiscount': new KnetikcloudSdk.CouponDefinition() // CouponDefinition | The details of the discount to add
+  'customDiscount': new KnetikPlatformApiDocumentationLatest.CouponDefinition() // CouponDefinition | The details of the discount to add
 };
-apiInstance.addCustomDiscount(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addCustomDiscount(id, opts, callback);
 ```
 
 ### Parameters
@@ -77,26 +80,29 @@ Adds a discount coupon to the cart
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
-  'skuRequest': new KnetikcloudSdk.SkuRequest() // SkuRequest | The request of the sku
+  'skuRequest': new KnetikPlatformApiDocumentationLatest.SkuRequest() // SkuRequest | The request of the sku
 };
-apiInstance.addDiscountToCart(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addDiscountToCart(id, opts, callback);
 ```
 
 ### Parameters
@@ -129,26 +135,29 @@ Currently, carts cannot contain virtual and real currency items at the same time
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
-  'cartItemRequest': new KnetikcloudSdk.CartItemRequest() // CartItemRequest | The cart item request object
+  'cartItemRequest': new KnetikPlatformApiDocumentationLatest.CartItemRequest() // CartItemRequest | The cart item request object
 };
-apiInstance.addItemToCart(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addItemToCart(id, opts, callback);
 ```
 
 ### Parameters
@@ -181,25 +190,28 @@ You don&#39;t have to have a user to create a cart but the API requires authenti
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var opts = { 
   'owner': 56, // Number | Set the owner of a cart. If not specified, defaults to the calling user's id. If specified and is not the calling user's id, SHOPPING_CARTS_ADMIN permission is required
   'currencyCode': "currencyCode_example" // String | Set the currency for the cart, by currency code. May be disallowed by site settings.
 };
-apiInstance.createCart(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createCart(opts, callback);
 ```
 
 ### Parameters
@@ -230,23 +242,26 @@ Returns the cart with the given GUID
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
-apiInstance.getCart(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCart(id, callback);
 ```
 
 ### Parameters
@@ -276,14 +291,14 @@ Get a list of carts
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var opts = { 
   'filterOwnerId': 56, // Number | Filter by the id of the owner
@@ -291,12 +306,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCarts(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getCarts(opts, callback);
 ```
 
 ### Parameters
@@ -329,23 +347,26 @@ Returns whether a cart requires shipping
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
-apiInstance.getShippable(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getShippable(id, callback);
 ```
 
 ### Parameters
@@ -377,23 +398,26 @@ Since a cart can have multiple vendors with different shipping options, the coun
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
-apiInstance.getShippingCountries(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getShippingCountries(id, callback);
 ```
 
 ### Parameters
@@ -423,25 +447,28 @@ Removes a discount coupon from the cart
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var code = "code_example"; // String | The SKU code of the coupon to remove
 
-apiInstance.removeDiscountFromCart(id, code).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeDiscountFromCart(id, code, callback);
 ```
 
 ### Parameters
@@ -474,26 +501,29 @@ May be disallowed by site settings.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
   'currencyCode': "currencyCode_example" // String | The code of the currency
 };
-apiInstance.setCartCurrency(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.setCartCurrency(id, opts, callback);
 ```
 
 ### Parameters
@@ -524,26 +554,29 @@ Sets the owner of a cart if none is set already
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
   'userId': 56 // Number | The id of the user
 };
-apiInstance.setCartOwner(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.setCartOwner(id, opts, callback);
 ```
 
 ### Parameters
@@ -576,26 +609,29 @@ A quantity of zero will remove the item from the cart altogether.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
-  'cartItemRequest': new KnetikcloudSdk.CartItemRequest() // CartItemRequest | The cart item request object
+  'cartItemRequest': new KnetikPlatformApiDocumentationLatest.CartItemRequest() // CartItemRequest | The cart item request object
 };
-apiInstance.updateItemInCart(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateItemInCart(id, opts, callback);
 ```
 
 ### Parameters
@@ -626,26 +662,29 @@ Modifies or sets the order shipping address
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreShoppingCartsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreShoppingCartsApi();
 
 var id = "id_example"; // String | The id of the cart
 
 var opts = { 
-  'cartShippingAddressRequest': new KnetikcloudSdk.CartShippingAddressRequest() // CartShippingAddressRequest | The cart shipping address request object
+  'cartShippingAddressRequest': new KnetikPlatformApiDocumentationLatest.CartShippingAddressRequest() // CartShippingAddressRequest | The cart shipping address request object
 };
-apiInstance.updateShippingAddress(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateShippingAddress(id, opts, callback);
 ```
 
 ### Parameters

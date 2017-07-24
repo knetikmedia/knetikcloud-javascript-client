@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PermissionResource
+# KnetikPlatformApiDocumentationLatest.PermissionResource
 
 ## Properties
 Name | Type | Description | Notes

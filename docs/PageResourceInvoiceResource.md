@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceInvoiceResource
+# KnetikPlatformApiDocumentationLatest.PageResourceInvoiceResource
 
 ## Properties
 Name | Type | Description | Notes

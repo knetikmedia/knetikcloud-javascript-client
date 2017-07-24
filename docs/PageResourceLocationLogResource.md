@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceLocationLogResource
+# KnetikPlatformApiDocumentationLatest.PageResourceLocationLogResource
 
 ## Properties
 Name | Type | Description | Notes

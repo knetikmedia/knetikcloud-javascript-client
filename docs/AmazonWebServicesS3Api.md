@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AmazonWebServicesS3Api
+# KnetikPlatformApiDocumentationLatest.AmazonWebServicesS3Api
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,25 +17,28 @@ Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.AmazonWebServicesS3Api();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.AmazonWebServicesS3Api();
 
 var opts = { 
   'filename': "filename_example", // String | The file name
   'contentType': "contentType_example" // String | The content type
 };
-apiInstance.getSignedS3URL(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getSignedS3URL(opts, callback);
 ```
 
 ### Parameters

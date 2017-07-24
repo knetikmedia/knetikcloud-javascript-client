@@ -1,4 +1,4 @@
-# KnetikcloudSdk.RewardItemResource
+# KnetikPlatformApiDocumentationLatest.RewardItemResource
 
 ## Properties
 Name | Type | Description | Notes

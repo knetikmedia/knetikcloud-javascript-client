@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ErrorResource
+# KnetikPlatformApiDocumentationLatest.ErrorResource
 
 ## Properties
 Name | Type | Description | Notes

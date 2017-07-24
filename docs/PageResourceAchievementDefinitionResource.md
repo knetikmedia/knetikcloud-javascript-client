@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceAchievementDefinitionResource
+# KnetikPlatformApiDocumentationLatest.PageResourceAchievementDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

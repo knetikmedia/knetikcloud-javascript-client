@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Batch
+# KnetikPlatformApiDocumentationLatest.Batch
 
 ## Properties
 Name | Type | Description | Notes

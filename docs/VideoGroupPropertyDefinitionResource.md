@@ -1,4 +1,4 @@
-# KnetikcloudSdk.VideoGroupPropertyDefinitionResource
+# KnetikPlatformApiDocumentationLatest.VideoGroupPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

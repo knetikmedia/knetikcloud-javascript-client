@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Collectionstring
+# KnetikPlatformApiDocumentationLatest.Collectionstring
 
 ## Properties
 Name | Type | Description | Notes

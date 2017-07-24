@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UserRelationshipResource
+# KnetikPlatformApiDocumentationLatest.UserRelationshipResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourcePermissionResource
+# KnetikPlatformApiDocumentationLatest.PageResourcePermissionResource
 
 ## Properties
 Name | Type | Description | Notes

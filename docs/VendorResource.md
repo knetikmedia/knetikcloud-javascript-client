@@ -1,4 +1,4 @@
-# KnetikcloudSdk.VendorResource
+# KnetikPlatformApiDocumentationLatest.VendorResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ReportingOrdersApi
+# KnetikPlatformApiDocumentationLatest.ReportingOrdersApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -15,14 +15,14 @@ Retrieve invoice counts aggregated by time ranges
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.ReportingOrdersApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingOrdersApi();
 
 var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
@@ -35,12 +35,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned
 };
-apiInstance.getInvoiceReports(currencyCode, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getInvoiceReports(currencyCode, opts, callback);
 ```
 
 ### Parameters

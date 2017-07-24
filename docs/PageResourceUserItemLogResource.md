@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceUserItemLogResource
+# KnetikPlatformApiDocumentationLatest.PageResourceUserItemLogResource
 
 ## Properties
 Name | Type | Description | Notes

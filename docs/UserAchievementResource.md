@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UserAchievementResource
+# KnetikPlatformApiDocumentationLatest.UserAchievementResource
 
 ## Properties
 Name | Type | Description | Notes

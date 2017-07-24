@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceVideoResource
+# KnetikPlatformApiDocumentationLatest.PageResourceVideoResource
 
 ## Properties
 Name | Type | Description | Notes

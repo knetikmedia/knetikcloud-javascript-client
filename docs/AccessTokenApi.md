@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AccessTokenApi
+# KnetikPlatformApiDocumentationLatest.AccessTokenApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -15,9 +15,9 @@ Get access token
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.AccessTokenApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.AccessTokenApi();
 
 var grantType = "client_credentials"; // String | Grant type
 
@@ -28,12 +28,15 @@ var opts = {
   'username': "username_example", // String | The username of the client.  Used only with a grant_type of password
   'password': "password_example" // String | The password of the client.  Used only with a grant_type of password
 };
-apiInstance.getOAuthToken(grantType, clientId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getOAuthToken(grantType, clientId, opts, callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceBareChallengeActivityResource
+# KnetikPlatformApiDocumentationLatest.PageResourceBareChallengeActivityResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.DispositionCount
+# KnetikPlatformApiDocumentationLatest.DispositionCount
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StripePaymentRequest
+# KnetikPlatformApiDocumentationLatest.StripePaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

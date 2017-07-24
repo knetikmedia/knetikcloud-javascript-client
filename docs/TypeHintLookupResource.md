@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TypeHintLookupResource
+# KnetikPlatformApiDocumentationLatest.TypeHintLookupResource
 
 ## Properties
 Name | Type | Description | Notes

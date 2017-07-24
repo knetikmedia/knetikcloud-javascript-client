@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceRewardSetResource
+# KnetikPlatformApiDocumentationLatest.PageResourceRewardSetResource
 
 ## Properties
 Name | Type | Description | Notes

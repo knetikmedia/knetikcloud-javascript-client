@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ActivityOccurrenceCreationFailure
+# KnetikPlatformApiDocumentationLatest.ActivityOccurrenceCreationFailure
 
 ## Properties
 Name | Type | Description | Notes

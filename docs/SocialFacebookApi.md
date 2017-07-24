@@ -1,4 +1,4 @@
-# KnetikcloudSdk.SocialFacebookApi
+# KnetikPlatformApiDocumentationLatest.SocialFacebookApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,24 +17,27 @@ Links the current user account to a facebook account, using the acccess token fr
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.SocialFacebookApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.SocialFacebookApi();
 
 var opts = { 
-  'facebookToken': new KnetikcloudSdk.FacebookToken() // FacebookToken | The token from facebook
+  'facebookToken': new KnetikPlatformApiDocumentationLatest.FacebookToken() // FacebookToken | The token from facebook
 };
-apiInstance.linkAccounts(opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.linkAccounts(opts, callback);
 ```
 
 ### Parameters

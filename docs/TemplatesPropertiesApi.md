@@ -1,4 +1,4 @@
-# KnetikcloudSdk.TemplatesPropertiesApi
+# KnetikPlatformApiDocumentationLatest.TemplatesPropertiesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -16,18 +16,21 @@ Get details for a template property type
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.TemplatesPropertiesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.TemplatesPropertiesApi();
 
 var type = "type_example"; // String | type
 
-apiInstance.getTemplatePropertyType(type).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTemplatePropertyType(type, callback);
 ```
 
 ### Parameters
@@ -57,15 +60,18 @@ List template property types
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.TemplatesPropertiesApi();
-apiInstance.getTemplatePropertyTypes().then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
+var apiInstance = new KnetikPlatformApiDocumentationLatest.TemplatesPropertiesApi();
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTemplatePropertyTypes(callback);
 ```
 
 ### Parameters

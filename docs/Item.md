@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Item
+# KnetikPlatformApiDocumentationLatest.Item
 
 ## Properties
 Name | Type | Description | Notes

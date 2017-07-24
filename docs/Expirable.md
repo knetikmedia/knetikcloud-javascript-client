@@ -1,4 +1,4 @@
-# KnetikcloudSdk.Expirable
+# KnetikPlatformApiDocumentationLatest.Expirable
 
 ## Properties
 Name | Type | Description | Notes

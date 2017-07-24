@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ConstantResource
+# KnetikPlatformApiDocumentationLatest.ConstantResource
 
 ## Properties
 Name | Type | Description | Notes

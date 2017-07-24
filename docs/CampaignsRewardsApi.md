@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CampaignsRewardsApi
+# KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,24 +19,27 @@ Create a reward set
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsRewardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
 
 var opts = { 
-  'rewardSetResource': new KnetikcloudSdk.RewardSetResource() // RewardSetResource | The reward set resource object
+  'rewardSetResource': new KnetikPlatformApiDocumentationLatest.RewardSetResource() // RewardSetResource | The reward set resource object
 };
-apiInstance.createRewardSet(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createRewardSet(opts, callback);
 ```
 
 ### Parameters
@@ -66,23 +69,26 @@ Delete a reward set
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsRewardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
 
 var id = 56; // Number | The reward id
 
-apiInstance.deleteRewardSet(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteRewardSet(id, callback);
 ```
 
 ### Parameters
@@ -112,18 +118,21 @@ Get a single reward set
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CampaignsRewardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
 
 var id = 56; // Number | The reward id
 
-apiInstance.getRewardSet(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getRewardSet(id, callback);
 ```
 
 ### Parameters
@@ -153,21 +162,24 @@ List and search reward sets
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.CampaignsRewardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getRewardSets(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getRewardSets(opts, callback);
 ```
 
 ### Parameters
@@ -199,26 +211,29 @@ Update a reward set
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.CampaignsRewardsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
 
 var id = 56; // Number | The reward id
 
 var opts = { 
-  'rewardSetResource': new KnetikcloudSdk.RewardSetResource() // RewardSetResource | The reward set resource object
+  'rewardSetResource': new KnetikPlatformApiDocumentationLatest.RewardSetResource() // RewardSetResource | The reward set resource object
 };
-apiInstance.updateRewardSet(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateRewardSet(id, opts, callback);
 ```
 
 ### Parameters

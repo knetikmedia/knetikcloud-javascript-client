@@ -1,4 +1,4 @@
-# KnetikcloudSdk.ItemBehaviorDefinitionResource
+# KnetikPlatformApiDocumentationLatest.ItemBehaviorDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

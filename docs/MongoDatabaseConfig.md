@@ -1,4 +1,4 @@
-# KnetikcloudSdk.MongoDatabaseConfig
+# KnetikPlatformApiDocumentationLatest.MongoDatabaseConfig
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.CampaignResource
+# KnetikPlatformApiDocumentationLatest.CampaignResource
 
 ## Properties
 Name | Type | Description | Notes

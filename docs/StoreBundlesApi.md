@@ -1,4 +1,4 @@
-# KnetikcloudSdk.StoreBundlesApi
+# KnetikPlatformApiDocumentationLatest.StoreBundlesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -25,25 +25,28 @@ The SKU for the bundle itself must be unique and there can only be one SKU.  Ext
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'bundleItem': new KnetikcloudSdk.BundleItem() // BundleItem | The bundle item object
+  'bundleItem': new KnetikPlatformApiDocumentationLatest.BundleItem() // BundleItem | The bundle item object
 };
-apiInstance.createBundleItem(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createBundleItem(opts, callback);
 ```
 
 ### Parameters
@@ -76,24 +79,27 @@ Bundle Templates define a type of bundle and the properties they have.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var opts = { 
-  'bundleTemplateResource': new KnetikcloudSdk.ItemTemplateResource() // ItemTemplateResource | The new bundle template
+  'bundleTemplateResource': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The new bundle template
 };
-apiInstance.createBundleTemplate(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createBundleTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -123,23 +129,26 @@ Delete a bundle item
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = 56; // Number | The id of the bundle
 
-apiInstance.deleteBundleItem(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteBundleItem(id, callback);
 ```
 
 ### Parameters
@@ -169,26 +178,29 @@ Delete a bundle template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteBundleTemplate(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteBundleTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -219,18 +231,21 @@ Get a single bundle item
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = 56; // Number | The id of the bundle
 
-apiInstance.getBundleItem(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBundleItem(id, callback);
 ```
 
 ### Parameters
@@ -262,18 +277,21 @@ Bundle Templates define a type of bundle and the properties they have.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = "id_example"; // String | The id of the template
 
-apiInstance.getBundleTemplate(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBundleTemplate(id, callback);
 ```
 
 ### Parameters
@@ -303,21 +321,24 @@ List and search bundle templates
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getBundleTemplates(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBundleTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -349,27 +370,30 @@ Update a bundle item
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = 56; // Number | The id of the bundle
 
 var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'bundleItem': new KnetikcloudSdk.BundleItem() // BundleItem | The bundle item object
+  'bundleItem': new KnetikPlatformApiDocumentationLatest.BundleItem() // BundleItem | The bundle item object
 };
-apiInstance.updateBundleItem(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateBundleItem(id, opts, callback);
 ```
 
 ### Parameters
@@ -401,26 +425,29 @@ Update a bundle template
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.StoreBundlesApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreBundlesApi();
 
 var id = "id_example"; // String | The id of the template
 
 var opts = { 
-  'bundleTemplateResource': new KnetikcloudSdk.ItemTemplateResource() // ItemTemplateResource | The bundle template resource object
+  'bundleTemplateResource': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The bundle template resource object
 };
-apiInstance.updateBundleTemplate(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.updateBundleTemplate(id, opts, callback);
 ```
 
 ### Parameters

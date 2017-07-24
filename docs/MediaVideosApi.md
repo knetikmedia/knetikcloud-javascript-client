@@ -1,4 +1,4 @@
-# KnetikcloudSdk.MediaVideosApi
+# KnetikPlatformApiDocumentationLatest.MediaVideosApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -40,26 +40,29 @@ Whitelisted users can view video regardless of privacy setting.
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var id = 789; // Number | The video id
 
 var opts = { 
   'userId': 56 // Number | The user id
 };
-apiInstance.addUserToVideoWhitelist(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addUserToVideoWhitelist(id, opts, callback);
 ```
 
 ### Parameters
@@ -90,24 +93,27 @@ Adds a new video in the system
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var opts = { 
-  'videoResource': new KnetikcloudSdk.VideoResource() // VideoResource | The video object
+  'videoResource': new KnetikPlatformApiDocumentationLatest.VideoResource() // VideoResource | The video object
 };
-apiInstance.addVideo(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addVideo(opts, callback);
 ```
 
 ### Parameters
@@ -137,26 +143,29 @@ Add a new video comment
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 56; // Number | The video id 
 
 var opts = { 
-  'commentResource': new KnetikcloudSdk.CommentResource() // CommentResource | The comment object
+  'commentResource': new KnetikPlatformApiDocumentationLatest.CommentResource() // CommentResource | The comment object
 };
-apiInstance.addVideoComment(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addVideoComment(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -187,26 +196,29 @@ Adds a contributor to a video
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var opts = { 
-  'contributionResource': new KnetikcloudSdk.ContributionResource() // ContributionResource | The contribution object
+  'contributionResource': new KnetikPlatformApiDocumentationLatest.ContributionResource() // ContributionResource | The contribution object
 };
-apiInstance.addVideoContributor(videoId, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.addVideoContributor(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -237,26 +249,29 @@ Add a new flag
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var opts = { 
   'reason': "reason_example" // String | The flag reason
 };
-apiInstance.addVideoFlag(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addVideoFlag(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -287,26 +302,29 @@ Adds one or more existing videos as related to this one
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var opts = { 
-  'videoRelationshipResource': new KnetikcloudSdk.VideoRelationshipResource() // VideoRelationshipResource | The video relationship object 
+  'videoRelationshipResource': new KnetikPlatformApiDocumentationLatest.VideoRelationshipResource() // VideoRelationshipResource | The video relationship object 
 };
-apiInstance.addVideoRelationships(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.addVideoRelationships(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -337,26 +355,29 @@ Create a video disposition
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 56; // Number | The video id
 
 var opts = { 
-  'dispositionResource': new KnetikcloudSdk.DispositionResource() // DispositionResource | The disposition object
+  'dispositionResource': new KnetikPlatformApiDocumentationLatest.DispositionResource() // DispositionResource | The disposition object
 };
-apiInstance.createVideoDisposition(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.createVideoDisposition(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -387,23 +408,26 @@ Deletes a video from the system if no resources are attached to it
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var id = 789; // Number | The video id
 
-apiInstance.deleteVideo(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVideo(id, callback);
 ```
 
 ### Parameters
@@ -433,25 +457,28 @@ Delete a video comment
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var id = 789; // Number | The comment id
 
-apiInstance.deleteVideoComment(videoId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVideoComment(videoId, id, callback);
 ```
 
 ### Parameters
@@ -482,23 +509,26 @@ Delete a video disposition
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var dispositionId = 789; // Number | The disposition id
 
-apiInstance.deleteVideoDisposition(dispositionId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVideoDisposition(dispositionId, callback);
 ```
 
 ### Parameters
@@ -528,23 +558,26 @@ Delete a flag
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
-apiInstance.deleteVideoFlag(videoId).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVideoFlag(videoId, callback);
 ```
 
 ### Parameters
@@ -574,25 +607,28 @@ Delete a video&#39;s relationship
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var id = 789; // Number | The relationship id
 
-apiInstance.deleteVideoRelationship(videoId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.deleteVideoRelationship(videoId, id, callback);
 ```
 
 ### Parameters
@@ -623,14 +659,14 @@ Get user videos
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var userId = 56; // Number | The user id
 
@@ -639,12 +675,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUserVideos(userId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getUserVideos(userId, opts, callback);
 ```
 
 ### Parameters
@@ -677,23 +716,26 @@ Loads a specific video details
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var id = 789; // Number | The video id
 
-apiInstance.getVideo(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVideo(id, callback);
 ```
 
 ### Parameters
@@ -723,9 +765,9 @@ Returns a page of comments for a video
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 56; // Number | The video id
 
@@ -733,12 +775,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoComments(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVideoComments(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -770,9 +815,9 @@ Returns a page of dispositions for a video
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 56; // Number | The video id
 
@@ -780,12 +825,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoDispositions(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVideoDispositions(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -817,9 +865,9 @@ Returns a page of video relationships
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
@@ -827,12 +875,15 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoRelationships(videoId, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVideoRelationships(videoId, opts, callback);
 ```
 
 ### Parameters
@@ -864,9 +915,9 @@ Search videos using the documented filters
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var opts = { 
   'excludeFlagged': true, // Boolean | Skip videos that have been flagged by the current user
@@ -885,12 +936,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "author:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getVideos(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getVideos(opts, callback);
 ```
 
 ### Parameters
@@ -936,25 +990,28 @@ Remove the user with the id given in the path from the whitelist of users that c
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var id = 56; // Number | The user id
 
-apiInstance.removeUserFromVideoWhitelist(videoId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeUserFromVideoWhitelist(videoId, id, callback);
 ```
 
 ### Parameters
@@ -985,25 +1042,28 @@ Removes a contributor from a video
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
 var id = 56; // Number | The contributor id
 
-apiInstance.removeVideoContributor(videoId, id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.removeVideoContributor(videoId, id, callback);
 ```
 
 ### Parameters
@@ -1034,26 +1094,29 @@ Modifies a video&#39;s details
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var id = 789; // Number | The video id
 
 var opts = { 
-  'videoResource': new KnetikcloudSdk.VideoResource() // VideoResource | The video object
+  'videoResource': new KnetikPlatformApiDocumentationLatest.VideoResource() // VideoResource | The video object
 };
-apiInstance.updateVideo(id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateVideo(id, opts, callback);
 ```
 
 ### Parameters
@@ -1084,14 +1147,14 @@ Update a video comment
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
@@ -1100,12 +1163,15 @@ var id = 789; // Number | The comment id
 var opts = { 
   'content': "content_example" // String | The comment content
 };
-apiInstance.updateVideoComment(videoId, id, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateVideoComment(videoId, id, opts, callback);
 ```
 
 ### Parameters
@@ -1137,14 +1203,14 @@ Update a video&#39;s relationship details
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var videoId = 789; // Number | The video id
 
@@ -1153,12 +1219,15 @@ var relationshipId = 789; // Number | The relationship id
 var opts = { 
   'details': "details_example" // String | The video relationship details
 };
-apiInstance.updateVideoRelationship(videoId, relationshipId, opts).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.updateVideoRelationship(videoId, relationshipId, opts, callback);
 ```
 
 ### Parameters
@@ -1190,18 +1259,21 @@ Increment a video&#39;s view count
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.MediaVideosApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaVideosApi();
 
 var id = 789; // Number | The video id
 
-apiInstance.viewVideo(id).then(function() {
-  console.log('API called successfully.');
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+};
+apiInstance.viewVideo(id, callback);
 ```
 
 ### Parameters

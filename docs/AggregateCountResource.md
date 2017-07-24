@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AggregateCountResource
+# KnetikPlatformApiDocumentationLatest.AggregateCountResource
 
 ## Properties
 Name | Type | Description | Notes

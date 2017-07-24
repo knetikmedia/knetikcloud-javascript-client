@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceSubscriptionTemplateResource
+# KnetikPlatformApiDocumentationLatest.PageResourceSubscriptionTemplateResource
 
 ## Properties
 Name | Type | Description | Notes

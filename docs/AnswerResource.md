@@ -1,4 +1,4 @@
-# KnetikcloudSdk.AnswerResource
+# KnetikPlatformApiDocumentationLatest.AnswerResource
 
 ## Properties
 Name | Type | Description | Notes

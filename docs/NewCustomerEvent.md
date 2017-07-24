@@ -1,4 +1,4 @@
-# KnetikcloudSdk.NewCustomerEvent
+# KnetikPlatformApiDocumentationLatest.NewCustomerEvent
 
 ## Properties
 Name | Type | Description | Notes

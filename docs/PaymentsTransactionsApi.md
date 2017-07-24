@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PaymentsTransactionsApi
+# KnetikPlatformApiDocumentationLatest.PaymentsTransactionsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,23 +17,26 @@ Get the details for a single transaction
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsTransactionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsTransactionsApi();
 
 var id = 56; // Number | id
 
-apiInstance.getTransaction(id).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTransaction(id, callback);
 ```
 
 ### Parameters
@@ -63,14 +66,14 @@ List and search transactions
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsTransactionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsTransactionsApi();
 
 var opts = { 
   'filterInvoice': 56, // Number | Filter for transactions from a specific invoice
@@ -78,12 +81,15 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getTransactions(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getTransactions(opts, callback);
 ```
 
 ### Parameters
@@ -118,26 +124,29 @@ Will not allow for refunding more than the full amount even with multiple partia
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
-var defaultClient = KnetikcloudSdk.ApiClient.default;
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
 var OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikcloudSdk.PaymentsTransactionsApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsTransactionsApi();
 
 var id = 56; // Number | The id of the transaction to refund
 
 var opts = { 
-  'request': new KnetikcloudSdk.RefundRequest() // RefundRequest | Request containing refund details
+  'request': new KnetikPlatformApiDocumentationLatest.RefundRequest() // RefundRequest | Request containing refund details
 };
-apiInstance.refundTransaction(id, opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.refundTransaction(id, opts, callback);
 ```
 
 ### Parameters

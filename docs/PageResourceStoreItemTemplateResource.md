@@ -1,4 +1,4 @@
-# KnetikcloudSdk.PageResourceStoreItemTemplateResource
+# KnetikPlatformApiDocumentationLatest.PageResourceStoreItemTemplateResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikcloudSdk.UtilBatchApi
+# KnetikPlatformApiDocumentationLatest.UtilBatchApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,18 +18,21 @@ Tokens expire in 24 hours
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.UtilBatchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilBatchApi();
 
 var token = "token_example"; // String | token
 
-apiInstance.getBatch(token).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.getBatch(token, callback);
 ```
 
 ### Parameters
@@ -61,19 +64,22 @@ Should the request take longer than one of the alloted timeout parameters, a tok
 
 ### Example
 ```javascript
-var KnetikcloudSdk = require('knetikcloud-sdk');
+var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
 
-var apiInstance = new KnetikcloudSdk.UtilBatchApi();
+var apiInstance = new KnetikPlatformApiDocumentationLatest.UtilBatchApi();
 
 var opts = { 
-  'batch': new KnetikcloudSdk.Batch() // Batch | The batch object
+  'batch': new KnetikPlatformApiDocumentationLatest.Batch() // Batch | The batch object
 };
-apiInstance.sendBatch(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
 
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.sendBatch(opts, callback);
 ```
 
 ### Parameters

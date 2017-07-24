@@ -1,4 +1,4 @@
-# KnetikcloudSdk.BreEvent
+# KnetikPlatformApiDocumentationLatest.BreEvent
 
 ## Properties
 Name | Type | Description | Notes
