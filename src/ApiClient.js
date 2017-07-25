@@ -87,6 +87,9 @@
      * @default false
      */
     this.enableCookies = false;
+    
+    /** inheritance map */
+    this.inheritanceMap = {};
 
     /*
      * Used to save and return cookies in a node.js (non-browser) setting,
@@ -507,7 +510,8 @@
           return data;
         } else if (typeof type === 'function') {
           // for model type like: User
-          return type.constructFromObject(data);
+          var finalType = exports.determineInheritance(type, data);
+          return finalType.constructFromObject(data);
         } else if (Array.isArray(type)) {
           // for array type like: ['String']
           var itemType = type[0];
@@ -557,6 +561,36 @@
           obj[k] = exports.convertToType(data[k], itemType);
       }
     }
+  };
+  
+  exports.registerDiscriminator = function(parent, discriminatorField) {
+	  var m = this.inheritanceMap[parent];
+	  if (m === null || m === undefined)
+		  m = {'children': {}};
+	  m['discriminatorField'] = discriminatorField;
+	  this.inheritanceMap[parent] = m;
+  };
+  
+  exports.registerInheritance = function(parent, child, discriminatorValue) {
+	  var m = this.inheritanceMap[parent];
+	  if (m === null || m === undefined)
+		  m = {'children': {}};
+	  m['children'][discriminatorValue] = child;
+	  this.inheritanceMap[parent] = m;
+  };
+  
+  exports.determineInheritance = function(parent, data) {
+	  var m = this.inheritanceMap[parent];
+	  if (m === null || m === undefined)
+		  return parent;
+	  var field = m['discriminatorField'];
+	  var value = data[field];
+	  if (value === null || value === undefined)
+		  return parent;
+	  var child = m['children'][value];
+	  if (child === null || child === undefined)
+		  return parent;
+	  return child;
   };
 
   /**
