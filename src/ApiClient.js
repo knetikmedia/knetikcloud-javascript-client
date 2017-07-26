@@ -564,7 +564,7 @@
   };
   
   exports.registerDiscriminator = function(parent, discriminatorField) {
-	  var m = this.inheritanceMap[parent];
+	  var m = exports.inheritanceMap[parent];
 	  if (m === null || m === undefined)
 		  m = {'children': {}};
 	  m['discriminatorField'] = discriminatorField;
@@ -572,7 +572,7 @@
   };
   
   exports.registerInheritance = function(parent, child, discriminatorValue) {
-	  var m = this.inheritanceMap[parent];
+	  var m = exports.inheritanceMap[parent];
 	  if (m === null || m === undefined)
 		  m = {'children': {}};
 	  m['children'][discriminatorValue] = child;
@@ -580,7 +580,7 @@
   };
   
   exports.determineInheritance = function(parent, data) {
-	  var m = this.inheritanceMap[parent];
+	  var m = exports.inheritanceMap[parent];
 	  if (m === null || m === undefined)
 		  return parent;
 	  var field = m['discriminatorField'];
