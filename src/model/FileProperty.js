@@ -92,7 +92,7 @@
 	  if(exports.children === null || exports.children === undefined)
 		  exports.children = {};
 	  exports.children[discriminatorValue] = child;
-	  if(exports.parent !== null || exports.parent !== undefined)
+	  if(exports.parent !== null && exports.parent !== undefined)
 		  exports.parent.registerChild(child, discriminatorValue);
   }
   Property.registerChild(exports, 'file');
