@@ -81,7 +81,7 @@
    */
   exports.prototype['value'] = undefined;
 
-  ApiClient.registerInheritance(Property, IntegerProperty, 'integer');
+  ApiClient.registerInheritance(Property, exports, 'integer');
 
   return exports;
 }));

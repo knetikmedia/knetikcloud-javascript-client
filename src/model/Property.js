@@ -77,7 +77,7 @@
    */
   exports.prototype['type'] = undefined;
 
-  ApiClient.registerDiscriminator(Property, 'type');
+  ApiClient.registerDiscriminator(exports, 'type');
 
   return exports;
 }));
