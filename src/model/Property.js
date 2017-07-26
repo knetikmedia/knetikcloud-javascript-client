@@ -70,6 +70,17 @@
     }
     return obj;
   }
+  
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children === null || exports.children === undefined)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent !== null || exports.parent !== undefined)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
 
   /**
    * The type of the property. Used for polymorphic type recognition and thus must match an expected type with additional properties.
