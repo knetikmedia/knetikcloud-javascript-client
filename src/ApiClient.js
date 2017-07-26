@@ -568,7 +568,7 @@
 	  if (m === null || m === undefined)
 		  m = {'children': {}};
 	  m['discriminatorField'] = discriminatorField;
-	  this.inheritanceMap[parent] = m;
+	  this.instance.inheritanceMap[parent] = m;
   };
   
   exports.registerInheritance = function(parent, child, discriminatorValue) {
@@ -576,7 +576,7 @@
 	  if (m === null || m === undefined)
 		  m = {'children': {}};
 	  m['children'][discriminatorValue] = child;
-	  this.inheritanceMap[parent] = m;
+	  this.instance.inheritanceMap[parent] = m;
   };
   
   exports.determineInheritance = function(parent, data) {
