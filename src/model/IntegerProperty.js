@@ -94,8 +94,6 @@
    */
   exports.prototype['value'] = undefined;
 
-  ApiClient.registerInheritance(Property, exports, 'integer');
-
   return exports;
 }));
 
