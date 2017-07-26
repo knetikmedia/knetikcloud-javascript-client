@@ -67,7 +67,7 @@
     }
     return obj;
   }
-  
+
   exports.registerChild = function(child, discriminatorValue) {
 	  child.discriminatorField = exports.discriminatorField;
 	  child.discriminatorValue = discriminatorValue;
@@ -78,10 +78,15 @@
 	  if(exports.parent != null)
 		  exports.parent.registerChild(child, discriminatorValue);
   }
-  FileProperty.registerChild(exports, 'image');
-
+  
+  var discriminatorValue = 'image';
+  FileProperty.registerChild(exports, discriminatorValue);
+  
   exports.prototype = Object.create(FileProperty.prototype);
   exports.prototype.constructor = exports;
+
+
+
 
 
   return exports;

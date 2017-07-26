@@ -74,6 +74,20 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'SubscriptionPriceOverrideRequest';
+
+
   /**
    * The recurring price that has been set to override the base price. Null if not overriding
    * @member {Number} new_price

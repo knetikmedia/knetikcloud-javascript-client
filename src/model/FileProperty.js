@@ -83,7 +83,6 @@
     }
     return obj;
   }
-  
 
   exports.registerChild = function(child, discriminatorValue) {
 	  child.discriminatorField = exports.discriminatorField;
@@ -95,10 +94,13 @@
 	  if(exports.parent != null)
 		  exports.parent.registerChild(child, discriminatorValue);
   }
-  Property.registerChild(exports, 'file');
-
+  
+  var discriminatorValue = 'file';
+  Property.registerChild(exports, discriminatorValue);
+  
   exports.prototype = Object.create(Property.prototype);
   exports.prototype.constructor = exports;
+
 
   /**
    * A crc value for file integrity verification
@@ -120,6 +122,7 @@
    * @member {String} url
    */
   exports.prototype['url'] = undefined;
+
 
 
   return exports;

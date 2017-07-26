@@ -129,6 +129,20 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'ActivityResource';
+
+
   /**
    * A map of additional properties keyed on the property name. Used to further describe an activity. While settings will vary from one activity occurrence (a game) to another, additional properties are shared by all the occurrences of this activity. Ex: Activity Logo, Disclaimer, Greeting, etc. Validated against template if one exists for activities
    * @member {Object.<String, module:model/Property>} additional_properties

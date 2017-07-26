@@ -91,6 +91,20 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'DispositionResource';
+
+
   /**
    * The context of that resource. Required when passed to /dispositions rather than context specific endpoint
    * @member {String} context

@@ -82,16 +82,21 @@
 	  if(exports.parent != null)
 		  exports.parent.registerChild(child, discriminatorValue);
   }
-  Property.registerChild(exports, 'text');
-
+  
+  var discriminatorValue = 'text';
+  Property.registerChild(exports, discriminatorValue);
+  
   exports.prototype = Object.create(Property.prototype);
   exports.prototype.constructor = exports;
+
 
   /**
    * The value
    * @member {String} value
    */
   exports.prototype['value'] = undefined;
+
+
 
   return exports;
 }));

@@ -76,8 +76,23 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'cache_clear';
+  BroadcastableEvent.registerChild(exports, discriminatorValue);
+  
   exports.prototype = Object.create(BroadcastableEvent.prototype);
   exports.prototype.constructor = exports;
+
 
   /**
    * @member {Boolean} customer_setup

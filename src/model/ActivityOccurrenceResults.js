@@ -71,6 +71,20 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'ActivityOccurrenceResults';
+
+
   /**
    * The game results for each user. Include all users that played (paid to get in) even if they were eliminated without a result. A null metric is allowed
    * @member {Array.<module:model/UserActivityResults>} users

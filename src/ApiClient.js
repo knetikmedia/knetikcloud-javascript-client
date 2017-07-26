@@ -87,9 +87,6 @@
      * @default false
      */
     this.enableCookies = false;
-    
-    /** inheritance map */
-    this.inheritanceMap = {};
 
     /*
      * Used to save and return cookies in a node.js (non-browser) setting,
@@ -563,19 +560,25 @@
     }
   };
   
+  /**
+   * Determines the type to use based on a parent type and REST data for polymorphic resolution.
+   * @param parent {function} The parent type.
+   * @param data {Object|Array} The REST data.
+   * @returns The type to deserialize to. Will match the parent if a child cannot be found.
+   */
   exports.determineInheritance = function(parent, data) {
-	  if (parent.discriminatorField == null)
-		  return parent;
-	  if (parent.children == null)
-		  return parent;
-	  var field = parent.discriminatorField;
-	  var value = data[field];
-	  if (value == null)
-		  return parent;
-	  var child = parent.children[value];
-	  if (child == null)
-		  return parent;
-	  return child;
+    if (parent.discriminatorField == null)
+      return parent;
+    if (parent.children == null)
+      return parent;
+    var field = parent.discriminatorField;
+    var value = data[field];
+    if (value == null)
+      return parent;
+    var child = parent.children[value];
+    if (child == null)
+      return parent;
+    return child;
   };
 
   /**

@@ -71,7 +71,6 @@
     }
     return obj;
   }
-  
 
   exports.registerChild = function(child, discriminatorValue) {
 	  child.discriminatorField = exports.discriminatorField;
@@ -83,16 +82,21 @@
 	  if(exports.parent != null)
 		  exports.parent.registerChild(child, discriminatorValue);
   }
-  Property.registerChild(exports, 'integer');
-
+  
+  var discriminatorValue = 'integer';
+  Property.registerChild(exports, discriminatorValue);
+  
   exports.prototype = Object.create(Property.prototype);
   exports.prototype.constructor = exports;
+
 
   /**
    * The value
    * @member {Number} value
    */
   exports.prototype['value'] = undefined;
+
+
 
   return exports;
 }));
