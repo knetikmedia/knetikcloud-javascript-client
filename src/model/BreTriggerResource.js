@@ -97,6 +97,20 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children == null)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent != null)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  
+  var discriminatorValue = 'BreTriggerResource';
+
+
   /**
    * The category this trigger belongs to. See endpoints for related asset information. All new triggers are in category 'custom'
    * @member {module:model/BreTriggerResource.CategoryEnum} category
