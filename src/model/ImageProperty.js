@@ -73,6 +73,8 @@
 
 
 
+  ApiClient.registerInheritance(FileProperty, exports, 'image');
+
 
   return exports;
 }));

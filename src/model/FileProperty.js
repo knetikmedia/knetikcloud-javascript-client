@@ -110,6 +110,8 @@
 
 
 
+  ApiClient.registerInheritance(Property, exports, 'file');
+
   return exports;
 }));
 

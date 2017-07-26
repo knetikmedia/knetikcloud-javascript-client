@@ -82,6 +82,8 @@
   exports.prototype['value'] = undefined;
 
 
+  ApiClient.registerInheritance(Property, exports, 'text');
+
 
   return exports;
 }));
