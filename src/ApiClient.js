@@ -564,16 +564,16 @@
   };
   
   exports.determineInheritance = function(parent, data) {
-	  if (parent.discriminatorField === null || parent.discriminatorField === undefined)
+	  if (parent.discriminatorField == null)
 		  return parent;
-	  if (parent.children === null || parent.children === undefined)
+	  if (parent.children == null)
 		  return parent;
 	  var field = parent.discriminatorField;
 	  var value = data[field];
-	  if (value === null || value === undefined)
+	  if (value == null)
 		  return parent;
 	  var child = parent.children[value];
-	  if (child === null || child === undefined)
+	  if (child == null)
 		  return parent;
 	  return child;
   };
