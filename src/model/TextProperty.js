@@ -72,6 +72,18 @@
     return obj;
   }
 
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children === null || exports.children === undefined)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent !== null || exports.parent !== undefined)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  Property.registerChild(exports, 'text');
+
   exports.prototype = Object.create(Property.prototype);
   exports.prototype.constructor = exports;
 

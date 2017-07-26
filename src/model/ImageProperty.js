@@ -67,13 +67,21 @@
     }
     return obj;
   }
+  
+  exports.registerChild = function(child, discriminatorValue) {
+	  child.discriminatorField = exports.discriminatorField;
+	  child.discriminatorValue = discriminatorValue;
+	  child.parent = exports;
+	  if(exports.children === null || exports.children === undefined)
+		  exports.children = {};
+	  exports.children[discriminatorValue] = child;
+	  if(exports.parent !== null || exports.parent !== undefined)
+		  exports.parent.registerChild(child, discriminatorValue);
+  }
+  FileProperty.registerChild(exports, 'image');
 
   exports.prototype = Object.create(FileProperty.prototype);
   exports.prototype.constructor = exports;
-
-
-
-  ApiClient.registerInheritance(FileProperty, exports, 'image');
 
 
   return exports;

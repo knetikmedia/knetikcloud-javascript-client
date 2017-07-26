@@ -563,31 +563,16 @@
     }
   };
   
-  exports.registerDiscriminator = function(parent, discriminatorField) {
-	  var m = this.instance.inheritanceMap[parent];
-	  if (m === null || m === undefined)
-		  m = {'children': {}};
-	  m['discriminatorField'] = discriminatorField;
-	  this.instance.inheritanceMap[parent] = m;
-  };
-  
-  exports.registerInheritance = function(parent, child, discriminatorValue) {
-	  var m = this.instance.inheritanceMap[parent];
-	  if (m === null || m === undefined)
-		  m = {'children': {}};
-	  m['children'][discriminatorValue] = child;
-	  this.instance.inheritanceMap[parent] = m;
-  };
-  
   exports.determineInheritance = function(parent, data) {
-	  var m = this.instance.inheritanceMap[parent];
-	  if (m === null || m === undefined)
+	  if (parent.discriminatorField === null || parent.discriminatorField === undefined)
 		  return parent;
-	  var field = m['discriminatorField'];
+	  if (parent.children === null || parent.children === undefined)
+		  return parent;
+	  var field = parent.discriminatorField;
 	  var value = data[field];
 	  if (value === null || value === undefined)
 		  return parent;
-	  var child = m['children'][value];
+	  var child = parent.children[value];
 	  if (child === null || child === undefined)
 		  return parent;
 	  return child;
