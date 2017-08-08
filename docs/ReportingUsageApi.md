@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ReportingUsageApi
+# KnetikCloud.ReportingUsageApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -20,35 +20,32 @@ Returns aggregated endpoint usage information by day
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-var opts = { 
+let opts = { 
   'combineEndpoints': false, // Boolean | Whether to combine counts from different endpoint. Removes the url and method from the result object
   'method': "method_example", // String | Filter for a certain endpoint method.  Must include url as well to work
   'url': "url_example", // String | Filter for a certain endpoint.  Must include method as well to work
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsageByDay(startDate, endDate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageByDay(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -84,35 +81,32 @@ Returns aggregated endpoint usage information by hour
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-var opts = { 
+let opts = { 
   'combineEndpoints': false, // Boolean | Whether to combine counts from different endpoint. Removes the url and method from the result object
   'method': "method_example", // String | Filter for a certain endpoint method.  Must include url as well to work
   'url': "url_example", // String | Filter for a certain endpoint.  Must include method as well to work
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsageByHour(startDate, endDate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageByHour(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -148,35 +142,32 @@ Returns aggregated endpoint usage information by minute
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-var opts = { 
+let opts = { 
   'combineEndpoints': false, // Boolean | Whether to combine counts from different endpoint. Removes the url and method from the result object
   'method': "method_example", // String | Filter for a certain endpoint method.  Must include url as well to work
   'url': "url_example", // String | Filter for a certain endpoint.  Must include method as well to work
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsageByMinute(startDate, endDate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageByMinute(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -212,35 +203,32 @@ Returns aggregated endpoint usage information by month
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-var opts = { 
+let opts = { 
   'combineEndpoints': false, // Boolean | Whether to combine counts from different endpoint. Removes the url and method from the result object
   'method': "method_example", // String | Filter for a certain endpoint method.  Must include url as well to work
   'url': "url_example", // String | Filter for a certain endpoint.  Must include method as well to work
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsageByMonth(startDate, endDate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageByMonth(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -276,35 +264,32 @@ Returns aggregated endpoint usage information by year
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
-var opts = { 
+let opts = { 
   'combineEndpoints': false, // Boolean | Whether to combine counts from different endpoints. Removes the url and method from the result object
   'method': "method_example", // String | Filter for a certain endpoint method.  Must include url as well to work
   'url': "url_example", // String | Filter for a certain endpoint.  Must include method as well to work
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsageByYear(startDate, endDate, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageByYear(startDate, endDate, opts, callback);
 ```
 
 ### Parameters
@@ -340,28 +325,25 @@ Returns list of endpoints called (method and url)
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsageApi();
+let apiInstance = new KnetikCloud.ReportingUsageApi();
 
-var startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
+let startDate = 789; // Number | The beginning of the range being requested, unix timestamp in seconds
 
-var endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
+let endDate = 789; // Number | The ending of the range being requested, unix timestamp in seconds
 
+apiInstance.getUsageEndpoints(startDate, endDate).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsageEndpoints(startDate, endDate, callback);
 ```
 
 ### Parameters

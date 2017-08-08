@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.Cart
+# KnetikCloud.Cart
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.TimePeriodGettable
+# KnetikCloud.TimePeriodGettable
 
 ## Properties
 Name | Type | Description | Notes

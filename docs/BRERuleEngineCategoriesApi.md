@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi
+# KnetikCloud.BRERuleEngineCategoriesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -24,27 +24,24 @@ Templates define a type of BRE category and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The category template to create
+let opts = { 
+  'template': new KnetikCloud.TemplateResource() // TemplateResource | The category template to create
 };
+apiInstance.createBRECategoryTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createBRECategoryTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -76,29 +73,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteBRECategoryTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteBRECategoryTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -129,28 +123,25 @@ List categories
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getBRECategories(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBRECategories(opts, callback);
 ```
 
 ### Parameters
@@ -181,26 +172,23 @@ Get a single category
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var name = "name_example"; // String | The category name
+let name = "name_example"; // String | The category name
 
+apiInstance.getBRECategory(name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBRECategory(name, callback);
 ```
 
 ### Parameters
@@ -230,26 +218,23 @@ Get a single BRE category template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getBRECategoryTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBRECategoryTemplate(id, callback);
 ```
 
 ### Parameters
@@ -279,29 +264,26 @@ List and search BRE category templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getBRECategoryTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBRECategoryTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -333,29 +315,26 @@ Update a category
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var name = "name_example"; // String | The category name
+let name = "name_example"; // String | The category name
 
-var opts = { 
-  'category': new KnetikPlatformApiDocumentationLatest.BreCategoryResource() // BreCategoryResource | The updated BRE category information
+let opts = { 
+  'category': new KnetikCloud.BreCategoryResource() // BreCategoryResource | The updated BRE category information
 };
+apiInstance.updateBRECategory(name, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateBRECategory(name, opts, callback);
 ```
 
 ### Parameters
@@ -386,29 +365,26 @@ Update a BRE category template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineCategoriesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The updated category template definition
+let opts = { 
+  'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated category template definition
 };
+apiInstance.updateBRECategoryTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateBRECategoryTemplate(id, opts, callback);
 ```
 
 ### Parameters

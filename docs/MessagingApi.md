@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.MessagingApi
+# KnetikCloud.MessagingApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,27 +18,24 @@ Send a raw email to one or more users
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MessagingApi();
+let apiInstance = new KnetikCloud.MessagingApi();
 
-var opts = { 
-  'rawEmailResource': new KnetikPlatformApiDocumentationLatest.RawEmailResource() // RawEmailResource | The new raw email to be sent
+let opts = { 
+  'rawEmailResource': new KnetikCloud.RawEmailResource() // RawEmailResource | The new raw email to be sent
 };
+apiInstance.sendRawEmail(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.sendRawEmail(opts, callback);
 ```
 
 ### Parameters
@@ -70,27 +67,24 @@ Sends a raw SMS text message to one or more users. User&#39;s without registered
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MessagingApi();
+let apiInstance = new KnetikCloud.MessagingApi();
 
-var opts = { 
-  'rawSMSResource': new KnetikPlatformApiDocumentationLatest.RawSMSResource() // RawSMSResource | The new raw SMS to be sent
+let opts = { 
+  'rawSMSResource': new KnetikCloud.RawSMSResource() // RawSMSResource | The new raw SMS to be sent
 };
+apiInstance.sendRawSMS(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.sendRawSMS(opts, callback);
 ```
 
 ### Parameters
@@ -120,27 +114,24 @@ Send a templated email to one or more users
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MessagingApi();
+let apiInstance = new KnetikCloud.MessagingApi();
 
-var opts = { 
-  'messageResource': new KnetikPlatformApiDocumentationLatest.TemplateEmailResource() // TemplateEmailResource | The new template email to be sent
+let opts = { 
+  'messageResource': new KnetikCloud.TemplateEmailResource() // TemplateEmailResource | The new template email to be sent
 };
+apiInstance.sendTemplatedEmail(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.sendTemplatedEmail(opts, callback);
 ```
 
 ### Parameters
@@ -172,27 +163,24 @@ Sends a templated SMS text message to one or more users. User&#39;s without regi
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MessagingApi();
+let apiInstance = new KnetikCloud.MessagingApi();
 
-var opts = { 
-  'templateSMSResource': new KnetikPlatformApiDocumentationLatest.TemplateSMSResource() // TemplateSMSResource | The new template SMS to be sent
+let opts = { 
+  'templateSMSResource': new KnetikCloud.TemplateSMSResource() // TemplateSMSResource | The new template SMS to be sent
 };
+apiInstance.sendTemplatedSMS(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.sendTemplatedSMS(opts, callback);
 ```
 
 ### Parameters

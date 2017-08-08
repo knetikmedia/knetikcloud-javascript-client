@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AudioGroupPropertyDefinitionResource
+# KnetikCloud.AudioGroupPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

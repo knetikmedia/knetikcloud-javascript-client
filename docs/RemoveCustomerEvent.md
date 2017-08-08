@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.RemoveCustomerEvent
+# KnetikCloud.RemoveCustomerEvent
 
 ## Properties
 Name | Type | Description | Notes

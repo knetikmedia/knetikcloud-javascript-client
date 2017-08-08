@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DateOperationResource
+# KnetikCloud.DateOperationResource
 
 ## Properties
 Name | Type | Description | Notes

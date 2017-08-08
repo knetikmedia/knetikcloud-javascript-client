@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.VideoResource
+# KnetikCloud.VideoResource
 
 ## Properties
 Name | Type | Description | Notes

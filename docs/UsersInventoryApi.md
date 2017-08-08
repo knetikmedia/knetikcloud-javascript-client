@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UsersInventoryApi
+# KnetikCloud.UsersInventoryApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -37,29 +37,26 @@ The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skip
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var id = 56; // Number | The id of the user
+let id = 56; // Number | The id of the user
 
-var opts = { 
-  'userInventoryAddRequest': new KnetikPlatformApiDocumentationLatest.UserInventoryAddRequest() // UserInventoryAddRequest | The user inventory add request object
+let opts = { 
+  'userInventoryAddRequest': new KnetikCloud.UserInventoryAddRequest() // UserInventoryAddRequest | The user inventory add request object
 };
+apiInstance.addItemToUserInventory(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addItemToUserInventory(id, opts, callback);
 ```
 
 ### Parameters
@@ -92,31 +89,28 @@ Useful for pre-check and accounts for all various buisness rules
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
+let userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
 
-var itemId = 56; // Number | The id of the item
+let itemId = 56; // Number | The id of the item
 
-var opts = { 
+let opts = { 
   'sku': "sku_example" // String | The specific sku of an entitlement list addition to check entitlement for. This is of very limited and specific use and should generally be left out
 };
+apiInstance.checkUserEntitlementItem(userId, itemId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.checkUserEntitlementItem(userId, itemId, opts, callback);
 ```
 
 ### Parameters
@@ -148,28 +142,25 @@ Create an entitlement item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var opts = { 
+let opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'entitlementItem': new KnetikPlatformApiDocumentationLatest.EntitlementItem() // EntitlementItem | The entitlement item object
+  'entitlementItem': new KnetikCloud.EntitlementItem() // EntitlementItem | The entitlement item object
 };
+apiInstance.createEntitlementItem(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createEntitlementItem(opts, callback);
 ```
 
 ### Parameters
@@ -202,27 +193,24 @@ Entitlement templates define a type of entitlement and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The entitlement template to be created
+let opts = { 
+  'template': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The entitlement template to be created
 };
+apiInstance.createEntitlementTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createEntitlementTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -252,26 +240,23 @@ Delete an entitlement item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var entitlementId = 56; // Number | The id of the entitlement
+let entitlementId = 56; // Number | The id of the entitlement
 
+apiInstance.deleteEntitlementItem(entitlementId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteEntitlementItem(entitlementId, callback);
 ```
 
 ### Parameters
@@ -303,29 +288,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteEntitlementTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteEntitlementTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -356,21 +338,18 @@ Get a single entitlement item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var entitlementId = 56; // Number | The id of the entitlement
+let entitlementId = 56; // Number | The id of the entitlement
 
+apiInstance.getEntitlementItem(entitlementId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getEntitlementItem(entitlementId, callback);
 ```
 
 ### Parameters
@@ -400,24 +379,21 @@ List and search entitlement items
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getEntitlementItems(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getEntitlementItems(opts, callback);
 ```
 
 ### Parameters
@@ -449,26 +425,23 @@ Get a single entitlement template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getEntitlementTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getEntitlementTemplate(id, callback);
 ```
 
 ### Parameters
@@ -498,29 +471,26 @@ List and search entitlement templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getEntitlementTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getEntitlementTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -552,18 +522,18 @@ List the user inventory entries for a given user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var id = 56; // Number | The id of the user
+let id = 56; // Number | The id of the user
 
-var opts = { 
+let opts = { 
   'inactive': false, // Boolean | If true, accepts inactive user inventories
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
@@ -573,15 +543,12 @@ var opts = {
   'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
   'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
 };
+apiInstance.getUserInventories(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserInventories(id, opts, callback);
 ```
 
 ### Parameters
@@ -619,28 +586,25 @@ Get an inventory entry
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = 56; // Number | The id of the inventory owner or 'me' for the logged in user
+let userId = 56; // Number | The id of the inventory owner or 'me' for the logged in user
 
-var id = 56; // Number | The id of the user inventory
+let id = 56; // Number | The id of the user inventory
 
+apiInstance.getUserInventory(userId, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserInventory(userId, id, callback);
 ```
 
 ### Parameters
@@ -671,32 +635,29 @@ List the log entries for this inventory entry
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = "userId_example"; // String | The id of the inventory owner or 'me' for the logged in user
+let userId = "userId_example"; // String | The id of the inventory owner or 'me' for the logged in user
 
-var id = 56; // Number | The id of the user inventory
+let id = 56; // Number | The id of the user inventory
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUserInventoryLog(userId, id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserInventoryLog(userId, id, opts, callback);
 ```
 
 ### Parameters
@@ -729,16 +690,16 @@ List the user inventory entries for all users
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var opts = { 
+let opts = { 
   'inactive': false, // Boolean | If true, accepts inactive user inventories
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
@@ -748,15 +709,12 @@ var opts = {
   'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
   'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
 };
+apiInstance.getUsersInventory(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsersInventory(opts, callback);
 ```
 
 ### Parameters
@@ -793,28 +751,25 @@ Grant an entitlement
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = 56; // Number | The id of the user to grant the entitlement to
+let userId = 56; // Number | The id of the user to grant the entitlement to
 
-var grantRequest = new KnetikPlatformApiDocumentationLatest.EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
+let grantRequest = new KnetikCloud.EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
 
+apiInstance.grantUserEntitlement(userId, grantRequest).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.grantUserEntitlement(userId, grantRequest, callback);
 ```
 
 ### Parameters
@@ -845,30 +800,27 @@ Update an entitlement item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var entitlementId = 56; // Number | The id of the entitlement
+let entitlementId = 56; // Number | The id of the entitlement
 
-var opts = { 
+let opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'entitlementItem': new KnetikPlatformApiDocumentationLatest.EntitlementItem() // EntitlementItem | The entitlement item object
+  'entitlementItem': new KnetikCloud.EntitlementItem() // EntitlementItem | The entitlement item object
 };
+apiInstance.updateEntitlementItem(entitlementId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateEntitlementItem(entitlementId, opts, callback);
 ```
 
 ### Parameters
@@ -900,29 +852,26 @@ Update an entitlement template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.ItemTemplateResource() // ItemTemplateResource | The updated template
+let opts = { 
+  'template': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The updated template
 };
+apiInstance.updateEntitlementTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateEntitlementTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -953,31 +902,28 @@ Set the behavior data for an inventory entry
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var id = 56; // Number | The id of the user inventory
+let id = 56; // Number | The id of the user inventory
 
-var opts = { 
+let opts = { 
   'data': null // Object | The data map
 };
+apiInstance.updateUserInventoryBehaviorData(userId, id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateUserInventoryBehaviorData(userId, id, opts, callback);
 ```
 
 ### Parameters
@@ -1011,31 +957,28 @@ Will change the current grace period for a subscription but not the bill date (p
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = 56; // Number | user_id
+let userId = 56; // Number | user_id
 
-var id = 56; // Number | The id of the user inventory
+let id = 56; // Number | The id of the user inventory
 
-var opts = { 
+let opts = { 
   'timestamp': 789 // Number | The new expiration date as a unix timestamp in seconds. May be null (no body).
 };
+apiInstance.updateUserInventoryExpires(userId, id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateUserInventoryExpires(userId, id, opts, callback);
 ```
 
 ### Parameters
@@ -1067,31 +1010,28 @@ Set the status for an inventory entry
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var id = 56; // Number | The id of the user inventory
+let id = 56; // Number | The id of the user inventory
 
-var opts = { 
+let opts = { 
   'inventoryStatus': "inventoryStatus_example" // String | The inventory status object
 };
+apiInstance.updateUserInventoryStatus(userId, id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateUserInventoryStatus(userId, id, opts, callback);
 ```
 
 ### Parameters
@@ -1123,32 +1063,29 @@ Use an item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersInventoryApi();
+let apiInstance = new KnetikCloud.UsersInventoryApi();
 
-var userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
+let userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
 
-var itemId = 56; // Number | The id of the item
+let itemId = 56; // Number | The id of the item
 
-var opts = { 
+let opts = { 
   'sku': "sku_example", // String | The specific sku of an entitlement_list addition to check entitlement for. This is of very limited and specific use and should generally be left out
   'info': "info_example" // String | Any additional info to add to the log about this use
 };
+apiInstance.useUserEntitlementItem(userId, itemId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.useUserEntitlementItem(userId, itemId, opts, callback);
 ```
 
 ### Parameters

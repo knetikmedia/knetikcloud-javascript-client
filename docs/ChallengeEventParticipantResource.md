@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ChallengeEventParticipantResource
+# KnetikCloud.ChallengeEventParticipantResource
 
 ## Properties
 Name | Type | Description | Notes

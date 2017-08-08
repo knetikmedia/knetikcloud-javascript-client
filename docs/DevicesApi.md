@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DevicesApi
+# KnetikCloud.DevicesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -22,28 +22,25 @@ Add device users
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var userResources = [new KnetikPlatformApiDocumentationLatest.SimpleUserResource()]; // [SimpleUserResource] | userResources
+let userResources = [new KnetikCloud.SimpleUserResource()]; // [SimpleUserResource] | userResources
 
-var id = 56; // Number | id
+let id = 56; // Number | id
 
+apiInstance.addDeviceUsers(userResources, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addDeviceUsers(userResources, id, callback);
 ```
 
 ### Parameters
@@ -74,26 +71,23 @@ Create a device
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var device = new KnetikPlatformApiDocumentationLatest.DeviceResource(); // DeviceResource | device
+let device = new KnetikCloud.DeviceResource(); // DeviceResource | device
 
+apiInstance.createDevice(device).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createDevice(device, callback);
 ```
 
 ### Parameters
@@ -123,26 +117,23 @@ Delete a device
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var id = 56; // Number | id
+let id = 56; // Number | id
 
+apiInstance.deleteDevice(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteDevice(id, callback);
 ```
 
 ### Parameters
@@ -172,28 +163,25 @@ Delete a device user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var id = 56; // Number | The id of the device
+let id = 56; // Number | The id of the device
 
-var userId = 56; // Number | The user id of the device user
+let userId = 56; // Number | The user id of the device user
 
+apiInstance.deleteDeviceUser(id, userId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteDeviceUser(id, userId, callback);
 ```
 
 ### Parameters
@@ -224,29 +212,26 @@ Delete all device users
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var id = 56; // Number | The id of the device
+let id = 56; // Number | The id of the device
 
-var opts = { 
+let opts = { 
   'filterId': "filterId_example" // String | Filter for device users to delete with a user id in a given comma separated list of ids
 };
+apiInstance.deleteDeviceUsers(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteDeviceUsers(id, opts, callback);
 ```
 
 ### Parameters
@@ -277,26 +262,23 @@ Get a single device
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var id = 56; // Number | id
+let id = 56; // Number | id
 
+apiInstance.getDevice(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDevice(id, callback);
 ```
 
 ### Parameters
@@ -328,31 +310,28 @@ Get a list of devices with optional filtering
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var opts = { 
+let opts = { 
   'filterMake': "filterMake_example", // String | Filter for devices with specified make
   'filterModel': "filterModel_example", // String | Filter for devices with specified model
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getDevices(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDevices(opts, callback);
 ```
 
 ### Parameters
@@ -386,28 +365,25 @@ Update a device
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.DevicesApi();
+let apiInstance = new KnetikCloud.DevicesApi();
 
-var device = new KnetikPlatformApiDocumentationLatest.DeviceResource(); // DeviceResource | device
+let device = new KnetikCloud.DeviceResource(); // DeviceResource | device
 
-var id = 56; // Number | id
+let id = 56; // Number | id
 
+apiInstance.updateDevice(device, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateDevice(device, id, callback);
 ```
 
 ### Parameters

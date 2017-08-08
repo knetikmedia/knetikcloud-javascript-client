@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserLevelingResource
+# KnetikCloud.UserLevelingResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CartShippableResponse
+# KnetikCloud.CartShippableResponse
 
 ## Properties
 Name | Type | Description | Notes

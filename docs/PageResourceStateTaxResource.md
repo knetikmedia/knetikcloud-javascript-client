@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceStateTaxResource
+# KnetikCloud.PageResourceStateTaxResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ChallengeResource
+# KnetikCloud.ChallengeResource
 
 ## Properties
 Name | Type | Description | Notes

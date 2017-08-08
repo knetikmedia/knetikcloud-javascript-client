@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceRevenueProductReportResource
+# KnetikCloud.PageResourceRevenueProductReportResource
 
 ## Properties
 Name | Type | Description | Notes

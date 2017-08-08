@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceUserAchievementGroupResource
+# KnetikCloud.PageResourceUserAchievementGroupResource
 
 ## Properties
 Name | Type | Description | Notes

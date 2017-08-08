@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.LocationsApi
+# KnetikCloud.LocationsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,18 +18,15 @@ Get a list of countries
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.LocationsApi();
+let apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCountries().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCountries(callback);
 ```
 
 ### Parameters
@@ -58,18 +55,15 @@ Determined by geo ip location
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.LocationsApi();
+let apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCountryByGeoLocation().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCountryByGeoLocation(callback);
 ```
 
 ### Parameters
@@ -96,21 +90,18 @@ Get a list of a country&#39;s states
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.LocationsApi();
+let apiInstance = new KnetikCloud.LocationsApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
+apiInstance.getCountryStates(countryCodeIso3).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCountryStates(countryCodeIso3, callback);
 ```
 
 ### Parameters
@@ -142,18 +133,15 @@ Determined by geo ip location, currency to country mapping and a fallback settin
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.LocationsApi();
+let apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCurrencyByGeoLocation().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCurrencyByGeoLocation(callback);
 ```
 
 ### Parameters

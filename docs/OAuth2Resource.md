@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.OAuth2Resource
+# KnetikCloud.OAuth2Resource
 
 ## Properties
 Name | Type | Description | Notes

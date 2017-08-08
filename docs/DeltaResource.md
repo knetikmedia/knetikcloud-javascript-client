@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DeltaResource
+# KnetikCloud.DeltaResource
 
 ## Properties
 Name | Type | Description | Notes

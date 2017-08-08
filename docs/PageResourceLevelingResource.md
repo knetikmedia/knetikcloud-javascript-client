@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceLevelingResource
+# KnetikCloud.PageResourceLevelingResource
 
 ## Properties
 Name | Type | Description | Notes

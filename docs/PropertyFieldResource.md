@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PropertyFieldResource
+# KnetikCloud.PropertyFieldResource
 
 ## Properties
 Name | Type | Description | Notes

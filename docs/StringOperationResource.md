@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.StringOperationResource
+# KnetikCloud.StringOperationResource
 
 ## Properties
 Name | Type | Description | Notes

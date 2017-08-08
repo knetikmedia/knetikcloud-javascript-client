@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BundleItem
+# KnetikCloud.BundleItem
 
 ## Properties
 Name | Type | Description | Notes

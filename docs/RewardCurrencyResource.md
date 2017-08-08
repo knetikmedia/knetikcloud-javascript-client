@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.RewardCurrencyResource
+# KnetikCloud.RewardCurrencyResource
 
 ## Properties
 Name | Type | Description | Notes

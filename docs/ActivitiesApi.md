@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ActivitiesApi
+# KnetikCloud.ActivitiesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -27,27 +27,24 @@ Create an activity
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var opts = { 
-  'activityResource': new KnetikPlatformApiDocumentationLatest.ActivityResource() // ActivityResource | The activity resource object
+let opts = { 
+  'activityResource': new KnetikCloud.ActivityResource() // ActivityResource | The activity resource object
 };
+apiInstance.createActivity(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createActivity(opts, callback);
 ```
 
 ### Parameters
@@ -79,28 +76,25 @@ Has to enforce extra rules if not used as an admin
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var opts = { 
+let opts = { 
   'test': false, // Boolean | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
-  'activityOccurrenceResource': new KnetikPlatformApiDocumentationLatest.ActivityOccurrenceResource() // ActivityOccurrenceResource | The activity occurrence object
+  'activityOccurrenceResource': new KnetikCloud.ActivityOccurrenceResource() // ActivityOccurrenceResource | The activity occurrence object
 };
+apiInstance.createActivityOccurrence(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createActivityOccurrence(opts, callback);
 ```
 
 ### Parameters
@@ -133,27 +127,24 @@ Activity Templates define a type of activity and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var opts = { 
-  'activityTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The activity template resource object
+let opts = { 
+  'activityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The activity template resource object
 };
+apiInstance.createActivityTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createActivityTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -183,26 +174,23 @@ Delete an activity
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = 789; // Number | The id of the activity
+let id = 789; // Number | The id of the activity
 
+apiInstance.deleteActivity(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteActivity(id, callback);
 ```
 
 ### Parameters
@@ -234,29 +222,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteActivityTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteActivityTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -287,11 +272,11 @@ List activity definitions
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var opts = { 
+let opts = { 
   'filterTemplate': true, // Boolean | Filter for activities that are templates, or specifically not if false
   'filterName': "filterName_example", // String | Filter for activities that have a name starting with specified string
   'filterId': "filterId_example", // String | Filter for activities with an id in the given comma separated list of ids
@@ -299,15 +284,12 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getActivities(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getActivities(opts, callback);
 ```
 
 ### Parameters
@@ -342,21 +324,18 @@ Get a single activity
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = 789; // Number | The id of the activity
+let id = 789; // Number | The id of the activity
 
+apiInstance.getActivity(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getActivity(id, callback);
 ```
 
 ### Parameters
@@ -386,26 +365,23 @@ Get a single activity template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getActivityTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getActivityTemplate(id, callback);
 ```
 
 ### Parameters
@@ -435,29 +411,26 @@ List and search activity templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getActivityTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getActivityTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -489,29 +462,26 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+let activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
-var opts = { 
-  'activityOccurrenceResults': new KnetikPlatformApiDocumentationLatest.ActivityOccurrenceResultsResource() // ActivityOccurrenceResultsResource | The activity occurrence object
+let opts = { 
+  'activityOccurrenceResults': new KnetikCloud.ActivityOccurrenceResultsResource() // ActivityOccurrenceResultsResource | The activity occurrence object
 };
+apiInstance.setActivityOccurrenceResults(activityOccurrenceId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.setActivityOccurrenceResults(activityOccurrenceId, opts, callback);
 ```
 
 ### Parameters
@@ -542,29 +512,26 @@ Update an activity
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = 789; // Number | The id of the activity
+let id = 789; // Number | The id of the activity
 
-var opts = { 
-  'activityResource': new KnetikPlatformApiDocumentationLatest.ActivityResource() // ActivityResource | The activity resource object
+let opts = { 
+  'activityResource': new KnetikCloud.ActivityResource() // ActivityResource | The activity resource object
 };
+apiInstance.updateActivity(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateActivity(id, opts, callback);
 ```
 
 ### Parameters
@@ -597,29 +564,26 @@ If setting to &#39;FINISHED&#39; you must POST to /results instead to record the
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+let activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
-var opts = { 
+let opts = { 
   'activityCccurrenceStatus': "activityCccurrenceStatus_example" // String | The activity occurrence status object
 };
+apiInstance.updateActivityOccurrence(activityOccurrenceId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateActivityOccurrence(activityOccurrenceId, opts, callback);
 ```
 
 ### Parameters
@@ -650,29 +614,26 @@ Update an activity template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ActivitiesApi();
+let apiInstance = new KnetikCloud.ActivitiesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'activityTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The activity template resource object
+let opts = { 
+  'activityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The activity template resource object
 };
+apiInstance.updateActivityTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateActivityTemplate(id, opts, callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ContentCommentsApi
+# KnetikCloud.ContentCommentsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -20,27 +20,24 @@ Add a new comment
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var opts = { 
-  'commentResource': new KnetikPlatformApiDocumentationLatest.CommentResource() // CommentResource | The comment to be added
+let opts = { 
+  'commentResource': new KnetikCloud.CommentResource() // CommentResource | The comment to be added
 };
+apiInstance.addComment(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addComment(opts, callback);
 ```
 
 ### Parameters
@@ -70,26 +67,23 @@ Delete a comment
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var id = 789; // Number | The comment id
+let id = 789; // Number | The comment id
 
+apiInstance.deleteComment(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteComment(id, callback);
 ```
 
 ### Parameters
@@ -119,21 +113,18 @@ Return a comment
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var id = 789; // Number | The comment id
+let id = 789; // Number | The comment id
 
+apiInstance.getComment(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getComment(id, callback);
 ```
 
 ### Parameters
@@ -163,27 +154,24 @@ Returns a page of comments
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var context = "context_example"; // String | Get comments by context type
+let context = "context_example"; // String | Get comments by context type
 
-var contextId = 56; // Number | Get comments by context id
+let contextId = 56; // Number | Get comments by context id
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getComments(context, contextId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getComments(context, contextId, opts, callback);
 ```
 
 ### Parameters
@@ -218,24 +206,21 @@ The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;h
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var opts = { 
+let opts = { 
   'query': null, // Object | The search query
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.searchComments(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.searchComments(opts, callback);
 ```
 
 ### Parameters
@@ -267,29 +252,26 @@ Update a comment
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentCommentsApi();
+let apiInstance = new KnetikCloud.ContentCommentsApi();
 
-var id = 789; // Number | The comment id
+let id = 789; // Number | The comment id
 
-var opts = { 
-  'content': "content_example" // String | The comment content
+let opts = { 
+  'content': new KnetikCloud.StringWrapper() // StringWrapper | The comment content
 };
+apiInstance.updateComment(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateComment(id, opts, callback);
 ```
 
 ### Parameters
@@ -297,7 +279,7 @@ apiInstance.updateComment(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The comment id | 
- **content** | **String**| The comment content | [optional] 
+ **content** | [**StringWrapper**](StringWrapper.md)| The comment content | [optional] 
 
 ### Return type
 

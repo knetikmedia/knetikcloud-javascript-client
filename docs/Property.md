@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.Property
+# KnetikCloud.Property
 
 ## Properties
 Name | Type | Description | Notes

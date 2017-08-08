@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SubscriptionCreditResource
+# KnetikCloud.SubscriptionCreditResource
 
 ## Properties
 Name | Type | Description | Notes

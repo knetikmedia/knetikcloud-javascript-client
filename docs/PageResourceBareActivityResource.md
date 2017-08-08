@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceBareActivityResource
+# KnetikCloud.PageResourceBareActivityResource
 
 ## Properties
 Name | Type | Description | Notes

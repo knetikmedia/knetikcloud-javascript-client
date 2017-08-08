@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ActivityOccurrenceResource
+# KnetikCloud.ActivityOccurrenceResource
 
 ## Properties
 Name | Type | Description | Notes

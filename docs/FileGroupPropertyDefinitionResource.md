@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FileGroupPropertyDefinitionResource
+# KnetikCloud.FileGroupPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

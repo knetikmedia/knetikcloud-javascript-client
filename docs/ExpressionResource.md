@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ExpressionResource
+# KnetikCloud.ExpressionResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserItemLogResource
+# KnetikCloud.UserItemLogResource
 
 ## Properties
 Name | Type | Description | Notes

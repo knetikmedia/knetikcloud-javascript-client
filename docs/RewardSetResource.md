@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.RewardSetResource
+# KnetikCloud.RewardSetResource
 
 ## Properties
 Name | Type | Description | Notes

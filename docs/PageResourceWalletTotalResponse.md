@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceWalletTotalResponse
+# KnetikCloud.PageResourceWalletTotalResponse
 
 ## Properties
 Name | Type | Description | Notes

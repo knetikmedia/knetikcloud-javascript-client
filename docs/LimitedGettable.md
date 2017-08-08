@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.LimitedGettable
+# KnetikCloud.LimitedGettable
 
 ## Properties
 Name | Type | Description | Notes

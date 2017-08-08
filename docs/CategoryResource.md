@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CategoryResource
+# KnetikCloud.CategoryResource
 
 ## Properties
 Name | Type | Description | Notes

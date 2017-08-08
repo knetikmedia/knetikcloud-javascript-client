@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SettingOption
+# KnetikCloud.SettingOption
 
 ## Properties
 Name | Type | Description | Notes

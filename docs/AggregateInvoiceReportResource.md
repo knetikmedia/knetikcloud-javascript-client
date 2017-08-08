@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AggregateInvoiceReportResource
+# KnetikCloud.AggregateInvoiceReportResource
 
 ## Properties
 Name | Type | Description | Notes

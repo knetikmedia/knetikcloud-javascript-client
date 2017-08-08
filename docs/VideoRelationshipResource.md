@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.VideoRelationshipResource
+# KnetikCloud.VideoRelationshipResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceImportJobResource
+# KnetikCloud.PageResourceImportJobResource
 
 ## Properties
 Name | Type | Description | Notes

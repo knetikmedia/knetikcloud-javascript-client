@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CartShippingOption
+# KnetikCloud.CartShippingOption
 
 ## Properties
 Name | Type | Description | Notes

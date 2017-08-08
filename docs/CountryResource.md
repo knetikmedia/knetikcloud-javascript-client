@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CountryResource
+# KnetikCloud.CountryResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ImagePropertyDefinitionResource
+# KnetikCloud.ImagePropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

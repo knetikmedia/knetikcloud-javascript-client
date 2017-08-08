@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SimpleReferenceResourceint
+# KnetikCloud.SimpleReferenceResourceint
 
 ## Properties
 Name | Type | Description | Notes

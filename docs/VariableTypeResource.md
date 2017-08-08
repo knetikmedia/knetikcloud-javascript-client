@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.VariableTypeResource
+# KnetikCloud.VariableTypeResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,9 +1,10 @@
-# KnetikPlatformApiDocumentationLatest.Order
+# KnetikCloud.Order
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ascending** | **Boolean** |  | [optional] 
+**descending** | **Boolean** |  | [optional] 
 **direction** | **String** |  | [optional] 
 **ignoreCase** | **Boolean** |  | [optional] 
 **nullHandling** | **String** |  | [optional] 

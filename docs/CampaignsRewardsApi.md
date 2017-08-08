@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi
+# KnetikCloud.CampaignsRewardsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,27 +19,24 @@ Create a reward set
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
+let apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-var opts = { 
-  'rewardSetResource': new KnetikPlatformApiDocumentationLatest.RewardSetResource() // RewardSetResource | The reward set resource object
+let opts = { 
+  'rewardSetResource': new KnetikCloud.RewardSetResource() // RewardSetResource | The reward set resource object
 };
+apiInstance.createRewardSet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createRewardSet(opts, callback);
 ```
 
 ### Parameters
@@ -69,26 +66,23 @@ Delete a reward set
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
+let apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-var id = 56; // Number | The reward id
+let id = 56; // Number | The reward id
 
+apiInstance.deleteRewardSet(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteRewardSet(id, callback);
 ```
 
 ### Parameters
@@ -118,21 +112,18 @@ Get a single reward set
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
+let apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-var id = 56; // Number | The reward id
+let id = 56; // Number | The reward id
 
+apiInstance.getRewardSet(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRewardSet(id, callback);
 ```
 
 ### Parameters
@@ -162,24 +153,21 @@ List and search reward sets
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
+let apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getRewardSets(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRewardSets(opts, callback);
 ```
 
 ### Parameters
@@ -211,29 +199,26 @@ Update a reward set
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CampaignsRewardsApi();
+let apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-var id = 56; // Number | The reward id
+let id = 56; // Number | The reward id
 
-var opts = { 
-  'rewardSetResource': new KnetikPlatformApiDocumentationLatest.RewardSetResource() // RewardSetResource | The reward set resource object
+let opts = { 
+  'rewardSetResource': new KnetikCloud.RewardSetResource() // RewardSetResource | The reward set resource object
 };
+apiInstance.updateRewardSet(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateRewardSet(id, opts, callback);
 ```
 
 ### Parameters

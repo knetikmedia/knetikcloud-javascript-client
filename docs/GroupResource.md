@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GroupResource
+# KnetikCloud.GroupResource
 
 ## Properties
 Name | Type | Description | Notes

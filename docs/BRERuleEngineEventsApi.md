@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BRERuleEngineEventsApi
+# KnetikCloud.BRERuleEngineEventsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,27 +17,24 @@ Parameters within the event must match names and types from the trigger. Actual 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineEventsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineEventsApi();
 
-var opts = { 
-  'breEvent': new KnetikPlatformApiDocumentationLatest.BreEvent() // BreEvent | The BRE event object
+let opts = { 
+  'breEvent': new KnetikCloud.BreEvent() // BreEvent | The BRE event object
 };
+apiInstance.sendBREEvent(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.sendBREEvent(opts, callback);
 ```
 
 ### Parameters

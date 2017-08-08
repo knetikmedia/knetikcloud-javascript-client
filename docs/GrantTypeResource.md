@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GrantTypeResource
+# KnetikCloud.GrantTypeResource
 
 ## Properties
 Name | Type | Description | Notes

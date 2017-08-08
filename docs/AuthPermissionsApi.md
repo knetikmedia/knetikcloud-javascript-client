@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AuthPermissionsApi
+# KnetikCloud.AuthPermissionsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,27 +19,24 @@ Create a new permission
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthPermissionsApi();
+let apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-var opts = { 
-  'permissionResource': new KnetikPlatformApiDocumentationLatest.PermissionResource() // PermissionResource | The permission resource object
+let opts = { 
+  'permissionResource': new KnetikCloud.PermissionResource() // PermissionResource | The permission resource object
 };
+apiInstance.createPermission(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createPermission(opts, callback);
 ```
 
 ### Parameters
@@ -69,29 +66,26 @@ Delete a permission
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthPermissionsApi();
+let apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-var permission = "permission_example"; // String | The permission value
+let permission = "permission_example"; // String | The permission value
 
-var opts = { 
+let opts = { 
   'force': true // Boolean | If true, removes permission assigned to roles
 };
+apiInstance.deletePermission(permission, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deletePermission(permission, opts, callback);
 ```
 
 ### Parameters
@@ -122,26 +116,23 @@ Get a single permission
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthPermissionsApi();
+let apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-var permission = "permission_example"; // String | The permission value
+let permission = "permission_example"; // String | The permission value
 
+apiInstance.getPermission(permission).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getPermission(permission, callback);
 ```
 
 ### Parameters
@@ -171,29 +162,26 @@ List and search permissions
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthPermissionsApi();
+let apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "permission:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getPermissions(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getPermissions(opts, callback);
 ```
 
 ### Parameters
@@ -225,29 +213,26 @@ Update a permission
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthPermissionsApi();
+let apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-var permission = "permission_example"; // String | The permission value
+let permission = "permission_example"; // String | The permission value
 
-var opts = { 
-  'permissionResource': new KnetikPlatformApiDocumentationLatest.PermissionResource() // PermissionResource | The permission resource object
+let opts = { 
+  'permissionResource': new KnetikCloud.PermissionResource() // PermissionResource | The permission resource object
 };
+apiInstance.updatePermission(permission, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updatePermission(permission, opts, callback);
 ```
 
 ### Parameters

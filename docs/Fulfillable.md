@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.Fulfillable
+# KnetikCloud.Fulfillable
 
 ## Properties
 Name | Type | Description | Notes

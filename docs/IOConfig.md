@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.IOConfig
+# KnetikCloud.IOConfig
 
 ## Properties
 Name | Type | Description | Notes

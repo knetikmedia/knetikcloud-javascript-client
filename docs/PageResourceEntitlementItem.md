@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceEntitlementItem
+# KnetikCloud.PageResourceEntitlementItem
 
 ## Properties
 Name | Type | Description | Notes

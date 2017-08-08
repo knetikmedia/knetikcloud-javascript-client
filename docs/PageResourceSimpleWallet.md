@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceSimpleWallet
+# KnetikCloud.PageResourceSimpleWallet
 
 ## Properties
 Name | Type | Description | Notes

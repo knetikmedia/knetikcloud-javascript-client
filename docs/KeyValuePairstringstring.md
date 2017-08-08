@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.KeyValuePairstringstring
+# KnetikCloud.KeyValuePairstringstring
 
 ## Properties
 Name | Type | Description | Notes

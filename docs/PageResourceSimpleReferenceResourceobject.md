@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceSimpleReferenceResourceobject
+# KnetikCloud.PageResourceSimpleReferenceResourceobject
 
 ## Properties
 Name | Type | Description | Notes

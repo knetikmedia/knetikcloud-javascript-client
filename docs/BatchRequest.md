@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BatchRequest
+# KnetikCloud.BatchRequest
 
 ## Properties
 Name | Type | Description | Notes

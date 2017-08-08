@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi
+# KnetikCloud.PaymentsXsollaApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -16,27 +16,24 @@ Create a payment token that should be used to forward the user to Xsolla so they
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi();
+let apiInstance = new KnetikCloud.PaymentsXsollaApi();
 
-var opts = { 
-  'request': new KnetikPlatformApiDocumentationLatest.XsollaPaymentRequest() // XsollaPaymentRequest | The payment request to be sent to XSolla
+let opts = { 
+  'request': new KnetikCloud.XsollaPaymentRequest() // XsollaPaymentRequest | The payment request to be sent to XSolla
 };
+apiInstance.createXsollaTokenUrl(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createXsollaTokenUrl(opts, callback);
 ```
 
 ### Parameters
@@ -68,18 +65,15 @@ Only used by Xsolla to call back to JSAPI after processing user payment action
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsXsollaApi();
+let apiInstance = new KnetikCloud.PaymentsXsollaApi();
+apiInstance.receiveXsollaNotification().then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.receiveXsollaNotification(callback);
 ```
 
 ### Parameters

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.Spendable
+# KnetikCloud.Spendable
 
 ## Properties
 Name | Type | Description | Notes

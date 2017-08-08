@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ReactivateSubscriptionRequest
+# KnetikCloud.ReactivateSubscriptionRequest
 
 ## Properties
 Name | Type | Description | Notes

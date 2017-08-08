@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceConfig
+# KnetikCloud.PageResourceConfig
 
 ## Properties
 Name | Type | Description | Notes

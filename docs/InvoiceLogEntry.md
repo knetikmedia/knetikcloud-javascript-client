@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.InvoiceLogEntry
+# KnetikCloud.InvoiceLogEntry
 
 ## Properties
 Name | Type | Description | Notes

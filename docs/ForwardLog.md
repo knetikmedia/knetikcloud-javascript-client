@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ForwardLog
+# KnetikCloud.ForwardLog
 
 ## Properties
 Name | Type | Description | Notes

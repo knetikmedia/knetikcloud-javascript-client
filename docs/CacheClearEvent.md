@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CacheClearEvent
+# KnetikCloud.CacheClearEvent
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi
+# KnetikCloud.UsersSubscriptionsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -22,28 +22,25 @@ Get details about a user&#39;s subscription
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
+apiInstance.getUserSubscriptionDetails(userId, inventoryId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserSubscriptionDetails(userId, inventoryId, callback);
 ```
 
 ### Parameters
@@ -74,26 +71,23 @@ Get details about a user&#39;s subscriptions
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
+apiInstance.getUsersSubscriptionDetails(userId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsersSubscriptionDetails(userId, callback);
 ```
 
 ### Parameters
@@ -123,31 +117,28 @@ Reactivate a subscription and charge fee
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var opts = { 
-  'reactivateSubscriptionRequest': new KnetikPlatformApiDocumentationLatest.ReactivateSubscriptionRequest() // ReactivateSubscriptionRequest | The reactivate subscription request object inventory
+let opts = { 
+  'reactivateSubscriptionRequest': new KnetikCloud.ReactivateSubscriptionRequest() // ReactivateSubscriptionRequest | The reactivate subscription request object inventory
 };
+apiInstance.reactivateUserSubscription(userId, inventoryId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.reactivateUserSubscription(userId, inventoryId, opts, callback);
 ```
 
 ### Parameters
@@ -179,30 +170,27 @@ Set a new date to bill a subscription on
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var billDate = 789; // Number | The new bill date. Unix timestamp in seconds
+let billDate = 789; // Number | The new bill date. Unix timestamp in seconds
 
+apiInstance.setSubscriptionBillDate(userId, inventoryId, billDate).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setSubscriptionBillDate(userId, inventoryId, billDate, callback);
 ```
 
 ### Parameters
@@ -236,31 +224,28 @@ May send null to use floating default
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var opts = { 
-  'paymentMethodId': 56 // Number | The id of the payment method
+let opts = { 
+  'paymentMethodId': new KnetikCloud.IntWrapper() // IntWrapper | The id of the payment method
 };
+apiInstance.setSubscriptionPaymentMethod(userId, inventoryId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setSubscriptionPaymentMethod(userId, inventoryId, opts, callback);
 ```
 
 ### Parameters
@@ -269,7 +254,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
  **inventoryId** | **Number**| The id of the user&#39;s inventory | 
- **paymentMethodId** | **Number**| The id of the payment method | [optional] 
+ **paymentMethodId** | [**IntWrapper**](IntWrapper.md)| The id of the payment method | [optional] 
 
 ### Return type
 
@@ -290,34 +275,31 @@ null (empty response body)
 
 Set the status of a subscription
 
-The body is a json string (put in quotes) that should match a desired invoice status type. Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var status = "status_example"; // String | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
+let status = new KnetikCloud.StringWrapper(); // StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
 
+apiInstance.setSubscriptionStatus(userId, inventoryId, status).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setSubscriptionStatus(userId, inventoryId, status, callback);
 ```
 
 ### Parameters
@@ -326,7 +308,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
  **inventoryId** | **Number**| The id of the user&#39;s inventory | 
- **status** | **String**| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) | 
+ **status** | [**StringWrapper**](StringWrapper.md)| The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;) | 
 
 ### Return type
 
@@ -349,31 +331,28 @@ Set a new subscription plan for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var opts = { 
-  'planId': "planId_example" // String | The id of the new plan. Must be from the same subscription
+let opts = { 
+  'planId': new KnetikCloud.StringWrapper() // StringWrapper | The id of the new plan. Must be from the same subscription
 };
+apiInstance.setUserSubscriptionPlan(userId, inventoryId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setUserSubscriptionPlan(userId, inventoryId, opts, callback);
 ```
 
 ### Parameters
@@ -382,7 +361,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
  **inventoryId** | **Number**| The id of the user&#39;s inventory | 
- **planId** | **String**| The id of the new plan. Must be from the same subscription | [optional] 
+ **planId** | [**StringWrapper**](StringWrapper.md)| The id of the new plan. Must be from the same subscription | [optional] 
 
 ### Return type
 
@@ -407,31 +386,28 @@ This new price will be what the user is charged at the begining of each new peri
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersSubscriptionsApi();
+let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var inventoryId = 56; // Number | The id of the user's inventory
+let inventoryId = 56; // Number | The id of the user's inventory
 
-var opts = { 
-  'theOverrideDetails': new KnetikPlatformApiDocumentationLatest.SubscriptionPriceOverrideRequest() // SubscriptionPriceOverrideRequest | override
+let opts = { 
+  'theOverrideDetails': new KnetikCloud.SubscriptionPriceOverrideRequest() // SubscriptionPriceOverrideRequest | override
 };
+apiInstance.setUserSubscriptionPrice(userId, inventoryId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setUserSubscriptionPrice(userId, inventoryId, opts, callback);
 ```
 
 ### Parameters

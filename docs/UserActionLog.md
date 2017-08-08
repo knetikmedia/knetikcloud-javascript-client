@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserActionLog
+# KnetikCloud.UserActionLog
 
 ## Properties
 Name | Type | Description | Notes

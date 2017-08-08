@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PredicateOperation
+# KnetikCloud.PredicateOperation
 
 ## Properties
 Name | Type | Description | Notes

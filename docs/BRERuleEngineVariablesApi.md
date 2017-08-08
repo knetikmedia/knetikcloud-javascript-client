@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BRERuleEngineVariablesApi
+# KnetikCloud.BRERuleEngineVariablesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,23 +18,20 @@ Types include integer, string, user and invoice. These are used to qualify trigg
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineVariablesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
+apiInstance.getBREVariableTypes().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBREVariableTypes(callback);
 ```
 
 ### Parameters
@@ -63,31 +60,28 @@ Used to lookup users to fill in a user constant for example. Only types marked a
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineVariablesApi();
+let apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
 
-var name = "name_example"; // String | The name of the type
+let name = "name_example"; // String | The name of the type
 
-var opts = { 
+let opts = { 
   'filterName': "filterName_example", // String | Filter results by those with names starting with this string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getBREVariableValues(name, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBREVariableValues(name, opts, callback);
 ```
 
 ### Parameters

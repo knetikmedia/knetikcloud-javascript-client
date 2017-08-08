@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.WalletTotalResponse
+# KnetikCloud.WalletTotalResponse
 
 ## Properties
 Name | Type | Description | Notes

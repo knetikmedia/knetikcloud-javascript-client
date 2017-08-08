@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.StoreItem
+# KnetikCloud.StoreItem
 
 ## Properties
 Name | Type | Description | Notes

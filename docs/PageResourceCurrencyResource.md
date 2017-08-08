@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceCurrencyResource
+# KnetikCloud.PageResourceCurrencyResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceVendorResource
+# KnetikCloud.PageResourceVendorResource
 
 ## Properties
 Name | Type | Description | Notes

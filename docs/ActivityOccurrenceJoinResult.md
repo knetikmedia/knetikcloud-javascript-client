@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ActivityOccurrenceJoinResult
+# KnetikCloud.ActivityOccurrenceJoinResult
 
 ## Properties
 Name | Type | Description | Notes

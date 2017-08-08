@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CatalogSale
+# KnetikCloud.CatalogSale
 
 ## Properties
 Name | Type | Description | Notes

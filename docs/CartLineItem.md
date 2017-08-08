@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CartLineItem
+# KnetikCloud.CartLineItem
 
 ## Properties
 Name | Type | Description | Notes

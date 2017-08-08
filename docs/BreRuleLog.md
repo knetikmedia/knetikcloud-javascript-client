@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BreRuleLog
+# KnetikCloud.BreRuleLog
 
 ## Properties
 Name | Type | Description | Notes

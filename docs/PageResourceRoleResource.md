@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceRoleResource
+# KnetikCloud.PageResourceRoleResource
 
 ## Properties
 Name | Type | Description | Notes

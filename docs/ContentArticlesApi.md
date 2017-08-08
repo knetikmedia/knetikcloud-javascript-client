@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ContentArticlesApi
+# KnetikCloud.ContentArticlesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -26,27 +26,24 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var opts = { 
-  'articleResource': new KnetikPlatformApiDocumentationLatest.ArticleResource() // ArticleResource | The new article
+let opts = { 
+  'articleResource': new KnetikCloud.ArticleResource() // ArticleResource | The new article
 };
+apiInstance.createArticle(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createArticle(opts, callback);
 ```
 
 ### Parameters
@@ -78,27 +75,24 @@ Article Templates define a type of article and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var opts = { 
-  'articleTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The article template resource object
+let opts = { 
+  'articleTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The article template resource object
 };
+apiInstance.createArticleTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createArticleTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -128,26 +122,23 @@ Delete an existing article
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The article id
+let id = "id_example"; // String | The article id
 
+apiInstance.deleteArticle(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteArticle(id, callback);
 ```
 
 ### Parameters
@@ -179,29 +170,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteArticleTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteArticleTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -232,21 +220,18 @@ Get a single article
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The article id
+let id = "id_example"; // String | The article id
 
+apiInstance.getArticle(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getArticle(id, callback);
 ```
 
 ### Parameters
@@ -276,26 +261,23 @@ Get a single article template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getArticleTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getArticleTemplate(id, callback);
 ```
 
 ### Parameters
@@ -325,29 +307,26 @@ List and search article templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getArticleTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getArticleTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -381,11 +360,11 @@ Get a list of articles with optional filtering. Assets will not be filled in on 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var opts = { 
+let opts = { 
   'filterCategory': "filterCategory_example", // String | Filter for articles from a specific category by id
   'filterTagset': "filterTagset_example", // String | Filter for articles with at least one of a specified set of tags (separated by comma)
   'filterTagIntersection': "filterTagIntersection_example", // String | Filter for articles with all of a specified set of tags (separated by comma)
@@ -395,15 +374,12 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getArticles(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getArticles(opts, callback);
 ```
 
 ### Parameters
@@ -440,29 +416,26 @@ Update an existing article
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The article id
+let id = "id_example"; // String | The article id
 
-var opts = { 
-  'articleResource': new KnetikPlatformApiDocumentationLatest.ArticleResource() // ArticleResource | The article object
+let opts = { 
+  'articleResource': new KnetikCloud.ArticleResource() // ArticleResource | The article object
 };
+apiInstance.updateArticle(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateArticle(id, opts, callback);
 ```
 
 ### Parameters
@@ -493,29 +466,26 @@ Update an article template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ContentArticlesApi();
+let apiInstance = new KnetikCloud.ContentArticlesApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'articleTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The article template resource object
+let opts = { 
+  'articleTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The article template resource object
 };
+apiInstance.updateArticleTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateArticleTemplate(id, opts, callback);
 ```
 
 ### Parameters

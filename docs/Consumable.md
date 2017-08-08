@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.Consumable
+# KnetikCloud.Consumable
 
 ## Properties
 Name | Type | Description | Notes

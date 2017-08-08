@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceBillingReport
+# KnetikCloud.PageResourceBillingReport
 
 ## Properties
 Name | Type | Description | Notes

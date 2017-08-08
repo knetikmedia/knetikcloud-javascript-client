@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.XsollaPaymentRequest
+# KnetikCloud.XsollaPaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FlagReportResource
+# KnetikCloud.FlagReportResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.InvoicePaymentStatusRequest
+# KnetikCloud.InvoicePaymentStatusRequest
 
 ## Properties
 Name | Type | Description | Notes

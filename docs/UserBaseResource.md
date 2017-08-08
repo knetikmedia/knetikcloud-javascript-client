@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserBaseResource
+# KnetikCloud.UserBaseResource
 
 ## Properties
 Name | Type | Description | Notes

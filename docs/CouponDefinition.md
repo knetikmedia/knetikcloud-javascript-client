@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CouponDefinition
+# KnetikCloud.CouponDefinition
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ParameterResource
+# KnetikCloud.ParameterResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GroupMemberResource
+# KnetikCloud.GroupMemberResource
 
 ## Properties
 Name | Type | Description | Notes

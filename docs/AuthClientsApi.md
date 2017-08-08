@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AuthClientsApi
+# KnetikCloud.AuthClientsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -22,27 +22,24 @@ Create a new client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var opts = { 
-  'clientResource': new KnetikPlatformApiDocumentationLatest.ClientResource() // ClientResource | The client resource object
+let opts = { 
+  'clientResource': new KnetikCloud.ClientResource() // ClientResource | The client resource object
 };
+apiInstance.createClient(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createClient(opts, callback);
 ```
 
 ### Parameters
@@ -72,26 +69,23 @@ Delete a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var clientKey = "clientKey_example"; // String | The key of the client
+let clientKey = "clientKey_example"; // String | The key of the client
 
+apiInstance.deleteClient(clientKey).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteClient(clientKey, callback);
 ```
 
 ### Parameters
@@ -121,26 +115,23 @@ Get a single client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var clientKey = "clientKey_example"; // String | The key of the client
+let clientKey = "clientKey_example"; // String | The key of the client
 
+apiInstance.getClient(clientKey).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClient(clientKey, callback);
 ```
 
 ### Parameters
@@ -170,23 +161,20 @@ List available client grant types
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
+apiInstance.getClientGrantTypes().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClientGrantTypes(callback);
 ```
 
 ### Parameters
@@ -213,29 +201,26 @@ List and search clients
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getClients(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClients(opts, callback);
 ```
 
 ### Parameters
@@ -267,29 +252,26 @@ Set grant types for a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var clientKey = "clientKey_example"; // String | The key of the client
+let clientKey = "clientKey_example"; // String | The key of the client
 
-var opts = { 
-  'grantList': [new KnetikPlatformApiDocumentationLatest.[String]()] // [String] | A list of unique grant types
+let opts = { 
+  'grantList': [new KnetikCloud.[String]()] // [String] | A list of unique grant types
 };
+apiInstance.setClientGrantTypes(clientKey, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setClientGrantTypes(clientKey, opts, callback);
 ```
 
 ### Parameters
@@ -320,29 +302,26 @@ Set redirect uris for a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var clientKey = "clientKey_example"; // String | The key of the client
+let clientKey = "clientKey_example"; // String | The key of the client
 
-var opts = { 
-  'redirectList': [new KnetikPlatformApiDocumentationLatest.[String]()] // [String] | A list of unique redirect uris
+let opts = { 
+  'redirectList': [new KnetikCloud.[String]()] // [String] | A list of unique redirect uris
 };
+apiInstance.setClientRedirectUris(clientKey, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setClientRedirectUris(clientKey, opts, callback);
 ```
 
 ### Parameters
@@ -373,29 +352,26 @@ Update a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthClientsApi();
+let apiInstance = new KnetikCloud.AuthClientsApi();
 
-var clientKey = "clientKey_example"; // String | The key of the client
+let clientKey = "clientKey_example"; // String | The key of the client
 
-var opts = { 
-  'clientResource': new KnetikPlatformApiDocumentationLatest.ClientResource() // ClientResource | The client resource object
+let opts = { 
+  'clientResource': new KnetikCloud.ClientResource() // ClientResource | The client resource object
 };
+apiInstance.updateClient(clientKey, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateClient(clientKey, opts, callback);
 ```
 
 ### Parameters

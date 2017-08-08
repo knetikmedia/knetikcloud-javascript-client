@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentsStripeApi
+# KnetikCloud.PaymentsStripeApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,27 +18,24 @@ Stores customer information and creates a payment method that can be used to pay
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsStripeApi();
+let apiInstance = new KnetikCloud.PaymentsStripeApi();
 
-var opts = { 
-  'request': new KnetikPlatformApiDocumentationLatest.StripeCreatePaymentMethod() // StripeCreatePaymentMethod | The request to create a Stripe customer with payment info
+let opts = { 
+  'request': new KnetikCloud.StripeCreatePaymentMethod() // StripeCreatePaymentMethod | The request to create a Stripe customer with payment info
 };
+apiInstance.createStripePaymentMethod(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createStripePaymentMethod(opts, callback);
 ```
 
 ### Parameters
@@ -68,22 +65,19 @@ Pay with a single use token
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsStripeApi();
+let apiInstance = new KnetikCloud.PaymentsStripeApi();
 
-var opts = { 
-  'request': new KnetikPlatformApiDocumentationLatest.StripePaymentRequest() // StripePaymentRequest | The request to pay an invoice
+let opts = { 
+  'request': new KnetikCloud.StripePaymentRequest() // StripePaymentRequest | The request to pay an invoice
 };
+apiInstance.payStripeInvoice(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.payStripeInvoice(opts, callback);
 ```
 
 ### Parameters

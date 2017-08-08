@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.StoreApi
+# KnetikCloud.StoreApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**getStore**](StoreApi.md#getStore) | **GET** /store | Get a listing of store items
 [**getStoreItem**](StoreApi.md#getStoreItem) | **GET** /store/items/{id} | Get a single store item
 [**getStoreItems**](StoreApi.md#getStoreItems) | **GET** /store/items | List and search store items
+[**quickBuy**](StoreApi.md#quickBuy) | **POST** /store/quick-buy | One-step purchase and pay for a single SKU item from a user&#39;s wallet
 [**updateItemTemplate**](StoreApi.md#updateItemTemplate) | **PUT** /store/items/templates/{id} | Update an item template
 [**updateStoreItem**](StoreApi.md#updateStoreItem) | **PUT** /store/items/{id} | Update a store item
 
@@ -28,27 +29,24 @@ Item Templates define a type of item and the properties they have.
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var opts = { 
-  'itemTemplateResource': new KnetikPlatformApiDocumentationLatest.StoreItemTemplateResource() // StoreItemTemplateResource | The new item template
+let opts = { 
+  'itemTemplateResource': new KnetikCloud.StoreItemTemplateResource() // StoreItemTemplateResource | The new item template
 };
+apiInstance.createItemTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createItemTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -80,28 +78,25 @@ SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 e
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var opts = { 
+let opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'storeItem': new KnetikPlatformApiDocumentationLatest.StoreItem() // StoreItem | The store item object
+  'storeItem': new KnetikCloud.StoreItem() // StoreItem | The store item object
 };
+apiInstance.createStoreItem(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createStoreItem(opts, callback);
 ```
 
 ### Parameters
@@ -132,29 +127,26 @@ Delete an item template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
+apiInstance.deleteItemTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteItemTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -185,26 +177,23 @@ Delete a store item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = 56; // Number | The id of the item
+let id = 56; // Number | The id of the item
 
+apiInstance.deleteStoreItem(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteStoreItem(id, callback);
 ```
 
 ### Parameters
@@ -234,23 +223,20 @@ List available item behaviors
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
+apiInstance.getBehaviors().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBehaviors(callback);
 ```
 
 ### Parameters
@@ -279,26 +265,23 @@ Item Templates define a type of item and the properties they have.
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getItemTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getItemTemplate(id, callback);
 ```
 
 ### Parameters
@@ -328,29 +311,26 @@ List and search item templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getItemTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getItemTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -384,26 +364,23 @@ The exact structure of each items may differ to include fields specific to the t
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var opts = { 
+let opts = { 
   'limit': 56, // Number | The amount of items returned
   'page': 56, // Number | The page of the request
   'useCatalog': true, // Boolean | Whether to remove items that are not intended for display or not in date
   'ignoreLocation': true, // Boolean | Whether to ignore country restrictions based on the caller's location
   'inStockOnly': false // Boolean | Whether only in-stock items should be returned.  Default value is false
 };
+apiInstance.getStore(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStore(opts, callback);
 ```
 
 ### Parameters
@@ -437,21 +414,18 @@ Get a single store item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = 56; // Number | The id of the item
+let id = 56; // Number | The id of the item
 
+apiInstance.getStoreItem(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStoreItem(id, callback);
 ```
 
 ### Parameters
@@ -481,11 +455,11 @@ List and search store items
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var opts = { 
+let opts = { 
   'filterNameSearch': "filterNameSearch_example", // String | Filter for items whose name starts with a given string.
   'filterUniqueKey': "filterUniqueKey_example", // String | Filter for items whose unique_key is a given string.
   'filterPublished': true, // Boolean | Filter for skus that have been published.
@@ -504,15 +478,12 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getStoreItems(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStoreItems(opts, callback);
 ```
 
 ### Parameters
@@ -550,6 +521,55 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="quickBuy"></a>
+# **quickBuy**
+> InvoiceResource quickBuy(opts)
+
+One-step purchase and pay for a single SKU item from a user&#39;s wallet
+
+Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+
+### Example
+```javascript
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: OAuth2
+let OAuth2 = defaultClient.authentications['OAuth2'];
+OAuth2.accessToken = 'YOUR ACCESS TOKEN';
+
+let apiInstance = new KnetikCloud.StoreApi();
+
+let opts = { 
+  'quickBuyRequest': new KnetikCloud.QuickBuyRequest() // QuickBuyRequest | Quick buy details
+};
+apiInstance.quickBuy(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **quickBuyRequest** | [**QuickBuyRequest**](QuickBuyRequest.md)| Quick buy details | [optional] 
+
+### Return type
+
+[**InvoiceResource**](InvoiceResource.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateItemTemplate"></a>
 # **updateItemTemplate**
 > StoreItemTemplateResource updateItemTemplate(id, opts)
@@ -558,29 +578,26 @@ Update an item template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'itemTemplateResource': new KnetikPlatformApiDocumentationLatest.StoreItemTemplateResource() // StoreItemTemplateResource | The item template resource object
+let opts = { 
+  'itemTemplateResource': new KnetikCloud.StoreItemTemplateResource() // StoreItemTemplateResource | The item template resource object
 };
+apiInstance.updateItemTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateItemTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -611,30 +628,27 @@ Update a store item
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreApi();
+let apiInstance = new KnetikCloud.StoreApi();
 
-var id = 56; // Number | The id of the item
+let id = 56; // Number | The id of the item
 
-var opts = { 
+let opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'storeItem': new KnetikPlatformApiDocumentationLatest.StoreItem() // StoreItem | The store item object
+  'storeItem': new KnetikCloud.StoreItem() // StoreItem | The store item object
 };
+apiInstance.updateStoreItem(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateStoreItem(id, opts, callback);
 ```
 
 ### Parameters

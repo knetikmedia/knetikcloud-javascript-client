@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentsGoogleApi
+# KnetikCloud.PaymentsGoogleApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,22 +17,19 @@ Mark an invoice paid with Google. Verifies signature from Google and treats the 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsGoogleApi();
+let apiInstance = new KnetikCloud.PaymentsGoogleApi();
 
-var opts = { 
-  'request': new KnetikPlatformApiDocumentationLatest.GooglePaymentRequest() // GooglePaymentRequest | The request for paying an invoice through a Google in-app payment
+let opts = { 
+  'request': new KnetikCloud.GooglePaymentRequest() // GooglePaymentRequest | The request for paying an invoice through a Google in-app payment
 };
+apiInstance.handleGooglePayment(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.handleGooglePayment(opts, callback);
 ```
 
 ### Parameters

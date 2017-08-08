@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BooleanPropertyDefinitionResource
+# KnetikCloud.BooleanPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

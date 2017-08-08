@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.TemplateSMSResource
+# KnetikCloud.TemplateSMSResource
 
 ## Properties
 Name | Type | Description | Notes

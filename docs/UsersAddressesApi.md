@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UsersAddressesApi
+# KnetikCloud.UsersAddressesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,29 +19,26 @@ Create a new address
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersAddressesApi();
+let apiInstance = new KnetikCloud.UsersAddressesApi();
 
-var userId = "userId_example"; // String | The id of the user
+let userId = "userId_example"; // String | The id of the user
 
-var opts = { 
-  'savedAddressResource': new KnetikPlatformApiDocumentationLatest.SavedAddressResource() // SavedAddressResource | The new address
+let opts = { 
+  'savedAddressResource': new KnetikCloud.SavedAddressResource() // SavedAddressResource | The new address
 };
+apiInstance.createAddress(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createAddress(userId, opts, callback);
 ```
 
 ### Parameters
@@ -72,28 +69,25 @@ Delete an address
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersAddressesApi();
+let apiInstance = new KnetikCloud.UsersAddressesApi();
 
-var userId = "userId_example"; // String | The id of the user
+let userId = "userId_example"; // String | The id of the user
 
-var id = 56; // Number | The id of the address
+let id = 56; // Number | The id of the address
 
+apiInstance.deleteAddress(userId, id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteAddress(userId, id, callback);
 ```
 
 ### Parameters
@@ -124,28 +118,25 @@ Get a single address
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersAddressesApi();
+let apiInstance = new KnetikCloud.UsersAddressesApi();
 
-var userId = "userId_example"; // String | The id of the user
+let userId = "userId_example"; // String | The id of the user
 
-var id = 56; // Number | The id of the address
+let id = 56; // Number | The id of the address
 
+apiInstance.getAddress(userId, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAddress(userId, id, callback);
 ```
 
 ### Parameters
@@ -176,31 +167,28 @@ List and search addresses
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersAddressesApi();
+let apiInstance = new KnetikCloud.UsersAddressesApi();
 
-var userId = "userId_example"; // String | The id of the user
+let userId = "userId_example"; // String | The id of the user
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getAddresses(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAddresses(userId, opts, callback);
 ```
 
 ### Parameters
@@ -233,31 +221,28 @@ Update an address
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersAddressesApi();
+let apiInstance = new KnetikCloud.UsersAddressesApi();
 
-var userId = "userId_example"; // String | The id of the user
+let userId = "userId_example"; // String | The id of the user
 
-var id = 56; // Number | The id of the address
+let id = 56; // Number | The id of the address
 
-var opts = { 
-  'savedAddressResource': new KnetikPlatformApiDocumentationLatest.SavedAddressResource() // SavedAddressResource | The saved address resource object
+let opts = { 
+  'savedAddressResource': new KnetikCloud.SavedAddressResource() // SavedAddressResource | The saved address resource object
 };
+apiInstance.updateAddress(userId, id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateAddress(userId, id, opts, callback);
 ```
 
 ### Parameters

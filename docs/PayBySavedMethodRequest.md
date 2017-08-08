@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PayBySavedMethodRequest
+# KnetikCloud.PayBySavedMethodRequest
 
 ## Properties
 Name | Type | Description | Notes

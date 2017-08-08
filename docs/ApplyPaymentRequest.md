@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ApplyPaymentRequest
+# KnetikCloud.ApplyPaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

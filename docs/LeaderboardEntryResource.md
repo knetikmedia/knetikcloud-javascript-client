@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.LeaderboardEntryResource
+# KnetikCloud.LeaderboardEntryResource
 
 ## Properties
 Name | Type | Description | Notes

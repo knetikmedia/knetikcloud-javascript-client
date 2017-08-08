@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AuthRolesApi
+# KnetikCloud.AuthRolesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -24,27 +24,24 @@ Create a new role
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var opts = { 
-  'roleResource': new KnetikPlatformApiDocumentationLatest.RoleResource() // RoleResource | The role resource object
+let opts = { 
+  'roleResource': new KnetikCloud.RoleResource() // RoleResource | The role resource object
 };
+apiInstance.createRole(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createRole(opts, callback);
 ```
 
 ### Parameters
@@ -74,29 +71,26 @@ Delete a role
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var role = "role_example"; // String | The role value
+let role = "role_example"; // String | The role value
 
-var opts = { 
+let opts = { 
   'force': true // Boolean | If true, removes role from users/clients
 };
+apiInstance.deleteRole(role, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteRole(role, opts, callback);
 ```
 
 ### Parameters
@@ -127,26 +121,23 @@ Get roles for a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var clientKey = "clientKey_example"; // String | The client key
+let clientKey = "clientKey_example"; // String | The client key
 
+apiInstance.getClientRoles(clientKey).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getClientRoles(clientKey, callback);
 ```
 
 ### Parameters
@@ -176,26 +167,23 @@ Get a single role
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var role = "role_example"; // String | The role value
+let role = "role_example"; // String | The role value
 
+apiInstance.getRole(role).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRole(role, callback);
 ```
 
 ### Parameters
@@ -225,35 +213,36 @@ List and search roles
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var opts = { 
+let opts = { 
+  'filterName': "filterName_example", // String | Filter for roles that have a name starting with specified string
+  'filterRole': "filterRole_example", // String | Filter for roles that have a role starting with specified string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getRoles(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getRoles(opts, callback);
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterName** | **String**| Filter for roles that have a name starting with specified string | [optional] 
+ **filterRole** | **String**| Filter for roles that have a role starting with specified string | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
@@ -279,26 +268,23 @@ Get roles for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
+apiInstance.getUserRoles(userId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserRoles(userId, callback);
 ```
 
 ### Parameters
@@ -328,29 +314,26 @@ Set roles for a client
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var clientKey = "clientKey_example"; // String | The client key
+let clientKey = "clientKey_example"; // String | The client key
 
-var opts = { 
-  'rolesList': [new KnetikPlatformApiDocumentationLatest.[String]()] // [String] | The list of unique roles
+let opts = { 
+  'rolesList': [new KnetikCloud.[String]()] // [String] | The list of unique roles
 };
+apiInstance.setClientRoles(clientKey, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.setClientRoles(clientKey, opts, callback);
 ```
 
 ### Parameters
@@ -381,29 +364,26 @@ Set permissions for a role
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var role = "role_example"; // String | The role value
+let role = "role_example"; // String | The role value
 
-var opts = { 
-  'permissionsList': [new KnetikPlatformApiDocumentationLatest.[String]()] // [String] | The list of unique permissions
+let opts = { 
+  'permissionsList': [new KnetikCloud.[String]()] // [String] | The list of unique permissions
 };
+apiInstance.setPermissionsForRole(role, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.setPermissionsForRole(role, opts, callback);
 ```
 
 ### Parameters
@@ -434,29 +414,26 @@ Set roles for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
-var opts = { 
-  'rolesList': [new KnetikPlatformApiDocumentationLatest.[String]()] // [String] | The list of unique roles
+let opts = { 
+  'rolesList': [new KnetikCloud.[String]()] // [String] | The list of unique roles
 };
+apiInstance.setUserRoles(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.setUserRoles(userId, opts, callback);
 ```
 
 ### Parameters
@@ -487,29 +464,26 @@ Update a role
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.AuthRolesApi();
+let apiInstance = new KnetikCloud.AuthRolesApi();
 
-var role = "role_example"; // String | The role value
+let role = "role_example"; // String | The role value
 
-var opts = { 
-  'roleResource': new KnetikPlatformApiDocumentationLatest.RoleResource() // RoleResource | The role resource object
+let opts = { 
+  'roleResource': new KnetikCloud.RoleResource() // RoleResource | The role resource object
 };
+apiInstance.updateRole(role, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateRole(role, opts, callback);
 ```
 
 ### Parameters

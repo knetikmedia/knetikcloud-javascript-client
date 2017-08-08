@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CommentSearch
+# KnetikCloud.CommentSearch
 
 ## Properties
 Name | Type | Description | Notes

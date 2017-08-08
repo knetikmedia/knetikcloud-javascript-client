@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceBreRule
+# KnetikCloud.PageResourceBreRule
 
 ## Properties
 Name | Type | Description | Notes

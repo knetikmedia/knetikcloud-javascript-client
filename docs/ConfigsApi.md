@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ConfigsApi
+# KnetikCloud.ConfigsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,27 +19,24 @@ Create a new config
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ConfigsApi();
+let apiInstance = new KnetikCloud.ConfigsApi();
 
-var opts = { 
-  'config': new KnetikPlatformApiDocumentationLatest.Config() // Config | The config object
+let opts = { 
+  'config': new KnetikCloud.Config() // Config | The config object
 };
+apiInstance.createConfig(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createConfig(opts, callback);
 ```
 
 ### Parameters
@@ -69,26 +66,23 @@ Delete an existing config
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ConfigsApi();
+let apiInstance = new KnetikCloud.ConfigsApi();
 
-var name = "name_example"; // String | The config name
+let name = "name_example"; // String | The config name
 
+apiInstance.deleteConfig(name).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteConfig(name, callback);
 ```
 
 ### Parameters
@@ -120,26 +114,23 @@ Only configs that are public readable will be shown without admin access
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ConfigsApi();
+let apiInstance = new KnetikCloud.ConfigsApi();
 
-var name = "name_example"; // String | The config name
+let name = "name_example"; // String | The config name
 
+apiInstance.getConfig(name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getConfig(name, callback);
 ```
 
 ### Parameters
@@ -169,30 +160,27 @@ List and search configs
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ConfigsApi();
+let apiInstance = new KnetikCloud.ConfigsApi();
 
-var opts = { 
+let opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for configs whose name contains the given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getConfigs(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getConfigs(opts, callback);
 ```
 
 ### Parameters
@@ -225,29 +213,26 @@ Update an existing config
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ConfigsApi();
+let apiInstance = new KnetikCloud.ConfigsApi();
 
-var name = "name_example"; // String | The config name
+let name = "name_example"; // String | The config name
 
-var opts = { 
-  'config': new KnetikPlatformApiDocumentationLatest.Config() // Config | The config object
+let opts = { 
+  'config': new KnetikCloud.Config() // Config | The config object
 };
+apiInstance.updateConfig(name, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateConfig(name, opts, callback);
 ```
 
 ### Parameters

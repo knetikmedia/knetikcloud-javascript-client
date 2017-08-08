@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceSavedAddressResource
+# KnetikCloud.PageResourceSavedAddressResource
 
 ## Properties
 Name | Type | Description | Notes

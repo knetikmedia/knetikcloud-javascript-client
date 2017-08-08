@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceBreGlobalResource
+# KnetikCloud.PageResourceBreGlobalResource
 
 ## Properties
 Name | Type | Description | Notes

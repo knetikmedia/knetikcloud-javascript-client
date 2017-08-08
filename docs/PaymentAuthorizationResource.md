@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentAuthorizationResource
+# KnetikCloud.PaymentAuthorizationResource
 
 ## Properties
 Name | Type | Description | Notes

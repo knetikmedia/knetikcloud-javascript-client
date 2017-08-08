@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserActivityResultsResource
+# KnetikCloud.UserActivityResultsResource
 
 ## Properties
 Name | Type | Description | Notes

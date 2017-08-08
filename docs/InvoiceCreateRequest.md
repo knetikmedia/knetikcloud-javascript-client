@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.InvoiceCreateRequest
+# KnetikCloud.InvoiceCreateRequest
 
 ## Properties
 Name | Type | Description | Notes

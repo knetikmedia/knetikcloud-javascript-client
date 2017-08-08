@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ReportingUsersApi
+# KnetikCloud.ReportingUsersApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,31 +17,28 @@ Get user registration counts grouped by time range
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingUsersApi();
+let apiInstance = new KnetikCloud.ReportingUsersApi();
 
-var opts = { 
+let opts = { 
   'granularity': "day", // String | The time duration to aggregate by
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789, // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUserRegistrations(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserRegistrations(opts, callback);
 ```
 
 ### Parameters

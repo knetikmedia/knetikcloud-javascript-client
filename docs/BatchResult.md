@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BatchResult
+# KnetikCloud.BatchResult
 
 ## Properties
 Name | Type | Description | Notes

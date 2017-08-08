@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FinalizePayPalPaymentRequest
+# KnetikCloud.FinalizePayPalPaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi
+# KnetikCloud.GamificationAchievementsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -34,27 +34,24 @@ If the definition contains a trigger event name, a BRE rule is created, so that 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var opts = { 
-  'achievement': new KnetikPlatformApiDocumentationLatest.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
+let opts = { 
+  'achievement': new KnetikCloud.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
 };
+apiInstance.createAchievement(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createAchievement(opts, callback);
 ```
 
 ### Parameters
@@ -86,27 +83,24 @@ Achievement templates define a type of achievement and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The achievement template to be created
+let opts = { 
+  'template': new KnetikCloud.TemplateResource() // TemplateResource | The achievement template to be created
 };
+apiInstance.createAchievementTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createAchievementTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -138,26 +132,23 @@ Will also disable the associated generated rule, if any.
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var name = "name_example"; // String | The name of the achievement
+let name = "name_example"; // String | The name of the achievement
 
+apiInstance.deleteAchievement(name).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteAchievement(name, callback);
 ```
 
 ### Parameters
@@ -189,29 +180,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteAchievementTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteAchievementTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -242,26 +230,23 @@ Get a single achievement definition
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var name = "name_example"; // String | The name of the achievement
+let name = "name_example"; // String | The name of the achievement
 
+apiInstance.getAchievement(name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAchievement(name, callback);
 ```
 
 ### Parameters
@@ -291,26 +276,23 @@ Get a single achievement template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getAchievementTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAchievementTemplate(id, callback);
 ```
 
 ### Parameters
@@ -340,29 +322,26 @@ List and search achievement templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getAchievementTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAchievementTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -394,23 +373,20 @@ Get the list of triggers that can be used to trigger an achievement progress upd
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+apiInstance.getAchievementTriggers().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAchievementTriggers(callback);
 ```
 
 ### Parameters
@@ -437,16 +413,16 @@ Get all achievement definitions in the system
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var opts = { 
+let opts = { 
   'filterTagset': "filterTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterName': "filterName_example", // String | Filter for achievements whose name contains a string
   'filterHidden': true, // Boolean | Filter for achievements that are hidden or not
@@ -455,15 +431,12 @@ var opts = {
   'order': "name:ASC", // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   'filterDerived': false // Boolean | Filter for achievements that are derived from other services
 };
+apiInstance.getAchievements(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getAchievements(opts, callback);
 ```
 
 ### Parameters
@@ -501,26 +474,23 @@ Used by other services that depend on achievements
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var name = "name_example"; // String | The name of the derived achievement
+let name = "name_example"; // String | The name of the derived achievement
 
+apiInstance.getDerivedAchievements(name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getDerivedAchievements(name, callback);
 ```
 
 ### Parameters
@@ -552,28 +522,25 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
-var achievementName = "achievementName_example"; // String | The achievement's name
+let achievementName = "achievementName_example"; // String | The achievement's name
 
+apiInstance.getUserAchievementProgress(userId, achievementName).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserAchievementProgress(userId, achievementName, callback);
 ```
 
 ### Parameters
@@ -606,33 +573,30 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
-var opts = { 
+let opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUserAchievementsProgress(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserAchievementsProgress(userId, opts, callback);
 ```
 
 ### Parameters
@@ -669,33 +633,30 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var achievementName = "achievementName_example"; // String | The achievement's name
+let achievementName = "achievementName_example"; // String | The achievement's name
 
-var opts = { 
+let opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsersAchievementProgress(achievementName, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsersAchievementProgress(achievementName, opts, callback);
 ```
 
 ### Parameters
@@ -732,31 +693,28 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var opts = { 
+let opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getUsersAchievementsProgress(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsersAchievementsProgress(opts, callback);
 ```
 
 ### Parameters
@@ -792,31 +750,28 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
-var achievementName = "achievementName_example"; // String | The achievement's name
+let achievementName = "achievementName_example"; // String | The achievement's name
 
-var opts = { 
-  'progress': 56 // Number | The amount to add to the progress value
+let opts = { 
+  'progress': new KnetikCloud.IntWrapper() // IntWrapper | The amount to add to the progress value
 };
+apiInstance.incrementAchievementProgress(userId, achievementName, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.incrementAchievementProgress(userId, achievementName, opts, callback);
 ```
 
 ### Parameters
@@ -825,7 +780,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The user&#39;s id | 
  **achievementName** | **String**| The achievement&#39;s name | 
- **progress** | **Number**| The amount to add to the progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The amount to add to the progress value | [optional] 
 
 ### Return type
 
@@ -850,31 +805,28 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var userId = 56; // Number | The user's id
+let userId = 56; // Number | The user's id
 
-var achievementName = "achievementName_example"; // String | The achievement's name
+let achievementName = "achievementName_example"; // String | The achievement's name
 
-var opts = { 
-  'progress': 56 // Number | The new progress value
+let opts = { 
+  'progress': new KnetikCloud.IntWrapper() // IntWrapper | The new progress value
 };
+apiInstance.setAchievementProgress(userId, achievementName, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.setAchievementProgress(userId, achievementName, opts, callback);
 ```
 
 ### Parameters
@@ -883,7 +835,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The user&#39;s id | 
  **achievementName** | **String**| The achievement&#39;s name | 
- **progress** | **Number**| The new progress value | [optional] 
+ **progress** | [**IntWrapper**](IntWrapper.md)| The new progress value | [optional] 
 
 ### Return type
 
@@ -908,29 +860,26 @@ The existing generated rule, if any, will be deleted. A new rule will be created
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var name = "name_example"; // String | The name of the achievement
+let name = "name_example"; // String | The name of the achievement
 
-var opts = { 
-  'achievement': new KnetikPlatformApiDocumentationLatest.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
+let opts = { 
+  'achievement': new KnetikCloud.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
 };
+apiInstance.updateAchievement(name, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateAchievement(name, opts, callback);
 ```
 
 ### Parameters
@@ -961,29 +910,26 @@ Update an achievement template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.GamificationAchievementsApi();
+let apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'template': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The updated template
+let opts = { 
+  'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated template
 };
+apiInstance.updateAchievementTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateAchievementTemplate(id, opts, callback);
 ```
 
 ### Parameters

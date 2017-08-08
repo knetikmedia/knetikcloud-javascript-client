@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.MetricResource
+# KnetikCloud.MetricResource
 
 ## Properties
 Name | Type | Description | Notes

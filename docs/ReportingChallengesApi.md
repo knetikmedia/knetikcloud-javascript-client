@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ReportingChallengesApi
+# KnetikCloud.ReportingChallengesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -18,30 +18,27 @@ Lists all leaderboard entries with additional user details
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingChallengesApi();
+let apiInstance = new KnetikCloud.ReportingChallengesApi();
 
-var opts = { 
+let opts = { 
   'filterEvent': 789, // Number | A sepecific challenge event id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getChallengeEventLeaderboard(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getChallengeEventLeaderboard(opts, callback);
 ```
 
 ### Parameters
@@ -76,30 +73,27 @@ Lists all user submitted scores sorted by value, including those that do not ape
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingChallengesApi();
+let apiInstance = new KnetikCloud.ReportingChallengesApi();
 
-var opts = { 
+let opts = { 
   'filterEvent': 789, // Number | A sepecific challenge event id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getChallengeEventParticipants(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getChallengeEventParticipants(opts, callback);
 ```
 
 ### Parameters

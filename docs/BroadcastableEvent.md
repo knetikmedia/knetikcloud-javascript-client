@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BroadcastableEvent
+# KnetikCloud.BroadcastableEvent
 
 ## Properties
 Name | Type | Description | Notes

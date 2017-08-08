@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SampleCountriesResponse
+# KnetikCloud.SampleCountriesResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.TaxesApi
+# KnetikCloud.TaxesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -25,27 +25,24 @@ Create a country tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var opts = { 
-  'taxResource': new KnetikPlatformApiDocumentationLatest.CountryTaxResource() // CountryTaxResource | The tax object
+let opts = { 
+  'taxResource': new KnetikCloud.CountryTaxResource() // CountryTaxResource | The tax object
 };
+apiInstance.createCountryTax(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCountryTax(opts, callback);
 ```
 
 ### Parameters
@@ -75,29 +72,26 @@ Create a state tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var opts = { 
-  'taxResource': new KnetikPlatformApiDocumentationLatest.StateTaxResource() // StateTaxResource | The tax object
+let opts = { 
+  'taxResource': new KnetikCloud.StateTaxResource() // StateTaxResource | The tax object
 };
+apiInstance.createStateTax(countryCodeIso3, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createStateTax(countryCodeIso3, opts, callback);
 ```
 
 ### Parameters
@@ -128,26 +122,23 @@ Delete an existing tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
+apiInstance.deleteCountryTax(countryCodeIso3).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteCountryTax(countryCodeIso3, callback);
 ```
 
 ### Parameters
@@ -177,28 +168,25 @@ Delete an existing state tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var stateCode = "stateCode_example"; // String | The code of the state
+let stateCode = "stateCode_example"; // String | The code of the state
 
+apiInstance.deleteStateTax(countryCodeIso3, stateCode).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteStateTax(countryCodeIso3, stateCode, callback);
 ```
 
 ### Parameters
@@ -229,21 +217,18 @@ Get a single tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
+apiInstance.getCountryTax(countryCodeIso3).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCountryTax(countryCodeIso3, callback);
 ```
 
 ### Parameters
@@ -275,24 +260,21 @@ Get a list of taxes
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getCountryTaxes(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCountryTaxes(opts, callback);
 ```
 
 ### Parameters
@@ -324,23 +306,20 @@ Get a single state tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var stateCode = "stateCode_example"; // String | The code of the state
+let stateCode = "stateCode_example"; // String | The code of the state
 
+apiInstance.getStateTax(countryCodeIso3, stateCode).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStateTax(countryCodeIso3, stateCode, callback);
 ```
 
 ### Parameters
@@ -373,24 +352,21 @@ Get a list of taxes
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getStateTaxesForCountries(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStateTaxesForCountries(opts, callback);
 ```
 
 ### Parameters
@@ -424,26 +400,23 @@ Get a list of taxes
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getStateTaxesForCountry(countryCodeIso3, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStateTaxesForCountry(countryCodeIso3, opts, callback);
 ```
 
 ### Parameters
@@ -476,29 +449,26 @@ Create or update a tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var opts = { 
-  'taxResource': new KnetikPlatformApiDocumentationLatest.CountryTaxResource() // CountryTaxResource | The tax object
+let opts = { 
+  'taxResource': new KnetikCloud.CountryTaxResource() // CountryTaxResource | The tax object
 };
+apiInstance.updateCountryTax(countryCodeIso3, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateCountryTax(countryCodeIso3, opts, callback);
 ```
 
 ### Parameters
@@ -529,31 +499,28 @@ Create or update a state tax
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.TaxesApi();
+let apiInstance = new KnetikCloud.TaxesApi();
 
-var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-var stateCode = "stateCode_example"; // String | The code of the state
+let stateCode = "stateCode_example"; // String | The code of the state
 
-var opts = { 
-  'taxResource': new KnetikPlatformApiDocumentationLatest.StateTaxResource() // StateTaxResource | The tax object
+let opts = { 
+  'taxResource': new KnetikCloud.StateTaxResource() // StateTaxResource | The tax object
 };
+apiInstance.updateStateTax(countryCodeIso3, stateCode, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateStateTax(countryCodeIso3, stateCode, opts, callback);
 ```
 
 ### Parameters

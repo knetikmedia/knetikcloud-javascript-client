@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FacebookToken
+# KnetikCloud.FacebookToken
 
 ## Properties
 Name | Type | Description | Notes

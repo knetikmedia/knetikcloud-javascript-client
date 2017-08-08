@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CreatePayPalPaymentRequest
+# KnetikCloud.CreatePayPalPaymentRequest
 
 ## Properties
 Name | Type | Description | Notes

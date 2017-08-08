@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DispositionResource
+# KnetikCloud.DispositionResource
 
 ## Properties
 Name | Type | Description | Notes

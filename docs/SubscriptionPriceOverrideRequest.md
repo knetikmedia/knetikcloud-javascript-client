@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SubscriptionPriceOverrideRequest
+# KnetikCloud.SubscriptionPriceOverrideRequest
 
 ## Properties
 Name | Type | Description | Notes

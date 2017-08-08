@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UsersApi
+# KnetikCloud.UsersApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -30,28 +30,25 @@ Add a tag to a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var tag = "tag_example"; // String | tag
+let tag = new KnetikCloud.StringWrapper(); // StringWrapper | tag
 
+apiInstance.addUserTag(userId, tag).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.addUserTag(userId, tag, callback);
 ```
 
 ### Parameters
@@ -59,7 +56,7 @@ apiInstance.addUserTag(userId, tag, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **Number**| The id of the user | 
- **tag** | **String**| tag | 
+ **tag** | [**StringWrapper**](StringWrapper.md)| tag | 
 
 ### Return type
 
@@ -84,27 +81,24 @@ User Templates define a type of user and the properties they have
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var opts = { 
-  'userTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The user template resource object
+let opts = { 
+  'userTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The user template resource object
 };
+apiInstance.createUserTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createUserTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -136,29 +130,26 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
+apiInstance.deleteUserTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteUserTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -191,26 +182,23 @@ Additional private info is included as USERS_ADMIN
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = "id_example"; // String | The id of the user or 'me'
+let id = "id_example"; // String | The id of the user or 'me'
 
+apiInstance.getUser(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUser(id, callback);
 ```
 
 ### Parameters
@@ -240,26 +228,23 @@ List tags for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
+apiInstance.getUserTags(userId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserTags(userId, callback);
 ```
 
 ### Parameters
@@ -289,26 +274,23 @@ Get a single user template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getUserTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserTemplate(id, callback);
 ```
 
 ### Parameters
@@ -338,29 +320,26 @@ List and search user templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getUserTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUserTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -394,16 +373,16 @@ Additional private info is included as USERS_ADMIN
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var opts = { 
+let opts = { 
   'filterDisplayname': "filterDisplayname_example", // String | Filter for users whose display name starts with provided string.
   'filterEmail': "filterEmail_example", // String | Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
   'filterFirstname': "filterFirstname_example", // String | Filter for users whose first name starts with provided string. Requires USERS_ADMIN permission
@@ -418,15 +397,12 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getUsers(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getUsers(opts, callback);
 ```
 
 ### Parameters
@@ -470,24 +446,21 @@ Finish resetting a user&#39;s password using the secret provided from the passwo
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = 56; // Number | The id of the user
+let id = 56; // Number | The id of the user
 
-var opts = { 
-  'newPasswordRequest': new KnetikPlatformApiDocumentationLatest.NewPasswordRequest() // NewPasswordRequest | The new password request object
+let opts = { 
+  'newPasswordRequest': new KnetikCloud.NewPasswordRequest() // NewPasswordRequest | The new password request object
 };
+apiInstance.passwordReset(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.passwordReset(id, opts, callback);
 ```
 
 ### Parameters
@@ -520,22 +493,19 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var opts = { 
-  'userResource': new KnetikPlatformApiDocumentationLatest.UserResource() // UserResource | The user resource object
+let opts = { 
+  'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
 };
+apiInstance.registerUser(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.registerUser(opts, callback);
 ```
 
 ### Parameters
@@ -565,28 +535,25 @@ Remove a tag from a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var userId = 56; // Number | The id of the user
+let userId = 56; // Number | The id of the user
 
-var tag = "tag_example"; // String | The tag to remove
+let tag = "tag_example"; // String | The tag to remove
 
+apiInstance.removeUserTag(userId, tag).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.removeUserTag(userId, tag, callback);
 ```
 
 ### Parameters
@@ -619,29 +586,26 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = 56; // Number | The id of the user
+let id = 56; // Number | The id of the user
 
-var opts = { 
-  'password': "password_example" // String | The new plain text password
+let opts = { 
+  'password': new KnetikCloud.StringWrapper() // StringWrapper | The new plain text password
 };
+apiInstance.setPassword(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setPassword(id, opts, callback);
 ```
 
 ### Parameters
@@ -649,7 +613,7 @@ apiInstance.setPassword(id, opts, callback);
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Number**| The id of the user | 
- **password** | **String**| The new plain text password | [optional] 
+ **password** | [**StringWrapper**](StringWrapper.md)| The new plain text password | [optional] 
 
 ### Return type
 
@@ -674,21 +638,18 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = 56; // Number | The id of the user
+let id = 56; // Number | The id of the user
 
+apiInstance.startPasswordReset(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.startPasswordReset(id, callback);
 ```
 
 ### Parameters
@@ -720,22 +681,19 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var opts = { 
-  'passwordReset': new KnetikPlatformApiDocumentationLatest.PasswordResetRequest() // PasswordResetRequest | An object containing one of three methods to look up a user
+let opts = { 
+  'passwordReset': new KnetikCloud.PasswordResetRequest() // PasswordResetRequest | An object containing one of three methods to look up a user
 };
+apiInstance.submitPasswordReset(opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.submitPasswordReset(opts, callback);
 ```
 
 ### Parameters
@@ -767,29 +725,26 @@ Password will not be edited on this endpoint, use password specific endpoints.
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = "id_example"; // String | The id of the user or 'me'
+let id = "id_example"; // String | The id of the user or 'me'
 
-var opts = { 
-  'userResource': new KnetikPlatformApiDocumentationLatest.UserResource() // UserResource | The user resource object
+let opts = { 
+  'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
 };
+apiInstance.updateUser(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateUser(id, opts, callback);
 ```
 
 ### Parameters
@@ -820,29 +775,26 @@ Update a user template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.UsersApi();
+let apiInstance = new KnetikCloud.UsersApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'userTemplateResource': new KnetikPlatformApiDocumentationLatest.TemplateResource() // TemplateResource | The user template resource object
+let opts = { 
+  'userTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The user template resource object
 };
+apiInstance.updateUserTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateUserTemplate(id, opts, callback);
 ```
 
 ### Parameters

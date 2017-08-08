@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentMethodResource
+# KnetikCloud.PaymentMethodResource
 
 ## Properties
 Name | Type | Description | Notes

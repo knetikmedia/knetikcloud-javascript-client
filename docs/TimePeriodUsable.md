@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.TimePeriodUsable
+# KnetikCloud.TimePeriodUsable
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PollResponseResource
+# KnetikCloud.PollResponseResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PasswordResetRequest
+# KnetikCloud.PasswordResetRequest
 
 ## Properties
 Name | Type | Description | Notes

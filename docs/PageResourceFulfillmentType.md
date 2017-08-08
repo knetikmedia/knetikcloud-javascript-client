@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceFulfillmentType
+# KnetikCloud.PageResourceFulfillmentType
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GoogleToken
+# KnetikCloud.GoogleToken
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BundledSku
+# KnetikCloud.BundledSku
 
 ## Properties
 Name | Type | Description | Notes

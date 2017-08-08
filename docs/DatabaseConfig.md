@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DatabaseConfig
+# KnetikCloud.DatabaseConfig
 
 ## Properties
 Name | Type | Description | Notes

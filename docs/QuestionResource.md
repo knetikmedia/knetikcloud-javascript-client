@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.QuestionResource
+# KnetikCloud.QuestionResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ArtistResource
+# KnetikCloud.ArtistResource
 
 ## Properties
 Name | Type | Description | Notes

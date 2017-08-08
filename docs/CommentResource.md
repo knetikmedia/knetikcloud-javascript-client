@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CommentResource
+# KnetikCloud.CommentResource
 
 ## Properties
 Name | Type | Description | Notes

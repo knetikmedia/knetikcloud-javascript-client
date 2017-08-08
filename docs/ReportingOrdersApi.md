@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ReportingOrdersApi
+# KnetikCloud.ReportingOrdersApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -15,18 +15,18 @@ Retrieve invoice counts aggregated by time ranges
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.ReportingOrdersApi();
+let apiInstance = new KnetikCloud.ReportingOrdersApi();
 
-var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-var opts = { 
+let opts = { 
   'granularity': "day", // String | The time duration to aggregate by
   'filterPaymentStatus': "filterPaymentStatus_example", // String | A payment status to filter results by, can be a comma separated list
   'filterFulfillmentStatus': "filterFulfillmentStatus_example", // String | An invoice fulfillment status to filter results by, can be a comma separated list
@@ -35,15 +35,12 @@ var opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned
 };
+apiInstance.getInvoiceReports(currencyCode, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getInvoiceReports(currencyCode, opts, callback);
 ```
 
 ### Parameters

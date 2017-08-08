@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ActionResource
+# KnetikCloud.ActionResource
 
 ## Properties
 Name | Type | Description | Notes

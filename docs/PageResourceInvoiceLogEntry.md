@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceInvoiceLogEntry
+# KnetikCloud.PageResourceInvoiceLogEntry
 
 ## Properties
 Name | Type | Description | Notes

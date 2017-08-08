@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CreateBillingAgreementRequest
+# KnetikCloud.CreateBillingAgreementRequest
 
 ## Properties
 Name | Type | Description | Notes

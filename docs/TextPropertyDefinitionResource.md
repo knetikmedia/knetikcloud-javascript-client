@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.TextPropertyDefinitionResource
+# KnetikCloud.TextPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

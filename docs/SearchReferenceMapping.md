@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.SearchReferenceMapping
+# KnetikCloud.SearchReferenceMapping
 
 ## Properties
 Name | Type | Description | Notes

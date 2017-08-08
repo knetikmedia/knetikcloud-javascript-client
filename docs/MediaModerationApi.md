@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.MediaModerationApi
+# KnetikCloud.MediaModerationApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -17,26 +17,23 @@ Get a flag report
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaModerationApi();
+let apiInstance = new KnetikCloud.MediaModerationApi();
 
-var id = 789; // Number | The flag report id
+let id = 789; // Number | The flag report id
 
+apiInstance.getModerationReport(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getModerationReport(id, callback);
 ```
 
 ### Parameters
@@ -68,30 +65,27 @@ Context can be either a free-form string or a pre-defined context name
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaModerationApi();
+let apiInstance = new KnetikCloud.MediaModerationApi();
 
-var opts = { 
+let opts = { 
   'excludeResolved': true, // Boolean | Ignore resolved context
   'filterContext': "filterContext_example", // String | Filter by moderation context
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getModerationReports(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getModerationReports(opts, callback);
 ```
 
 ### Parameters
@@ -126,29 +120,26 @@ Lets you set the resolution of a report. Resolution types is {banned,ignore} in 
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.MediaModerationApi();
+let apiInstance = new KnetikCloud.MediaModerationApi();
 
-var id = 789; // Number | The flag report id
+let id = 789; // Number | The flag report id
 
-var opts = { 
-  'flagReportResource': new KnetikPlatformApiDocumentationLatest.FlagReportResource() // FlagReportResource | The new flag report
+let opts = { 
+  'flagReportResource': new KnetikCloud.FlagReportResource() // FlagReportResource | The new flag report
 };
+apiInstance.updateModerationReport(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateModerationReport(id, opts, callback);
 ```
 
 ### Parameters

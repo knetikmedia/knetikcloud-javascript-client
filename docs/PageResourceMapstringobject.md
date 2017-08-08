@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceMapstringobject
+# KnetikCloud.PageResourceMapstringobject
 
 ## Properties
 Name | Type | Description | Notes

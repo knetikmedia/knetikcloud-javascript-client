@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.DoublePropertyDefinitionResource
+# KnetikCloud.DoublePropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

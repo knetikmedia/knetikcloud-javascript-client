@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi
+# KnetikCloud.BRERuleEngineGlobalsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -21,27 +21,24 @@ Once created you can then use in a custom rule. Note that global definitions can
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-var opts = { 
-  'breGlobalResource': new KnetikPlatformApiDocumentationLatest.BreGlobalResource() // BreGlobalResource | The BRE global resource object
+let opts = { 
+  'breGlobalResource': new KnetikCloud.BreGlobalResource() // BreGlobalResource | The BRE global resource object
 };
+apiInstance.createBREGlobal(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createBREGlobal(opts, callback);
 ```
 
 ### Parameters
@@ -73,26 +70,23 @@ May fail if there are existing rules against it. Cannot delete core globals
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-var id = "id_example"; // String | The id of the global definition
+let id = "id_example"; // String | The id of the global definition
 
+apiInstance.deleteBREGlobal(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteBREGlobal(id, callback);
 ```
 
 ### Parameters
@@ -122,26 +116,23 @@ Get a single global definition
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-var id = "id_example"; // String | The id of the global definition
+let id = "id_example"; // String | The id of the global definition
 
+apiInstance.getBREGlobal(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBREGlobal(id, callback);
 ```
 
 ### Parameters
@@ -171,29 +162,26 @@ List global definitions
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-var opts = { 
+let opts = { 
   'filterSystem': true, // Boolean | Filter for globals that are system globals when true, or not when false. Leave off for both mixed
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
+apiInstance.getBREGlobals(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getBREGlobals(opts, callback);
 ```
 
 ### Parameters
@@ -227,29 +215,26 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.BRERuleEngineGlobalsApi();
+let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-var id = "id_example"; // String | The id of the global definition
+let id = "id_example"; // String | The id of the global definition
 
-var opts = { 
-  'breGlobalResource': new KnetikPlatformApiDocumentationLatest.BreGlobalResource() // BreGlobalResource | The BRE global resource object
+let opts = { 
+  'breGlobalResource': new KnetikCloud.BreGlobalResource() // BreGlobalResource | The BRE global resource object
 };
+apiInstance.updateBREGlobal(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateBREGlobal(id, opts, callback);
 ```
 
 ### Parameters

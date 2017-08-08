@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.WalletAlterRequest
+# KnetikCloud.WalletAlterRequest
 
 ## Properties
 Name | Type | Description | Notes

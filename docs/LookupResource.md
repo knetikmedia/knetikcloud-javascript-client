@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.LookupResource
+# KnetikCloud.LookupResource
 
 ## Properties
 Name | Type | Description | Notes

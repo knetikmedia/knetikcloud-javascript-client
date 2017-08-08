@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourceTemplateResource
+# KnetikCloud.PageResourceTemplateResource
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PreReqEntitlement
+# KnetikCloud.PreReqEntitlement
 
 ## Properties
 Name | Type | Description | Notes

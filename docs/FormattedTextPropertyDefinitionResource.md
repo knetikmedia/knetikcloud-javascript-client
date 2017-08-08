@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FormattedTextPropertyDefinitionResource
+# KnetikCloud.FormattedTextPropertyDefinitionResource
 
 ## Properties
 Name | Type | Description | Notes

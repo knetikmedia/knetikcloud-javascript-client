@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.AddressResource
+# KnetikCloud.AddressResource
 
 ## Properties
 Name | Type | Description | Notes

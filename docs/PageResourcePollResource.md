@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PageResourcePollResource
+# KnetikCloud.PageResourcePollResource
 
 ## Properties
 Name | Type | Description | Notes

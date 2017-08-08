@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.GlobalResource
+# KnetikCloud.GlobalResource
 
 ## Properties
 Name | Type | Description | Notes

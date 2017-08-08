@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PaymentsApi
+# KnetikCloud.PaymentsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -21,29 +21,26 @@ Create a new payment method for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var userId = 56; // Number | ID of the user for whom the payment method is being created
+let userId = 56; // Number | ID of the user for whom the payment method is being created
 
-var opts = { 
-  'paymentMethod': new KnetikPlatformApiDocumentationLatest.PaymentMethodResource() // PaymentMethodResource | Payment method being created
+let opts = { 
+  'paymentMethod': new KnetikCloud.PaymentMethodResource() // PaymentMethodResource | Payment method being created
 };
+apiInstance.createPaymentMethod(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createPaymentMethod(userId, opts, callback);
 ```
 
 ### Parameters
@@ -74,28 +71,25 @@ Delete an existing payment method for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var userId = 56; // Number | ID of the user for whom the payment method is being updated
+let userId = 56; // Number | ID of the user for whom the payment method is being updated
 
-var id = 56; // Number | ID of the payment method being deleted
+let id = 56; // Number | ID of the payment method being deleted
 
+apiInstance.deletePaymentMethod(userId, id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deletePaymentMethod(userId, id, callback);
 ```
 
 ### Parameters
@@ -126,28 +120,25 @@ Get a single payment method for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var userId = 56; // Number | ID of the user for whom the payment method is being retrieved
+let userId = 56; // Number | ID of the user for whom the payment method is being retrieved
 
-var id = 56; // Number | ID of the payment method being retrieved
+let id = 56; // Number | ID of the payment method being retrieved
 
+apiInstance.getPaymentMethod(userId, id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getPaymentMethod(userId, id, callback);
 ```
 
 ### Parameters
@@ -178,18 +169,18 @@ Get all payment methods for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var userId = 56; // Number | ID of the user for whom the payment methods are being retrieved
+let userId = 56; // Number | ID of the user for whom the payment methods are being retrieved
 
-var opts = { 
+let opts = { 
   'filterName': "filterName_example", // String | Filter for payment methods whose name starts with a given string
   'filterPaymentType': "filterPaymentType_example", // String | Filter for payment methods with a specific payment type
   'filterPaymentMethodTypeId': 56, // Number | Filter for payment methods with a specific payment method type by id
@@ -198,15 +189,12 @@ var opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getPaymentMethods(userId, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getPaymentMethods(userId, opts, callback);
 ```
 
 ### Parameters
@@ -243,27 +231,24 @@ Authorize payment of an invoice for later capture
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var opts = { 
-  'request': new KnetikPlatformApiDocumentationLatest.PaymentAuthorizationResource() // PaymentAuthorizationResource | Payment authorization request
+let opts = { 
+  'request': new KnetikCloud.PaymentAuthorizationResource() // PaymentAuthorizationResource | Payment authorization request
 };
+apiInstance.paymentAuthorization(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.paymentAuthorization(opts, callback);
 ```
 
 ### Parameters
@@ -293,26 +278,23 @@ Capture an existing invoice payment authorization
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var id = 56; // Number | ID of the payment authorization to capture
+let id = 56; // Number | ID of the payment authorization to capture
 
+apiInstance.paymentCapture(id).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.paymentCapture(id, callback);
 ```
 
 ### Parameters
@@ -342,31 +324,28 @@ Update an existing payment method for a user
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.PaymentsApi();
+let apiInstance = new KnetikCloud.PaymentsApi();
 
-var userId = 56; // Number | ID of the user for whom the payment method is being updated
+let userId = 56; // Number | ID of the user for whom the payment method is being updated
 
-var id = 56; // Number | ID of the payment method being updated
+let id = 56; // Number | ID of the payment method being updated
 
-var opts = { 
-  'paymentMethod': new KnetikPlatformApiDocumentationLatest.PaymentMethodResource() // PaymentMethodResource | The updated payment method data
+let opts = { 
+  'paymentMethod': new KnetikCloud.PaymentMethodResource() // PaymentMethodResource | The updated payment method data
 };
+apiInstance.updatePaymentMethod(userId, id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updatePaymentMethod(userId, id, opts, callback);
 ```
 
 ### Parameters

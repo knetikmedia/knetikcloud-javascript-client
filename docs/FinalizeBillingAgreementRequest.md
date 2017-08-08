@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FinalizeBillingAgreementRequest
+# KnetikCloud.FinalizeBillingAgreementRequest
 
 ## Properties
 Name | Type | Description | Notes

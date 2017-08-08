@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.UserInventoryAddRequest
+# KnetikCloud.UserInventoryAddRequest
 
 ## Properties
 Name | Type | Description | Notes

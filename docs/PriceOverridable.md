@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.PriceOverridable
+# KnetikCloud.PriceOverridable
 
 ## Properties
 Name | Type | Description | Notes

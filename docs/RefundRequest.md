@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.RefundRequest
+# KnetikCloud.RefundRequest
 
 ## Properties
 Name | Type | Description | Notes

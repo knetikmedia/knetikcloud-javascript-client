@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi
+# KnetikCloud.StoreSubscriptionsApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -25,27 +25,24 @@ Creates a subscription item and associated plans
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var opts = { 
-  'subscriptionResource': new KnetikPlatformApiDocumentationLatest.SubscriptionResource() // SubscriptionResource | The subscription to be created
+let opts = { 
+  'subscriptionResource': new KnetikCloud.SubscriptionResource() // SubscriptionResource | The subscription to be created
 };
+apiInstance.createSubscription(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createSubscription(opts, callback);
 ```
 
 ### Parameters
@@ -77,27 +74,24 @@ Subscription Templates define a type of subscription and the properties they hav
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var opts = { 
-  'subscriptionTemplateResource': new KnetikPlatformApiDocumentationLatest.SubscriptionTemplateResource() // SubscriptionTemplateResource | The new subscription template
+let opts = { 
+  'subscriptionTemplateResource': new KnetikCloud.SubscriptionTemplateResource() // SubscriptionTemplateResource | The new subscription template
 };
+apiInstance.createSubscriptionTemplate(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createSubscriptionTemplate(opts, callback);
 ```
 
 ### Parameters
@@ -129,28 +123,25 @@ Must not be locked or a migration target
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = 56; // Number | The id of the subscription
+let id = 56; // Number | The id of the subscription
 
-var planId = "planId_example"; // String | The id of the plan
+let planId = "planId_example"; // String | The id of the plan
 
+apiInstance.deleteSubscription(id, planId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteSubscription(id, planId, callback);
 ```
 
 ### Parameters
@@ -181,29 +172,26 @@ Delete a subscription template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
+let opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
+apiInstance.deleteSubscriptionTemplate(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteSubscriptionTemplate(id, opts, callback);
 ```
 
 ### Parameters
@@ -234,21 +222,18 @@ Retrieve a single subscription item and associated plans
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = 56; // Number | The id of the subscription
+let id = 56; // Number | The id of the subscription
 
+apiInstance.getSubscription(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSubscription(id, callback);
 ```
 
 ### Parameters
@@ -280,26 +265,23 @@ Subscription Templates define a type of subscription and the properties they hav
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
+apiInstance.getSubscriptionTemplate(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSubscriptionTemplate(id, callback);
 ```
 
 ### Parameters
@@ -329,29 +311,26 @@ List and search subscription templates
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getSubscriptionTemplates(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSubscriptionTemplates(opts, callback);
 ```
 
 ### Parameters
@@ -383,24 +362,21 @@ List available subscription items and associated plans
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var opts = { 
+let opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getSubscriptions(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getSubscriptions(opts, callback);
 ```
 
 ### Parameters
@@ -432,23 +408,20 @@ Processes subscriptions and charge dues
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+apiInstance.processSubscriptions().then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.processSubscriptions(callback);
 ```
 
 ### Parameters
@@ -477,29 +450,26 @@ Will not remove plans left out
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = 56; // Number | The id of the subscription
+let id = 56; // Number | The id of the subscription
 
-var opts = { 
-  'subscriptionResource': new KnetikPlatformApiDocumentationLatest.SubscriptionResource() // SubscriptionResource | The subscription resource object
+let opts = { 
+  'subscriptionResource': new KnetikCloud.SubscriptionResource() // SubscriptionResource | The subscription resource object
 };
+apiInstance.updateSubscription(id, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateSubscription(id, opts, callback);
 ```
 
 ### Parameters
@@ -530,29 +500,26 @@ Update a subscription template
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.StoreSubscriptionsApi();
+let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-var id = "id_example"; // String | The id of the template
+let id = "id_example"; // String | The id of the template
 
-var opts = { 
-  'subscriptionTemplateResource': new KnetikPlatformApiDocumentationLatest.SubscriptionTemplateResource() // SubscriptionTemplateResource | The subscription template resource object
+let opts = { 
+  'subscriptionTemplateResource': new KnetikCloud.SubscriptionTemplateResource() // SubscriptionTemplateResource | The subscription template resource object
 };
+apiInstance.updateSubscriptionTemplate(id, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.updateSubscriptionTemplate(id, opts, callback);
 ```
 
 ### Parameters

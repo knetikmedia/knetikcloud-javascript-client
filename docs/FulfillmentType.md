@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.FulfillmentType
+# KnetikCloud.FulfillmentType
 
 ## Properties
 Name | Type | Description | Notes

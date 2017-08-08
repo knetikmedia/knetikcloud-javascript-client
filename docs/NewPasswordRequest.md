@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.NewPasswordRequest
+# KnetikCloud.NewPasswordRequest
 
 ## Properties
 Name | Type | Description | Notes

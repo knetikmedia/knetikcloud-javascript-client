@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.ShippingItem
+# KnetikCloud.ShippingItem
 
 ## Properties
 Name | Type | Description | Notes

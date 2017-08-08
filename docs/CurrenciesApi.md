@@ -1,4 +1,4 @@
-# KnetikPlatformApiDocumentationLatest.CurrenciesApi
+# KnetikCloud.CurrenciesApi
 
 All URIs are relative to *https://sandbox.knetikcloud.com*
 
@@ -19,27 +19,24 @@ Create a currency
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CurrenciesApi();
+let apiInstance = new KnetikCloud.CurrenciesApi();
 
-var opts = { 
-  'currency': new KnetikPlatformApiDocumentationLatest.CurrencyResource() // CurrencyResource | The currency object
+let opts = { 
+  'currency': new KnetikCloud.CurrencyResource() // CurrencyResource | The currency object
 };
+apiInstance.createCurrency(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createCurrency(opts, callback);
 ```
 
 ### Parameters
@@ -69,26 +66,23 @@ Delete a currency
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CurrenciesApi();
+let apiInstance = new KnetikCloud.CurrenciesApi();
 
-var code = "code_example"; // String | The currency code
+let code = "code_example"; // String | The currency code
 
+apiInstance.deleteCurrency(code).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteCurrency(code, callback);
 ```
 
 ### Parameters
@@ -118,26 +112,23 @@ List and search currencies
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CurrenciesApi();
+let apiInstance = new KnetikCloud.CurrenciesApi();
 
-var opts = { 
+let opts = { 
   'filterEnabledCurrencies': true, // Boolean | Filter for alternate currencies setup explicitely in system config
   'filterType': "filterType_example", // String | Filter currencies by type.  Allowable values: ('virtual', 'real')
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
+apiInstance.getCurrencies(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCurrencies(opts, callback);
 ```
 
 ### Parameters
@@ -171,21 +162,18 @@ Get a single currency
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
+import KnetikCloud from 'knetikcloud-sdk';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CurrenciesApi();
+let apiInstance = new KnetikCloud.CurrenciesApi();
 
-var code = "code_example"; // String | The currency code
+let code = "code_example"; // String | The currency code
 
+apiInstance.getCurrency(code).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getCurrency(code, callback);
 ```
 
 ### Parameters
@@ -215,29 +203,26 @@ Update a currency
 
 ### Example
 ```javascript
-var KnetikPlatformApiDocumentationLatest = require('knetik_platform_api_documentation_latest');
-var defaultClient = KnetikPlatformApiDocumentationLatest.ApiClient.instance;
+import KnetikCloud from 'knetikcloud-sdk';
+let defaultClient = KnetikCloud.ApiClient.instance;
 
 // Configure OAuth2 access token for authorization: OAuth2
-var OAuth2 = defaultClient.authentications['OAuth2'];
+let OAuth2 = defaultClient.authentications['OAuth2'];
 OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
-var apiInstance = new KnetikPlatformApiDocumentationLatest.CurrenciesApi();
+let apiInstance = new KnetikCloud.CurrenciesApi();
 
-var code = "code_example"; // String | The currency code
+let code = "code_example"; // String | The currency code
 
-var opts = { 
-  'currency': new KnetikPlatformApiDocumentationLatest.CurrencyResource() // CurrencyResource | The currency object
+let opts = { 
+  'currency': new KnetikCloud.CurrencyResource() // CurrencyResource | The currency object
 };
+apiInstance.updateCurrency(code, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.updateCurrency(code, opts, callback);
 ```
 
 ### Parameters
