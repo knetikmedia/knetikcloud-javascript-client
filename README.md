@@ -101,8 +101,10 @@ var clientId = "knetik"; // {String} The id of the client
 
 var opts = { 
   'clientSecret': "clientSecret_example", // {String} The secret key of the client.  Used only with a grant_type of client_credentials
-  'username': "username_example", // {String} The username of the client.  Used only with a grant_type of password
-  'password': "password_example" // {String} The password of the client.  Used only with a grant_type of password
+  'username': "username_example", // {String} The username of the client. Used only with a grant_type of password
+  'password': "password_example", // {String} The password of the client. Used only with a grant_type of password
+  'token': "token_example", // {String} The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+  'refreshToken': "refreshToken_example" // {String} The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
 };
 api.getOAuthToken(grantType, clientId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);

@@ -41,8 +41,10 @@ export default class AccessTokenApi {
      * @param {String} clientId The id of the client
      * @param {Object} opts Optional parameters
      * @param {String} opts.clientSecret The secret key of the client.  Used only with a grant_type of client_credentials
-     * @param {String} opts.username The username of the client.  Used only with a grant_type of password
-     * @param {String} opts.password The password of the client.  Used only with a grant_type of password
+     * @param {String} opts.username The username of the client. Used only with a grant_type of password
+     * @param {String} opts.password The password of the client. Used only with a grant_type of password
+     * @param {String} opts.token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+     * @param {String} opts.refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OAuth2Resource} and HTTP response
      */
     getOAuthTokenWithHttpInfo(grantType, clientId, opts) {
@@ -71,7 +73,9 @@ export default class AccessTokenApi {
         'client_id': clientId,
         'client_secret': opts['clientSecret'],
         'username': opts['username'],
-        'password': opts['password']
+        'password': opts['password'],
+        'token': opts['token'],
+        'refresh_token': opts['refreshToken']
       };
 
       let authNames = [];
@@ -92,8 +96,10 @@ export default class AccessTokenApi {
      * @param {String} clientId The id of the client
      * @param {Object} opts Optional parameters
      * @param {String} opts.clientSecret The secret key of the client.  Used only with a grant_type of client_credentials
-     * @param {String} opts.username The username of the client.  Used only with a grant_type of password
-     * @param {String} opts.password The password of the client.  Used only with a grant_type of password
+     * @param {String} opts.username The username of the client. Used only with a grant_type of password
+     * @param {String} opts.password The password of the client. Used only with a grant_type of password
+     * @param {String} opts.token The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
+     * @param {String} opts.refreshToken The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OAuth2Resource}
      */
     getOAuthToken(grantType, clientId, opts) {
