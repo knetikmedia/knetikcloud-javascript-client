@@ -32,11 +32,6 @@ Adds a new member to the group
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -65,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -81,11 +76,6 @@ Adds multiple members to the group
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -114,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -130,11 +120,6 @@ Create a group
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -161,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -179,11 +164,6 @@ Group Templates define a type of group and the properties they have
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -210,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -226,11 +206,6 @@ Removes a group from the system IF no resources are attached to it
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -256,7 +231,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -274,11 +249,6 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -308,7 +278,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -458,11 +428,6 @@ Get a single group template
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -488,7 +453,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -504,11 +469,6 @@ List and search group templates
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -539,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -596,11 +556,6 @@ Removes a user from a group
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -629,7 +584,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -645,11 +600,6 @@ Update a group
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -679,7 +629,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -695,11 +645,6 @@ Change a user&#39;s status
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -731,7 +676,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -747,11 +692,6 @@ Update a group template
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.UsersGroupsApi();
 
@@ -781,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

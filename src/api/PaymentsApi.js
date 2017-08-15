@@ -64,7 +64,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PaymentMethodResource;
@@ -122,7 +122,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -179,7 +179,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PaymentMethodResource;
@@ -245,7 +245,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [PaymentMethodResource];
@@ -298,7 +298,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PaymentAuthorizationResource;
@@ -348,7 +348,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -407,7 +407,7 @@ export default class PaymentsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PaymentMethodResource;

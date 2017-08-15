@@ -65,7 +65,7 @@ export default class UtilSecurityApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceLocationLogResource;
@@ -112,7 +112,7 @@ export default class UtilSecurityApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TokenDetailsResource;

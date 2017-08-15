@@ -61,7 +61,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -111,7 +111,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreEventLog;
@@ -167,7 +167,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceBreEventLog;
@@ -222,7 +222,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ForwardLog;
@@ -278,7 +278,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceForwardLog;
@@ -333,7 +333,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = UserActionLog;
@@ -387,7 +387,7 @@ export default class LogsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceUserActionLog;

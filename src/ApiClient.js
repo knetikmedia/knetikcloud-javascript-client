@@ -41,7 +41,8 @@ export default class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'OAuth2': {type: 'oauth2'}
+            'oauth2_client_credentials_grant': {type: 'oauth2'},
+            'oauth2_password_grant': {type: 'oauth2'}
         }
 
         /**

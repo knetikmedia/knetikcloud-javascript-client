@@ -72,7 +72,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = SimpleWallet;
@@ -145,7 +145,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceWalletTransactionResource;
@@ -203,7 +203,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [SimpleWallet];
@@ -245,7 +245,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceWalletTotalResponse;
@@ -310,7 +310,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceWalletTransactionResource;
@@ -371,7 +371,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceSimpleWallet;
@@ -433,7 +433,7 @@ export default class PaymentsWalletsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = WalletTransactionResource;

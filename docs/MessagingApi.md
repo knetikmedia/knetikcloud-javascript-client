@@ -19,11 +19,6 @@ Send a raw email to one or more users
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.MessagingApi();
 
@@ -50,7 +45,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -68,11 +63,6 @@ Sends a raw SMS text message to one or more users. User&#39;s without registered
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.MessagingApi();
 
@@ -99,7 +89,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -115,11 +105,6 @@ Send a templated email to one or more users
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.MessagingApi();
 
@@ -146,7 +131,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -164,11 +149,6 @@ Sends a templated SMS text message to one or more users. User&#39;s without regi
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.MessagingApi();
 
@@ -195,7 +175,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -58,7 +58,7 @@ export default class BRERuleEngineGlobalsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreGlobalResource;
@@ -110,7 +110,7 @@ export default class BRERuleEngineGlobalsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -160,7 +160,7 @@ export default class BRERuleEngineGlobalsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreGlobalResource;
@@ -210,7 +210,7 @@ export default class BRERuleEngineGlobalsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceBreGlobalResource;
@@ -266,7 +266,7 @@ export default class BRERuleEngineGlobalsApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreGlobalResource;

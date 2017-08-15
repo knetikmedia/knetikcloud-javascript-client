@@ -27,11 +27,6 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -58,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -76,11 +71,6 @@ Article Templates define a type of article and the properties they have
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -107,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -123,11 +113,6 @@ Delete an existing article
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -153,7 +138,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -171,11 +156,6 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -205,7 +185,7 @@ null (empty response body)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -262,11 +242,6 @@ Get a single article template
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -292,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -308,11 +283,6 @@ List and search article templates
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -343,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -365,6 +335,7 @@ import KnetikCloud from 'knetikcloud-sdk';
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
 let opts = { 
+  'filterActiveOnly': true, // Boolean | Filter for articles that are active (true) or inactive (false)
   'filterCategory': "filterCategory_example", // String | Filter for articles from a specific category by id
   'filterTagset': "filterTagset_example", // String | Filter for articles with at least one of a specified set of tags (separated by comma)
   'filterTagIntersection': "filterTagIntersection_example", // String | Filter for articles with all of a specified set of tags (separated by comma)
@@ -386,6 +357,7 @@ apiInstance.getArticles(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterActiveOnly** | **Boolean**| Filter for articles that are active (true) or inactive (false) | [optional] 
  **filterCategory** | **String**| Filter for articles from a specific category by id | [optional] 
  **filterTagset** | **String**| Filter for articles with at least one of a specified set of tags (separated by comma) | [optional] 
  **filterTagIntersection** | **String**| Filter for articles with all of a specified set of tags (separated by comma) | [optional] 
@@ -417,11 +389,6 @@ Update an existing article
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -451,7 +418,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -467,11 +434,6 @@ Update an article template
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.ContentArticlesApi();
 
@@ -501,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

@@ -18,11 +18,6 @@ Stores customer information and creates a payment method that can be used to pay
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.PaymentsFattMerchantApi();
 
@@ -49,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

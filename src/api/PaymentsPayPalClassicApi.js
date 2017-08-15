@@ -60,7 +60,7 @@ export default class PaymentsPayPalClassicApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = 'String';
@@ -108,7 +108,7 @@ export default class PaymentsPayPalClassicApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = 'String';
@@ -156,7 +156,7 @@ export default class PaymentsPayPalClassicApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = 'Number';
@@ -204,7 +204,7 @@ export default class PaymentsPayPalClassicApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;

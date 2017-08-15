@@ -13,6 +13,7 @@
 
 
 import ApiClient from '../ApiClient';
+import Behavior from './Behavior';
 import Property from './Property';
 import SubscriptionPlanResource from './SubscriptionPlanResource';
 
@@ -65,6 +66,9 @@ export default class SubscriptionResource {
             }
             if (data.hasOwnProperty('availability')) {
                 obj['availability'] = ApiClient.convertToType(data['availability'], 'String');
+            }
+            if (data.hasOwnProperty('behaviors')) {
+                obj['behaviors'] = ApiClient.convertToType(data['behaviors'], [Behavior]);
             }
             if (data.hasOwnProperty('category')) {
                 obj['category'] = ApiClient.convertToType(data['category'], 'String');
@@ -134,6 +138,11 @@ export default class SubscriptionResource {
     * @member {module:model/SubscriptionResource.AvailabilityEnum} availability
     */
     availability = undefined;
+    /**
+    * The behaviors linked to the item, describing various options and interactions. May not be included in item lists
+    * @member {Array.<module:model/Behavior>} behaviors
+    */
+    behaviors = undefined;
     /**
     * A category for filtering items
     * @member {String} category

@@ -37,8 +37,63 @@ export default class AmazonWebServicesS3Api {
 
 
     /**
-     * Get a signed S3 URL
-     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+     * Get a temporary signed S3 URL for download
+     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.bucket S3 bucket name
+     * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
+     * @param {Number} opts.expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     */
+    getDownloadURLWithHttpInfo(opts) {
+      opts = opts || {};
+      let postBody = null;
+
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'bucket': opts['bucket'],
+        'path': opts['path'],
+        'expiration': opts['expiration']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/amazon/s3/downloadurl', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a temporary signed S3 URL for download
+     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.bucket S3 bucket name
+     * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
+     * @param {Number} opts.expiration The number of seconds this URL will be valid. Default to 60 (default to 60)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     */
+    getDownloadURL(opts) {
+      return this.getDownloadURLWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get a signed S3 URL for upload
+     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
      * @param {Object} opts Optional parameters
      * @param {String} opts.filename The file name
      * @param {String} opts.contentType The content type
@@ -60,7 +115,7 @@ export default class AmazonWebServicesS3Api {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = AmazonS3Activity;
@@ -73,8 +128,8 @@ export default class AmazonWebServicesS3Api {
     }
 
     /**
-     * Get a signed S3 URL
-     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;)
+     * Get a signed S3 URL for upload
+     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
      * @param {Object} opts Optional parameters
      * @param {String} opts.filename The file name
      * @param {String} opts.contentType The content type

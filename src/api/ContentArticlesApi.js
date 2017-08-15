@@ -60,7 +60,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ArticleResource;
@@ -108,7 +108,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;
@@ -159,7 +159,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -213,7 +213,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -314,7 +314,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;
@@ -364,7 +364,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceTemplateResource;
@@ -396,6 +396,7 @@ export default class ContentArticlesApi {
      * List and search articles
      * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
      * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
      * @param {String} opts.filterTagset Filter for articles with at least one of a specified set of tags (separated by comma)
      * @param {String} opts.filterTagIntersection Filter for articles with all of a specified set of tags (separated by comma)
@@ -414,6 +415,7 @@ export default class ContentArticlesApi {
       let pathParams = {
       };
       let queryParams = {
+        'filter_active_only': opts['filterActiveOnly'],
         'filter_category': opts['filterCategory'],
         'filter_tagset': opts['filterTagset'],
         'filter_tag_intersection': opts['filterTagIntersection'],
@@ -444,6 +446,7 @@ export default class ContentArticlesApi {
      * List and search articles
      * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
      * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
      * @param {String} opts.filterTagset Filter for articles with at least one of a specified set of tags (separated by comma)
      * @param {String} opts.filterTagIntersection Filter for articles with all of a specified set of tags (separated by comma)
@@ -489,7 +492,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ArticleResource;
@@ -543,7 +546,7 @@ export default class ContentArticlesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;

@@ -60,7 +60,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;
@@ -116,7 +116,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = null;
@@ -167,7 +167,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceBreCategoryResource;
@@ -218,7 +218,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreCategoryResource;
@@ -267,7 +267,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;
@@ -317,7 +317,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceTemplateResource;
@@ -372,7 +372,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = BreCategoryResource;
@@ -426,7 +426,7 @@ export default class BRERuleEngineCategoriesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = TemplateResource;

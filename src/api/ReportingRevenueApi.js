@@ -69,7 +69,7 @@ export default class ReportingRevenueApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RevenueReportResource;
@@ -129,7 +129,7 @@ export default class ReportingRevenueApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RevenueReportResource;
@@ -193,7 +193,7 @@ export default class ReportingRevenueApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceRevenueCountryReportResource;
@@ -259,7 +259,7 @@ export default class ReportingRevenueApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceRevenueProductReportResource;
@@ -321,7 +321,7 @@ export default class ReportingRevenueApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = RevenueReportResource;

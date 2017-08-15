@@ -18,11 +18,6 @@ Will return the url for a hosted payment endpoint to post to. See Optimal docume
 ### Example
 ```javascript
 import KnetikCloud from 'knetikcloud-sdk';
-let defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: OAuth2
-let OAuth2 = defaultClient.authentications['OAuth2'];
-OAuth2.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new KnetikCloud.PaymentsOptimalApi();
 
@@ -49,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

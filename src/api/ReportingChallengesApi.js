@@ -64,7 +64,7 @@ export default class ReportingChallengesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceChallengeEventParticipantResource;
@@ -122,7 +122,7 @@ export default class ReportingChallengesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceChallengeEventParticipantResource;

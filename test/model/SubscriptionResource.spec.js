@@ -66,6 +66,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property behaviors (base name: "behaviors")', function() {
+      // uncomment below and update the code to test the property behaviors
+      //var instane = new KnetikCloud.SubscriptionResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property category (base name: "category")', function() {
       // uncomment below and update the code to test the property category
       //var instane = new KnetikCloud.SubscriptionResource();

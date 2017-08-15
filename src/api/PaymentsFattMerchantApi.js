@@ -58,7 +58,7 @@ export default class PaymentsFattMerchantApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PaymentMethodResource;

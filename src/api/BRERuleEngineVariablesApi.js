@@ -55,7 +55,7 @@ export default class BRERuleEngineVariablesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = [VariableTypeResource];
@@ -113,7 +113,7 @@ export default class BRERuleEngineVariablesApi {
       let formParams = {
       };
 
-      let authNames = ['OAuth2'];
+      let authNames = [];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = PageResourceSimpleReferenceResourceobject;

@@ -48,6 +48,16 @@
   }
 
   describe('AmazonWebServicesS3Api', function() {
+    describe('getDownloadURL', function() {
+      it('should call getDownloadURL successfully', function(done) {
+        //uncomment below and update the code to test getDownloadURL
+        //instance.getDownloadURL(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getSignedS3URL', function() {
       it('should call getSignedS3URL successfully', function(done) {
         //uncomment below and update the code to test getSignedS3URL
