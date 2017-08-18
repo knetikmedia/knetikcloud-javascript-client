@@ -17,16 +17,16 @@ Post a new score/stat for an activity occurrence without ending the occurrence i
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationMetricsApi();
+var apiInstance = new KnetikCloud.GamificationMetricsApi();
 
-let opts = { 
+var opts = { 
   'metric': new KnetikCloud.MetricResource() // MetricResource | The new metric
 };
-apiInstance.addMetric(opts).then(() => {
+apiInstance.addMetric(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

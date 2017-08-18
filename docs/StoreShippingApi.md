@@ -25,17 +25,17 @@ A shipping item represents a shipping option and cost. SKUs have to be unique in
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'shippingItem': new KnetikCloud.ShippingItem() // ShippingItem | The shipping item object
 };
-apiInstance.createShippingItem(opts).then((data) => {
+apiInstance.createShippingItem(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,16 +71,16 @@ Shipping Templates define a type of shipping and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let opts = { 
+var opts = { 
   'shippingTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The new shipping template
 };
-apiInstance.createShippingTemplate(opts).then((data) => {
+apiInstance.createShippingTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,15 +113,15 @@ Delete a shipping item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = 56; // Number | The id of the shipping item
+var id = 56; // Number | The id of the shipping item
 
-apiInstance.deleteShippingItem(id).then(() => {
+apiInstance.deleteShippingItem(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -154,18 +154,18 @@ Delete a shipping template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteShippingTemplate(id, opts).then(() => {
+apiInstance.deleteShippingTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -199,15 +199,15 @@ Get a single shipping item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = 56; // Number | The id of the shipping item
+var id = 56; // Number | The id of the shipping item
 
-apiInstance.getShippingItem(id).then((data) => {
+apiInstance.getShippingItem(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -242,15 +242,15 @@ Shipping Templates define a type of shipping and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getShippingTemplate(id).then((data) => {
+apiInstance.getShippingTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -283,18 +283,18 @@ List and search shipping templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getShippingTemplates(opts).then((data) => {
+apiInstance.getShippingTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,19 +329,19 @@ Update a shipping item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = 56; // Number | The id of the shipping item
+var id = 56; // Number | The id of the shipping item
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'shippingItem': new KnetikCloud.ShippingItem() // ShippingItem | The shipping item object
 };
-apiInstance.updateShippingItem(id, opts).then((data) => {
+apiInstance.updateShippingItem(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -376,18 +376,18 @@ Update a shipping template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShippingApi();
+var apiInstance = new KnetikCloud.StoreShippingApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'shippingTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The shipping template resource object
 };
-apiInstance.updateShippingTemplate(id, opts).then((data) => {
+apiInstance.updateShippingTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

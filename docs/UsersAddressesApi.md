@@ -19,18 +19,18 @@ Create a new address
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersAddressesApi();
+var apiInstance = new KnetikCloud.UsersAddressesApi();
 
-let userId = "userId_example"; // String | The id of the user
+var userId = "userId_example"; // String | The id of the user
 
-let opts = { 
+var opts = { 
   'savedAddressResource': new KnetikCloud.SavedAddressResource() // SavedAddressResource | The new address
 };
-apiInstance.createAddress(userId, opts).then((data) => {
+apiInstance.createAddress(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -64,17 +64,17 @@ Delete an address
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersAddressesApi();
+var apiInstance = new KnetikCloud.UsersAddressesApi();
 
-let userId = "userId_example"; // String | The id of the user
+var userId = "userId_example"; // String | The id of the user
 
-let id = 56; // Number | The id of the address
+var id = 56; // Number | The id of the address
 
-apiInstance.deleteAddress(userId, id).then(() => {
+apiInstance.deleteAddress(userId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -108,17 +108,17 @@ Get a single address
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersAddressesApi();
+var apiInstance = new KnetikCloud.UsersAddressesApi();
 
-let userId = "userId_example"; // String | The id of the user
+var userId = "userId_example"; // String | The id of the user
 
-let id = 56; // Number | The id of the address
+var id = 56; // Number | The id of the address
 
-apiInstance.getAddress(userId, id).then((data) => {
+apiInstance.getAddress(userId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -152,20 +152,20 @@ List and search addresses
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersAddressesApi();
+var apiInstance = new KnetikCloud.UsersAddressesApi();
 
-let userId = "userId_example"; // String | The id of the user
+var userId = "userId_example"; // String | The id of the user
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getAddresses(userId, opts).then((data) => {
+apiInstance.getAddresses(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -201,20 +201,20 @@ Update an address
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersAddressesApi();
+var apiInstance = new KnetikCloud.UsersAddressesApi();
 
-let userId = "userId_example"; // String | The id of the user
+var userId = "userId_example"; // String | The id of the user
 
-let id = 56; // Number | The id of the address
+var id = 56; // Number | The id of the address
 
-let opts = { 
+var opts = { 
   'savedAddressResource': new KnetikCloud.SavedAddressResource() // SavedAddressResource | The saved address resource object
 };
-apiInstance.updateAddress(userId, id, opts).then((data) => {
+apiInstance.updateAddress(userId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

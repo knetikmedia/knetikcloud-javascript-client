@@ -19,16 +19,16 @@ Create a user relationship
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersRelationshipsApi();
+var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
-let opts = { 
+var opts = { 
   'relationship': new KnetikCloud.UserRelationshipResource() // UserRelationshipResource | The new relationship
 };
-apiInstance.createUserRelationship(opts).then((data) => {
+apiInstance.createUserRelationship(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete a user relationship
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersRelationshipsApi();
+var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
-let id = 789; // Number | The id of the relationship
+var id = 789; // Number | The id of the relationship
 
-apiInstance.deleteUserRelationship(id).then(() => {
+apiInstance.deleteUserRelationship(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -102,15 +102,15 @@ Get a user relationship
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersRelationshipsApi();
+var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
-let id = 789; // Number | The id of the relationship
+var id = 789; // Number | The id of the relationship
 
-apiInstance.getUserRelationship(id).then((data) => {
+apiInstance.getUserRelationship(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -143,18 +143,18 @@ Get a list of user relationships
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersRelationshipsApi();
+var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserRelationships(opts).then((data) => {
+apiInstance.getUserRelationships(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -189,18 +189,18 @@ Update a user relationship
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersRelationshipsApi();
+var apiInstance = new KnetikCloud.UsersRelationshipsApi();
 
-let id = 789; // Number | The id of the relationship
+var id = 789; // Number | The id of the relationship
 
-let opts = { 
+var opts = { 
   'relationship': new KnetikCloud.UserRelationshipResource() // UserRelationshipResource | The new relationship
 };
-apiInstance.updateUserRelationship(id, opts).then((data) => {
+apiInstance.updateUserRelationship(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

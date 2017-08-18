@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **String** |  | [optional] 
 **context** | **String** |  | [optional] 
-**contextId** | **Number** |  | [optional] 
+**context_id** | **Number** |  | [optional] 
 **id** | **Number** |  | [optional] 
-**ownerId** | **Number** |  | [optional] 
-**ownerUsername** | **String** |  | [optional] 
+**owner_id** | **Number** |  | [optional] 
+**owner_username** | **String** |  | [optional] 
 
 

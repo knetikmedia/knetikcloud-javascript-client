@@ -19,16 +19,16 @@ Create a currency
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CurrenciesApi();
+var apiInstance = new KnetikCloud.CurrenciesApi();
 
-let opts = { 
+var opts = { 
   'currency': new KnetikCloud.CurrencyResource() // CurrencyResource | The currency object
 };
-apiInstance.createCurrency(opts).then((data) => {
+apiInstance.createCurrency(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete a currency
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CurrenciesApi();
+var apiInstance = new KnetikCloud.CurrenciesApi();
 
-let code = "code_example"; // String | The currency code
+var code = "code_example"; // String | The currency code
 
-apiInstance.deleteCurrency(code).then(() => {
+apiInstance.deleteCurrency(code).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -102,20 +102,20 @@ List and search currencies
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CurrenciesApi();
+var apiInstance = new KnetikCloud.CurrenciesApi();
 
-let opts = { 
+var opts = { 
   'filterEnabledCurrencies': true, // Boolean | Filter for alternate currencies setup explicitely in system config
   'filterType': "filterType_example", // String | Filter currencies by type.  Allowable values: ('virtual', 'real')
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCurrencies(opts).then((data) => {
+apiInstance.getCurrencies(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -152,15 +152,15 @@ Get a single currency
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CurrenciesApi();
+var apiInstance = new KnetikCloud.CurrenciesApi();
 
-let code = "code_example"; // String | The currency code
+var code = "code_example"; // String | The currency code
 
-apiInstance.getCurrency(code).then((data) => {
+apiInstance.getCurrency(code).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -193,18 +193,18 @@ Update a currency
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CurrenciesApi();
+var apiInstance = new KnetikCloud.CurrenciesApi();
 
-let code = "code_example"; // String | The currency code
+var code = "code_example"; // String | The currency code
 
-let opts = { 
+var opts = { 
   'currency': new KnetikCloud.CurrencyResource() // CurrencyResource | The currency object
 };
-apiInstance.updateCurrency(code, opts).then(() => {
+apiInstance.updateCurrency(code, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

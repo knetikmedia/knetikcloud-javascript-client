@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **details** | **Object** | The details for this authorization. Format dependent on payment provider | [optional] 
 **id** | **Number** | The id of the authorization | [optional] 
 **invoice** | **Number** | The invoice this authorization is intended to pay | [optional] 
-**paymentType** | [**SimpleReferenceResourceint**](SimpleReferenceResourceint.md) | The payment type (which provider) this payment is through | 
+**payment_type** | [**SimpleReferenceResourceint**](SimpleReferenceResourceint.md) | The payment type (which provider) this payment is through | 
 
 

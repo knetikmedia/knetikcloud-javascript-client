@@ -18,19 +18,19 @@ A log entry is recorded everytime a user requests a new token. Standard paginati
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilSecurityApi();
+var apiInstance = new KnetikCloud.UtilSecurityApi();
 
-let opts = { 
+var opts = { 
   'userId': 56, // Number | The user id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserLocationLog(opts).then((data) => {
+apiInstance.getUserLocationLog(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,12 +66,12 @@ Returns the authentication token details. Use /users endpoint for detailed user&
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilSecurityApi();
-apiInstance.getUserTokenDetails().then((data) => {
+var apiInstance = new KnetikCloud.UtilSecurityApi();
+apiInstance.getUserTokenDetails().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

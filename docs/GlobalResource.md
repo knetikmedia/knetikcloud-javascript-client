@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**globalDefId** | **String** |  | [optional] 
+**global_def_id** | **String** |  | [optional] 
 **scopes** | [**{String: ExpressionResource}**](ExpressionResource.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 

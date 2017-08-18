@@ -44,18 +44,18 @@ Add an answer to a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let questionId = "questionId_example"; // String | The id of the question
+var questionId = "questionId_example"; // String | The id of the question
 
-let opts = { 
+var opts = { 
   'answer': new KnetikCloud.AnswerResource() // AnswerResource | The new answer
 };
-apiInstance.addQuestionAnswers(questionId, opts).then((data) => {
+apiInstance.addQuestionAnswers(questionId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -89,18 +89,18 @@ Add a tag to a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-let opts = { 
+var opts = { 
   'tag': new KnetikCloud.StringWrapper() // StringWrapper | The new tag
 };
-apiInstance.addQuestionTag(id, opts).then(() => {
+apiInstance.addQuestionTag(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -136,11 +136,11 @@ All questions that dont&#39;t have the tag and match filters will have it added.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'tag': new KnetikCloud.StringWrapper(), // StringWrapper | The tag to add
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
   'filterIdset': "filterIdset_example", // String | Filter for documents whose id is in the comma separated list provided
@@ -151,9 +151,9 @@ let opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.addTagToQuestionsBatch(opts).then((data) => {
+apiInstance.addTagToQuestionsBatch(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -196,16 +196,16 @@ Set up a job to import a set of trivia questions from a cvs file at a remote url
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.ImportJobResource() // ImportJobResource | The new import job
 };
-apiInstance.createImportJob(opts).then((data) => {
+apiInstance.createImportJob(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -238,16 +238,16 @@ Create a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'question': new KnetikCloud.QuestionResource() // QuestionResource | The new question
 };
-apiInstance.createQuestion(opts).then((data) => {
+apiInstance.createQuestion(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -282,16 +282,16 @@ Question templates define a type of question and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'questionTemplateResource': new KnetikCloud.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
 };
-apiInstance.createQuestionTemplate(opts).then((data) => {
+apiInstance.createQuestionTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -326,15 +326,15 @@ Also deletes all questions that were imported by it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = 789; // Number | The id of the job
+var id = 789; // Number | The id of the job
 
-apiInstance.deleteImportJob(id).then(() => {
+apiInstance.deleteImportJob(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -367,15 +367,15 @@ Delete a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-apiInstance.deleteQuestion(id).then(() => {
+apiInstance.deleteQuestion(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -408,17 +408,17 @@ Remove an answer from a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let questionId = "questionId_example"; // String | The id of the question
+var questionId = "questionId_example"; // String | The id of the question
 
-let id = "id_example"; // String | The id of the answer
+var id = "id_example"; // String | The id of the answer
 
-apiInstance.deleteQuestionAnswers(questionId, id).then(() => {
+apiInstance.deleteQuestionAnswers(questionId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -454,18 +454,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteQuestionTemplate(id, opts).then(() => {
+apiInstance.deleteQuestionTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -499,15 +499,15 @@ Get an import job
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = 789; // Number | The id of the job
+var id = 789; // Number | The id of the job
 
-apiInstance.getImportJob(id).then((data) => {
+apiInstance.getImportJob(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -540,11 +540,11 @@ Get a list of import job
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'filterVendor': "filterVendor_example", // String | Filter for jobs by vendor id
   'filterCategory': "filterCategory_example", // String | Filter for jobs by category id
   'filterName': "filterName_example", // String | Filter for jobs which name *STARTS* with the given string
@@ -553,9 +553,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getImportJobs(opts).then((data) => {
+apiInstance.getImportJobs(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -594,15 +594,15 @@ Get a single question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-apiInstance.getQuestion(id).then((data) => {
+apiInstance.getQuestion(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -635,17 +635,17 @@ Get an answer for a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let questionId = "questionId_example"; // String | The id of the question
+var questionId = "questionId_example"; // String | The id of the question
 
-let id = "id_example"; // String | The id of the answer
+var id = "id_example"; // String | The id of the answer
 
-apiInstance.getQuestionAnswer(questionId, id).then((data) => {
+apiInstance.getQuestionAnswer(questionId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -679,15 +679,15 @@ List the answers available for a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let questionId = "questionId_example"; // String | The id of the question
+var questionId = "questionId_example"; // String | The id of the question
 
-apiInstance.getQuestionAnswers(questionId).then((data) => {
+apiInstance.getQuestionAnswers(questionId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -722,16 +722,16 @@ The &#39;since&#39; parameter is important to avoid getting a full list of all q
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'since': 789 // Number | Timestamp in seconds
 };
-apiInstance.getQuestionDeltas(opts).then((data) => {
+apiInstance.getQuestionDeltas(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -764,15 +764,15 @@ List the tags for a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-apiInstance.getQuestionTags(id).then((data) => {
+apiInstance.getQuestionTags(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -805,15 +805,15 @@ Get a single question template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getQuestionTemplate(id).then((data) => {
+apiInstance.getQuestionTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -846,18 +846,18 @@ List and search question templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getQuestionTemplates(opts).then((data) => {
+apiInstance.getQuestionTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -892,11 +892,11 @@ List and search questions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC", // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -909,9 +909,9 @@ let opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.getQuestions(opts).then((data) => {
+apiInstance.getQuestions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -956,11 +956,11 @@ This is also provided by the list endpoint so you don&#39;t need to call this fo
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
   'filterIdset': "filterIdset_example", // String | Filter for documents whose id is in the comma separated list provided
   'filterCategory': "filterCategory_example", // String | Filter for questions with specified category, by id
@@ -969,9 +969,9 @@ let opts = {
   'filterType': "filterType_example", // String | Filter for questions with specified type.  Allowable values: ('TEXT', 'IMAGE', 'VIDEO', 'AUDIO')
   'filterPublished': true // Boolean | Filter for questions currenctly published or not
 };
-apiInstance.getQuestionsCount(opts).then((data) => {
+apiInstance.getQuestionsCount(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1012,17 +1012,17 @@ Will process the CSV file and add new questions asynchronously. The status of th
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = 789; // Number | The id of the job
+var id = 789; // Number | The id of the job
 
-let publishNow = true; // Boolean | Whether the new questions should be published live immediately
+var publishNow = true; // Boolean | Whether the new questions should be published live immediately
 
-apiInstance.processImportJob(id, publishNow).then((data) => {
+apiInstance.processImportJob(id, publishNow).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1056,17 +1056,17 @@ Remove a tag from a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-let tag = "tag_example"; // String | The tag to remove
+var tag = "tag_example"; // String | The tag to remove
 
-apiInstance.removeQuestionTag(id, tag).then(() => {
+apiInstance.removeQuestionTag(id, tag).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1102,13 +1102,13 @@ ll questions that have the tag and match filters will have it removed. The retur
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let tag = "tag_example"; // String | The tag to remove
+var tag = "tag_example"; // String | The tag to remove
 
-let opts = { 
+var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
   'filterIdset': "filterIdset_example", // String | Filter for documents whose id is in the comma separated list provided
   'filterCategory': "filterCategory_example", // String | Filter for questions with specified category, by id
@@ -1118,9 +1118,9 @@ let opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.removeTagToQuestionsBatch(tag, opts).then((data) => {
+apiInstance.removeTagToQuestionsBatch(tag, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1163,18 +1163,18 @@ For performance reasons, search &amp; category filters are mutually exclusive. I
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for tags starting with the given text
   'filterCategory': "filterCategory_example", // String | Filter for tags on questions from a specific category
   'filterImportId': 789 // Number | Filter for tags on questions from a specific import job
 };
-apiInstance.searchQuestionTags(opts).then((data) => {
+apiInstance.searchQuestionTags(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1211,18 +1211,18 @@ Changes should be made before process is started for there to be any effect.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = 789; // Number | The id of the job
+var id = 789; // Number | The id of the job
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.ImportJobResource() // ImportJobResource | The updated job
 };
-apiInstance.updateImportJob(id, opts).then((data) => {
+apiInstance.updateImportJob(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1256,18 +1256,18 @@ Update a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the question
+var id = "id_example"; // String | The id of the question
 
-let opts = { 
+var opts = { 
   'question': new KnetikCloud.QuestionResource() // QuestionResource | The updated question
 };
-apiInstance.updateQuestion(id, opts).then((data) => {
+apiInstance.updateQuestion(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1301,20 +1301,20 @@ Update an answer for a question
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let questionId = "questionId_example"; // String | The id of the question
+var questionId = "questionId_example"; // String | The id of the question
 
-let id = "id_example"; // String | The id of the answer
+var id = "id_example"; // String | The id of the answer
 
-let opts = { 
+var opts = { 
   'answer': new KnetikCloud.AnswerResource() // AnswerResource | The updated answer
 };
-apiInstance.updateQuestionAnswer(questionId, id, opts).then(() => {
+apiInstance.updateQuestionAnswer(questionId, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1349,18 +1349,18 @@ Update a question template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'questionTemplateResource': new KnetikCloud.QuestionTemplateResource() // QuestionTemplateResource | The question template resource object
 };
-apiInstance.updateQuestionTemplate(id, opts).then((data) => {
+apiInstance.updateQuestionTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1396,11 +1396,11 @@ Will update all questions that match filters used (or all questions in system if
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationTriviaApi();
+var apiInstance = new KnetikCloud.GamificationTriviaApi();
 
-let opts = { 
+var opts = { 
   'question': new KnetikCloud.QuestionResource(), // QuestionResource | New values for a set of question fields
   'filterSearch': "filterSearch_example", // String | Filter for documents whose question, answers or tags contains provided string
   'filterIdset': "filterIdset_example", // String | Filter for documents whose id is in the comma separated list provided
@@ -1410,9 +1410,9 @@ let opts = {
   'filterPublished': true, // Boolean | Filter for questions currenctly published or not
   'filterImportId': 789 // Number | Filter for questions from a specific import job
 };
-apiInstance.updateQuestionsInBulk(opts).then((data) => {
+apiInstance.updateQuestionsInBulk(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

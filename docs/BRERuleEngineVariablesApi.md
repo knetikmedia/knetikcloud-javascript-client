@@ -18,12 +18,12 @@ Types include integer, string, user and invoice. These are used to qualify trigg
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
-apiInstance.getBREVariableTypes().then((data) => {
+var apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
+apiInstance.getBREVariableTypes().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -55,20 +55,20 @@ Used to lookup users to fill in a user constant for example. Only types marked a
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineVariablesApi();
 
-let name = "name_example"; // String | The name of the type
+var name = "name_example"; // String | The name of the type
 
-let opts = { 
+var opts = { 
   'filterName': "filterName_example", // String | Filter results by those with names starting with this string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBREVariableValues(name, opts).then((data) => {
+apiInstance.getBREVariableValues(name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

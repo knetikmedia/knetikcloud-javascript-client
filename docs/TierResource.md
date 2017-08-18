@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additionalProperties** | [**{String: Property}**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] 
+**additional_properties** | [**{String: Property}**](Property.md) | A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type | [optional] 
 **name** | **String** | The name of the tier | [optional] 
-**requiredProgress** | **Number** | The required progress for the tier | 
-**triggerEventName** | **String** | The name of the triggered event | [optional] 
+**required_progress** | **Number** | The required progress for the tier | 
+**trigger_event_name** | **String** | The name of the triggered event | [optional] 
 
 

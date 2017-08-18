@@ -6,11 +6,11 @@ Name | Type | Description | Notes
 **content** | [**[UserBaseResource]**](UserBaseResource.md) |  | [optional] 
 **first** | **Boolean** |  | [optional] 
 **last** | **Boolean** |  | [optional] 
-**_number** | **Number** |  | [optional] 
-**numberOfElements** | **Number** |  | [optional] 
+**number** | **Number** |  | [optional] 
+**number_of_elements** | **Number** |  | [optional] 
 **size** | **Number** |  | [optional] 
 **sort** | [**[Order]**](Order.md) |  | [optional] 
-**totalElements** | **Number** |  | [optional] 
-**totalPages** | **Number** |  | [optional] 
+**total_elements** | **Number** |  | [optional] 
+**total_pages** | **Number** |  | [optional] 
 
 

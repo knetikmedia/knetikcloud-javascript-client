@@ -16,15 +16,15 @@ Get details for a template property type
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.TemplatesPropertiesApi();
+var apiInstance = new KnetikCloud.TemplatesPropertiesApi();
 
-let type = "type_example"; // String | type
+var type = "type_example"; // String | type
 
-apiInstance.getTemplatePropertyType(type).then((data) => {
+apiInstance.getTemplatePropertyType(type).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -57,12 +57,12 @@ List template property types
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.TemplatesPropertiesApi();
-apiInstance.getTemplatePropertyTypes().then((data) => {
+var apiInstance = new KnetikCloud.TemplatesPropertiesApi();
+apiInstance.getTemplatePropertyTypes().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

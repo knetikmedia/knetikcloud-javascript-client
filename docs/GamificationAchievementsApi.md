@@ -34,16 +34,16 @@ If the definition contains a trigger event name, a BRE rule is created, so that 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let opts = { 
+var opts = { 
   'achievement': new KnetikCloud.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
 };
-apiInstance.createAchievement(opts).then((data) => {
+apiInstance.createAchievement(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -78,16 +78,16 @@ Achievement templates define a type of achievement and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The achievement template to be created
 };
-apiInstance.createAchievementTemplate(opts).then((data) => {
+apiInstance.createAchievementTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -122,15 +122,15 @@ Will also disable the associated generated rule, if any.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let name = "name_example"; // String | The name of the achievement
+var name = "name_example"; // String | The name of the achievement
 
-apiInstance.deleteAchievement(name).then(() => {
+apiInstance.deleteAchievement(name).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -165,18 +165,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteAchievementTemplate(id, opts).then(() => {
+apiInstance.deleteAchievementTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -210,15 +210,15 @@ Get a single achievement definition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let name = "name_example"; // String | The name of the achievement
+var name = "name_example"; // String | The name of the achievement
 
-apiInstance.getAchievement(name).then((data) => {
+apiInstance.getAchievement(name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -251,15 +251,15 @@ Get a single achievement template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getAchievementTemplate(id).then((data) => {
+apiInstance.getAchievementTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -292,18 +292,18 @@ List and search achievement templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getAchievementTemplates(opts).then((data) => {
+apiInstance.getAchievementTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -338,12 +338,12 @@ Get the list of triggers that can be used to trigger an achievement progress upd
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
-apiInstance.getAchievementTriggers().then((data) => {
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
+apiInstance.getAchievementTriggers().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -373,11 +373,11 @@ Get all achievement definitions in the system
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let opts = { 
+var opts = { 
   'filterTagset': "filterTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterName': "filterName_example", // String | Filter for achievements whose name contains a string
   'filterHidden': true, // Boolean | Filter for achievements that are hidden or not
@@ -386,9 +386,9 @@ let opts = {
   'order': "name:ASC", // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
   'filterDerived': false // Boolean | Filter for achievements that are derived from other services
 };
-apiInstance.getAchievements(opts).then((data) => {
+apiInstance.getAchievements(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -429,15 +429,15 @@ Used by other services that depend on achievements
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let name = "name_example"; // String | The name of the derived achievement
+var name = "name_example"; // String | The name of the derived achievement
 
-apiInstance.getDerivedAchievements(name).then((data) => {
+apiInstance.getDerivedAchievements(name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -472,17 +472,17 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-let achievementName = "achievementName_example"; // String | The achievement's name
+var achievementName = "achievementName_example"; // String | The achievement's name
 
-apiInstance.getUserAchievementProgress(userId, achievementName).then((data) => {
+apiInstance.getUserAchievementProgress(userId, achievementName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -518,22 +518,22 @@ Assets will not be filled in on the resources returned. Use &#39;Get a single po
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-let opts = { 
+var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUserAchievementsProgress(userId, opts).then((data) => {
+apiInstance.getUserAchievementsProgress(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -573,22 +573,22 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let achievementName = "achievementName_example"; // String | The achievement's name
+var achievementName = "achievementName_example"; // String | The achievement's name
 
-let opts = { 
+var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsersAchievementProgress(achievementName, opts).then((data) => {
+apiInstance.getUsersAchievementProgress(achievementName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -628,20 +628,20 @@ Assets will not be filled in on the resources returned. Use &#39;Get single achi
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let opts = { 
+var opts = { 
   'filterAchievementDerived': true, // Boolean | Filter for achievements that are derived from other services
   'filterAchievementTagset': "filterAchievementTagset_example", // String | Filter for achievements with specified tags (separated by comma)
   'filterAchievementName': "filterAchievementName_example", // String | Filter for achievements whose name contains a string
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUsersAchievementsProgress(opts).then((data) => {
+apiInstance.getUsersAchievementsProgress(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -680,20 +680,20 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-let achievementName = "achievementName_example"; // String | The achievement's name
+var achievementName = "achievementName_example"; // String | The achievement's name
 
-let opts = { 
+var opts = { 
   'progress': new KnetikCloud.IntWrapper() // IntWrapper | The amount to add to the progress value
 };
-apiInstance.incrementAchievementProgress(userId, achievementName, opts).then((data) => {
+apiInstance.incrementAchievementProgress(userId, achievementName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -730,20 +730,20 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-let achievementName = "achievementName_example"; // String | The achievement's name
+var achievementName = "achievementName_example"; // String | The achievement's name
 
-let opts = { 
+var opts = { 
   'progress': new KnetikCloud.IntWrapper() // IntWrapper | The new progress value
 };
-apiInstance.setAchievementProgress(userId, achievementName, opts).then((data) => {
+apiInstance.setAchievementProgress(userId, achievementName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -780,18 +780,18 @@ The existing generated rule, if any, will be deleted. A new rule will be created
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let name = "name_example"; // String | The name of the achievement
+var name = "name_example"; // String | The name of the achievement
 
-let opts = { 
+var opts = { 
   'achievement': new KnetikCloud.AchievementDefinitionResource() // AchievementDefinitionResource | The achievement definition
 };
-apiInstance.updateAchievement(name, opts).then((data) => {
+apiInstance.updateAchievement(name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -825,18 +825,18 @@ Update an achievement template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationAchievementsApi();
+var apiInstance = new KnetikCloud.GamificationAchievementsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated template
 };
-apiInstance.updateAchievementTemplate(id, opts).then((data) => {
+apiInstance.updateAchievementTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

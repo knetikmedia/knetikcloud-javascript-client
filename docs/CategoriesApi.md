@@ -25,16 +25,16 @@ Create a new category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let opts = { 
+var opts = { 
   'category': new KnetikCloud.CategoryResource() // CategoryResource | The category to create
 };
-apiInstance.createCategory(opts).then((data) => {
+apiInstance.createCategory(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -69,16 +69,16 @@ Templates define a type of category and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The template to create
 };
-apiInstance.createCategoryTemplate(opts).then((data) => {
+apiInstance.createCategoryTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -111,15 +111,15 @@ Delete an existing category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the category to be deleted
+var id = "id_example"; // String | The id of the category to be deleted
 
-apiInstance.deleteCategory(id).then(() => {
+apiInstance.deleteCategory(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -154,18 +154,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteCategoryTemplate(id, opts).then(() => {
+apiInstance.deleteCategoryTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -199,20 +199,20 @@ List and search categories with optional filters
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let opts = { 
+var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for categories whose names begin with provided string
   'filterActive': true, // Boolean | Filter for categories that are specifically active or inactive
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCategories(opts).then((data) => {
+apiInstance.getCategories(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -249,15 +249,15 @@ Get a single category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the category to retrieve
+var id = "id_example"; // String | The id of the category to retrieve
 
-apiInstance.getCategory(id).then((data) => {
+apiInstance.getCategory(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -290,15 +290,15 @@ Get a single category template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getCategoryTemplate(id).then((data) => {
+apiInstance.getCategoryTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -331,18 +331,18 @@ List and search category templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCategoryTemplates(opts).then((data) => {
+apiInstance.getCategoryTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -377,17 +377,17 @@ List all trivia tags in the system
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getTags(opts).then((data) => {
+apiInstance.getTags(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -421,18 +421,18 @@ Update an existing category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the category
+var id = "id_example"; // String | The id of the category
 
-let opts = { 
+var opts = { 
   'category': new KnetikCloud.CategoryResource() // CategoryResource | The category to update
 };
-apiInstance.updateCategory(id, opts).then((data) => {
+apiInstance.updateCategory(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -466,18 +466,18 @@ Update a category template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CategoriesApi();
+var apiInstance = new KnetikCloud.CategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated template information
 };
-apiInstance.updateCategoryTemplate(id, opts).then((data) => {
+apiInstance.updateCategoryTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -19,16 +19,16 @@ Create a new permission
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthPermissionsApi();
+var apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-let opts = { 
+var opts = { 
   'permissionResource': new KnetikCloud.PermissionResource() // PermissionResource | The permission resource object
 };
-apiInstance.createPermission(opts).then((data) => {
+apiInstance.createPermission(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,18 +61,18 @@ Delete a permission
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthPermissionsApi();
+var apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-let permission = "permission_example"; // String | The permission value
+var permission = "permission_example"; // String | The permission value
 
-let opts = { 
+var opts = { 
   'force': true // Boolean | If true, removes permission assigned to roles
 };
-apiInstance.deletePermission(permission, opts).then(() => {
+apiInstance.deletePermission(permission, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -106,15 +106,15 @@ Get a single permission
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthPermissionsApi();
+var apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-let permission = "permission_example"; // String | The permission value
+var permission = "permission_example"; // String | The permission value
 
-apiInstance.getPermission(permission).then((data) => {
+apiInstance.getPermission(permission).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -147,18 +147,18 @@ List and search permissions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthPermissionsApi();
+var apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "permission:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getPermissions(opts).then((data) => {
+apiInstance.getPermissions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -193,18 +193,18 @@ Update a permission
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthPermissionsApi();
+var apiInstance = new KnetikCloud.AuthPermissionsApi();
 
-let permission = "permission_example"; // String | The permission value
+var permission = "permission_example"; // String | The permission value
 
-let opts = { 
+var opts = { 
   'permissionResource': new KnetikCloud.PermissionResource() // PermissionResource | The permission resource object
 };
-apiInstance.updatePermission(permission, opts).then((data) => {
+apiInstance.updatePermission(permission, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

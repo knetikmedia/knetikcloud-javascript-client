@@ -40,18 +40,18 @@ Whitelisted users can view video regardless of privacy setting.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let id = 789; // Number | The video id
+var id = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'userId': new KnetikCloud.IntWrapper() // IntWrapper | The user id
 };
-apiInstance.addUserToVideoWhitelist(id, opts).then(() => {
+apiInstance.addUserToVideoWhitelist(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -85,16 +85,16 @@ Adds a new video in the system
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let opts = { 
+var opts = { 
   'videoResource': new KnetikCloud.VideoResource() // VideoResource | The video object
 };
-apiInstance.addVideo(opts).then((data) => {
+apiInstance.addVideo(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -127,18 +127,18 @@ Add a new video comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 56; // Number | The video id 
+var videoId = 56; // Number | The video id 
 
-let opts = { 
+var opts = { 
   'commentResource': new KnetikCloud.CommentResource() // CommentResource | The comment object
 };
-apiInstance.addVideoComment(videoId, opts).then((data) => {
+apiInstance.addVideoComment(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,18 +172,18 @@ Adds a contributor to a video
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'contributionResource': new KnetikCloud.ContributionResource() // ContributionResource | The contribution object
 };
-apiInstance.addVideoContributor(videoId, opts).then(() => {
+apiInstance.addVideoContributor(videoId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -217,18 +217,18 @@ Add a new flag
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'reason': new KnetikCloud.StringWrapper() // StringWrapper | The flag reason
 };
-apiInstance.addVideoFlag(videoId, opts).then((data) => {
+apiInstance.addVideoFlag(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -262,18 +262,18 @@ Adds one or more existing videos as related to this one
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'videoRelationshipResource': new KnetikCloud.VideoRelationshipResource() // VideoRelationshipResource | The video relationship object 
 };
-apiInstance.addVideoRelationships(videoId, opts).then((data) => {
+apiInstance.addVideoRelationships(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -307,18 +307,18 @@ Create a video disposition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 56; // Number | The video id
+var videoId = 56; // Number | The video id
 
-let opts = { 
+var opts = { 
   'dispositionResource': new KnetikCloud.DispositionResource() // DispositionResource | The disposition object
 };
-apiInstance.createVideoDisposition(videoId, opts).then((data) => {
+apiInstance.createVideoDisposition(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -352,15 +352,15 @@ Deletes a video from the system if no resources are attached to it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let id = 789; // Number | The video id
+var id = 789; // Number | The video id
 
-apiInstance.deleteVideo(id).then(() => {
+apiInstance.deleteVideo(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -393,17 +393,17 @@ Delete a video comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let id = 789; // Number | The comment id
+var id = 789; // Number | The comment id
 
-apiInstance.deleteVideoComment(videoId, id).then(() => {
+apiInstance.deleteVideoComment(videoId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -437,15 +437,15 @@ Delete a video disposition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let dispositionId = 789; // Number | The disposition id
+var dispositionId = 789; // Number | The disposition id
 
-apiInstance.deleteVideoDisposition(dispositionId).then(() => {
+apiInstance.deleteVideoDisposition(dispositionId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -478,15 +478,15 @@ Delete a flag
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-apiInstance.deleteVideoFlag(videoId).then(() => {
+apiInstance.deleteVideoFlag(videoId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -519,17 +519,17 @@ Delete a video&#39;s relationship
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let id = 789; // Number | The relationship id
+var id = 789; // Number | The relationship id
 
-apiInstance.deleteVideoRelationship(videoId, id).then(() => {
+apiInstance.deleteVideoRelationship(videoId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -563,20 +563,20 @@ Get user videos
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let userId = 56; // Number | The user id
+var userId = 56; // Number | The user id
 
-let opts = { 
+var opts = { 
   'excludeFlagged': true, // Boolean | Skip videos that have been flagged by the current user
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUserVideos(userId, opts).then((data) => {
+apiInstance.getUserVideos(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -612,15 +612,15 @@ Loads a specific video details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let id = 789; // Number | The video id
+var id = 789; // Number | The video id
 
-apiInstance.getVideo(id).then((data) => {
+apiInstance.getVideo(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -653,19 +653,19 @@ Returns a page of comments for a video
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 56; // Number | The video id
+var videoId = 56; // Number | The video id
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoComments(videoId, opts).then((data) => {
+apiInstance.getVideoComments(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -700,19 +700,19 @@ Returns a page of dispositions for a video
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 56; // Number | The video id
+var videoId = 56; // Number | The video id
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoDispositions(videoId, opts).then((data) => {
+apiInstance.getVideoDispositions(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -747,19 +747,19 @@ Returns a page of video relationships
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getVideoRelationships(videoId, opts).then((data) => {
+apiInstance.getVideoRelationships(videoId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -794,11 +794,11 @@ Search videos using the documented filters
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let opts = { 
+var opts = { 
   'excludeFlagged': true, // Boolean | Skip videos that have been flagged by the current user
   'filterVideosByUploader': 56, // Number | Filter for videos by uploader id
   'filterCategory': "filterCategory_example", // String | Filter for videos from a specific category by id
@@ -815,9 +815,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "author:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getVideos(opts).then((data) => {
+apiInstance.getVideos(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -866,17 +866,17 @@ Remove the user with the id given in the path from the whitelist of users that c
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let id = 56; // Number | The user id
+var id = 56; // Number | The user id
 
-apiInstance.removeUserFromVideoWhitelist(videoId, id).then(() => {
+apiInstance.removeUserFromVideoWhitelist(videoId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -910,17 +910,17 @@ Removes a contributor from a video
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let id = 56; // Number | The contributor id
+var id = 56; // Number | The contributor id
 
-apiInstance.removeVideoContributor(videoId, id).then(() => {
+apiInstance.removeVideoContributor(videoId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -954,18 +954,18 @@ Modifies a video&#39;s details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let id = 789; // Number | The video id
+var id = 789; // Number | The video id
 
-let opts = { 
+var opts = { 
   'videoResource': new KnetikCloud.VideoResource() // VideoResource | The video object
 };
-apiInstance.updateVideo(id, opts).then(() => {
+apiInstance.updateVideo(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -999,20 +999,20 @@ Update a video comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let id = 789; // Number | The comment id
+var id = 789; // Number | The comment id
 
-let opts = { 
+var opts = { 
   'content': new KnetikCloud.StringWrapper() // StringWrapper | The comment content
 };
-apiInstance.updateVideoComment(videoId, id, opts).then(() => {
+apiInstance.updateVideoComment(videoId, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1047,20 +1047,20 @@ Update a video&#39;s relationship details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let videoId = 789; // Number | The video id
+var videoId = 789; // Number | The video id
 
-let relationshipId = 789; // Number | The relationship id
+var relationshipId = 789; // Number | The relationship id
 
-let opts = { 
+var opts = { 
   'details': new KnetikCloud.StringWrapper() // StringWrapper | The video relationship details
 };
-apiInstance.updateVideoRelationship(videoId, relationshipId, opts).then(() => {
+apiInstance.updateVideoRelationship(videoId, relationshipId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1095,15 +1095,15 @@ Increment a video&#39;s view count
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaVideosApi();
+var apiInstance = new KnetikCloud.MediaVideosApi();
 
-let id = 789; // Number | The video id
+var id = 789; // Number | The video id
 
-apiInstance.viewVideo(id).then(() => {
+apiInstance.viewVideo(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

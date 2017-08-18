@@ -29,16 +29,16 @@ Item Templates define a type of item and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'itemTemplateResource': new KnetikCloud.StoreItemTemplateResource() // StoreItemTemplateResource | The new item template
 };
-apiInstance.createItemTemplate(opts).then((data) => {
+apiInstance.createItemTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -73,17 +73,17 @@ SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 e
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'storeItem': new KnetikCloud.StoreItem() // StoreItem | The store item object
 };
-apiInstance.createStoreItem(opts).then((data) => {
+apiInstance.createStoreItem(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -117,18 +117,18 @@ Delete an item template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteItemTemplate(id, opts).then(() => {
+apiInstance.deleteItemTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -162,15 +162,15 @@ Delete a store item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = 56; // Number | The id of the item
+var id = 56; // Number | The id of the item
 
-apiInstance.deleteStoreItem(id).then(() => {
+apiInstance.deleteStoreItem(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -203,12 +203,12 @@ List available item behaviors
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
-apiInstance.getBehaviors().then((data) => {
+var apiInstance = new KnetikCloud.StoreApi();
+apiInstance.getBehaviors().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -240,15 +240,15 @@ Item Templates define a type of item and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getItemTemplate(id).then((data) => {
+apiInstance.getItemTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -281,18 +281,18 @@ List and search item templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getItemTemplates(opts).then((data) => {
+apiInstance.getItemTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,20 +329,20 @@ The exact structure of each items may differ to include fields specific to the t
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'limit': 56, // Number | The amount of items returned
   'page': 56, // Number | The page of the request
   'useCatalog': true, // Boolean | Whether to remove items that are not intended for display or not in date
   'ignoreLocation': true, // Boolean | Whether to ignore country restrictions based on the caller's location
   'inStockOnly': false // Boolean | Whether only in-stock items should be returned.  Default value is false
 };
-apiInstance.getStore(opts).then((data) => {
+apiInstance.getStore(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -379,15 +379,15 @@ Get a single store item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = 56; // Number | The id of the item
+var id = 56; // Number | The id of the item
 
-apiInstance.getStoreItem(id).then((data) => {
+apiInstance.getStoreItem(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -420,11 +420,11 @@ List and search store items
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'filterNameSearch': "filterNameSearch_example", // String | Filter for items whose name starts with a given string.
   'filterUniqueKey': "filterUniqueKey_example", // String | Filter for items whose unique_key is a given string.
   'filterPublished': true, // Boolean | Filter for skus that have been published.
@@ -443,9 +443,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getStoreItems(opts).then((data) => {
+apiInstance.getStoreItems(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -496,16 +496,16 @@ Used to create and automatically pay an invoice for a single unit of a single SK
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let opts = { 
+var opts = { 
   'quickBuyRequest': new KnetikCloud.QuickBuyRequest() // QuickBuyRequest | Quick buy details
 };
-apiInstance.quickBuy(opts).then((data) => {
+apiInstance.quickBuy(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -538,18 +538,18 @@ Update an item template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'itemTemplateResource': new KnetikCloud.StoreItemTemplateResource() // StoreItemTemplateResource | The item template resource object
 };
-apiInstance.updateItemTemplate(id, opts).then((data) => {
+apiInstance.updateItemTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -583,19 +583,19 @@ Update a store item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreApi();
+var apiInstance = new KnetikCloud.StoreApi();
 
-let id = 56; // Number | The id of the item
+var id = 56; // Number | The id of the item
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'storeItem': new KnetikCloud.StoreItem() // StoreItem | The store item object
 };
-apiInstance.updateStoreItem(id, opts).then((data) => {
+apiInstance.updateStoreItem(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

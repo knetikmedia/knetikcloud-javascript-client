@@ -26,16 +26,16 @@ Adds a new artist in the system. Use specific media contributions endpoint to ad
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let opts = { 
+var opts = { 
   'artistResource': new KnetikCloud.ArtistResource() // ArtistResource | The new artist
 };
-apiInstance.addArtist(opts).then((data) => {
+apiInstance.addArtist(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -70,16 +70,16 @@ Artist Templates define a type of artist and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let opts = { 
+var opts = { 
   'artistTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The artist template resource object
 };
-apiInstance.createArtistTemplate(opts).then((data) => {
+apiInstance.createArtistTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -112,15 +112,15 @@ Removes an artist from the system IF no resources are attached to it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = 789; // Number | The artist id
+var id = 789; // Number | The artist id
 
-apiInstance.deleteArtist(id).then(() => {
+apiInstance.deleteArtist(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -155,18 +155,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteArtistTemplate(id, opts).then(() => {
+apiInstance.deleteArtistTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -200,18 +200,18 @@ Loads a specific artist details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = 789; // Number | The artist id
+var id = 789; // Number | The artist id
 
-let opts = { 
+var opts = { 
   'showContributions': 56 // Number | The number of contributions to show fetch
 };
-apiInstance.getArtist(id, opts).then((data) => {
+apiInstance.getArtist(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -245,15 +245,15 @@ Get a single artist template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getArtistTemplate(id).then((data) => {
+apiInstance.getArtistTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -286,18 +286,18 @@ List and search artist templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArtistTemplates(opts).then((data) => {
+apiInstance.getArtistTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -332,19 +332,19 @@ Search for artists
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let opts = { 
+var opts = { 
   'filterArtistsByName': "filterArtistsByName_example", // String | Filter for artists which name *STARTS* with the given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArtists(opts).then((data) => {
+apiInstance.getArtists(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -380,18 +380,18 @@ Modifies an artist details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = 789; // Number | The artist id
+var id = 789; // Number | The artist id
 
-let opts = { 
+var opts = { 
   'artistResource': new KnetikCloud.ArtistResource() // ArtistResource | The new artist
 };
-apiInstance.updateArtist(id, opts).then(() => {
+apiInstance.updateArtist(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -425,18 +425,18 @@ Update an artist template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaArtistsApi();
+var apiInstance = new KnetikCloud.MediaArtistsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'artistTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The artist template resource object
 };
-apiInstance.updateArtistTemplate(id, opts).then((data) => {
+apiInstance.updateArtistTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

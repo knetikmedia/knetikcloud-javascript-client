@@ -29,16 +29,16 @@ Create an invoice(s) by providing a cart GUID. Note that there may be multiple i
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let opts = { 
+var opts = { 
   'req': new KnetikCloud.InvoiceCreateRequest() // InvoiceCreateRequest | Invoice to be created
 };
-apiInstance.createInvoice(opts).then((data) => {
+apiInstance.createInvoice(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,12 +71,12 @@ Lists available fulfillment statuses
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
-apiInstance.getFulFillmentStatuses().then((data) => {
+var apiInstance = new KnetikCloud.InvoicesApi();
+apiInstance.getFulFillmentStatuses().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -106,15 +106,15 @@ Retrieve an invoice
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-apiInstance.getInvoice(id).then((data) => {
+apiInstance.getInvoice(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -147,19 +147,19 @@ List invoice logs
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getInvoiceLogs(id, opts).then((data) => {
+apiInstance.getInvoiceLogs(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -196,11 +196,11 @@ Without INVOICES_ADMIN permission the results are automatically filtered for onl
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let opts = { 
+var opts = { 
   'filterUser': 56, // Number | The id of a user to get invoices for. Automtically added if not being called with admin permissions.
   'filterEmail': "filterEmail_example", // String | Filters invoices by customer's email. Admins only.
   'filterFulfillmentStatus': "filterFulfillmentStatus_example", // String | Filters invoices by fulfillment status type. Can be a comma separated list of statuses
@@ -219,9 +219,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getInvoices(opts).then((data) => {
+apiInstance.getInvoices(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -270,12 +270,12 @@ Lists available payment statuses
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
-apiInstance.getPaymentStatuses().then((data) => {
+var apiInstance = new KnetikCloud.InvoicesApi();
+apiInstance.getPaymentStatuses().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -305,18 +305,18 @@ Pay an invoice using a saved payment method
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.PayBySavedMethodRequest() // PayBySavedMethodRequest | The payment method details. Will default to the appropriate user's wallet in the invoice currency if ommited.
 };
-apiInstance.payInvoice(id, opts).then(() => {
+apiInstance.payInvoice(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -352,21 +352,21 @@ This allows external fulfillment systems to report success or failure. Fulfillme
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let bundleSku = "bundleSku_example"; // String | The sku of the bundle in the invoice that contains the given target
+var bundleSku = "bundleSku_example"; // String | The sku of the bundle in the invoice that contains the given target
 
-let sku = "sku_example"; // String | The sku of an item in the bundle in the invoice
+var sku = "sku_example"; // String | The sku of an item in the bundle in the invoice
 
-let status = new KnetikCloud.StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+var status = new KnetikCloud.StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
-apiInstance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status).then(() => {
+apiInstance.setBundledInvoiceItemFulfillmentStatus(id, bundleSku, sku, status).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -402,18 +402,18 @@ Set the external reference of an invoice
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'externalRef': new KnetikCloud.StringWrapper() // StringWrapper | External reference info
 };
-apiInstance.setExternalRef(id, opts).then(() => {
+apiInstance.setExternalRef(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -449,19 +449,19 @@ This allows external fulfillment systems to report success or failure. Fulfillme
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let sku = "sku_example"; // String | The sku of an item in the invoice
+var sku = "sku_example"; // String | The sku of an item in the invoice
 
-let status = new KnetikCloud.StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
+var status = new KnetikCloud.StringWrapper(); // StringWrapper | The new fulfillment status for the item. Additional options may be available based on configuration.  Allowable values:  'unfulfilled', 'fulfilled', 'not fulfillable', 'failed', 'processing', 'failed_permanent', 'delayed'
 
-apiInstance.setInvoiceItemFulfillmentStatus(id, sku, status).then(() => {
+apiInstance.setInvoiceItemFulfillmentStatus(id, sku, status).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -496,18 +496,18 @@ Set the order notes of an invoice
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'orderNotes': new KnetikCloud.StringWrapper() // StringWrapper | Payment status info
 };
-apiInstance.setOrderNotes(id, opts).then(() => {
+apiInstance.setOrderNotes(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -543,18 +543,18 @@ This may trigger fulfillment if setting the status to &#39;paid&#39;. This is ma
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.InvoicePaymentStatusRequest() // InvoicePaymentStatusRequest | Payment status info
 };
-apiInstance.setPaymentStatus(id, opts).then(() => {
+apiInstance.setPaymentStatus(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -588,18 +588,18 @@ Set or update billing info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.InvoicesApi();
+var apiInstance = new KnetikCloud.InvoicesApi();
 
-let id = 56; // Number | The id of the invoice
+var id = 56; // Number | The id of the invoice
 
-let opts = { 
+var opts = { 
   'billingInfoRequest': new KnetikCloud.AddressResource() // AddressResource | Address info
 };
-apiInstance.updateBillingInfo(id, opts).then(() => {
+apiInstance.updateBillingInfo(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -25,16 +25,16 @@ Creates a subscription item and associated plans
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let opts = { 
+var opts = { 
   'subscriptionResource': new KnetikCloud.SubscriptionResource() // SubscriptionResource | The subscription to be created
 };
-apiInstance.createSubscription(opts).then((data) => {
+apiInstance.createSubscription(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -69,16 +69,16 @@ Subscription Templates define a type of subscription and the properties they hav
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let opts = { 
+var opts = { 
   'subscriptionTemplateResource': new KnetikCloud.SubscriptionTemplateResource() // SubscriptionTemplateResource | The new subscription template
 };
-apiInstance.createSubscriptionTemplate(opts).then((data) => {
+apiInstance.createSubscriptionTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,17 +113,17 @@ Must not be locked or a migration target
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = 56; // Number | The id of the subscription
+var id = 56; // Number | The id of the subscription
 
-let planId = "planId_example"; // String | The id of the plan
+var planId = "planId_example"; // String | The id of the plan
 
-apiInstance.deleteSubscription(id, planId).then(() => {
+apiInstance.deleteSubscription(id, planId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -157,18 +157,18 @@ Delete a subscription template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteSubscriptionTemplate(id, opts).then(() => {
+apiInstance.deleteSubscriptionTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -202,15 +202,15 @@ Retrieve a single subscription item and associated plans
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = 56; // Number | The id of the subscription
+var id = 56; // Number | The id of the subscription
 
-apiInstance.getSubscription(id).then((data) => {
+apiInstance.getSubscription(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -245,15 +245,15 @@ Subscription Templates define a type of subscription and the properties they hav
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getSubscriptionTemplate(id).then((data) => {
+apiInstance.getSubscriptionTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -286,18 +286,18 @@ List and search subscription templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getSubscriptionTemplates(opts).then((data) => {
+apiInstance.getSubscriptionTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -332,18 +332,18 @@ List available subscription items and associated plans
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getSubscriptions(opts).then((data) => {
+apiInstance.getSubscriptions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -378,12 +378,12 @@ Processes subscriptions and charge dues
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
-apiInstance.processSubscriptions().then(() => {
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+apiInstance.processSubscriptions().then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -415,18 +415,18 @@ Will not remove plans left out
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = 56; // Number | The id of the subscription
+var id = 56; // Number | The id of the subscription
 
-let opts = { 
+var opts = { 
   'subscriptionResource': new KnetikCloud.SubscriptionResource() // SubscriptionResource | The subscription resource object
 };
-apiInstance.updateSubscription(id, opts).then(() => {
+apiInstance.updateSubscription(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -460,18 +460,18 @@ Update a subscription template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSubscriptionsApi();
+var apiInstance = new KnetikCloud.StoreSubscriptionsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'subscriptionTemplateResource': new KnetikCloud.SubscriptionTemplateResource() // SubscriptionTemplateResource | The subscription template resource object
 };
-apiInstance.updateSubscriptionTemplate(id, opts).then((data) => {
+apiInstance.updateSubscriptionTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

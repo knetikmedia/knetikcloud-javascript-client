@@ -17,16 +17,16 @@ Links the current user account to a facebook account, using the acccess token fr
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SocialFacebookApi();
+var apiInstance = new KnetikCloud.SocialFacebookApi();
 
-let opts = { 
+var opts = { 
   'facebookToken': new KnetikCloud.FacebookToken() // FacebookToken | The token from facebook
 };
-apiInstance.linkAccounts(opts).then(() => {
+apiInstance.linkAccounts(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

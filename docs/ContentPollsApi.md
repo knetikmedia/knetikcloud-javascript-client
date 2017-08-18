@@ -26,18 +26,18 @@ Add your vote to a poll
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The poll id
+var id = "id_example"; // String | The poll id
 
-let opts = { 
+var opts = { 
   'answerKey': new KnetikCloud.StringWrapper() // StringWrapper | The answer key
 };
-apiInstance.answerPoll(id, opts).then((data) => {
+apiInstance.answerPoll(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -73,16 +73,16 @@ Polls are blobs of text with titles, a category and assets. Formatting and displ
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let opts = { 
+var opts = { 
   'pollResource': new KnetikCloud.PollResource() // PollResource | The poll object
 };
-apiInstance.createPoll(opts).then((data) => {
+apiInstance.createPoll(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -117,16 +117,16 @@ Poll templates define a type of poll and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let opts = { 
+var opts = { 
   'pollTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The poll template resource object
 };
-apiInstance.createPollTemplate(opts).then((data) => {
+apiInstance.createPollTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -159,15 +159,15 @@ Delete an existing poll
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The poll id
+var id = "id_example"; // String | The poll id
 
-apiInstance.deletePoll(id).then(() => {
+apiInstance.deletePoll(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -202,18 +202,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deletePollTemplate(id, opts).then(() => {
+apiInstance.deletePollTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -247,15 +247,15 @@ Get a single poll
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The poll id
+var id = "id_example"; // String | The poll id
 
-apiInstance.getPoll(id).then((data) => {
+apiInstance.getPoll(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -288,15 +288,15 @@ Get poll answer
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The poll id
+var id = "id_example"; // String | The poll id
 
-apiInstance.getPollAnswer(id).then((data) => {
+apiInstance.getPollAnswer(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,15 +329,15 @@ Get a single poll template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getPollTemplate(id).then((data) => {
+apiInstance.getPollTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -370,18 +370,18 @@ List and search poll templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getPollTemplates(opts).then((data) => {
+apiInstance.getPollTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -418,11 +418,11 @@ Get a list of polls with optional filtering. Assets will not be filled in on the
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let opts = { 
+var opts = { 
   'filterCategory': "filterCategory_example", // String | Filter for polls from a specific category by id
   'filterTagset': "filterTagset_example", // String | Filter for polls with specified tags (separated by comma)
   'filterText': "filterText_example", // String | Filter for polls whose text contains a string
@@ -430,9 +430,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getPolls(opts).then((data) => {
+apiInstance.getPolls(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -470,18 +470,18 @@ Update an existing poll
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The poll id
+var id = "id_example"; // String | The poll id
 
-let opts = { 
+var opts = { 
   'pollResource': new KnetikCloud.PollResource() // PollResource | The poll object
 };
-apiInstance.updatePoll(id, opts).then((data) => {
+apiInstance.updatePoll(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -515,18 +515,18 @@ Update a poll template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentPollsApi();
+var apiInstance = new KnetikCloud.ContentPollsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'pollTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The poll template resource object
 };
-apiInstance.updatePollTemplate(id, opts).then((data) => {
+apiInstance.updatePollTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

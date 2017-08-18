@@ -17,16 +17,16 @@ Parameters within the event must match names and types from the trigger. Actual 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineEventsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineEventsApi();
 
-let opts = { 
+var opts = { 
   'breEvent': new KnetikCloud.BreEvent() // BreEvent | The BRE event object
 };
-apiInstance.sendBREEvent(opts).then((data) => {
+apiInstance.sendBREEvent(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

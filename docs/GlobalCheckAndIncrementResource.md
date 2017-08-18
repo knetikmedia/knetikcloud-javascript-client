@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**checkValueResource** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
-**globalResource** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
+**check_value_resource** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
+**global_resource** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
 **type** | **String** |  | [optional] 
 
 

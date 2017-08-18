@@ -25,17 +25,17 @@ SKUs have to be unique in the entire store.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'couponItem': new KnetikCloud.CouponItem() // CouponItem | The coupon item object
 };
-apiInstance.createCouponItem(opts).then((data) => {
+apiInstance.createCouponItem(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,16 +71,16 @@ Coupon Templates define a type of coupon and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let opts = { 
+var opts = { 
   'couponTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The new coupon template
 };
-apiInstance.createCouponTemplate(opts).then((data) => {
+apiInstance.createCouponTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,15 +113,15 @@ Delete a coupon item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = 56; // Number | The id of the coupon
+var id = 56; // Number | The id of the coupon
 
-apiInstance.deleteCouponItem(id).then(() => {
+apiInstance.deleteCouponItem(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -154,18 +154,18 @@ Delete a coupon template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteCouponTemplate(id, opts).then(() => {
+apiInstance.deleteCouponTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -199,15 +199,15 @@ Get a single coupon item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = 56; // Number | The id of the coupon
+var id = 56; // Number | The id of the coupon
 
-apiInstance.getCouponItem(id).then((data) => {
+apiInstance.getCouponItem(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -242,15 +242,15 @@ Coupon Templates define a type of coupon and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getCouponTemplate(id).then((data) => {
+apiInstance.getCouponTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -283,18 +283,18 @@ List and search coupon templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCouponTemplates(opts).then((data) => {
+apiInstance.getCouponTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,19 +329,19 @@ Update a coupon item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = 56; // Number | The id of the coupon
+var id = 56; // Number | The id of the coupon
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'couponItem': new KnetikCloud.CouponItem() // CouponItem | The coupon item object
 };
-apiInstance.updateCouponItem(id, opts).then((data) => {
+apiInstance.updateCouponItem(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -376,18 +376,18 @@ Update a coupon template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreCouponsApi();
+var apiInstance = new KnetikCloud.StoreCouponsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'couponTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The coupon template resource object
 };
-apiInstance.updateCouponTemplate(id, opts).then((data) => {
+apiInstance.updateCouponTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

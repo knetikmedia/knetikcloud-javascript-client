@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dbName** | **String** |  | [optional] 
+**db_name** | **String** |  | [optional] 
 **options** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **servers** | **String** |  | [optional] 

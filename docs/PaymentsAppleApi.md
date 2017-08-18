@@ -17,16 +17,16 @@ Mark an invoice paid using Apple payment receipt. A receipt will only be accepte
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsAppleApi();
+var apiInstance = new KnetikCloud.PaymentsAppleApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.ApplyPaymentRequest() // ApplyPaymentRequest | The request for paying an invoice through an Apple receipt
 };
-apiInstance.verifyAppleReceipt(opts).then((data) => {
+apiInstance.verifyAppleReceipt(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

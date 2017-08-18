@@ -3,15 +3,15 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currencyCode** | **String** |  | [optional] 
+**currency_code** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**originalPrice** | **Number** |  | [optional] 
+**original_price** | **Number** |  | [optional] 
 **price** | **Number** |  | [optional] 
-**shippingItemId** | **Number** |  | [optional] 
+**shipping_item_id** | **Number** |  | [optional] 
 **sku** | **String** |  | [optional] 
 **taxable** | **Boolean** |  | [optional] 
-**vendorId** | **Number** |  | [optional] 
-**vendorName** | **String** |  | [optional] 
+**vendor_id** | **Number** |  | [optional] 
+**vendor_name** | **String** |  | [optional] 
 
 

@@ -24,16 +24,16 @@ Templates define a type of BRE category and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The category template to create
 };
-apiInstance.createBRECategoryTemplate(opts).then((data) => {
+apiInstance.createBRECategoryTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -68,18 +68,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteBRECategoryTemplate(id, opts).then(() => {
+apiInstance.deleteBRECategoryTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,17 +113,17 @@ List categories
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBRECategories(opts).then((data) => {
+apiInstance.getBRECategories(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -157,15 +157,15 @@ Get a single category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let name = "name_example"; // String | The category name
+var name = "name_example"; // String | The category name
 
-apiInstance.getBRECategory(name).then((data) => {
+apiInstance.getBRECategory(name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -198,15 +198,15 @@ Get a single BRE category template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getBRECategoryTemplate(id).then((data) => {
+apiInstance.getBRECategoryTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -239,18 +239,18 @@ List and search BRE category templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getBRECategoryTemplates(opts).then((data) => {
+apiInstance.getBRECategoryTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -285,18 +285,18 @@ Update a category
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let name = "name_example"; // String | The category name
+var name = "name_example"; // String | The category name
 
-let opts = { 
+var opts = { 
   'category': new KnetikCloud.BreCategoryResource() // BreCategoryResource | The updated BRE category information
 };
-apiInstance.updateBRECategory(name, opts).then((data) => {
+apiInstance.updateBRECategory(name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -330,18 +330,18 @@ Update a BRE category template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineCategoriesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.TemplateResource() // TemplateResource | The updated category template definition
 };
-apiInstance.updateBRECategoryTemplate(id, opts).then((data) => {
+apiInstance.updateBRECategoryTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

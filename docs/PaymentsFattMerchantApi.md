@@ -17,16 +17,16 @@ Stores customer information and creates a payment method that can be used to pay
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsFattMerchantApi();
+var apiInstance = new KnetikCloud.PaymentsFattMerchantApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.FattMerchantPaymentMethodRequest() // FattMerchantPaymentMethodRequest | Request containing payment method information for user
 };
-apiInstance.createOrUpdateFattMerchantPaymentMethod(opts).then((data) => {
+apiInstance.createOrUpdateFattMerchantPaymentMethod(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

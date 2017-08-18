@@ -10,24 +10,24 @@ Name | Type | Description | Notes
 **category** | [**SimpleReferenceResourcestring**](SimpleReferenceResourcestring.md) | The category of the video | 
 **comments** | [**[CommentResource]**](CommentResource.md) | The comments of the video | [optional] 
 **contributors** | [**[ContributionResource]**](ContributionResource.md) | Artists that contributed to the creation. See separate endpoint to add to list | [optional] 
-**createdDate** | **Number** | The date/time this resource was created in seconds since unix epoch | [optional] 
+**created_date** | **Number** | The date/time this resource was created in seconds since unix epoch | [optional] 
 **embed** | **String** | The country of an embedable version | [optional] 
 **extension** | **String** | The file extension of the media file. 1-5 characters | 
 **height** | **Number** | The height of the video in px | 
 **id** | **Number** | The unique ID for that resource | [optional] 
 **length** | **Number** | The length of the video in seconds | 
 **location** | **String** | The country of the media. Typically a url. Cannot be blank | 
-**longDescription** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
-**mimeType** | **String** | The mime-type of the media | [optional] 
+**long_description** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
+**mime_type** | **String** | The mime-type of the media | [optional] 
 **name** | **String** | The user friendly name of that resource | 
 **priority** | **Number** | The sort order of the video. default: 100 | [optional] 
 **privacy** | **String** | The privacy setting. default: private | [optional] 
 **published** | **Boolean** | Whether the video has been made public. Default true | [optional] 
-**shortDescription** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
+**short_description** | **String** | The user friendly name of that resource. Defaults to blank string | [optional] 
 **size** | **Number** | The size of the media. Minimum 0 if supplied | [optional] 
 **tags** | **[String]** | The tags for the video | [optional] 
 **thumbnail** | **String** | The country of a thumbnail version. Typically a url | [optional] 
-**updatedDate** | **Number** | The date/time this resource was last updated in seconds since unix epoch | [optional] 
+**updated_date** | **Number** | The date/time this resource was last updated in seconds since unix epoch | [optional] 
 **uploader** | [**SimpleUserResource**](SimpleUserResource.md) | The user the media was uploaded by. May be null for system uploaded media. May only be set to a user other than the current caller if VIDEOS_ADMIN permission. Null will mean the caller is the uploader unless the caller has VIDEOS_ADMIN permission, in which case it will be set to null | [optional] 
 **views** | **Number** | The view count of the video | [optional] 
 **width** | **Number** | The width of the video in px | 

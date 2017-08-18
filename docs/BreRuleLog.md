@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ran** | **Boolean** | Whether the rule ran | [optional] 
 **reason** | **String** | The reason for the rule | [optional] 
-**ruleEndDate** | **Number** | The end date of the rule in seconds | [optional] 
-**ruleId** | **String** | The id of the rule | [optional] 
-**ruleName** | **String** | The name of the rule | [optional] 
-**ruleStartDate** | **Number** | The start date of the rule in seconds | [optional] 
+**rule_end_date** | **Number** | The end date of the rule in seconds | [optional] 
+**rule_id** | **String** | The id of the rule | [optional] 
+**rule_name** | **String** | The name of the rule | [optional] 
+**rule_start_date** | **Number** | The start date of the rule in seconds | [optional] 
 
 

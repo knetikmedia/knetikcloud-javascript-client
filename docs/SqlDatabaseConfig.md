@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**connectionPoolSize** | **Number** |  | [optional] 
-**dbName** | **String** |  | [optional] 
+**connection_pool_size** | **Number** |  | [optional] 
+**db_name** | **String** |  | [optional] 
 **hostname** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **port** | **Number** |  | [optional] 

@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**itemId** | **Number** |  | [optional] 
-**itemName** | **String** |  | [optional] 
+**item_id** | **Number** |  | [optional] 
+**item_name** | **String** |  | [optional] 
 **revenue** | **Number** |  | [optional] 
 **volume** | **Number** |  | [optional] 
 

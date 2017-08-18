@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **client** | **String** |  | [optional] 
 **customer** | **String** |  | [optional] 
-**doNotBroadcast** | **Boolean** |  | [optional] 
+**do_not_broadcast** | **Boolean** |  | [optional] 
 **section** | **String** |  | [optional] 
 **source** | **Object** |  | [optional] 
 **specifics** | **String** |  | [optional] 

@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bucketName** | **String** |  | [optional] 
-**cdnUrl** | **String** |  | [optional] 
+**bucket_name** | **String** |  | [optional] 
+**cdn_url** | **String** |  | [optional] 
 **region** | **String** |  | [optional] 
-**uploadPrefix** | **String** |  | [optional] 
+**upload_prefix** | **String** |  | [optional] 
 
 

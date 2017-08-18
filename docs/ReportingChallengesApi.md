@@ -18,19 +18,19 @@ Lists all leaderboard entries with additional user details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingChallengesApi();
+var apiInstance = new KnetikCloud.ReportingChallengesApi();
 
-let opts = { 
+var opts = { 
   'filterEvent': 789, // Number | A sepecific challenge event id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeEventLeaderboard(opts).then((data) => {
+apiInstance.getChallengeEventLeaderboard(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -68,19 +68,19 @@ Lists all user submitted scores sorted by value, including those that do not ape
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingChallengesApi();
+var apiInstance = new KnetikCloud.ReportingChallengesApi();
 
-let opts = { 
+var opts = { 
   'filterEvent': 789, // Number | A sepecific challenge event id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeEventParticipants(opts).then((data) => {
+apiInstance.getChallengeEventParticipants(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

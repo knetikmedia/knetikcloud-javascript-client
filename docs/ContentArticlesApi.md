@@ -26,16 +26,16 @@ Articles are blobs of text with titles, a category and assets. Formatting and di
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let opts = { 
+var opts = { 
   'articleResource': new KnetikCloud.ArticleResource() // ArticleResource | The new article
 };
-apiInstance.createArticle(opts).then((data) => {
+apiInstance.createArticle(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -70,16 +70,16 @@ Article Templates define a type of article and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let opts = { 
+var opts = { 
   'articleTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The article template resource object
 };
-apiInstance.createArticleTemplate(opts).then((data) => {
+apiInstance.createArticleTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -112,15 +112,15 @@ Delete an existing article
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The article id
+var id = "id_example"; // String | The article id
 
-apiInstance.deleteArticle(id).then(() => {
+apiInstance.deleteArticle(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -155,18 +155,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteArticleTemplate(id, opts).then(() => {
+apiInstance.deleteArticleTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -200,15 +200,15 @@ Get a single article
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The article id
+var id = "id_example"; // String | The article id
 
-apiInstance.getArticle(id).then((data) => {
+apiInstance.getArticle(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -241,15 +241,15 @@ Get a single article template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getArticleTemplate(id).then((data) => {
+apiInstance.getArticleTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -282,18 +282,18 @@ List and search article templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArticleTemplates(opts).then((data) => {
+apiInstance.getArticleTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -330,11 +330,11 @@ Get a list of articles with optional filtering. Assets will not be filled in on 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let opts = { 
+var opts = { 
   'filterActiveOnly': true, // Boolean | Filter for articles that are active (true) or inactive (false)
   'filterCategory': "filterCategory_example", // String | Filter for articles from a specific category by id
   'filterTagset': "filterTagset_example", // String | Filter for articles with at least one of a specified set of tags (separated by comma)
@@ -345,9 +345,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getArticles(opts).then((data) => {
+apiInstance.getArticles(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -388,18 +388,18 @@ Update an existing article
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The article id
+var id = "id_example"; // String | The article id
 
-let opts = { 
+var opts = { 
   'articleResource': new KnetikCloud.ArticleResource() // ArticleResource | The article object
 };
-apiInstance.updateArticle(id, opts).then((data) => {
+apiInstance.updateArticle(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -433,18 +433,18 @@ Update an article template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentArticlesApi();
+var apiInstance = new KnetikCloud.ContentArticlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'articleTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The article template resource object
 };
-apiInstance.updateArticleTemplate(id, opts).then((data) => {
+apiInstance.updateArticleTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

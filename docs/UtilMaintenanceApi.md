@@ -18,12 +18,12 @@ Delete maintenance info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilMaintenanceApi();
-apiInstance.deleteMaintenance().then(() => {
+var apiInstance = new KnetikCloud.UtilMaintenanceApi();
+apiInstance.deleteMaintenance().then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -55,12 +55,12 @@ Get current maintenance info. 404 if no maintenance.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilMaintenanceApi();
-apiInstance.getMaintenance().then((data) => {
+var apiInstance = new KnetikCloud.UtilMaintenanceApi();
+apiInstance.getMaintenance().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -90,16 +90,16 @@ Set current maintenance info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilMaintenanceApi();
+var apiInstance = new KnetikCloud.UtilMaintenanceApi();
 
-let opts = { 
+var opts = { 
   'maintenance': new KnetikCloud.Maintenance() // Maintenance | The maintenance object
 };
-apiInstance.setMaintenance(opts).then(() => {
+apiInstance.setMaintenance(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -132,16 +132,16 @@ Update current maintenance info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilMaintenanceApi();
+var apiInstance = new KnetikCloud.UtilMaintenanceApi();
 
-let opts = { 
+var opts = { 
   'maintenance': new KnetikCloud.Maintenance() // Maintenance | The maintenance object
 };
-apiInstance.updateMaintenance(opts).then(() => {
+apiInstance.updateMaintenance(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

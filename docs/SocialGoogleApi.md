@@ -17,16 +17,16 @@ Links the current user account to a google account, using the acccess token from
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SocialGoogleApi();
+var apiInstance = new KnetikCloud.SocialGoogleApi();
 
-let opts = { 
+var opts = { 
   'googleToken': new KnetikCloud.GoogleToken() // GoogleToken | The token from google
 };
-apiInstance.linkAccounts1(opts).then(() => {
+apiInstance.linkAccounts1(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

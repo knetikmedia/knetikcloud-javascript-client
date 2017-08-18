@@ -15,12 +15,12 @@ Get health info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilHealthApi();
-apiInstance.getHealth().then((data) => {
+var apiInstance = new KnetikCloud.UtilHealthApi();
+apiInstance.getHealth().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

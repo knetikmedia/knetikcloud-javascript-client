@@ -27,18 +27,18 @@ Add a challenge to a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = 789; // Number | The id of the campaign
+var id = 789; // Number | The id of the campaign
 
-let opts = { 
+var opts = { 
   'challengeId': 789 // Number | The id of the challenge
 };
-apiInstance.addChallengeToCampaign(id, opts).then(() => {
+apiInstance.addChallengeToCampaign(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -72,16 +72,16 @@ Create a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let opts = { 
+var opts = { 
   'campaignResource': new KnetikCloud.CampaignResource() // CampaignResource | The campaign resource object
 };
-apiInstance.createCampaign(opts).then((data) => {
+apiInstance.createCampaign(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -116,16 +116,16 @@ Campaign Templates define a type of campaign and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let opts = { 
+var opts = { 
   'campaignTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The campaign template resource object
 };
-apiInstance.createCampaignTemplate(opts).then((data) => {
+apiInstance.createCampaignTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -158,15 +158,15 @@ Delete a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = 789; // Number | The campaign id
+var id = 789; // Number | The campaign id
 
-apiInstance.deleteCampaign(id).then(() => {
+apiInstance.deleteCampaign(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -201,18 +201,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteCampaignTemplate(id, opts).then(() => {
+apiInstance.deleteCampaignTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -246,15 +246,15 @@ Returns a single campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = 789; // Number | The campaign id
+var id = 789; // Number | The campaign id
 
-apiInstance.getCampaign(id).then((data) => {
+apiInstance.getCampaign(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -287,22 +287,22 @@ List the challenges associated with a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = 789; // Number | The campaign id
+var id = 789; // Number | The campaign id
 
-let opts = { 
+var opts = { 
   'filterStartDate': "filterStartDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'filterEndDate': "filterEndDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the challenge end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaignChallenges(id, opts).then((data) => {
+apiInstance.getCampaignChallenges(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -340,15 +340,15 @@ Get a single campaign template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getCampaignTemplate(id).then((data) => {
+apiInstance.getCampaignTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -381,18 +381,18 @@ List and search campaign templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaignTemplates(opts).then((data) => {
+apiInstance.getCampaignTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -427,19 +427,19 @@ List and search campaigns
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let opts = { 
+var opts = { 
   'filterActive': true, // Boolean | Filter for campaigns that are active
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCampaigns(opts).then((data) => {
+apiInstance.getCampaigns(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -475,17 +475,17 @@ Remove a challenge from a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let campaignId = 789; // Number | The campaign id
+var campaignId = 789; // Number | The campaign id
 
-let id = 789; // Number | The challenge id
+var id = 789; // Number | The challenge id
 
-apiInstance.removeChallengeFromCampaign(campaignId, id).then(() => {
+apiInstance.removeChallengeFromCampaign(campaignId, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -519,18 +519,18 @@ Update a campaign
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = 789; // Number | The campaign id
+var id = 789; // Number | The campaign id
 
-let opts = { 
+var opts = { 
   'campaignResource': new KnetikCloud.CampaignResource() // CampaignResource | The campaign resource object
 };
-apiInstance.updateCampaign(id, opts).then((data) => {
+apiInstance.updateCampaign(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -564,18 +564,18 @@ Update an campaign template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsApi();
+var apiInstance = new KnetikCloud.CampaignsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'campaignTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The campaign template resource object
 };
-apiInstance.updateCampaignTemplate(id, opts).then((data) => {
+apiInstance.updateCampaignTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

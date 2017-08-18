@@ -5,16 +5,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address1** | **String** |  | [optional] 
 **address2** | **String** |  | [optional] 
-**addressCity** | **String** |  | [optional] 
-**addressCountry** | **String** |  | [optional] 
-**addressState** | **String** |  | [optional] 
-**addressZip** | **String** |  | [optional] 
-**cardLastFour** | **String** | Last four digits of the credit card | 
-**createdAt** | **String** |  | [optional] 
-**customerId** | **String** | Unique FattMerchant customer ID | 
-**deletedAt** | **String** |  | [optional] 
+**address_city** | **String** |  | [optional] 
+**address_country** | **String** |  | [optional] 
+**address_state** | **String** |  | [optional] 
+**address_zip** | **String** |  | [optional] 
+**card_last_four** | **String** | Last four digits of the credit card | 
+**created_at** | **String** |  | [optional] 
+**customer_id** | **String** | Unique FattMerchant customer ID | 
+**deleted_at** | **String** |  | [optional] 
 **id** | **String** |  | [optional] 
 **nickname** | **String** | Nickname given to the FattMerchant payment method | 
-**updatedAt** | **String** |  | [optional] 
+**updated_at** | **String** |  | [optional] 
 
 

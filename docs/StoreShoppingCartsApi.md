@@ -27,18 +27,18 @@ Adds a custom discount to the cart
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'customDiscount': new KnetikCloud.CouponDefinition() // CouponDefinition | The details of the discount to add
 };
-apiInstance.addCustomDiscount(id, opts).then(() => {
+apiInstance.addCustomDiscount(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -72,18 +72,18 @@ Adds a discount coupon to the cart
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'skuRequest': new KnetikCloud.SkuRequest() // SkuRequest | The request of the sku
 };
-apiInstance.addDiscountToCart(id, opts).then(() => {
+apiInstance.addDiscountToCart(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -119,18 +119,18 @@ Currently, carts cannot contain virtual and real currency items at the same time
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'cartItemRequest': new KnetikCloud.CartItemRequest() // CartItemRequest | The cart item request object
 };
-apiInstance.addItemToCart(id, opts).then(() => {
+apiInstance.addItemToCart(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -166,17 +166,17 @@ You don&#39;t have to have a user to create a cart but the API requires authenti
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let opts = { 
+var opts = { 
   'owner': 56, // Number | Set the owner of a cart. If not specified, defaults to the calling user's id. If specified and is not the calling user's id, SHOPPING_CARTS_ADMIN permission is required
   'currencyCode': "currencyCode_example" // String | Set the currency for the cart, by currency code. May be disallowed by site settings.
 };
-apiInstance.createCart(opts).then((data) => {
+apiInstance.createCart(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -210,15 +210,15 @@ Returns the cart with the given GUID
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-apiInstance.getCart(id).then((data) => {
+apiInstance.getCart(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -251,19 +251,19 @@ Get a list of carts
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let opts = { 
+var opts = { 
   'filterOwnerId': 56, // Number | Filter by the id of the owner
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCarts(opts).then((data) => {
+apiInstance.getCarts(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -299,15 +299,15 @@ Returns whether a cart requires shipping
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-apiInstance.getShippable(id).then((data) => {
+apiInstance.getShippable(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -342,15 +342,15 @@ Since a cart can have multiple vendors with different shipping options, the coun
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-apiInstance.getShippingCountries(id).then((data) => {
+apiInstance.getShippingCountries(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -383,17 +383,17 @@ Removes a discount coupon from the cart
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let code = "code_example"; // String | The SKU code of the coupon to remove
+var code = "code_example"; // String | The SKU code of the coupon to remove
 
-apiInstance.removeDiscountFromCart(id, code).then(() => {
+apiInstance.removeDiscountFromCart(id, code).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -429,18 +429,18 @@ May be disallowed by site settings.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'currencyCode': new KnetikCloud.StringWrapper() // StringWrapper | The code of the currency
 };
-apiInstance.setCartCurrency(id, opts).then(() => {
+apiInstance.setCartCurrency(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -474,18 +474,18 @@ Sets the owner of a cart if none is set already
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'userId': new KnetikCloud.IntWrapper() // IntWrapper | The id of the user
 };
-apiInstance.setCartOwner(id, opts).then(() => {
+apiInstance.setCartOwner(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -521,18 +521,18 @@ A quantity of zero will remove the item from the cart altogether.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'cartItemRequest': new KnetikCloud.CartItemRequest() // CartItemRequest | The cart item request object
 };
-apiInstance.updateItemInCart(id, opts).then(() => {
+apiInstance.updateItemInCart(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -566,18 +566,18 @@ Modifies or sets the order shipping address
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreShoppingCartsApi();
+var apiInstance = new KnetikCloud.StoreShoppingCartsApi();
 
-let id = "id_example"; // String | The id of the cart
+var id = "id_example"; // String | The id of the cart
 
-let opts = { 
+var opts = { 
   'cartShippingAddressRequest': new KnetikCloud.CartShippingAddressRequest() // CartShippingAddressRequest | The cart shipping address request object
 };
-apiInstance.updateShippingAddress(id, opts).then(() => {
+apiInstance.updateShippingAddress(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

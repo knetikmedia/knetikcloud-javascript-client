@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerConfig** | [**CustomerConfig**](CustomerConfig.md) |  | [optional] 
+**customer_config** | [**CustomerConfig**](CustomerConfig.md) |  | [optional] 
 
 

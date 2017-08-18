@@ -21,17 +21,17 @@ Returns the user&#39;s wallet for the given currency code
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let userId = 56; // Number | The ID of the user for whom wallet is being retrieved
+var userId = 56; // Number | The ID of the user for whom wallet is being retrieved
 
-let currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
+var currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
 
-apiInstance.getUserWallet(userId, currencyCode).then((data) => {
+apiInstance.getUserWallet(userId, currencyCode).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -65,15 +65,15 @@ Retrieve a user&#39;s wallet transactions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let userId = 56; // Number | The ID of the user for whom wallet transactions are being retrieved
+var userId = 56; // Number | The ID of the user for whom wallet transactions are being retrieved
 
-let currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
+var currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
 
-let opts = { 
+var opts = { 
   'filterType': "filterType_example", // String | Filter for transactions with specified type
   'filterMaxDate': 789, // Number | Filter for transactions from no earlier than the specified date as a unix timestamp in seconds
   'filterMinDate': 789, // Number | Filter for transactions from no later than the specified date as a unix timestamp in seconds
@@ -82,9 +82,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserWalletTransactions(userId, currencyCode, opts).then((data) => {
+apiInstance.getUserWalletTransactions(userId, currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -125,15 +125,15 @@ List all of a user&#39;s wallets
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let userId = 56; // Number | The ID of the user for whom wallets are being retrieved
+var userId = 56; // Number | The ID of the user for whom wallets are being retrieved
 
-apiInstance.getUserWallets(userId).then((data) => {
+apiInstance.getUserWallets(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -166,12 +166,12 @@ Retrieves a summation of wallet balances by currency code
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
-apiInstance.getWalletBalances().then((data) => {
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
+apiInstance.getWalletBalances().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -201,11 +201,11 @@ Retrieve wallet transactions across the system
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let opts = { 
+var opts = { 
   'filterInvoice': 56, // Number | Filter for transactions from a specific invoice
   'filterType': "filterType_example", // String | Filter for transactions with specified type
   'filterDate': "filterDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -218,9 +218,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getWalletTransactions(opts).then((data) => {
+apiInstance.getWalletTransactions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -263,18 +263,18 @@ Retrieve a list of wallets across the system
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getWallets(opts).then((data) => {
+apiInstance.getWallets(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -309,20 +309,20 @@ Updates the balance for a user&#39;s wallet
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsWalletsApi();
+var apiInstance = new KnetikCloud.PaymentsWalletsApi();
 
-let userId = 56; // Number | The ID of the user for whom wallet is being modified
+var userId = 56; // Number | The ID of the user for whom wallet is being modified
 
-let currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
+var currencyCode = "currencyCode_example"; // String | Currency code of the user's wallet
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.WalletAlterRequest() // WalletAlterRequest | The requested balance modification to be made to the user's wallet
 };
-apiInstance.updateWalletBalance(userId, currencyCode, opts).then((data) => {
+apiInstance.updateWalletBalance(userId, currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

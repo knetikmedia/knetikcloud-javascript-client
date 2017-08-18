@@ -21,16 +21,16 @@ Once created you can then use in a custom rule. Note that global definitions can
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-let opts = { 
+var opts = { 
   'breGlobalResource': new KnetikCloud.BreGlobalResource() // BreGlobalResource | The BRE global resource object
 };
-apiInstance.createBREGlobal(opts).then((data) => {
+apiInstance.createBREGlobal(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -65,15 +65,15 @@ May fail if there are existing rules against it. Cannot delete core globals
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-let id = "id_example"; // String | The id of the global definition
+var id = "id_example"; // String | The id of the global definition
 
-apiInstance.deleteBREGlobal(id).then(() => {
+apiInstance.deleteBREGlobal(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -106,15 +106,15 @@ Get a single global definition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-let id = "id_example"; // String | The id of the global definition
+var id = "id_example"; // String | The id of the global definition
 
-apiInstance.getBREGlobal(id).then((data) => {
+apiInstance.getBREGlobal(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -147,18 +147,18 @@ List global definitions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-let opts = { 
+var opts = { 
   'filterSystem': true, // Boolean | Filter for globals that are system globals when true, or not when false. Leave off for both mixed
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBREGlobals(opts).then((data) => {
+apiInstance.getBREGlobals(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -195,18 +195,18 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineGlobalsApi();
 
-let id = "id_example"; // String | The id of the global definition
+var id = "id_example"; // String | The id of the global definition
 
-let opts = { 
+var opts = { 
   'breGlobalResource': new KnetikCloud.BreGlobalResource() // BreGlobalResource | The BRE global resource object
 };
-apiInstance.updateBREGlobal(id, opts).then((data) => {
+apiInstance.updateBREGlobal(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fileType** | **String** | If provided, a file type that the property must match | [optional] 
-**maxFileSize** | **Number** | If provided, the maximum allowed file size in bytes | [optional] 
+**file_type** | **String** | If provided, a file type that the property must match | [optional] 
+**max_file_size** | **Number** | If provided, the maximum allowed file size in bytes | [optional] 
 
 

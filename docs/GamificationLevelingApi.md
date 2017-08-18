@@ -24,16 +24,16 @@ Create a level schema
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let opts = { 
+var opts = { 
   'level': new KnetikCloud.LevelingResource() // LevelingResource | The level schema definition
 };
-apiInstance.createLevel(opts).then((data) => {
+apiInstance.createLevel(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,15 +66,15 @@ Delete a level
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-apiInstance.deleteLevel(name).then(() => {
+apiInstance.deleteLevel(name).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -107,15 +107,15 @@ Retrieve a level
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-apiInstance.getLevel(name).then((data) => {
+apiInstance.getLevel(name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -148,12 +148,12 @@ Get the list of triggers that can be used to trigger a leveling progress update
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
-apiInstance.getLevelTriggers().then((data) => {
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
+apiInstance.getLevelTriggers().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -185,19 +185,19 @@ Get a list of levels schemas with optional filtering
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let opts = { 
+var opts = { 
   'filterName': "filterName_example", // String | Filter for level schemas whose name contains a given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getLevels(opts).then((data) => {
+apiInstance.getLevels(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -233,17 +233,17 @@ Get a user&#39;s progress for a given level schema
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-apiInstance.getUserLevel(userId, name).then((data) => {
+apiInstance.getUserLevel(userId, name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -279,21 +279,21 @@ Filtering and sorting is based on the LevelingResource object, not the UserLevel
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let opts = { 
+var opts = { 
   'filterName': "filterName_example", // String | Filter for level schemas whose name contains a given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserLevels(userId, opts).then((data) => {
+apiInstance.getUserLevels(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -332,20 +332,20 @@ If no progress record yet exists for the user, it will be created. Otherwise the
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-let opts = { 
+var opts = { 
   'progress': new KnetikCloud.IntWrapper() // IntWrapper | The amount of progress to add
 };
-apiInstance.incrementProgress(userId, name, opts).then(() => {
+apiInstance.incrementProgress(userId, name, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -382,20 +382,20 @@ If no progress record yet exists for the user, it will be created. Otherwise it 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-let opts = { 
+var opts = { 
   'progress': new KnetikCloud.IntWrapper() // IntWrapper | The new progress amount
 };
-apiInstance.setProgress(userId, name, opts).then(() => {
+apiInstance.setProgress(userId, name, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -430,18 +430,18 @@ Update a level
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLevelingApi();
+var apiInstance = new KnetikCloud.GamificationLevelingApi();
 
-let name = "name_example"; // String | The level schema name
+var name = "name_example"; // String | The level schema name
 
-let opts = { 
+var opts = { 
   'newLevel': new KnetikCloud.LevelingResource() // LevelingResource | The level schema definition
 };
-apiInstance.updateLevel(name, opts).then((data) => {
+apiInstance.updateLevel(name, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

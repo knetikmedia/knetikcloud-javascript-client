@@ -22,17 +22,17 @@ Get details about a user&#39;s subscription
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-apiInstance.getUserSubscriptionDetails(userId, inventoryId).then((data) => {
+apiInstance.getUserSubscriptionDetails(userId, inventoryId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,15 +66,15 @@ Get details about a user&#39;s subscriptions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-apiInstance.getUsersSubscriptionDetails(userId).then((data) => {
+apiInstance.getUsersSubscriptionDetails(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -107,20 +107,20 @@ Reactivate a subscription and charge fee
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let opts = { 
+var opts = { 
   'reactivateSubscriptionRequest': new KnetikCloud.ReactivateSubscriptionRequest() // ReactivateSubscriptionRequest | The reactivate subscription request object inventory
 };
-apiInstance.reactivateUserSubscription(userId, inventoryId, opts).then((data) => {
+apiInstance.reactivateUserSubscription(userId, inventoryId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -155,19 +155,19 @@ Set a new date to bill a subscription on
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let billDate = 789; // Number | The new bill date. Unix timestamp in seconds
+var billDate = 789; // Number | The new bill date. Unix timestamp in seconds
 
-apiInstance.setSubscriptionBillDate(userId, inventoryId, billDate).then(() => {
+apiInstance.setSubscriptionBillDate(userId, inventoryId, billDate).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -204,20 +204,20 @@ May send null to use floating default
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let opts = { 
+var opts = { 
   'paymentMethodId': new KnetikCloud.IntWrapper() // IntWrapper | The id of the payment method
 };
-apiInstance.setSubscriptionPaymentMethod(userId, inventoryId, opts).then(() => {
+apiInstance.setSubscriptionPaymentMethod(userId, inventoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -254,19 +254,19 @@ Note that the new status may be blocked if the system is not configured to allow
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let status = new KnetikCloud.StringWrapper(); // StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
+var status = new KnetikCloud.StringWrapper(); // StringWrapper | The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: ('current', 'canceled', 'stopped', 'payment_failed', 'suspended')
 
-apiInstance.setSubscriptionStatus(userId, inventoryId, status).then(() => {
+apiInstance.setSubscriptionStatus(userId, inventoryId, status).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -301,20 +301,20 @@ Set a new subscription plan for a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let opts = { 
+var opts = { 
   'planId': new KnetikCloud.StringWrapper() // StringWrapper | The id of the new plan. Must be from the same subscription
 };
-apiInstance.setUserSubscriptionPlan(userId, inventoryId, opts).then(() => {
+apiInstance.setUserSubscriptionPlan(userId, inventoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -351,20 +351,20 @@ This new price will be what the user is charged at the begining of each new peri
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersSubscriptionsApi();
+var apiInstance = new KnetikCloud.UsersSubscriptionsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let inventoryId = 56; // Number | The id of the user's inventory
+var inventoryId = 56; // Number | The id of the user's inventory
 
-let opts = { 
+var opts = { 
   'theOverrideDetails': new KnetikCloud.SubscriptionPriceOverrideRequest() // SubscriptionPriceOverrideRequest | override
 };
-apiInstance.setUserSubscriptionPrice(userId, inventoryId, opts).then(() => {
+apiInstance.setUserSubscriptionPrice(userId, inventoryId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

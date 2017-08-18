@@ -24,16 +24,16 @@ Create a new role
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let opts = { 
+var opts = { 
   'roleResource': new KnetikCloud.RoleResource() // RoleResource | The role resource object
 };
-apiInstance.createRole(opts).then((data) => {
+apiInstance.createRole(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,18 +66,18 @@ Delete a role
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let role = "role_example"; // String | The role value
+var role = "role_example"; // String | The role value
 
-let opts = { 
+var opts = { 
   'force': true // Boolean | If true, removes role from users/clients
 };
-apiInstance.deleteRole(role, opts).then(() => {
+apiInstance.deleteRole(role, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -111,15 +111,15 @@ Get roles for a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let clientKey = "clientKey_example"; // String | The client key
+var clientKey = "clientKey_example"; // String | The client key
 
-apiInstance.getClientRoles(clientKey).then((data) => {
+apiInstance.getClientRoles(clientKey).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -152,15 +152,15 @@ Get a single role
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let role = "role_example"; // String | The role value
+var role = "role_example"; // String | The role value
 
-apiInstance.getRole(role).then((data) => {
+apiInstance.getRole(role).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -193,20 +193,20 @@ List and search roles
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let opts = { 
+var opts = { 
   'filterName': "filterName_example", // String | Filter for roles that have a name starting with specified string
   'filterRole': "filterRole_example", // String | Filter for roles that have a role starting with specified string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getRoles(opts).then((data) => {
+apiInstance.getRoles(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -243,15 +243,15 @@ Get roles for a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-apiInstance.getUserRoles(userId).then((data) => {
+apiInstance.getUserRoles(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -284,18 +284,18 @@ Set roles for a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let clientKey = "clientKey_example"; // String | The client key
+var clientKey = "clientKey_example"; // String | The client key
 
-let opts = { 
+var opts = { 
   'rolesList': [new KnetikCloud.[String]()] // [String] | The list of unique roles
 };
-apiInstance.setClientRoles(clientKey, opts).then((data) => {
+apiInstance.setClientRoles(clientKey, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,18 +329,18 @@ Set permissions for a role
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let role = "role_example"; // String | The role value
+var role = "role_example"; // String | The role value
 
-let opts = { 
+var opts = { 
   'permissionsList': [new KnetikCloud.[String]()] // [String] | The list of unique permissions
 };
-apiInstance.setPermissionsForRole(role, opts).then((data) => {
+apiInstance.setPermissionsForRole(role, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -374,18 +374,18 @@ Set roles for a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let userId = 56; // Number | The user's id
+var userId = 56; // Number | The user's id
 
-let opts = { 
+var opts = { 
   'rolesList': [new KnetikCloud.[String]()] // [String] | The list of unique roles
 };
-apiInstance.setUserRoles(userId, opts).then((data) => {
+apiInstance.setUserRoles(userId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -419,18 +419,18 @@ Update a role
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthRolesApi();
+var apiInstance = new KnetikCloud.AuthRolesApi();
 
-let role = "role_example"; // String | The role value
+var role = "role_example"; // String | The role value
 
-let opts = { 
+var opts = { 
   'roleResource': new KnetikCloud.RoleResource() // RoleResource | The role resource object
 };
-apiInstance.updateRole(role, opts).then((data) => {
+apiInstance.updateRole(role, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

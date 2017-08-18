@@ -21,19 +21,19 @@ Get basic info about revenue from sales of items and bundles (not subscriptions,
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingRevenueApi();
+var apiInstance = new KnetikCloud.ReportingRevenueApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-let opts = { 
+var opts = { 
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789 // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
 };
-apiInstance.getItemRevenue(currencyCode, opts).then((data) => {
+apiInstance.getItemRevenue(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -70,19 +70,19 @@ Get basic info about revenue loss from refunds (for all item types), summed up w
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingRevenueApi();
+var apiInstance = new KnetikCloud.ReportingRevenueApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get refund data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get refund data for
 
-let opts = { 
+var opts = { 
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789 // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
 };
-apiInstance.getRefundRevenue(currencyCode, opts).then((data) => {
+apiInstance.getRefundRevenue(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -119,21 +119,21 @@ Get basic info about revenue from sales of all types, summed up within a time ra
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingRevenueApi();
+var apiInstance = new KnetikCloud.ReportingRevenueApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-let opts = { 
+var opts = { 
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789, // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getRevenueByCountry(currencyCode, opts).then((data) => {
+apiInstance.getRevenueByCountry(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -172,21 +172,21 @@ Get basic info about revenue from sales of all types, summed up within a time ra
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingRevenueApi();
+var apiInstance = new KnetikCloud.ReportingRevenueApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-let opts = { 
+var opts = { 
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789, // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getRevenueByItem(currencyCode, opts).then((data) => {
+apiInstance.getRevenueByItem(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -225,19 +225,19 @@ Get basic info about revenue from sales of new subscriptions as well as recurrin
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingRevenueApi();
+var apiInstance = new KnetikCloud.ReportingRevenueApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-let opts = { 
+var opts = { 
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789 // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
 };
-apiInstance.getSubscriptionRevenue(currencyCode, opts).then((data) => {
+apiInstance.getSubscriptionRevenue(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

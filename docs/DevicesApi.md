@@ -22,17 +22,17 @@ Add device users
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let userResources = [new KnetikCloud.SimpleUserResource()]; // [SimpleUserResource] | userResources
+var userResources = [new KnetikCloud.SimpleUserResource()]; // [SimpleUserResource] | userResources
 
-let id = 56; // Number | id
+var id = 56; // Number | id
 
-apiInstance.addDeviceUsers(userResources, id).then((data) => {
+apiInstance.addDeviceUsers(userResources, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,15 +66,15 @@ Create a device
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let device = new KnetikCloud.DeviceResource(); // DeviceResource | device
+var device = new KnetikCloud.DeviceResource(); // DeviceResource | device
 
-apiInstance.createDevice(device).then((data) => {
+apiInstance.createDevice(device).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -107,15 +107,15 @@ Delete a device
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let id = 56; // Number | id
+var id = 56; // Number | id
 
-apiInstance.deleteDevice(id).then(() => {
+apiInstance.deleteDevice(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -148,17 +148,17 @@ Delete a device user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let id = 56; // Number | The id of the device
+var id = 56; // Number | The id of the device
 
-let userId = 56; // Number | The user id of the device user
+var userId = 56; // Number | The user id of the device user
 
-apiInstance.deleteDeviceUser(id, userId).then(() => {
+apiInstance.deleteDeviceUser(id, userId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -192,18 +192,18 @@ Delete all device users
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let id = 56; // Number | The id of the device
+var id = 56; // Number | The id of the device
 
-let opts = { 
+var opts = { 
   'filterId': "filterId_example" // String | Filter for device users to delete with a user id in a given comma separated list of ids
 };
-apiInstance.deleteDeviceUsers(id, opts).then(() => {
+apiInstance.deleteDeviceUsers(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -237,15 +237,15 @@ Get a single device
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let id = 56; // Number | id
+var id = 56; // Number | id
 
-apiInstance.getDevice(id).then((data) => {
+apiInstance.getDevice(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -280,20 +280,20 @@ Get a list of devices with optional filtering
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let opts = { 
+var opts = { 
   'filterMake': "filterMake_example", // String | Filter for devices with specified make
   'filterModel': "filterModel_example", // String | Filter for devices with specified model
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getDevices(opts).then((data) => {
+apiInstance.getDevices(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -330,17 +330,17 @@ Update a device
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DevicesApi();
+var apiInstance = new KnetikCloud.DevicesApi();
 
-let device = new KnetikCloud.DeviceResource(); // DeviceResource | device
+var device = new KnetikCloud.DeviceResource(); // DeviceResource | device
 
-let id = 56; // Number | id
+var id = 56; // Number | id
 
-apiInstance.updateDevice(device, id).then((data) => {
+apiInstance.updateDevice(device, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

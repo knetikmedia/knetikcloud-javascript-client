@@ -17,20 +17,20 @@ Get user registration counts grouped by time range
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingUsersApi();
+var apiInstance = new KnetikCloud.ReportingUsersApi();
 
-let opts = { 
+var opts = { 
   'granularity': "day", // String | The time duration to aggregate by
   'startDate': 789, // Number | The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
   'endDate': 789, // Number | The end of the time range to aggregate, unix timestamp in seconds. Default is end of time
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUserRegistrations(opts).then((data) => {
+apiInstance.getUserRegistrations(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

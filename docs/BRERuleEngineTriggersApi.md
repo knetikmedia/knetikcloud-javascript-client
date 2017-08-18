@@ -21,16 +21,16 @@ Customer added triggers will not be fired automatically or have rules associated
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
 
-let opts = { 
+var opts = { 
   'breTriggerResource': new KnetikCloud.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
 };
-apiInstance.createBRETrigger(opts).then((data) => {
+apiInstance.createBRETrigger(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -65,15 +65,15 @@ May fail if there are existing rules against it. Cannot delete core triggers
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
 
-let eventName = "eventName_example"; // String | The trigger event name
+var eventName = "eventName_example"; // String | The trigger event name
 
-apiInstance.deleteBRETrigger(eventName).then(() => {
+apiInstance.deleteBRETrigger(eventName).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -106,15 +106,15 @@ Get a single trigger
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
 
-let eventName = "eventName_example"; // String | The trigger event name
+var eventName = "eventName_example"; // String | The trigger event name
 
-apiInstance.getBRETrigger(eventName).then((data) => {
+apiInstance.getBRETrigger(eventName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -147,11 +147,11 @@ List triggers
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
 
-let opts = { 
+var opts = { 
   'filterSystem': true, // Boolean | Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
   'filterCategory': "filterCategory_example", // String | Filter for triggers that are within a specific category
   'filterTags': "filterTags_example", // String | Filter for triggers that have all of the given tags (comma separated list)
@@ -160,9 +160,9 @@ let opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBRETriggers(opts).then((data) => {
+apiInstance.getBRETriggers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -203,18 +203,18 @@ May fail if new parameters mismatch requirements of existing rules. Cannot updat
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
+var apiInstance = new KnetikCloud.BRERuleEngineTriggersApi();
 
-let eventName = "eventName_example"; // String | The trigger event name
+var eventName = "eventName_example"; // String | The trigger event name
 
-let opts = { 
+var opts = { 
   'breTriggerResource': new KnetikCloud.BreTriggerResource() // BreTriggerResource | The BRE trigger resource object
 };
-apiInstance.updateBRETrigger(eventName, opts).then((data) => {
+apiInstance.updateBRETrigger(eventName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

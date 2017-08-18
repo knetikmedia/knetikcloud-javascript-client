@@ -22,16 +22,16 @@ Create a new client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let opts = { 
+var opts = { 
   'clientResource': new KnetikCloud.ClientResource() // ClientResource | The client resource object
 };
-apiInstance.createClient(opts).then((data) => {
+apiInstance.createClient(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -64,15 +64,15 @@ Delete a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let clientKey = "clientKey_example"; // String | The key of the client
+var clientKey = "clientKey_example"; // String | The key of the client
 
-apiInstance.deleteClient(clientKey).then(() => {
+apiInstance.deleteClient(clientKey).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -105,15 +105,15 @@ Get a single client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let clientKey = "clientKey_example"; // String | The key of the client
+var clientKey = "clientKey_example"; // String | The key of the client
 
-apiInstance.getClient(clientKey).then((data) => {
+apiInstance.getClient(clientKey).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -146,12 +146,12 @@ List available client grant types
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
-apiInstance.getClientGrantTypes().then((data) => {
+var apiInstance = new KnetikCloud.AuthClientsApi();
+apiInstance.getClientGrantTypes().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -181,18 +181,18 @@ List and search clients
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getClients(opts).then((data) => {
+apiInstance.getClients(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -227,18 +227,18 @@ Set grant types for a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let clientKey = "clientKey_example"; // String | The key of the client
+var clientKey = "clientKey_example"; // String | The key of the client
 
-let opts = { 
+var opts = { 
   'grantList': [new KnetikCloud.[String]()] // [String] | A list of unique grant types
 };
-apiInstance.setClientGrantTypes(clientKey, opts).then(() => {
+apiInstance.setClientGrantTypes(clientKey, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -272,18 +272,18 @@ Set redirect uris for a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let clientKey = "clientKey_example"; // String | The key of the client
+var clientKey = "clientKey_example"; // String | The key of the client
 
-let opts = { 
+var opts = { 
   'redirectList': [new KnetikCloud.[String]()] // [String] | A list of unique redirect uris
 };
-apiInstance.setClientRedirectUris(clientKey, opts).then(() => {
+apiInstance.setClientRedirectUris(clientKey, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -317,18 +317,18 @@ Update a client
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AuthClientsApi();
+var apiInstance = new KnetikCloud.AuthClientsApi();
 
-let clientKey = "clientKey_example"; // String | The key of the client
+var clientKey = "clientKey_example"; // String | The key of the client
 
-let opts = { 
+var opts = { 
   'clientResource': new KnetikCloud.ClientResource() // ClientResource | The client resource object
 };
-apiInstance.updateClient(clientKey, opts).then((data) => {
+apiInstance.updateClient(clientKey, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

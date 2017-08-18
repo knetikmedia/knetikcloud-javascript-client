@@ -15,12 +15,12 @@ Get current version info
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilVersionApi();
-apiInstance.getVersion().then((data) => {
+var apiInstance = new KnetikCloud.UtilVersionApi();
+apiInstance.getVersion().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

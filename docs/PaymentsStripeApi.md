@@ -18,16 +18,16 @@ Stores customer information and creates a payment method that can be used to pay
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsStripeApi();
+var apiInstance = new KnetikCloud.PaymentsStripeApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.StripeCreatePaymentMethod() // StripeCreatePaymentMethod | The request to create a Stripe customer with payment info
 };
-apiInstance.createStripePaymentMethod(opts).then((data) => {
+apiInstance.createStripePaymentMethod(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -60,16 +60,16 @@ Pay with a single use token
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsStripeApi();
+var apiInstance = new KnetikCloud.PaymentsStripeApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.StripePaymentRequest() // StripePaymentRequest | The request to pay an invoice
 };
-apiInstance.payStripeInvoice(opts).then(() => {
+apiInstance.payStripeInvoice(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

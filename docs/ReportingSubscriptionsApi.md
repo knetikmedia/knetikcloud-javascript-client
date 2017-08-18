@@ -15,17 +15,17 @@ Get a list of available subscription reports in most recent first order
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingSubscriptionsApi();
+var apiInstance = new KnetikCloud.ReportingSubscriptionsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getSubscriptionReports(opts).then((data) => {
+apiInstance.getSubscriptionReports(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

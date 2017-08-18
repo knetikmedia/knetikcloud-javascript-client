@@ -21,20 +21,20 @@ Mainly intended for internal use.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SearchApi();
+var apiInstance = new KnetikCloud.SearchApi();
 
-let type = "type_example"; // String | The index type
+var type = "type_example"; // String | The index type
 
-let id = "id_example"; // String | The ID of the object
+var id = "id_example"; // String | The ID of the object
 
-let opts = { 
+var opts = { 
   '_object': null // Object | The object to add
 };
-apiInstance.addSearchIndex(type, id, opts).then(() => {
+apiInstance.addSearchIndex(type, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,16 +71,16 @@ Add a new type mapping to connect data from one index to another, or discover an
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SearchApi();
+var apiInstance = new KnetikCloud.SearchApi();
 
-let opts = { 
+var opts = { 
   'mappings': [new KnetikCloud.SearchReferenceMapping()] // [SearchReferenceMapping] | The mappings to add
 };
-apiInstance.addSearchMappings(opts).then(() => {
+apiInstance.addSearchMappings(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -115,17 +115,17 @@ Mainly intended for internal use. Requires SEARCH_ADMIN.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SearchApi();
+var apiInstance = new KnetikCloud.SearchApi();
 
-let type = "type_example"; // String | The index type
+var type = "type_example"; // String | The index type
 
-let id = "id_example"; // String | The ID of the object to delete
+var id = "id_example"; // String | The ID of the object to delete
 
-apiInstance.deleteSearchIndex(type, id).then(() => {
+apiInstance.deleteSearchIndex(type, id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -161,15 +161,15 @@ Mainly intended for internal use
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SearchApi();
+var apiInstance = new KnetikCloud.SearchApi();
 
-let type = "type_example"; // String | The index type
+var type = "type_example"; // String | The index type
 
-apiInstance.deleteSearchIndexes(type).then(() => {
+apiInstance.deleteSearchIndexes(type).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -204,20 +204,20 @@ The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.SearchApi();
+var apiInstance = new KnetikCloud.SearchApi();
 
-let type = "type_example"; // String | The index type
+var type = "type_example"; // String | The index type
 
-let opts = { 
+var opts = { 
   'query': null, // Object | The query to be used for the search
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.searchIndex(type, opts).then((data) => {
+apiInstance.searchIndex(type, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -18,16 +18,16 @@ Send a raw email to one or more users
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MessagingApi();
+var apiInstance = new KnetikCloud.MessagingApi();
 
-let opts = { 
+var opts = { 
   'rawEmailResource': new KnetikCloud.RawEmailResource() // RawEmailResource | The new raw email to be sent
 };
-apiInstance.sendRawEmail(opts).then(() => {
+apiInstance.sendRawEmail(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -62,16 +62,16 @@ Sends a raw SMS text message to one or more users. User&#39;s without registered
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MessagingApi();
+var apiInstance = new KnetikCloud.MessagingApi();
 
-let opts = { 
+var opts = { 
   'rawSMSResource': new KnetikCloud.RawSMSResource() // RawSMSResource | The new raw SMS to be sent
 };
-apiInstance.sendRawSMS(opts).then(() => {
+apiInstance.sendRawSMS(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -104,16 +104,16 @@ Send a templated email to one or more users
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MessagingApi();
+var apiInstance = new KnetikCloud.MessagingApi();
 
-let opts = { 
+var opts = { 
   'messageResource': new KnetikCloud.TemplateEmailResource() // TemplateEmailResource | The new template email to be sent
 };
-apiInstance.sendTemplatedEmail(opts).then(() => {
+apiInstance.sendTemplatedEmail(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -148,16 +148,16 @@ Sends a templated SMS text message to one or more users. User&#39;s without regi
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MessagingApi();
+var apiInstance = new KnetikCloud.MessagingApi();
 
-let opts = { 
+var opts = { 
   'templateSMSResource': new KnetikCloud.TemplateSMSResource() // TemplateSMSResource | The new template SMS to be sent
 };
-apiInstance.sendTemplatedSMS(opts).then(() => {
+apiInstance.sendTemplatedSMS(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

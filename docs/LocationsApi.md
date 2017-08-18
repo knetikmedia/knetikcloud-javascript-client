@@ -18,12 +18,12 @@ Get a list of countries
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.LocationsApi();
-apiInstance.getCountries().then((data) => {
+var apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCountries().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -55,12 +55,12 @@ Determined by geo ip location
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.LocationsApi();
-apiInstance.getCountryByGeoLocation().then((data) => {
+var apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCountryByGeoLocation().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -90,15 +90,15 @@ Get a list of a country&#39;s states
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.LocationsApi();
+var apiInstance = new KnetikCloud.LocationsApi();
 
-let countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
+var countryCodeIso3 = "countryCodeIso3_example"; // String | The iso3 code of the country
 
-apiInstance.getCountryStates(countryCodeIso3).then((data) => {
+apiInstance.getCountryStates(countryCodeIso3).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -133,12 +133,12 @@ Determined by geo ip location, currency to country mapping and a fallback settin
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.LocationsApi();
-apiInstance.getCurrencyByGeoLocation().then((data) => {
+var apiInstance = new KnetikCloud.LocationsApi();
+apiInstance.getCurrencyByGeoLocation().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

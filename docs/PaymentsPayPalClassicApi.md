@@ -20,16 +20,16 @@ Returns the token that should be used to forward the user to PayPal so they can 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.CreateBillingAgreementRequest() // CreateBillingAgreementRequest | The request to create a PayPal billing agreement
 };
-apiInstance.createPayPalBillingAgreementUrl(opts).then((data) => {
+apiInstance.createPayPalBillingAgreementUrl(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -64,16 +64,16 @@ Returns the token that should be used to forward the user to PayPal so they can 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.CreatePayPalPaymentRequest() // CreatePayPalPaymentRequest | The request to create a PayPal payment token
 };
-apiInstance.createPayPalExpressCheckout(opts).then((data) => {
+apiInstance.createPayPalExpressCheckout(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -108,16 +108,16 @@ Returns the ID of the new payment method created for the user for the billing ag
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.FinalizeBillingAgreementRequest() // FinalizeBillingAgreementRequest | The request to finalize a PayPal billing agreement
 };
-apiInstance.finalizePayPalBillingAgreement(opts).then((data) => {
+apiInstance.finalizePayPalBillingAgreement(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -152,16 +152,16 @@ The invoice will be marked paid/failed by asynchronous IPN callback.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
+var apiInstance = new KnetikCloud.PaymentsPayPalClassicApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.FinalizePayPalPaymentRequest() // FinalizePayPalPaymentRequest | The request to finalize the payment
 };
-apiInstance.finalizePayPalCheckout(opts).then(() => {
+apiInstance.finalizePayPalCheckout(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

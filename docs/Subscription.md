@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **availability** | **String** |  | [optional] 
-**consolidationDayOfMonth** | **Number** |  | [optional] 
-**subscriptionPlans** | [**[SubscriptionPlan]**](SubscriptionPlan.md) |  | [optional] 
+**consolidation_day_of_month** | **Number** |  | [optional] 
+**subscription_plans** | [**[SubscriptionPlan]**](SubscriptionPlan.md) |  | [optional] 
 
 
 <a name="AvailabilityEnum"></a>

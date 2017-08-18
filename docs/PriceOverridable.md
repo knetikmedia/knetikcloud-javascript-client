@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**maxPrice** | **Number** | The maximum price allowed | [optional] 
-**minPrice** | **Number** | The minimum price allowed | [optional] 
+**max_price** | **Number** | The maximum price allowed | [optional] 
+**min_price** | **Number** | The minimum price allowed | [optional] 
 
 

@@ -19,22 +19,22 @@ The context type identifies the type of entity (i.e., &#39;activity&#39;) being 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
+var apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
 
-let contextType = "contextType_example"; // String | The context type for the leaderboard
+var contextType = "contextType_example"; // String | The context type for the leaderboard
 
-let contextId = "contextId_example"; // String | The context id for the leaderboard
+var contextId = "contextId_example"; // String | The context id for the leaderboard
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "score:DESC,updated:ASC,user_id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getLeaderboard(contextType, contextId, opts).then((data) => {
+apiInstance.getLeaderboard(contextType, contextId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -73,19 +73,19 @@ The context type identifies the type of entity (i.e., &#39;activity&#39;) being 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
+var apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
 
-let contextType = "contextType_example"; // String | The context type for the leaderboard
+var contextType = "contextType_example"; // String | The context type for the leaderboard
 
-let contextId = "contextId_example"; // String | The context id for the leaderboard
+var contextId = "contextId_example"; // String | The context id for the leaderboard
 
-let id = "id_example"; // String | The id of a user
+var id = "id_example"; // String | The id of a user
 
-apiInstance.getLeaderboardRank(contextType, contextId, id).then((data) => {
+apiInstance.getLeaderboardRank(contextType, contextId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -120,12 +120,12 @@ Get a list of available leaderboard strategy names
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
-apiInstance.getLeaderboardStrategies().then((data) => {
+var apiInstance = new KnetikCloud.GamificationLeaderboardsApi();
+apiInstance.getLeaderboardStrategies().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

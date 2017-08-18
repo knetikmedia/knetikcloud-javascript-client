@@ -15,24 +15,24 @@ Get access token
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AccessTokenApi();
+var apiInstance = new KnetikCloud.AccessTokenApi();
 
-let grantType = "client_credentials"; // String | Grant type
+var grantType = "client_credentials"; // String | Grant type
 
-let clientId = "knetik"; // String | The id of the client
+var clientId = "knetik"; // String | The id of the client
 
-let opts = { 
+var opts = { 
   'clientSecret': "clientSecret_example", // String | The secret key of the client.  Used only with a grant_type of client_credentials
   'username': "username_example", // String | The username of the client. Used only with a grant_type of password
   'password': "password_example", // String | The password of the client. Used only with a grant_type of password
   'token': "token_example", // String | The 3rd party authentication token. Used only with a grant_type of facebook, google, etc (social plugins)
   'refreshToken': "refreshToken_example" // String | The refresh token obtained during prior authentication. Used only with a grant_type of refresh_token
 };
-apiInstance.getOAuthToken(grantType, clientId, opts).then((data) => {
+apiInstance.getOAuthToken(grantType, clientId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

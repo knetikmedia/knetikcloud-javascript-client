@@ -17,16 +17,16 @@ Will return the url for a hosted payment endpoint to post to. See Optimal docume
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsOptimalApi();
+var apiInstance = new KnetikCloud.PaymentsOptimalApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.OptimalPaymentRequest() // OptimalPaymentRequest | The payment request to initiate
 };
-apiInstance.silentPostOptimal(opts).then((data) => {
+apiInstance.silentPostOptimal(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

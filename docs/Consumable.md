@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**maxUse** | **Number** | The maximum number of times an item can be used | [optional] 
+**max_use** | **Number** | The maximum number of times an item can be used | [optional] 
 
 

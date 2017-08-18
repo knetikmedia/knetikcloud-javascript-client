@@ -39,16 +39,16 @@ Challenges do not run on their own.  They must be added to a campaign before eve
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'challengeResource': new KnetikCloud.ChallengeResource() // ChallengeResource | The challenge resource object
 };
-apiInstance.createChallenge(opts).then((data) => {
+apiInstance.createChallenge(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -81,19 +81,19 @@ Create a challenge activity
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let challengeId = 789; // Number | The challenge id
+var challengeId = 789; // Number | The challenge id
 
-let opts = { 
+var opts = { 
   'challengeActivityResource': new KnetikCloud.ChallengeActivityResource(), // ChallengeActivityResource | The challenge activity resource object
   'validateSettings': false // Boolean | Whether to validate the settings being sent against the available settings on the base activity.
 };
-apiInstance.createChallengeActivity(challengeId, opts).then((data) => {
+apiInstance.createChallengeActivity(challengeId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -130,16 +130,16 @@ Challenge Activity Templates define a type of challenge activity and the propert
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'challengeActivityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The challengeActivity template resource object
 };
-apiInstance.createChallengeActivityTemplate(opts).then((data) => {
+apiInstance.createChallengeActivityTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -174,16 +174,16 @@ Challenge Templates define a type of challenge and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'challengeTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The challenge template resource object
 };
-apiInstance.createChallengeTemplate(opts).then((data) => {
+apiInstance.createChallengeTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -216,15 +216,15 @@ Delete a challenge
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge id
+var id = 789; // Number | The challenge id
 
-apiInstance.deleteChallenge(id).then(() => {
+apiInstance.deleteChallenge(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -259,17 +259,17 @@ A challenge can have multiple instances of the same activity and thus the id use
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge_activity id
+var id = 789; // Number | The challenge_activity id
 
-let challengeId = 789; // Number | The challenge id
+var challengeId = 789; // Number | The challenge id
 
-apiInstance.deleteChallengeActivity(id, challengeId).then(() => {
+apiInstance.deleteChallengeActivity(id, challengeId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -305,18 +305,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteChallengeActivityTemplate(id, opts).then(() => {
+apiInstance.deleteChallengeActivityTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -350,15 +350,15 @@ Delete a challenge event
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge event id
+var id = 789; // Number | The challenge event id
 
-apiInstance.deleteChallengeEvent(id).then(() => {
+apiInstance.deleteChallengeEvent(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -393,18 +393,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteChallengeTemplate(id, opts).then(() => {
+apiInstance.deleteChallengeTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -438,15 +438,15 @@ Retrieve a challenge
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge id
+var id = 789; // Number | The challenge id
 
-apiInstance.getChallenge(id).then((data) => {
+apiInstance.getChallenge(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -479,20 +479,20 @@ List and search challenge activities
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let challengeId = 789; // Number | The challenge id
+var challengeId = 789; // Number | The challenge id
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeActivities(challengeId, opts).then((data) => {
+apiInstance.getChallengeActivities(challengeId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -530,17 +530,17 @@ A challenge can have multiple instances of the same activity and thus the id use
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge_activity id
+var id = 789; // Number | The challenge_activity id
 
-let challengeId = 789; // Number | The challenge id
+var challengeId = 789; // Number | The challenge id
 
-apiInstance.getChallengeActivity(id, challengeId).then((data) => {
+apiInstance.getChallengeActivity(id, challengeId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -574,15 +574,15 @@ Get a single challenge activity template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getChallengeActivityTemplate(id).then((data) => {
+apiInstance.getChallengeActivityTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -615,18 +615,18 @@ List and search challenge activity templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeActivityTemplates(opts).then((data) => {
+apiInstance.getChallengeActivityTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -661,15 +661,15 @@ Retrieve a single challenge event details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge event id
+var id = 789; // Number | The challenge event id
 
-apiInstance.getChallengeEvent(id).then((data) => {
+apiInstance.getChallengeEvent(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -702,11 +702,11 @@ Retrieve a list of challenge events
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'filterStartDate': "filterStartDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'filterEndDate': "filterEndDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'filterCampaigns': true, // Boolean | check only for events from currently running campaigns
@@ -715,9 +715,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeEvents(opts).then((data) => {
+apiInstance.getChallengeEvents(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -756,15 +756,15 @@ Get a single challenge template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getChallengeTemplate(id).then((data) => {
+apiInstance.getChallengeTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -797,18 +797,18 @@ List and search challenge templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallengeTemplates(opts).then((data) => {
+apiInstance.getChallengeTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -843,11 +843,11 @@ Retrieve a list of challenges
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let opts = { 
+var opts = { 
   'filterTemplate': true, // Boolean | Filter for challenges that are not tied to campaigns (templates)
   'filterActiveCampaign': true, // Boolean | Filter for challenges that are tied to active campaigns
   'filterStartDate': "filterStartDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -856,9 +856,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getChallenges(opts).then((data) => {
+apiInstance.getChallenges(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -899,18 +899,18 @@ If the challenge is a copy, changes will propagate to all the related challenges
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge id
+var id = 789; // Number | The challenge id
 
-let opts = { 
+var opts = { 
   'challengeResource': new KnetikCloud.ChallengeResource() // ChallengeResource | The challenge resource object
 };
-apiInstance.updateChallenge(id, opts).then((data) => {
+apiInstance.updateChallenge(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -946,20 +946,20 @@ A challenge can have multiple instances of the same activity and thus the id use
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = 789; // Number | The challenge_activity id
+var id = 789; // Number | The challenge_activity id
 
-let challengeId = 789; // Number | The challenge id
+var challengeId = 789; // Number | The challenge id
 
-let opts = { 
+var opts = { 
   'challengeActivityResource': new KnetikCloud.ChallengeActivityResource() // ChallengeActivityResource | The challenge activity resource object
 };
-apiInstance.updateChallengeActivity(id, challengeId, opts).then((data) => {
+apiInstance.updateChallengeActivity(id, challengeId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -994,18 +994,18 @@ Update an challenge activity template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'challengeActivityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The challengeActivity template resource object
 };
-apiInstance.updateChallengeActivityTemplate(id, opts).then((data) => {
+apiInstance.updateChallengeActivityTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -1039,18 +1039,18 @@ Update a challenge template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsChallengesApi();
+var apiInstance = new KnetikCloud.CampaignsChallengesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'challengeTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The challenge template resource object
 };
-apiInstance.updateChallengeTemplate(id, opts).then((data) => {
+apiInstance.updateChallengeTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

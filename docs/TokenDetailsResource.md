@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**clientId** | **String** |  | [optional] 
+**client_id** | **String** |  | [optional] 
 **roles** | **[String]** |  | [optional] 
-**userId** | **Number** |  | [optional] 
+**user_id** | **Number** |  | [optional] 
 
 

@@ -17,16 +17,16 @@ Mark an invoice paid with Google. Verifies signature from Google and treats the 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsGoogleApi();
+var apiInstance = new KnetikCloud.PaymentsGoogleApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.GooglePaymentRequest() // GooglePaymentRequest | The request for paying an invoice through a Google in-app payment
 };
-apiInstance.handleGooglePayment(opts).then((data) => {
+apiInstance.handleGooglePayment(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

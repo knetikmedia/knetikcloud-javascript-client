@@ -19,16 +19,16 @@ Create a sale
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSalesApi();
+var apiInstance = new KnetikCloud.StoreSalesApi();
 
-let opts = { 
+var opts = { 
   'catalogSale': new KnetikCloud.CatalogSale() // CatalogSale | The catalog sale object
 };
-apiInstance.createCatalogSale(opts).then((data) => {
+apiInstance.createCatalogSale(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete a sale
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSalesApi();
+var apiInstance = new KnetikCloud.StoreSalesApi();
 
-let id = 56; // Number | The id of the sale
+var id = 56; // Number | The id of the sale
 
-apiInstance.deleteCatalogSale(id).then(() => {
+apiInstance.deleteCatalogSale(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -102,15 +102,15 @@ Get a single sale
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSalesApi();
+var apiInstance = new KnetikCloud.StoreSalesApi();
 
-let id = 56; // Number | The id of the sale
+var id = 56; // Number | The id of the sale
 
-apiInstance.getCatalogSale(id).then((data) => {
+apiInstance.getCatalogSale(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -143,18 +143,18 @@ List and search sales
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSalesApi();
+var apiInstance = new KnetikCloud.StoreSalesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getCatalogSales(opts).then((data) => {
+apiInstance.getCatalogSales(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -189,18 +189,18 @@ Update a sale
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreSalesApi();
+var apiInstance = new KnetikCloud.StoreSalesApi();
 
-let id = 56; // Number | The id of the sale
+var id = 56; // Number | The id of the sale
 
-let opts = { 
+var opts = { 
   'catalogSale': new KnetikCloud.CatalogSale() // CatalogSale | The catalog sale object
 };
-apiInstance.updateCatalogSale(id, opts).then((data) => {
+apiInstance.updateCatalogSale(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

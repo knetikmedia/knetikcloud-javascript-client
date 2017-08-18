@@ -37,18 +37,18 @@ The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skip
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let id = 56; // Number | The id of the user
+var id = 56; // Number | The id of the user
 
-let opts = { 
+var opts = { 
   'userInventoryAddRequest': new KnetikCloud.UserInventoryAddRequest() // UserInventoryAddRequest | The user inventory add request object
 };
-apiInstance.addItemToUserInventory(id, opts).then((data) => {
+apiInstance.addItemToUserInventory(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -84,20 +84,20 @@ Useful for pre-check and accounts for all various buisness rules
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
+var userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
 
-let itemId = 56; // Number | The id of the item
+var itemId = 56; // Number | The id of the item
 
-let opts = { 
+var opts = { 
   'sku': "sku_example" // String | The specific sku of an entitlement list addition to check entitlement for. This is of very limited and specific use and should generally be left out
 };
-apiInstance.checkUserEntitlementItem(userId, itemId, opts).then(() => {
+apiInstance.checkUserEntitlementItem(userId, itemId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -132,17 +132,17 @@ Create an entitlement item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'entitlementItem': new KnetikCloud.EntitlementItem() // EntitlementItem | The entitlement item object
 };
-apiInstance.createEntitlementItem(opts).then((data) => {
+apiInstance.createEntitlementItem(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -178,16 +178,16 @@ Entitlement templates define a type of entitlement and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The entitlement template to be created
 };
-apiInstance.createEntitlementTemplate(opts).then((data) => {
+apiInstance.createEntitlementTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -220,15 +220,15 @@ Delete an entitlement item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let entitlementId = 56; // Number | The id of the entitlement
+var entitlementId = 56; // Number | The id of the entitlement
 
-apiInstance.deleteEntitlementItem(entitlementId).then(() => {
+apiInstance.deleteEntitlementItem(entitlementId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -263,18 +263,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteEntitlementTemplate(id, opts).then(() => {
+apiInstance.deleteEntitlementTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -308,15 +308,15 @@ Get a single entitlement item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let entitlementId = 56; // Number | The id of the entitlement
+var entitlementId = 56; // Number | The id of the entitlement
 
-apiInstance.getEntitlementItem(entitlementId).then((data) => {
+apiInstance.getEntitlementItem(entitlementId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -349,18 +349,18 @@ List and search entitlement items
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getEntitlementItems(opts).then((data) => {
+apiInstance.getEntitlementItems(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -395,15 +395,15 @@ Get a single entitlement template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getEntitlementTemplate(id).then((data) => {
+apiInstance.getEntitlementTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -436,18 +436,18 @@ List and search entitlement templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getEntitlementTemplates(opts).then((data) => {
+apiInstance.getEntitlementTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -482,13 +482,13 @@ List the user inventory entries for a given user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let id = 56; // Number | The id of the user
+var id = 56; // Number | The id of the user
 
-let opts = { 
+var opts = { 
   'inactive': false, // Boolean | If true, accepts inactive user inventories
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
@@ -498,9 +498,9 @@ let opts = {
   'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
   'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
 };
-apiInstance.getUserInventories(id, opts).then((data) => {
+apiInstance.getUserInventories(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -541,17 +541,17 @@ Get an inventory entry
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = 56; // Number | The id of the inventory owner or 'me' for the logged in user
+var userId = 56; // Number | The id of the inventory owner or 'me' for the logged in user
 
-let id = 56; // Number | The id of the user inventory
+var id = 56; // Number | The id of the user inventory
 
-apiInstance.getUserInventory(userId, id).then((data) => {
+apiInstance.getUserInventory(userId, id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -585,21 +585,21 @@ List the log entries for this inventory entry
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = "userId_example"; // String | The id of the inventory owner or 'me' for the logged in user
+var userId = "userId_example"; // String | The id of the inventory owner or 'me' for the logged in user
 
-let id = 56; // Number | The id of the user inventory
+var id = 56; // Number | The id of the user inventory
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getUserInventoryLog(userId, id, opts).then((data) => {
+apiInstance.getUserInventoryLog(userId, id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -635,11 +635,11 @@ List the user inventory entries for all users
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let opts = { 
+var opts = { 
   'inactive': false, // Boolean | If true, accepts inactive user inventories
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
@@ -649,9 +649,9 @@ let opts = {
   'filterGroup': "filterGroup_example", // String | Filter by entries owned by the users in a given group, by unique name
   'filterDate': "filterDate_example" // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds. Can be repeated for a range, eg: GT,123,LT,456  Allowed operators: (GT, LT, EQ, GOE, LOE).
 };
-apiInstance.getUsersInventory(opts).then((data) => {
+apiInstance.getUsersInventory(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -691,17 +691,17 @@ Grant an entitlement
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = 56; // Number | The id of the user to grant the entitlement to
+var userId = 56; // Number | The id of the user to grant the entitlement to
 
-let grantRequest = new KnetikCloud.EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
+var grantRequest = new KnetikCloud.EntitlementGrantRequest(); // EntitlementGrantRequest | grantRequest
 
-apiInstance.grantUserEntitlement(userId, grantRequest).then(() => {
+apiInstance.grantUserEntitlement(userId, grantRequest).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -735,19 +735,19 @@ Update an entitlement item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let entitlementId = 56; // Number | The id of the entitlement
+var entitlementId = 56; // Number | The id of the entitlement
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'entitlementItem': new KnetikCloud.EntitlementItem() // EntitlementItem | The entitlement item object
 };
-apiInstance.updateEntitlementItem(entitlementId, opts).then(() => {
+apiInstance.updateEntitlementItem(entitlementId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -782,18 +782,18 @@ Update an entitlement template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'template': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The updated template
 };
-apiInstance.updateEntitlementTemplate(id, opts).then((data) => {
+apiInstance.updateEntitlementTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -827,20 +827,20 @@ Set the behavior data for an inventory entry
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let id = 56; // Number | The id of the user inventory
+var id = 56; // Number | The id of the user inventory
 
-let opts = { 
+var opts = { 
   'data': null // Object | The data map
 };
-apiInstance.updateUserInventoryBehaviorData(userId, id, opts).then(() => {
+apiInstance.updateUserInventoryBehaviorData(userId, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -877,20 +877,20 @@ Will change the current grace period for a subscription but not the bill date (p
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = 56; // Number | user_id
+var userId = 56; // Number | user_id
 
-let id = 56; // Number | The id of the user inventory
+var id = 56; // Number | The id of the user inventory
 
-let opts = { 
+var opts = { 
   'timestamp': 789 // Number | The new expiration date as a unix timestamp in seconds. May be null (no body).
 };
-apiInstance.updateUserInventoryExpires(userId, id, opts).then(() => {
+apiInstance.updateUserInventoryExpires(userId, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -925,20 +925,20 @@ Set the status for an inventory entry
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let id = 56; // Number | The id of the user inventory
+var id = 56; // Number | The id of the user inventory
 
-let opts = { 
+var opts = { 
   'inventoryStatus': "inventoryStatus_example" // String | The inventory status object
 };
-apiInstance.updateUserInventoryStatus(userId, id, opts).then(() => {
+apiInstance.updateUserInventoryStatus(userId, id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -973,21 +973,21 @@ Use an item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersInventoryApi();
+var apiInstance = new KnetikCloud.UsersInventoryApi();
 
-let userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
+var userId = "userId_example"; // String | The id of the user to check for or 'me' for logged in user
 
-let itemId = 56; // Number | The id of the item
+var itemId = 56; // Number | The id of the item
 
-let opts = { 
+var opts = { 
   'sku': "sku_example", // String | The specific sku of an entitlement_list addition to check entitlement for. This is of very limited and specific use and should generally be left out
   'info': "info_example" // String | Any additional info to add to the log about this use
 };
-apiInstance.useUserEntitlementItem(userId, itemId, opts).then(() => {
+apiInstance.useUserEntitlementItem(userId, itemId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

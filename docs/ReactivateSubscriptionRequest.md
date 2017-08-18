@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**inventoryId** | **Number** | The inventory to reactivate. Only required if using the deprecated subscriptions service | [optional] 
-**reactivationFee** | **Boolean** | Whether to add the additional reactivation fee in addition to the recurring fee | [optional] 
+**inventory_id** | **Number** | The inventory to reactivate. Only required if using the deprecated subscriptions service | [optional] 
+**reactivation_fee** | **Boolean** | Whether to add the additional reactivation fee in addition to the recurring fee | [optional] 
 
 

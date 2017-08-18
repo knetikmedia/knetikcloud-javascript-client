@@ -18,18 +18,18 @@ To give access to files in your own S3 account, you will need to grant KnetikcCl
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AmazonWebServicesS3Api();
+var apiInstance = new KnetikCloud.AmazonWebServicesS3Api();
 
-let opts = { 
+var opts = { 
   'bucket': "bucket_example", // String | S3 bucket name
   'path': "path_example", // String | The path to the file relative the bucket (the s3 object key)
   'expiration': 60 // Number | The number of seconds this URL will be valid. Default to 60
 };
-apiInstance.getDownloadURL(opts).then((data) => {
+apiInstance.getDownloadURL(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -66,17 +66,17 @@ Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.AmazonWebServicesS3Api();
+var apiInstance = new KnetikCloud.AmazonWebServicesS3Api();
 
-let opts = { 
+var opts = { 
   'filename': "filename_example", // String | The file name
   'contentType': "contentType_example" // String | The content type
 };
-apiInstance.getSignedS3URL(opts).then((data) => {
+apiInstance.getSignedS3URL(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

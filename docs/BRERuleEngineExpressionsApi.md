@@ -17,12 +17,12 @@ These are expression types that take a second expression as input and produce a 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineExpressionsApi();
-apiInstance.getBREExpressions().then((data) => {
+var apiInstance = new KnetikCloud.BRERuleEngineExpressionsApi();
+apiInstance.getBREExpressions().then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

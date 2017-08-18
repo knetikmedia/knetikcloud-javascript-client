@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerSetup** | **Boolean** |  | [optional] 
-**customerTeardown** | **Boolean** |  | [optional] 
+**customer_setup** | **Boolean** |  | [optional] 
+**customer_teardown** | **Boolean** |  | [optional] 
 
 

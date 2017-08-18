@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **sku** | **String** |  | [optional] 
-**uniqueKey** | **String** |  | [optional] 
+**unique_key** | **String** |  | [optional] 
 **value** | **Number** |  | [optional] 
 
 

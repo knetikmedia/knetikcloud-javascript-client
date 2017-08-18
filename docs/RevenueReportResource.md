@@ -3,9 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**customerCount** | **Number** |  | [optional] 
-**saleCount** | **Number** |  | [optional] 
-**salesAverage** | **Number** |  | [optional] 
-**salesTotal** | **Number** |  | [optional] 
+**customer_count** | **Number** |  | [optional] 
+**sale_count** | **Number** |  | [optional] 
+**sales_average** | **Number** |  | [optional] 
+**sales_total** | **Number** |  | [optional] 
 
 

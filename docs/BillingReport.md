@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **created** | **Number** |  | [optional] 
 **id** | **String** |  | [optional] 
-**lastKnownFailures** | **[String]** |  | [optional] 
+**last_known_failures** | **[String]** |  | [optional] 
 **statistics** | **{String: Number}** |  | [optional] 
 
 

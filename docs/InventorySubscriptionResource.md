@@ -3,20 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**billDate** | **Number** | The date the subscription will be billed | [optional] 
+**bill_date** | **Number** | The date the subscription will be billed | [optional] 
 **credit** | **Number** | A credit of money already applied to a subscription for the next bill, or a debt if negative | [optional] 
-**creditLog** | [**[SubscriptionCreditResource]**](SubscriptionCreditResource.md) | A record of past and present credit/debt changes | [optional] 
-**graceEnd** | **Number** | The date the grace period ends | [optional] 
-**inventoryId** | **Number** | The id of the inventory | [optional] 
-**inventoryStatus** | **String** | The inventory status object | [optional] 
-**itemId** | **Number** | The id of the item | [optional] 
-**paymentMethod** | [**PaymentMethodResource**](PaymentMethodResource.md) | The payment method object | [optional] 
-**priceOverride** | **Number** | The recurring price that has been set to override the base price. Null if not overriding | [optional] 
-**priceOverrideReason** | **String** | An explanation for the reason the price is being overridden | [optional] 
-**recurringPrice** | **Number** | The default recurring price | [optional] 
+**credit_log** | [**[SubscriptionCreditResource]**](SubscriptionCreditResource.md) | A record of past and present credit/debt changes | [optional] 
+**grace_end** | **Number** | The date the grace period ends | [optional] 
+**inventory_id** | **Number** | The id of the inventory | [optional] 
+**inventory_status** | **String** | The inventory status object | [optional] 
+**item_id** | **Number** | The id of the item | [optional] 
+**payment_method** | [**PaymentMethodResource**](PaymentMethodResource.md) | The payment method object | [optional] 
+**price_override** | **Number** | The recurring price that has been set to override the base price. Null if not overriding | [optional] 
+**price_override_reason** | **String** | An explanation for the reason the price is being overridden | [optional] 
+**recurring_price** | **Number** | The default recurring price | [optional] 
 **sku** | **String** | The recurring sku of the subscription | [optional] 
-**startDate** | **Number** | The date the subscription will start | [optional] 
-**subscriptionStatus** | **Number** | The status of the subscription | [optional] 
+**start_date** | **Number** | The date the subscription will start | [optional] 
+**subscription_status** | **Number** | The status of the subscription | [optional] 
 **user** | [**SimpleUserResource**](SimpleUserResource.md) | The user | [optional] 
 
 

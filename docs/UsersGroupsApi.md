@@ -31,17 +31,17 @@ Adds a new member to the group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let user = new KnetikCloud.GroupMemberResource(); // GroupMemberResource | The id and status for a user to add to the group
+var user = new KnetikCloud.GroupMemberResource(); // GroupMemberResource | The id and status for a user to add to the group
 
-apiInstance.addMemberToGroup(uniqueName, user).then((data) => {
+apiInstance.addMemberToGroup(uniqueName, user).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -75,17 +75,17 @@ Adds multiple members to the group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let users = [new KnetikCloud.GroupMemberResource()]; // [GroupMemberResource] | The id and status for a list of users to add to the group
+var users = [new KnetikCloud.GroupMemberResource()]; // [GroupMemberResource] | The id and status for a list of users to add to the group
 
-apiInstance.addMembersToGroup(uniqueName, users).then((data) => {
+apiInstance.addMembersToGroup(uniqueName, users).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -119,16 +119,16 @@ Create a group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let opts = { 
+var opts = { 
   'groupResource': new KnetikCloud.GroupResource() // GroupResource | The new group
 };
-apiInstance.createGroup(opts).then((data) => {
+apiInstance.createGroup(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -163,16 +163,16 @@ Group Templates define a type of group and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let opts = { 
+var opts = { 
   'groupTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The group template resource object
 };
-apiInstance.createGroupTemplate(opts).then((data) => {
+apiInstance.createGroupTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -205,15 +205,15 @@ Removes a group from the system IF no resources are attached to it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-apiInstance.deleteGroup(uniqueName).then(() => {
+apiInstance.deleteGroup(uniqueName).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -248,18 +248,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteGroupTemplate(id, opts).then(() => {
+apiInstance.deleteGroupTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -293,15 +293,15 @@ Loads a specific group&#39;s details
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-apiInstance.getGroup(uniqueName).then((data) => {
+apiInstance.getGroup(uniqueName).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -334,17 +334,17 @@ Get a user from a group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-apiInstance.getGroupMember(uniqueName, userId).then((data) => {
+apiInstance.getGroupMember(uniqueName, userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -378,20 +378,20 @@ Lists members of the group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getGroupMembers(uniqueName, opts).then((data) => {
+apiInstance.getGroupMembers(uniqueName, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -427,15 +427,15 @@ Get a single group template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getGroupTemplate(id).then((data) => {
+apiInstance.getGroupTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -468,18 +468,18 @@ List and search group templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | a comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getGroupTemplates(opts).then((data) => {
+apiInstance.getGroupTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -514,15 +514,15 @@ List groups a user is in
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-apiInstance.getGroupsForUser(userId).then((data) => {
+apiInstance.getGroupsForUser(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -555,17 +555,17 @@ Removes a user from a group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let userId = 56; // Number | The id of the user to remove
+var userId = 56; // Number | The id of the user to remove
 
-apiInstance.removeGroupMember(uniqueName, userId).then(() => {
+apiInstance.removeGroupMember(uniqueName, userId).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -599,18 +599,18 @@ Update a group
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let opts = { 
+var opts = { 
   'groupResource': new KnetikCloud.GroupResource() // GroupResource | The updated group
 };
-apiInstance.updateGroup(uniqueName, opts).then(() => {
+apiInstance.updateGroup(uniqueName, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -644,19 +644,19 @@ Change a user&#39;s status
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let uniqueName = "uniqueName_example"; // String | The group unique name
+var uniqueName = "uniqueName_example"; // String | The group unique name
 
-let userId = 56; // Number | The user id of the member to modify
+var userId = 56; // Number | The user id of the member to modify
 
-let status = "status_example"; // String | The new status for the user
+var status = "status_example"; // String | The new status for the user
 
-apiInstance.updateGroupMemberStatus(uniqueName, userId, status).then(() => {
+apiInstance.updateGroupMemberStatus(uniqueName, userId, status).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -691,18 +691,18 @@ Update a group template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'groupTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The group template resource object
 };
-apiInstance.updateGroupTemplate(id, opts).then((data) => {
+apiInstance.updateGroupTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -736,11 +736,11 @@ List and search groups
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersGroupsApi();
+var apiInstance = new KnetikCloud.UsersGroupsApi();
 
-let opts = { 
+var opts = { 
   'filterTemplate': "filterTemplate_example", // String | Filter for groups using a specific template, by id
   'filterMemberCount': "filterMemberCount_example", // String | Filters groups by member count. Multiple values possible for range search. Format: filter_member_count=OP,ts&... where OP in (GT, LT, GOE, LOE, EQ). Ex: filter_member_count=GT,14,LT,17
   'filterName': "filterName_example", // String | Filter for groups with names starting with the given string
@@ -751,9 +751,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "name:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.updateGroups(opts).then((data) => {
+apiInstance.updateGroups(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

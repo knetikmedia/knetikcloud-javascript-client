@@ -15,13 +15,13 @@ Retrieve invoice counts aggregated by time ranges
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ReportingOrdersApi();
+var apiInstance = new KnetikCloud.ReportingOrdersApi();
 
-let currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
+var currencyCode = "currencyCode_example"; // String | The code for a currency to get sales data for
 
-let opts = { 
+var opts = { 
   'granularity': "day", // String | The time duration to aggregate by
   'filterPaymentStatus': "filterPaymentStatus_example", // String | A payment status to filter results by, can be a comma separated list
   'filterFulfillmentStatus': "filterFulfillmentStatus_example", // String | An invoice fulfillment status to filter results by, can be a comma separated list
@@ -30,9 +30,9 @@ let opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned
 };
-apiInstance.getInvoiceReports(currencyCode, opts).then((data) => {
+apiInstance.getInvoiceReports(currencyCode, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

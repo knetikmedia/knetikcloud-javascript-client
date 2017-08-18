@@ -17,15 +17,15 @@ Get the details for a single transaction
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsTransactionsApi();
+var apiInstance = new KnetikCloud.PaymentsTransactionsApi();
 
-let id = 56; // Number | id
+var id = 56; // Number | id
 
-apiInstance.getTransaction(id).then((data) => {
+apiInstance.getTransaction(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -58,19 +58,19 @@ List and search transactions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsTransactionsApi();
+var apiInstance = new KnetikCloud.PaymentsTransactionsApi();
 
-let opts = { 
+var opts = { 
   'filterInvoice': 56, // Number | Filter for transactions from a specific invoice
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getTransactions(opts).then((data) => {
+apiInstance.getTransactions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -108,18 +108,18 @@ Will not allow for refunding more than the full amount even with multiple partia
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsTransactionsApi();
+var apiInstance = new KnetikCloud.PaymentsTransactionsApi();
 
-let id = 56; // Number | The id of the transaction to refund
+var id = 56; // Number | The id of the transaction to refund
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.RefundRequest() // RefundRequest | Request containing refund details
 };
-apiInstance.refundTransaction(id, opts).then((data) => {
+apiInstance.refundTransaction(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

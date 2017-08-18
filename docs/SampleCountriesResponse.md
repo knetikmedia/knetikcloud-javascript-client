@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**vendorId1** | [**[Country]**](Country.md) |  | [optional] 
-**vendorId2** | [**[Country]**](Country.md) |  | [optional] 
+**vendor_id1** | [**[Country]**](Country.md) |  | [optional] 
+**vendor_id2** | [**[Country]**](Country.md) |  | [optional] 
 
 

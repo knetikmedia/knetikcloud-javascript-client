@@ -3,6 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cartGuid** | **String** | The guid of a cart to create a new invoice for | 
+**cart_guid** | **String** | The guid of a cart to create a new invoice for | 
 
 

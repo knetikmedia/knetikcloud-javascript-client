@@ -16,16 +16,16 @@ Create a payment token that should be used to forward the user to Xsolla so they
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsXsollaApi();
+var apiInstance = new KnetikCloud.PaymentsXsollaApi();
 
-let opts = { 
+var opts = { 
   'request': new KnetikCloud.XsollaPaymentRequest() // XsollaPaymentRequest | The payment request to be sent to XSolla
 };
-apiInstance.createXsollaTokenUrl(opts).then((data) => {
+apiInstance.createXsollaTokenUrl(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -60,12 +60,12 @@ Only used by Xsolla to call back to JSAPI after processing user payment action
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.PaymentsXsollaApi();
-apiInstance.receiveXsollaNotification().then(() => {
+var apiInstance = new KnetikCloud.PaymentsXsollaApi();
+apiInstance.receiveXsollaNotification().then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

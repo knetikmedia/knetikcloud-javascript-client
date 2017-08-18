@@ -20,16 +20,16 @@ Add a new comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let opts = { 
+var opts = { 
   'commentResource': new KnetikCloud.CommentResource() // CommentResource | The comment to be added
 };
-apiInstance.addComment(opts).then((data) => {
+apiInstance.addComment(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -62,15 +62,15 @@ Delete a comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let id = 789; // Number | The comment id
+var id = 789; // Number | The comment id
 
-apiInstance.deleteComment(id).then(() => {
+apiInstance.deleteComment(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -103,15 +103,15 @@ Return a comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let id = 789; // Number | The comment id
+var id = 789; // Number | The comment id
 
-apiInstance.getComment(id).then((data) => {
+apiInstance.getComment(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -144,21 +144,21 @@ Returns a page of comments
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let context = "context_example"; // String | Get comments by context type
+var context = "context_example"; // String | Get comments by context type
 
-let contextId = 56; // Number | Get comments by context id
+var contextId = 56; // Number | Get comments by context id
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getComments(context, contextId, opts).then((data) => {
+apiInstance.getComments(context, contextId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -196,18 +196,18 @@ The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;h
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let opts = { 
+var opts = { 
   'query': null, // Object | The search query
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.searchComments(opts).then((data) => {
+apiInstance.searchComments(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -242,18 +242,18 @@ Update a comment
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ContentCommentsApi();
+var apiInstance = new KnetikCloud.ContentCommentsApi();
 
-let id = 789; // Number | The comment id
+var id = 789; // Number | The comment id
 
-let opts = { 
+var opts = { 
   'content': new KnetikCloud.StringWrapper() // StringWrapper | The comment content
 };
-apiInstance.updateComment(id, opts).then(() => {
+apiInstance.updateComment(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

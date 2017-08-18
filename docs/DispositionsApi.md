@@ -19,16 +19,16 @@ Add a new disposition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DispositionsApi();
+var apiInstance = new KnetikCloud.DispositionsApi();
 
-let opts = { 
+var opts = { 
   'disposition': new KnetikCloud.DispositionResource() // DispositionResource | The new disposition record
 };
-apiInstance.addDisposition(opts).then((data) => {
+apiInstance.addDisposition(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete a disposition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DispositionsApi();
+var apiInstance = new KnetikCloud.DispositionsApi();
 
-let id = 789; // Number | The id of the disposition record
+var id = 789; // Number | The id of the disposition record
 
-apiInstance.deleteDisposition(id).then(() => {
+apiInstance.deleteDisposition(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -102,15 +102,15 @@ Returns a disposition
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DispositionsApi();
+var apiInstance = new KnetikCloud.DispositionsApi();
 
-let id = 789; // Number | The id of the disposition record
+var id = 789; // Number | The id of the disposition record
 
-apiInstance.getDisposition(id).then((data) => {
+apiInstance.getDisposition(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -143,17 +143,17 @@ Returns a list of disposition counts
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DispositionsApi();
+var apiInstance = new KnetikCloud.DispositionsApi();
 
-let opts = { 
+var opts = { 
   'filterContext': "filterContext_example", // String | Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context=video:47
   'filterOwner': "filterOwner_example" // String | Filter for dispositions from a specific user by id or 'me'
 };
-apiInstance.getDispositionCounts(opts).then((data) => {
+apiInstance.getDispositionCounts(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -187,20 +187,20 @@ Returns a page of dispositions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.DispositionsApi();
+var apiInstance = new KnetikCloud.DispositionsApi();
 
-let opts = { 
+var opts = { 
   'filterContext': "filterContext_example", // String | Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context=video:47
   'filterOwner': "filterOwner_example", // String | Filter for dispositions from a specific user by id or 'me'
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getDispositions(opts).then((data) => {
+apiInstance.getDispositions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

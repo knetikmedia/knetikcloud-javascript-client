@@ -30,17 +30,17 @@ Add a tag to a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let tag = new KnetikCloud.StringWrapper(); // StringWrapper | tag
+var tag = new KnetikCloud.StringWrapper(); // StringWrapper | tag
 
-apiInstance.addUserTag(userId, tag).then(() => {
+apiInstance.addUserTag(userId, tag).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -76,16 +76,16 @@ User Templates define a type of user and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let opts = { 
+var opts = { 
   'userTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The user template resource object
 };
-apiInstance.createUserTemplate(opts).then((data) => {
+apiInstance.createUserTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -120,18 +120,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteUserTemplate(id, opts).then(() => {
+apiInstance.deleteUserTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -167,15 +167,15 @@ Additional private info is included as USERS_ADMIN
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = "id_example"; // String | The id of the user or 'me'
+var id = "id_example"; // String | The id of the user or 'me'
 
-apiInstance.getUser(id).then((data) => {
+apiInstance.getUser(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -208,15 +208,15 @@ List tags for a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-apiInstance.getUserTags(userId).then((data) => {
+apiInstance.getUserTags(userId).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -249,15 +249,15 @@ Get a single user template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getUserTemplate(id).then((data) => {
+apiInstance.getUserTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -290,18 +290,18 @@ List and search user templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUserTemplates(opts).then((data) => {
+apiInstance.getUserTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -338,11 +338,11 @@ Additional private info is included as USERS_ADMIN
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let opts = { 
+var opts = { 
   'filterDisplayname': "filterDisplayname_example", // String | Filter for users whose display name starts with provided string.
   'filterEmail': "filterEmail_example", // String | Filter for users whose email starts with provided string. Requires USERS_ADMIN permission
   'filterFirstname': "filterFirstname_example", // String | Filter for users whose first name starts with provided string. Requires USERS_ADMIN permission
@@ -357,9 +357,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getUsers(opts).then((data) => {
+apiInstance.getUsers(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -406,18 +406,18 @@ Finish resetting a user&#39;s password using the secret provided from the passwo
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = 56; // Number | The id of the user
+var id = 56; // Number | The id of the user
 
-let opts = { 
+var opts = { 
   'newPasswordRequest': new KnetikCloud.NewPasswordRequest() // NewPasswordRequest | The new password request object
 };
-apiInstance.passwordReset(id, opts).then(() => {
+apiInstance.passwordReset(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -453,16 +453,16 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let opts = { 
+var opts = { 
   'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
 };
-apiInstance.registerUser(opts).then((data) => {
+apiInstance.registerUser(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -495,17 +495,17 @@ Remove a tag from a user
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let userId = 56; // Number | The id of the user
+var userId = 56; // Number | The id of the user
 
-let tag = "tag_example"; // String | The tag to remove
+var tag = "tag_example"; // String | The tag to remove
 
-apiInstance.removeUserTag(userId, tag).then(() => {
+apiInstance.removeUserTag(userId, tag).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -541,18 +541,18 @@ Password should be in plain text and will be encrypted on receipt. Use SSL for s
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = 56; // Number | The id of the user
+var id = 56; // Number | The id of the user
 
-let opts = { 
+var opts = { 
   'password': new KnetikCloud.StringWrapper() // StringWrapper | The new plain text password
 };
-apiInstance.setPassword(id, opts).then(() => {
+apiInstance.setPassword(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -588,15 +588,15 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = 56; // Number | The id of the user
+var id = 56; // Number | The id of the user
 
-apiInstance.startPasswordReset(id).then(() => {
+apiInstance.startPasswordReset(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -631,16 +631,16 @@ A reset code will be generated and a &#39;forgot_password&#39; BRE event will be
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let opts = { 
+var opts = { 
   'passwordReset': new KnetikCloud.PasswordResetRequest() // PasswordResetRequest | An object containing one of three methods to look up a user
 };
-apiInstance.submitPasswordReset(opts).then(() => {
+apiInstance.submitPasswordReset(opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -675,18 +675,18 @@ Password will not be edited on this endpoint, use password specific endpoints.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = "id_example"; // String | The id of the user or 'me'
+var id = "id_example"; // String | The id of the user or 'me'
 
-let opts = { 
+var opts = { 
   'userResource': new KnetikCloud.UserResource() // UserResource | The user resource object
 };
-apiInstance.updateUser(id, opts).then(() => {
+apiInstance.updateUser(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -720,18 +720,18 @@ Update a user template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UsersApi();
+var apiInstance = new KnetikCloud.UsersApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'userTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The user template resource object
 };
-apiInstance.updateUserTemplate(id, opts).then((data) => {
+apiInstance.updateUserTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

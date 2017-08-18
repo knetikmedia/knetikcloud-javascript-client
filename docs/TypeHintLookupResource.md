@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lookupKey** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
+**lookup_key** | [**ExpressionResource**](ExpressionResource.md) |  | [optional] 
 **type** | **String** |  | [optional] 
-**valueType** | **String** |  | [optional] 
+**value_type** | **String** |  | [optional] 
 
 

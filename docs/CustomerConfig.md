@@ -7,6 +7,6 @@ Name | Type | Description | Notes
 **database** | [**DatabaseConfig**](DatabaseConfig.md) |  | [optional] 
 **io** | [**IOConfig**](IOConfig.md) |  | [optional] 
 **name** | **String** |  | [optional] 
-**s3Config** | [**S3Config**](S3Config.md) |  | [optional] 
+**s3_config** | [**S3Config**](S3Config.md) |  | [optional] 
 
 

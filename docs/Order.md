@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 **ascending** | **Boolean** |  | [optional] 
 **descending** | **Boolean** |  | [optional] 
 **direction** | **String** |  | [optional] 
-**ignoreCase** | **Boolean** |  | [optional] 
-**nullHandling** | **String** |  | [optional] 
+**ignore_case** | **Boolean** |  | [optional] 
+**null_handling** | **String** |  | [optional] 
 **property** | **String** |  | [optional] 
 
 

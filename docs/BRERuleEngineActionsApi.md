@@ -15,19 +15,19 @@ Get a list of available actions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineActionsApi();
+var apiInstance = new KnetikCloud.BRERuleEngineActionsApi();
 
-let opts = { 
+var opts = { 
   'filterCategory': "filterCategory_example", // String | Filter for actions that are within a specific category
   'filterName': "filterName_example", // String | Filter for actions that have names containing the given string
   'filterTags': "filterTags_example", // String | Filter for actions that have all of the given tags (comma separated list)
   'filterSearch': "filterSearch_example" // String | Filter for actions containing the given words somewhere within name, description and tags
 };
-apiInstance.getBREActions(opts).then((data) => {
+apiInstance.getBREActions(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

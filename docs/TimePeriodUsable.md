@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**maxUse** | **Number** | The amount of times it can be used | [optional] 
-**timeLength** | **Number** | The length of time | [optional] 
-**unitOfTime** | **String** | The unit of time | [optional] 
+**max_use** | **Number** | The amount of times it can be used | [optional] 
+**time_length** | **Number** | The length of time | [optional] 
+**unit_of_time** | **String** | The unit of time | [optional] 
 
 

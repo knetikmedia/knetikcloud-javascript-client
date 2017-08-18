@@ -17,15 +17,15 @@ Get a flag report
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaModerationApi();
+var apiInstance = new KnetikCloud.MediaModerationApi();
 
-let id = 789; // Number | The flag report id
+var id = 789; // Number | The flag report id
 
-apiInstance.getModerationReport(id).then((data) => {
+apiInstance.getModerationReport(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -60,19 +60,19 @@ Context can be either a free-form string or a pre-defined context name
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaModerationApi();
+var apiInstance = new KnetikCloud.MediaModerationApi();
 
-let opts = { 
+var opts = { 
   'excludeResolved': true, // Boolean | Ignore resolved context
   'filterContext': "filterContext_example", // String | Filter by moderation context
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getModerationReports(opts).then((data) => {
+apiInstance.getModerationReports(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -110,18 +110,18 @@ Lets you set the resolution of a report. Resolution types is {banned,ignore} in 
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.MediaModerationApi();
+var apiInstance = new KnetikCloud.MediaModerationApi();
 
-let id = 789; // Number | The flag report id
+var id = 789; // Number | The flag report id
 
-let opts = { 
+var opts = { 
   'flagReportResource': new KnetikCloud.FlagReportResource() // FlagReportResource | The new flag report
 };
-apiInstance.updateModerationReport(id, opts).then(() => {
+apiInstance.updateModerationReport(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -19,16 +19,16 @@ Create a reward set
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsRewardsApi();
+var apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-let opts = { 
+var opts = { 
   'rewardSetResource': new KnetikCloud.RewardSetResource() // RewardSetResource | The reward set resource object
 };
-apiInstance.createRewardSet(opts).then((data) => {
+apiInstance.createRewardSet(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete a reward set
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsRewardsApi();
+var apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-let id = 56; // Number | The reward id
+var id = 56; // Number | The reward id
 
-apiInstance.deleteRewardSet(id).then(() => {
+apiInstance.deleteRewardSet(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -102,15 +102,15 @@ Get a single reward set
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsRewardsApi();
+var apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-let id = 56; // Number | The reward id
+var id = 56; // Number | The reward id
 
-apiInstance.getRewardSet(id).then((data) => {
+apiInstance.getRewardSet(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -143,18 +143,18 @@ List and search reward sets
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsRewardsApi();
+var apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getRewardSets(opts).then((data) => {
+apiInstance.getRewardSets(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -189,18 +189,18 @@ Update a reward set
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.CampaignsRewardsApi();
+var apiInstance = new KnetikCloud.CampaignsRewardsApi();
 
-let id = 56; // Number | The reward id
+var id = 56; // Number | The reward id
 
-let opts = { 
+var opts = { 
   'rewardSetResource': new KnetikCloud.RewardSetResource() // RewardSetResource | The reward set resource object
 };
-apiInstance.updateRewardSet(id, opts).then((data) => {
+apiInstance.updateRewardSet(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

@@ -27,16 +27,16 @@ Create an activity
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let opts = { 
+var opts = { 
   'activityResource': new KnetikCloud.ActivityResource() // ActivityResource | The activity resource object
 };
-apiInstance.createActivity(opts).then((data) => {
+apiInstance.createActivity(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,17 +71,17 @@ Has to enforce extra rules if not used as an admin
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let opts = { 
+var opts = { 
   'test': false, // Boolean | if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings
   'activityOccurrenceResource': new KnetikCloud.ActivityOccurrenceResource() // ActivityOccurrenceResource | The activity occurrence object
 };
-apiInstance.createActivityOccurrence(opts).then((data) => {
+apiInstance.createActivityOccurrence(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -117,16 +117,16 @@ Activity Templates define a type of activity and the properties they have
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let opts = { 
+var opts = { 
   'activityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The activity template resource object
 };
-apiInstance.createActivityTemplate(opts).then((data) => {
+apiInstance.createActivityTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -159,15 +159,15 @@ Delete an activity
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = 789; // Number | The id of the activity
+var id = 789; // Number | The id of the activity
 
-apiInstance.deleteActivity(id).then(() => {
+apiInstance.deleteActivity(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -202,18 +202,18 @@ If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | The value needed to delete used templates
 };
-apiInstance.deleteActivityTemplate(id, opts).then(() => {
+apiInstance.deleteActivityTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -247,11 +247,11 @@ List activity definitions
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let opts = { 
+var opts = { 
   'filterTemplate': true, // Boolean | Filter for activities that are templates, or specifically not if false
   'filterName': "filterName_example", // String | Filter for activities that have a name starting with specified string
   'filterId': "filterId_example", // String | Filter for activities with an id in the given comma separated list of ids
@@ -259,9 +259,9 @@ let opts = {
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getActivities(opts).then((data) => {
+apiInstance.getActivities(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -299,15 +299,15 @@ Get a single activity
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = 789; // Number | The id of the activity
+var id = 789; // Number | The id of the activity
 
-apiInstance.getActivity(id).then((data) => {
+apiInstance.getActivity(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -340,15 +340,15 @@ Get a single activity template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getActivityTemplate(id).then((data) => {
+apiInstance.getActivityTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -381,18 +381,18 @@ List and search activity templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getActivityTemplates(opts).then((data) => {
+apiInstance.getActivityTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -427,18 +427,18 @@ Sets the status of an activity occurrence to FINISHED and logs metrics
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let activityOccurrenceId = 789; // Number | The id of the activity occurrence
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
-let opts = { 
+var opts = { 
   'activityOccurrenceResults': new KnetikCloud.ActivityOccurrenceResultsResource() // ActivityOccurrenceResultsResource | The activity occurrence object
 };
-apiInstance.setActivityOccurrenceResults(activityOccurrenceId, opts).then((data) => {
+apiInstance.setActivityOccurrenceResults(activityOccurrenceId, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -472,18 +472,18 @@ Update an activity
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = 789; // Number | The id of the activity
+var id = 789; // Number | The id of the activity
 
-let opts = { 
+var opts = { 
   'activityResource': new KnetikCloud.ActivityResource() // ActivityResource | The activity resource object
 };
-apiInstance.updateActivity(id, opts).then((data) => {
+apiInstance.updateActivity(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -519,18 +519,18 @@ If setting to &#39;FINISHED&#39; you must POST to /results instead to record the
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let activityOccurrenceId = 789; // Number | The id of the activity occurrence
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
-let opts = { 
+var opts = { 
   'activityCccurrenceStatus': "activityCccurrenceStatus_example" // String | The activity occurrence status object
 };
-apiInstance.updateActivityOccurrence(activityOccurrenceId, opts).then(() => {
+apiInstance.updateActivityOccurrence(activityOccurrenceId, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -564,18 +564,18 @@ Update an activity template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ActivitiesApi();
+var apiInstance = new KnetikCloud.ActivitiesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'activityTemplateResource': new KnetikCloud.TemplateResource() // TemplateResource | The activity template resource object
 };
-apiInstance.updateActivityTemplate(id, opts).then((data) => {
+apiInstance.updateActivityTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

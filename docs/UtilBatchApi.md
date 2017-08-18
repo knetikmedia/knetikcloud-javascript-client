@@ -18,15 +18,15 @@ Tokens expire in 24 hours
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilBatchApi();
+var apiInstance = new KnetikCloud.UtilBatchApi();
 
-let token = "token_example"; // String | token
+var token = "token_example"; // String | token
 
-apiInstance.getBatch(token).then((data) => {
+apiInstance.getBatch(token).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,16 +61,16 @@ Should the request take longer than one of the alloted timeout parameters, a tok
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.UtilBatchApi();
+var apiInstance = new KnetikCloud.UtilBatchApi();
 
-let opts = { 
+var opts = { 
   'batch': new KnetikCloud.Batch() // Batch | The batch object
 };
-apiInstance.sendBatch(opts).then((data) => {
+apiInstance.sendBatch(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

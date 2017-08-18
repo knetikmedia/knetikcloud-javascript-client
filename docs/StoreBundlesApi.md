@@ -25,17 +25,17 @@ The SKU for the bundle itself must be unique and there can only be one SKU.  Ext
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'bundleItem': new KnetikCloud.BundleItem() // BundleItem | The bundle item object
 };
-apiInstance.createBundleItem(opts).then((data) => {
+apiInstance.createBundleItem(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -71,16 +71,16 @@ Bundle Templates define a type of bundle and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let opts = { 
+var opts = { 
   'bundleTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The new bundle template
 };
-apiInstance.createBundleTemplate(opts).then((data) => {
+apiInstance.createBundleTemplate(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -113,15 +113,15 @@ Delete a bundle item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = 56; // Number | The id of the bundle
+var id = 56; // Number | The id of the bundle
 
-apiInstance.deleteBundleItem(id).then(() => {
+apiInstance.deleteBundleItem(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -154,18 +154,18 @@ Delete a bundle template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'cascade': "cascade_example" // String | force deleting the template if it's attached to other objects, cascade = detach
 };
-apiInstance.deleteBundleTemplate(id, opts).then(() => {
+apiInstance.deleteBundleTemplate(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -199,15 +199,15 @@ Get a single bundle item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = 56; // Number | The id of the bundle
+var id = 56; // Number | The id of the bundle
 
-apiInstance.getBundleItem(id).then((data) => {
+apiInstance.getBundleItem(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -242,15 +242,15 @@ Bundle Templates define a type of bundle and the properties they have.
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-apiInstance.getBundleTemplate(id).then((data) => {
+apiInstance.getBundleTemplate(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -283,18 +283,18 @@ List and search bundle templates
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let opts = { 
+var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:ASC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getBundleTemplates(opts).then((data) => {
+apiInstance.getBundleTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -329,19 +329,19 @@ Update a bundle item
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = 56; // Number | The id of the bundle
+var id = 56; // Number | The id of the bundle
 
-let opts = { 
+var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
   'bundleItem': new KnetikCloud.BundleItem() // BundleItem | The bundle item object
 };
-apiInstance.updateBundleItem(id, opts).then((data) => {
+apiInstance.updateBundleItem(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -376,18 +376,18 @@ Update a bundle template
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.StoreBundlesApi();
+var apiInstance = new KnetikCloud.StoreBundlesApi();
 
-let id = "id_example"; // String | The id of the template
+var id = "id_example"; // String | The id of the template
 
-let opts = { 
+var opts = { 
   'bundleTemplateResource': new KnetikCloud.ItemTemplateResource() // ItemTemplateResource | The bundle template resource object
 };
-apiInstance.updateBundleTemplate(id, opts).then((data) => {
+apiInstance.updateBundleTemplate(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

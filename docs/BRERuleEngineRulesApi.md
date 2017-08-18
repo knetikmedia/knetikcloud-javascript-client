@@ -23,16 +23,16 @@ Rules define which actions to run when a given event verifies the specified cond
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let opts = { 
+var opts = { 
   'breRule': new KnetikCloud.BreRule() // BreRule | The BRE rule object
 };
-apiInstance.createBRERule(opts).then((data) => {
+apiInstance.createBRERule(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -67,15 +67,15 @@ May fail if there are existing rules against it. Cannot delete core rules
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let id = "id_example"; // String | The id of the rule
+var id = "id_example"; // String | The id of the rule
 
-apiInstance.deleteBRERule(id).then(() => {
+apiInstance.deleteBRERule(id).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -108,16 +108,16 @@ Returns a string representation of the provided expression
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let opts = { 
+var opts = { 
   'expression': new KnetikCloud.Expressionobject() // Expressionobject | The expression
 };
-apiInstance.getBREExpressionAsString(opts).then((data) => {
+apiInstance.getBREExpressionAsString(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -150,15 +150,15 @@ Get a single rule
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let id = "id_example"; // String | The id of the rule
+var id = "id_example"; // String | The id of the rule
 
-apiInstance.getBRERule(id).then((data) => {
+apiInstance.getBRERule(id).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -191,11 +191,11 @@ List rules
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let opts = { 
+var opts = { 
   'filterName': "filterName_example", // String | Filter for rules containing the given name
   'filterEnabled': null, // Boolean | Filter for rules by active status, null for both
   'filterSystem': true, // Boolean | Filter for rules that are system rules when true, or not when false. Leave off for both mixed
@@ -205,9 +205,9 @@ let opts = {
   'size': 25, // Number | The number of objects returned per page
   'page': 1 // Number | The number of the page returned, starting with 1
 };
-apiInstance.getBRERules(opts).then((data) => {
+apiInstance.getBRERules(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -249,18 +249,18 @@ This is helpful for turning off systems rules which cannot be deleted or modifie
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let id = "id_example"; // String | The id of the rule
+var id = "id_example"; // String | The id of the rule
 
-let opts = { 
+var opts = { 
   'enabled': new KnetikCloud.BooleanResource() // BooleanResource | The boolean value
 };
-apiInstance.setBRERule(id, opts).then(() => {
+apiInstance.setBRERule(id, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -296,18 +296,18 @@ Cannot update system rules
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
+var apiInstance = new KnetikCloud.BRERuleEngineRulesApi();
 
-let id = "id_example"; // String | The id of the rule
+var id = "id_example"; // String | The id of the rule
 
-let opts = { 
+var opts = { 
   'breRule': new KnetikCloud.BreRule() // BreRule | The BRE rule object
 };
-apiInstance.updateBRERule(id, opts).then((data) => {
+apiInstance.updateBRERule(id, opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 

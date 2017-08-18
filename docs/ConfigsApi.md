@@ -19,16 +19,16 @@ Create a new config
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ConfigsApi();
+var apiInstance = new KnetikCloud.ConfigsApi();
 
-let opts = { 
+var opts = { 
   'config': new KnetikCloud.Config() // Config | The config object
 };
-apiInstance.createConfig(opts).then((data) => {
+apiInstance.createConfig(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -61,15 +61,15 @@ Delete an existing config
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ConfigsApi();
+var apiInstance = new KnetikCloud.ConfigsApi();
 
-let name = "name_example"; // String | The config name
+var name = "name_example"; // String | The config name
 
-apiInstance.deleteConfig(name).then(() => {
+apiInstance.deleteConfig(name).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -104,15 +104,15 @@ Only configs that are public readable will be shown without admin access
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ConfigsApi();
+var apiInstance = new KnetikCloud.ConfigsApi();
 
-let name = "name_example"; // String | The config name
+var name = "name_example"; // String | The config name
 
-apiInstance.getConfig(name).then((data) => {
+apiInstance.getConfig(name).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -145,19 +145,19 @@ List and search configs
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ConfigsApi();
+var apiInstance = new KnetikCloud.ConfigsApi();
 
-let opts = { 
+var opts = { 
   'filterSearch': "filterSearch_example", // String | Filter for configs whose name contains the given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
   'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
-apiInstance.getConfigs(opts).then((data) => {
+apiInstance.getConfigs(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
@@ -193,18 +193,18 @@ Update an existing config
 
 ### Example
 ```javascript
-import KnetikCloud from 'knetikcloud-sdk';
+var KnetikCloud = require('knetikcloud-sdk');
 
-let apiInstance = new KnetikCloud.ConfigsApi();
+var apiInstance = new KnetikCloud.ConfigsApi();
 
-let name = "name_example"; // String | The config name
+var name = "name_example"; // String | The config name
 
-let opts = { 
+var opts = { 
   'config': new KnetikCloud.Config() // Config | The config object
 };
-apiInstance.updateConfig(name, opts).then(() => {
+apiInstance.updateConfig(name, opts).then(function() {
   console.log('API called successfully.');
-}, (error) => {
+}, function(error) {
   console.error(error);
 });
 
