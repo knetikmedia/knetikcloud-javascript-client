@@ -852,7 +852,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceCommentResource;
@@ -912,7 +912,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceDispositionResource;
@@ -972,7 +972,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceVideoRelationshipResource;
@@ -1051,7 +1051,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceVideoResource;

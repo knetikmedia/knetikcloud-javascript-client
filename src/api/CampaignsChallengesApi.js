@@ -121,7 +121,7 @@
         'challenge_id': challengeId
       };
       var queryParams = {
-        'validateSettings': opts['validateSettings'],
+        'validate_settings': opts['validateSettings'],
       };
       var collectionQueryParams = {
       };
@@ -565,7 +565,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ChallengeResource;
@@ -624,7 +624,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceBareChallengeActivityResource;
@@ -687,7 +687,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ChallengeActivityResource;
@@ -846,7 +846,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = ChallengeEventResource;
@@ -906,7 +906,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeEventResource;
@@ -1077,7 +1077,7 @@
       var formParams = {
       };
 
-      var authNames = [];
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeResource;
@@ -1173,6 +1173,7 @@
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeActivityResource} opts.challengeActivityResource The challenge activity resource object
+     * @param {Boolean} opts.validateSettings Whether to validate the settings being sent against the available settings on the base activity. (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChallengeActivityResource} and HTTP response
      */
     this.updateChallengeActivityWithHttpInfo = function(id, challengeId, opts) {
@@ -1195,6 +1196,7 @@
         'challenge_id': challengeId
       };
       var queryParams = {
+        'validateSettings': opts['validateSettings'],
       };
       var collectionQueryParams = {
       };
@@ -1222,6 +1224,7 @@
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeActivityResource} opts.challengeActivityResource The challenge activity resource object
+     * @param {Boolean} opts.validateSettings Whether to validate the settings being sent against the available settings on the base activity. (default to false)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChallengeActivityResource}
      */
     this.updateChallengeActivity = function(id, challengeId, opts) {
