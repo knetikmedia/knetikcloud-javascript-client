@@ -105,6 +105,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property tags (base name: "tags")', function() {
+      // uncomment below and update the code to test the property tags
+      //var instane = new KnetikCloud.GroupResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property template (base name: "template")', function() {
       // uncomment below and update the code to test the property template
       //var instane = new KnetikCloud.GroupResource();

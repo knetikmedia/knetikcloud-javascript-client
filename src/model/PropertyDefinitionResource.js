@@ -52,7 +52,12 @@
     var _this = this;
 
 
+
+
     _this['name'] = name;
+
+
+
     _this['required'] = required;
     _this['type'] = type;
   };
@@ -68,11 +73,26 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('description')) {
+        obj['description'] = ApiClient.convertToType(data['description'], 'String');
+      }
       if (data.hasOwnProperty('field_list')) {
         obj['field_list'] = PropertyFieldListResource.constructFromObject(data['field_list']);
       }
+      if (data.hasOwnProperty('friendly_name')) {
+        obj['friendly_name'] = ApiClient.convertToType(data['friendly_name'], 'String');
+      }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('option_label_path')) {
+        obj['option_label_path'] = ApiClient.convertToType(data['option_label_path'], 'String');
+      }
+      if (data.hasOwnProperty('option_value_path')) {
+        obj['option_value_path'] = ApiClient.convertToType(data['option_value_path'], 'String');
+      }
+      if (data.hasOwnProperty('options_url')) {
+        obj['options_url'] = ApiClient.convertToType(data['options_url'], 'String');
       }
       if (data.hasOwnProperty('required')) {
         obj['required'] = ApiClient.convertToType(data['required'], 'Boolean');
@@ -99,15 +119,40 @@
 
 exports.discriminatorField = 'type';
   /**
+   * The description of the property
+   * @member {String} description
+   */
+  exports.prototype['description'] = undefined;
+  /**
    * A list of the fields on both the property definition and property of this type
    * @member {module:model/PropertyFieldListResource} field_list
    */
   exports.prototype['field_list'] = undefined;
   /**
+   * The friendly front-facing name of the property
+   * @member {String} friendly_name
+   */
+  exports.prototype['friendly_name'] = undefined;
+  /**
    * The name of the property
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * The JSON path to the option label
+   * @member {String} option_label_path
+   */
+  exports.prototype['option_label_path'] = undefined;
+  /**
+   * The JSON path to the option value
+   * @member {String} option_value_path
+   */
+  exports.prototype['option_value_path'] = undefined;
+  /**
+   * URL of service containing the property options (assumed JSON array)
+   * @member {String} options_url
+   */
+  exports.prototype['options_url'] = undefined;
   /**
    * Whether the property is required
    * @member {Boolean} required

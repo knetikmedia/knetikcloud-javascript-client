@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KnetikCloud.SearchApi();
+    instance = new KnetikCloud.SimpleGroupResource();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,27 +50,25 @@
       object[property] = value;
   }
 
-  describe('SearchApi', function() {
-    describe('searchIndex', function() {
-      it('should call searchIndex successfully', function(done) {
-        //uncomment below and update the code to test searchIndex
-        //instance.searchIndex(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('SimpleGroupResource', function() {
+    it('should create an instance of SimpleGroupResource', function() {
+      // uncomment below and update the code to test SimpleGroupResource
+      //var instane = new KnetikCloud.SimpleGroupResource();
+      //expect(instance).to.be.a(KnetikCloud.SimpleGroupResource);
     });
-    describe('searchIndexWithTemplate', function() {
-      it('should call searchIndexWithTemplate successfully', function(done) {
-        //uncomment below and update the code to test searchIndexWithTemplate
-        //instance.searchIndexWithTemplate(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new KnetikCloud.SimpleGroupResource();
+      //expect(instance).to.be();
     });
+
+    it('should have the property uniqueName (base name: "unique_name")', function() {
+      // uncomment below and update the code to test the property uniqueName
+      //var instane = new KnetikCloud.SimpleGroupResource();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

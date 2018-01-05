@@ -93,6 +93,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property evaluationCount (base name: "evaluation_count")', function() {
+      // uncomment below and update the code to test the property evaluationCount
+      //var instane = new KnetikCloud.BreRule();
+      //expect(instance).to.be();
+    });
+
     it('should have the property eventName (base name: "event_name")', function() {
       // uncomment below and update the code to test the property eventName
       //var instane = new KnetikCloud.BreRule();
@@ -107,6 +113,12 @@
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instane = new KnetikCloud.BreRule();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property runCount (base name: "run_count")', function() {
+      // uncomment below and update the code to test the property runCount
       //var instane = new KnetikCloud.BreRule();
       //expect(instance).to.be();
     });

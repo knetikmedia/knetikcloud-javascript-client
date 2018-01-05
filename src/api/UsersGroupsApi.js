@@ -314,7 +314,8 @@
 
 
     /**
-     * Removes a group from the system IF no resources are attached to it
+     * Removes a group from the system
+     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -352,7 +353,8 @@
     }
 
     /**
-     * Removes a group from the system IF no resources are attached to it
+     * Removes a group from the system
+     * All groups listing this as the parent are also removed and users are in turn removed from this and those groups. This may result in users no longer being in this group&#39;s parent if they were not added to it directly as well.
      * @param {String} uniqueName The group unique name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -527,6 +529,59 @@
      */
     this.getGroup = function(uniqueName) {
       return this.getGroupWithHttpInfo(uniqueName)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get group ancestors
+     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+     * @param {String} uniqueName The group unique name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GroupResource>} and HTTP response
+     */
+    this.getGroupAncestorsWithHttpInfo = function(uniqueName) {
+      var postBody = null;
+
+      // verify the required parameter 'uniqueName' is set
+      if (uniqueName === undefined || uniqueName === null) {
+        throw new Error("Missing the required parameter 'uniqueName' when calling getGroupAncestors");
+      }
+
+
+      var pathParams = {
+        'unique_name': uniqueName
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = [GroupResource];
+
+      return this.apiClient.callApi(
+        '/users/groups/{unique_name}/ancestors', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get group ancestors
+     * Returns a list of ancestor groups in reverse order (parent, then grandparent, etc
+     * @param {String} uniqueName The group unique name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GroupResource>}
+     */
+    this.getGroupAncestors = function(uniqueName) {
+      return this.getGroupAncestorsWithHttpInfo(uniqueName)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1058,6 +1113,7 @@
 
     /**
      * Update a group
+     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The updated group
@@ -1099,6 +1155,7 @@
 
     /**
      * Update a group
+     * If adding/removing/changing parent, user membership in group/new parent groups may be modified. The parent being removed will remove members from this sub group unless they were added explicitly to the parent and the new parent will gain members unless they were already a part of it.
      * @param {String} uniqueName The group unique name
      * @param {Object} opts Optional parameters
      * @param {module:model/GroupResource} opts.groupResource The updated group

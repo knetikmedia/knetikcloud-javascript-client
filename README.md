@@ -523,7 +523,8 @@ Class | Method | HTTP request | Description
 *KnetikCloud.ReportingUsageApi* | [**getUsageByYear**](docs/ReportingUsageApi.md#getUsageByYear) | **GET** /reporting/usage/year | Returns aggregated endpoint usage information by year
 *KnetikCloud.ReportingUsageApi* | [**getUsageEndpoints**](docs/ReportingUsageApi.md#getUsageEndpoints) | **GET** /reporting/usage/endpoints | Returns list of endpoints called (method and url)
 *KnetikCloud.ReportingUsersApi* | [**getUserRegistrations**](docs/ReportingUsersApi.md#getUserRegistrations) | **GET** /reporting/users/registrations | Get user registration info
-*KnetikCloud.SearchApi* | [**searchIndex**](docs/SearchApi.md#searchIndex) | **POST** /search/index/{type} | Search an index
+*KnetikCloud.SearchApi* | [**searchIndex**](docs/SearchApi.md#searchIndex) | **POST** /search/index/{type} | Search an index with no template
+*KnetikCloud.SearchApi* | [**searchIndexWithTemplate**](docs/SearchApi.md#searchIndexWithTemplate) | **POST** /search/index/{type}/{template} | Search an index with a template
 *KnetikCloud.SocialFacebookApi* | [**linkAccounts**](docs/SocialFacebookApi.md#linkAccounts) | **POST** /social/facebook/users | Link facebook account
 *KnetikCloud.SocialGoogleApi* | [**linkAccounts1**](docs/SocialGoogleApi.md#linkAccounts1) | **POST** /social/google/users | Link google account
 *KnetikCloud.StoreApi* | [**createItemTemplate**](docs/StoreApi.md#createItemTemplate) | **POST** /store/items/templates | Create an item template
@@ -650,10 +651,11 @@ Class | Method | HTTP request | Description
 *KnetikCloud.UsersGroupsApi* | [**createGroup**](docs/UsersGroupsApi.md#createGroup) | **POST** /users/groups | Create a group
 *KnetikCloud.UsersGroupsApi* | [**createGroupMemberTemplate**](docs/UsersGroupsApi.md#createGroupMemberTemplate) | **POST** /users/groups/members/templates | Create an group member template
 *KnetikCloud.UsersGroupsApi* | [**createGroupTemplate**](docs/UsersGroupsApi.md#createGroupTemplate) | **POST** /users/groups/templates | Create a group template
-*KnetikCloud.UsersGroupsApi* | [**deleteGroup**](docs/UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system IF no resources are attached to it
+*KnetikCloud.UsersGroupsApi* | [**deleteGroup**](docs/UsersGroupsApi.md#deleteGroup) | **DELETE** /users/groups/{unique_name} | Removes a group from the system
 *KnetikCloud.UsersGroupsApi* | [**deleteGroupMemberTemplate**](docs/UsersGroupsApi.md#deleteGroupMemberTemplate) | **DELETE** /users/groups/members/templates/{id} | Delete an group member template
 *KnetikCloud.UsersGroupsApi* | [**deleteGroupTemplate**](docs/UsersGroupsApi.md#deleteGroupTemplate) | **DELETE** /users/groups/templates/{id} | Delete a group template
 *KnetikCloud.UsersGroupsApi* | [**getGroup**](docs/UsersGroupsApi.md#getGroup) | **GET** /users/groups/{unique_name} | Loads a specific group&#39;s details
+*KnetikCloud.UsersGroupsApi* | [**getGroupAncestors**](docs/UsersGroupsApi.md#getGroupAncestors) | **GET** /users/groups/{unique_name}/ancestors | Get group ancestors
 *KnetikCloud.UsersGroupsApi* | [**getGroupMember**](docs/UsersGroupsApi.md#getGroupMember) | **GET** /users/groups/{unique_name}/members/{user_id} | Get a user from a group
 *KnetikCloud.UsersGroupsApi* | [**getGroupMemberTemplate**](docs/UsersGroupsApi.md#getGroupMemberTemplate) | **GET** /users/groups/members/templates/{id} | Get a single group member template
 *KnetikCloud.UsersGroupsApi* | [**getGroupMemberTemplates**](docs/UsersGroupsApi.md#getGroupMemberTemplates) | **GET** /users/groups/members/templates | List and search group member templates
@@ -976,6 +978,7 @@ Class | Method | HTTP request | Description
  - [KnetikCloud.SelectedSettingRequest](docs/SelectedSettingRequest.md)
  - [KnetikCloud.SelectedSettingResource](docs/SelectedSettingResource.md)
  - [KnetikCloud.SettingOption](docs/SettingOption.md)
+ - [KnetikCloud.SimpleGroupResource](docs/SimpleGroupResource.md)
  - [KnetikCloud.SimpleReferenceResourceint](docs/SimpleReferenceResourceint.md)
  - [KnetikCloud.SimpleReferenceResourcelong](docs/SimpleReferenceResourcelong.md)
  - [KnetikCloud.SimpleReferenceResourceobject](docs/SimpleReferenceResourceobject.md)

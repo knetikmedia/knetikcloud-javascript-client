@@ -151,6 +151,7 @@
     /**
      * List and search currencies
      * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.filterDefault Filter for the one currency that is set as default (true), or all that are not (false)
      * @param {Boolean} opts.filterEnabledCurrencies Filter for alternate currencies setup explicitely in system config
      * @param {String} opts.filterType Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;)
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -166,6 +167,7 @@
       var pathParams = {
       };
       var queryParams = {
+        'filter_default': opts['filterDefault'],
         'filter_enabled_currencies': opts['filterEnabledCurrencies'],
         'filter_type': opts['filterType'],
         'size': opts['size'],
@@ -194,6 +196,7 @@
     /**
      * List and search currencies
      * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.filterDefault Filter for the one currency that is set as default (true), or all that are not (false)
      * @param {Boolean} opts.filterEnabledCurrencies Filter for alternate currencies setup explicitely in system config
      * @param {String} opts.filterType Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;)
      * @param {Number} opts.size The number of objects returned per page (default to 25)

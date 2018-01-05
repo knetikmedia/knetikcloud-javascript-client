@@ -50,7 +50,7 @@
 
 
     /**
-     * Search an index
+     * Search an index with no template
      * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
      * @param {String} type The index type
      * @param {Object} opts Optional parameters
@@ -96,7 +96,7 @@
     }
 
     /**
-     * Search an index
+     * Search an index with no template
      * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
      * @param {String} type The index type
      * @param {Object} opts Optional parameters
@@ -107,6 +107,78 @@
      */
     this.searchIndex = function(type, opts) {
       return this.searchIndexWithHttpInfo(type, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Search an index with a template
+     * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+     * @param {String} type The index type
+     * @param {String} template The index template
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.query The query to be used for the search
+     * @param {Number} opts.size The number of documents returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceMapstringobject} and HTTP response
+     */
+    this.searchIndexWithTemplateWithHttpInfo = function(type, template, opts) {
+      opts = opts || {};
+      var postBody = opts['query'];
+
+      // verify the required parameter 'type' is set
+      if (type === undefined || type === null) {
+        throw new Error("Missing the required parameter 'type' when calling searchIndexWithTemplate");
+      }
+
+      // verify the required parameter 'template' is set
+      if (template === undefined || template === null) {
+        throw new Error("Missing the required parameter 'template' when calling searchIndexWithTemplate");
+      }
+
+
+      var pathParams = {
+        'type': type,
+        'template': template
+      };
+      var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = PageResourceMapstringobject;
+
+      return this.apiClient.callApi(
+        '/search/index/{type}/{template}', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Search an index with a template
+     * The body is an ElasticSearch query in JSON format. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options. The searchable object&#39;s format depends on on the type but mostly matches the resource from it&#39;s main endpoint. Exceptions include referenced objects (like user) being replaced with the full user resource to allow deeper searching.
+     * @param {String} type The index type
+     * @param {String} template The index template
+     * @param {Object} opts Optional parameters
+     * @param {Object} opts.query The query to be used for the search
+     * @param {Number} opts.size The number of documents returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceMapstringobject}
+     */
+    this.searchIndexWithTemplate = function(type, template, opts) {
+      return this.searchIndexWithTemplateWithHttpInfo(type, template, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

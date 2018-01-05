@@ -57,9 +57,11 @@
 
 
 
+
     _this['event_name'] = eventName;
 
     _this['name'] = name;
+
 
 
 
@@ -94,6 +96,9 @@
       if (data.hasOwnProperty('end_date')) {
         obj['end_date'] = ApiClient.convertToType(data['end_date'], 'Number');
       }
+      if (data.hasOwnProperty('evaluation_count')) {
+        obj['evaluation_count'] = ApiClient.convertToType(data['evaluation_count'], 'Number');
+      }
       if (data.hasOwnProperty('event_name')) {
         obj['event_name'] = ApiClient.convertToType(data['event_name'], 'String');
       }
@@ -102,6 +107,9 @@
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('run_count')) {
+        obj['run_count'] = ApiClient.convertToType(data['run_count'], 'Number');
       }
       if (data.hasOwnProperty('sort')) {
         obj['sort'] = ApiClient.convertToType(data['sort'], 'Number');
@@ -161,6 +169,11 @@
    */
   exports.prototype['end_date'] = undefined;
   /**
+   * How many times the rule has been evaluated (it's conditions checked, whether it then runs or not)
+   * @member {Number} evaluation_count
+   */
+  exports.prototype['evaluation_count'] = undefined;
+  /**
    * The event name of the trigger this rule runs for. Affects which parameters are available
    * @member {String} event_name
    */
@@ -175,6 +188,11 @@
    * @member {String} name
    */
   exports.prototype['name'] = undefined;
+  /**
+   * How many times the rule has run
+   * @member {Number} run_count
+   */
+  exports.prototype['run_count'] = undefined;
   /**
    * Used to sort rules to control the order they run in. Larger numbered sort values run first.  Default 500
    * @member {Number} sort

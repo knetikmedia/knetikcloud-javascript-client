@@ -17,55 +17,58 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BroadcastableEvent'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./BroadcastableEvent'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.CacheClearEvent = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BroadcastableEvent);
+    root.KnetikCloud.SimpleGroupResource = factory(root.KnetikCloud.ApiClient);
   }
-}(this, function(ApiClient, BroadcastableEvent) {
+}(this, function(ApiClient) {
   'use strict';
 
 
 
 
   /**
-   * The CacheClearEvent model module.
-   * @module model/CacheClearEvent
+   * The SimpleGroupResource model module.
+   * @module model/SimpleGroupResource
    * @version 3.0.8
    */
 
   /**
-   * Constructs a new <code>CacheClearEvent</code>.
-   * @alias module:model/CacheClearEvent
+   * Constructs a new <code>SimpleGroupResource</code>.
+   * @alias module:model/SimpleGroupResource
    * @class
-   * @extends module:model/BroadcastableEvent
-   * @param type {String} The type of the event. Used for polymorphic type recognition and thus must match an expected type
+   * @param name {String} The name of the group. Max 50 characters
    */
-  var exports = function(type) {
+  var exports = function(name) {
     var _this = this;
-    BroadcastableEvent.call(_this, type);
+
+    _this['name'] = name;
 
   };
 
   /**
-   * Constructs a <code>CacheClearEvent</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>SimpleGroupResource</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/CacheClearEvent} obj Optional instance to populate.
-   * @return {module:model/CacheClearEvent} The populated <code>CacheClearEvent</code> instance.
+   * @param {module:model/SimpleGroupResource} obj Optional instance to populate.
+   * @return {module:model/SimpleGroupResource} The populated <code>SimpleGroupResource</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
-      BroadcastableEvent.constructFromObject(data, obj);
-      if (data.hasOwnProperty('teardown')) {
-        obj['teardown'] = ApiClient.convertToType(data['teardown'], 'Boolean');
+
+      if (data.hasOwnProperty('name')) {
+        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      }
+      if (data.hasOwnProperty('unique_name')) {
+        obj['unique_name'] = ApiClient.convertToType(data['unique_name'], 'String');
       }
     }
     return obj;
@@ -82,17 +85,19 @@
 		  exports.parent.registerChild(child, discriminatorValue);
   }
   
-  var discriminatorValue = 'cache_clear';
-  BroadcastableEvent.registerChild(exports, discriminatorValue);
-  
-  exports.prototype = Object.create(BroadcastableEvent.prototype);
-  exports.prototype.constructor = exports;
+  var discriminatorValue = 'SimpleGroupResource';
 
 
   /**
-   * @member {Boolean} teardown
+   * The name of the group. Max 50 characters
+   * @member {String} name
    */
-  exports.prototype['teardown'] = undefined;
+  exports.prototype['name'] = undefined;
+  /**
+   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
+   * @member {String} unique_name
+   */
+  exports.prototype['unique_name'] = undefined;
 
 
 

@@ -46,9 +46,8 @@
    * @class
    * @param name {String} The name of the group. Max 50 characters
    * @param status {module:model/GroupResource.StatusEnum} The status which describes whether other users can freely join the group or not
-   * @param uniqueName {String} Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created
    */
-  var exports = function(name, status, uniqueName) {
+  var exports = function(name, status) {
     var _this = this;
 
 
@@ -60,7 +59,8 @@
     _this['status'] = status;
 
 
-    _this['unique_name'] = uniqueName;
+
+
   };
 
   /**
@@ -97,6 +97,9 @@
       }
       if (data.hasOwnProperty('sub_member_count')) {
         obj['sub_member_count'] = ApiClient.convertToType(data['sub_member_count'], 'Number');
+      }
+      if (data.hasOwnProperty('tags')) {
+        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
       }
       if (data.hasOwnProperty('template')) {
         obj['template'] = ApiClient.convertToType(data['template'], 'String');
@@ -163,12 +166,17 @@
    */
   exports.prototype['sub_member_count'] = undefined;
   /**
+   * Tags for search
+   * @member {Array.<String>} tags
+   */
+  exports.prototype['tags'] = undefined;
+  /**
    * A group template this group is validated against. May be null and no validation of additional_properties will be done
    * @member {String} template
    */
   exports.prototype['template'] = undefined;
   /**
-   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created
+   * Unique name used in url and references. Uppercase, lowercase, numbers and hyphens only. Max 50 characters. Cannot be altered once created. Default: random UUID
    * @member {String} unique_name
    */
   exports.prototype['unique_name'] = undefined;

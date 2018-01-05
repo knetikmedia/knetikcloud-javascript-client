@@ -57,14 +57,8 @@
       //expect(instance).to.be.a(KnetikCloud.CacheClearEvent);
     });
 
-    it('should have the property customerSetup (base name: "customer_setup")', function() {
-      // uncomment below and update the code to test the property customerSetup
-      //var instane = new KnetikCloud.CacheClearEvent();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property customerTeardown (base name: "customer_teardown")', function() {
-      // uncomment below and update the code to test the property customerTeardown
+    it('should have the property teardown (base name: "teardown")', function() {
+      // uncomment below and update the code to test the property teardown
       //var instane = new KnetikCloud.CacheClearEvent();
       //expect(instance).to.be();
     });

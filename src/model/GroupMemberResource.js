@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Property'], factory);
+    define(['ApiClient', 'model/Property', 'model/SimpleGroupResource', 'model/SimpleUserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./Property'));
+    module.exports = factory(require('../ApiClient'), require('./Property'), require('./SimpleGroupResource'), require('./SimpleUserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.GroupMemberResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Property);
+    root.KnetikCloud.GroupMemberResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.Property, root.KnetikCloud.SimpleGroupResource, root.KnetikCloud.SimpleUserResource);
   }
-}(this, function(ApiClient, Property) {
+}(this, function(ApiClient, Property, SimpleGroupResource, SimpleUserResource) {
   'use strict';
 
 
@@ -44,19 +44,19 @@
    * Constructs a new <code>GroupMemberResource</code>.
    * @alias module:model/GroupMemberResource
    * @class
-   * @param id {Number} The id of the user
+   * @param user {module:model/SimpleUserResource} The user
    */
-  var exports = function(id) {
+  var exports = function(user) {
     var _this = this;
 
 
 
 
-    _this['id'] = id;
 
 
 
 
+    _this['user'] = user;
   };
 
   /**
@@ -73,14 +73,14 @@
       if (data.hasOwnProperty('additional_properties')) {
         obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
       }
-      if (data.hasOwnProperty('avatar_url')) {
-        obj['avatar_url'] = ApiClient.convertToType(data['avatar_url'], 'String');
+      if (data.hasOwnProperty('group')) {
+        obj['group'] = SimpleGroupResource.constructFromObject(data['group']);
       }
-      if (data.hasOwnProperty('display_name')) {
-        obj['display_name'] = ApiClient.convertToType(data['display_name'], 'String');
+      if (data.hasOwnProperty('implicit')) {
+        obj['implicit'] = ApiClient.convertToType(data['implicit'], 'Boolean');
       }
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'Number');
+      if (data.hasOwnProperty('membership_id')) {
+        obj['membership_id'] = ApiClient.convertToType(data['membership_id'], 'Number');
       }
       if (data.hasOwnProperty('order')) {
         obj['order'] = ApiClient.convertToType(data['order'], 'String');
@@ -91,8 +91,8 @@
       if (data.hasOwnProperty('template')) {
         obj['template'] = ApiClient.convertToType(data['template'], 'String');
       }
-      if (data.hasOwnProperty('username')) {
-        obj['username'] = ApiClient.convertToType(data['username'], 'String');
+      if (data.hasOwnProperty('user')) {
+        obj['user'] = SimpleUserResource.constructFromObject(data['user']);
       }
     }
     return obj;
@@ -118,20 +118,20 @@
    */
   exports.prototype['additional_properties'] = undefined;
   /**
-   * The url of the user's avatar image
-   * @member {String} avatar_url
+   * The group. Id is the unique name
+   * @member {module:model/SimpleGroupResource} group
    */
-  exports.prototype['avatar_url'] = undefined;
+  exports.prototype['group'] = undefined;
   /**
-   * The public username of the user
-   * @member {String} display_name
+   * Whether this membership is explicit (the user was added directly to the group) or implicit (the user was added only to one or more child groups)
+   * @member {Boolean} implicit
    */
-  exports.prototype['display_name'] = undefined;
+  exports.prototype['implicit'] = undefined;
   /**
-   * The id of the user
-   * @member {Number} id
+   * The id of the membership entry
+   * @member {Number} membership_id
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['membership_id'] = undefined;
   /**
    * The position of the member in the group if applicable. Read notes for details
    * @member {String} order
@@ -148,10 +148,10 @@
    */
   exports.prototype['template'] = undefined;
   /**
-   * The username of the user
-   * @member {String} username
+   * The user
+   * @member {module:model/SimpleUserResource} user
    */
-  exports.prototype['username'] = undefined;
+  exports.prototype['user'] = undefined;
 
 
   /**

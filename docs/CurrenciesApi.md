@@ -134,6 +134,7 @@ oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
 var apiInstance = new KnetikCloud.CurrenciesApi();
 
 var opts = { 
+  'filterDefault': true, // Boolean | Filter for the one currency that is set as default (true), or all that are not (false)
   'filterEnabledCurrencies': true, // Boolean | Filter for alternate currencies setup explicitely in system config
   'filterType': "filterType_example", // String | Filter currencies by type.  Allowable values: ('virtual', 'real')
   'size': 25, // Number | The number of objects returned per page
@@ -152,6 +153,7 @@ apiInstance.getCurrencies(opts).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filterDefault** | **Boolean**| Filter for the one currency that is set as default (true), or all that are not (false) | [optional] 
  **filterEnabledCurrencies** | **Boolean**| Filter for alternate currencies setup explicitely in system config | [optional] 
  **filterType** | **String**| Filter currencies by type.  Allowable values: (&#39;virtual&#39;, &#39;real&#39;) | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]

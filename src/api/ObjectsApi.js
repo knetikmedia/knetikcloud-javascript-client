@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EntitlementItem', 'model/ItemTemplateResource', 'model/ObjectResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceObjectResource', 'model/Result'], factory);
+    define(['ApiClient', 'model/ItemTemplateResource', 'model/ObjectResource', 'model/PageResourceItemTemplateResource', 'model/PageResourceObjectResource', 'model/Result'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/EntitlementItem'), require('../model/ItemTemplateResource'), require('../model/ObjectResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceObjectResource'), require('../model/Result'));
+    module.exports = factory(require('../ApiClient'), require('../model/ItemTemplateResource'), require('../model/ObjectResource'), require('../model/PageResourceItemTemplateResource'), require('../model/PageResourceObjectResource'), require('../model/Result'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ObjectsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.EntitlementItem, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.ObjectResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceObjectResource, root.KnetikCloud.Result);
+    root.KnetikCloud.ObjectsApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemTemplateResource, root.KnetikCloud.ObjectResource, root.KnetikCloud.PageResourceItemTemplateResource, root.KnetikCloud.PageResourceObjectResource, root.KnetikCloud.Result);
   }
-}(this, function(ApiClient, EntitlementItem, ItemTemplateResource, ObjectResource, PageResourceItemTemplateResource, PageResourceObjectResource, Result) {
+}(this, function(ApiClient, ItemTemplateResource, ObjectResource, PageResourceItemTemplateResource, PageResourceObjectResource, Result) {
   'use strict';
 
   /**
@@ -507,13 +507,13 @@
     /**
      * Update an object
      * @param {String} templateId The id of the template this object is part of
-     * @param {Number} entitlementId The id of the entitlement
+     * @param {Number} objectId The id of the object
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
-     * @param {module:model/EntitlementItem} opts.objectItem The object item object
+     * @param {module:model/ObjectResource} opts.objectItem The object item object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateObjectItemWithHttpInfo = function(templateId, entitlementId, opts) {
+    this.updateObjectItemWithHttpInfo = function(templateId, objectId, opts) {
       opts = opts || {};
       var postBody = opts['objectItem'];
 
@@ -522,15 +522,15 @@
         throw new Error("Missing the required parameter 'templateId' when calling updateObjectItem");
       }
 
-      // verify the required parameter 'entitlementId' is set
-      if (entitlementId === undefined || entitlementId === null) {
-        throw new Error("Missing the required parameter 'entitlementId' when calling updateObjectItem");
+      // verify the required parameter 'objectId' is set
+      if (objectId === undefined || objectId === null) {
+        throw new Error("Missing the required parameter 'objectId' when calling updateObjectItem");
       }
 
 
       var pathParams = {
         'template_id': templateId,
-        'entitlement_id': entitlementId
+        'object_id': objectId
       };
       var queryParams = {
         'cascade': opts['cascade'],
@@ -557,14 +557,14 @@
     /**
      * Update an object
      * @param {String} templateId The id of the template this object is part of
-     * @param {Number} entitlementId The id of the entitlement
+     * @param {Number} objectId The id of the object
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
-     * @param {module:model/EntitlementItem} opts.objectItem The object item object
+     * @param {module:model/ObjectResource} opts.objectItem The object item object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateObjectItem = function(templateId, entitlementId, opts) {
-      return this.updateObjectItemWithHttpInfo(templateId, entitlementId, opts)
+    this.updateObjectItem = function(templateId, objectId, opts) {
+      return this.updateObjectItemWithHttpInfo(templateId, objectId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

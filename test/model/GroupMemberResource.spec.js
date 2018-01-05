@@ -63,20 +63,20 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property avatarUrl (base name: "avatar_url")', function() {
-      // uncomment below and update the code to test the property avatarUrl
+    it('should have the property group (base name: "group")', function() {
+      // uncomment below and update the code to test the property group
       //var instane = new KnetikCloud.GroupMemberResource();
       //expect(instance).to.be();
     });
 
-    it('should have the property displayName (base name: "display_name")', function() {
-      // uncomment below and update the code to test the property displayName
+    it('should have the property implicit (base name: "implicit")', function() {
+      // uncomment below and update the code to test the property implicit
       //var instane = new KnetikCloud.GroupMemberResource();
       //expect(instance).to.be();
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property membershipId (base name: "membership_id")', function() {
+      // uncomment below and update the code to test the property membershipId
       //var instane = new KnetikCloud.GroupMemberResource();
       //expect(instance).to.be();
     });
@@ -99,8 +99,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property username (base name: "username")', function() {
-      // uncomment below and update the code to test the property username
+    it('should have the property user (base name: "user")', function() {
+      // uncomment below and update the code to test the property user
       //var instane = new KnetikCloud.GroupMemberResource();
       //expect(instance).to.be();
     });

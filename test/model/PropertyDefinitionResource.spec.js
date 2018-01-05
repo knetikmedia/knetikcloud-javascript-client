@@ -57,14 +57,44 @@
       //expect(instance).to.be.a(KnetikCloud.PropertyDefinitionResource);
     });
 
+    it('should have the property description (base name: "description")', function() {
+      // uncomment below and update the code to test the property description
+      //var instane = new KnetikCloud.PropertyDefinitionResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property fieldList (base name: "field_list")', function() {
       // uncomment below and update the code to test the property fieldList
       //var instane = new KnetikCloud.PropertyDefinitionResource();
       //expect(instance).to.be();
     });
 
+    it('should have the property friendlyName (base name: "friendly_name")', function() {
+      // uncomment below and update the code to test the property friendlyName
+      //var instane = new KnetikCloud.PropertyDefinitionResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
+      //var instane = new KnetikCloud.PropertyDefinitionResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property optionLabelPath (base name: "option_label_path")', function() {
+      // uncomment below and update the code to test the property optionLabelPath
+      //var instane = new KnetikCloud.PropertyDefinitionResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property optionValuePath (base name: "option_value_path")', function() {
+      // uncomment below and update the code to test the property optionValuePath
+      //var instane = new KnetikCloud.PropertyDefinitionResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property optionsUrl (base name: "options_url")', function() {
+      // uncomment below and update the code to test the property optionsUrl
       //var instane = new KnetikCloud.PropertyDefinitionResource();
       //expect(instance).to.be();
     });

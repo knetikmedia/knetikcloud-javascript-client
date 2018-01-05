@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 <a name="updateObjectItem"></a>
 # **updateObjectItem**
-> updateObjectItem(templateId, entitlementId, opts)
+> updateObjectItem(templateId, objectId, opts)
 
 Update an object
 
@@ -473,13 +473,13 @@ var apiInstance = new KnetikCloud.ObjectsApi();
 
 var templateId = "templateId_example"; // String | The id of the template this object is part of
 
-var entitlementId = 56; // Number | The id of the entitlement
+var objectId = 56; // Number | The id of the object
 
 var opts = { 
   'cascade': false, // Boolean | Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values.
-  'objectItem': new KnetikCloud.EntitlementItem() // EntitlementItem | The object item object
+  'objectItem': new KnetikCloud.ObjectResource() // ObjectResource | The object item object
 };
-apiInstance.updateObjectItem(templateId, entitlementId, opts).then(function() {
+apiInstance.updateObjectItem(templateId, objectId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -492,9 +492,9 @@ apiInstance.updateObjectItem(templateId, entitlementId, opts).then(function() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **String**| The id of the template this object is part of | 
- **entitlementId** | **Number**| The id of the entitlement | 
+ **objectId** | **Number**| The id of the object | 
  **cascade** | **Boolean**| Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. | [optional] [default to false]
- **objectItem** | [**EntitlementItem**](EntitlementItem.md)| The object item object | [optional] 
+ **objectItem** | [**ObjectResource**](ObjectResource.md)| The object item object | [optional] 
 
 ### Return type
 

@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property defaultCurrency (base name: "default_currency")', function() {
+      // uncomment below and update the code to test the property defaultCurrency
+      //var instane = new KnetikCloud.CurrencyResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property factor (base name: "factor")', function() {
       // uncomment below and update the code to test the property factor
       //var instane = new KnetikCloud.CurrencyResource();

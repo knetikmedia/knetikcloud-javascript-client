@@ -141,6 +141,16 @@
         done();
       });
     });
+    describe('getGroupAncestors', function() {
+      it('should call getGroupAncestors successfully', function(done) {
+        //uncomment below and update the code to test getGroupAncestors
+        //instance.getGroupAncestors(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getGroupMember', function() {
       it('should call getGroupMember successfully', function(done) {
         //uncomment below and update the code to test getGroupMember
