@@ -121,6 +121,16 @@
         done();
       });
     });
+    describe('createVideoTemplate', function() {
+      it('should call createVideoTemplate successfully', function(done) {
+        //uncomment below and update the code to test createVideoTemplate
+        //instance.createVideoTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteVideo', function() {
       it('should call deleteVideo successfully', function(done) {
         //uncomment below and update the code to test deleteVideo
@@ -171,6 +181,16 @@
         done();
       });
     });
+    describe('deleteVideoTemplate', function() {
+      it('should call deleteVideoTemplate successfully', function(done) {
+        //uncomment below and update the code to test deleteVideoTemplate
+        //instance.deleteVideoTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUserVideos', function() {
       it('should call getUserVideos successfully', function(done) {
         //uncomment below and update the code to test getUserVideos
@@ -215,6 +235,26 @@
       it('should call getVideoRelationships successfully', function(done) {
         //uncomment below and update the code to test getVideoRelationships
         //instance.getVideoRelationships(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVideoTemplate', function() {
+      it('should call getVideoTemplate successfully', function(done) {
+        //uncomment below and update the code to test getVideoTemplate
+        //instance.getVideoTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getVideoTemplates', function() {
+      it('should call getVideoTemplates successfully', function(done) {
+        //uncomment below and update the code to test getVideoTemplates
+        //instance.getVideoTemplates(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -275,6 +315,16 @@
       it('should call updateVideoRelationship successfully', function(done) {
         //uncomment below and update the code to test updateVideoRelationship
         //instance.updateVideoRelationship(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateVideoTemplate', function() {
+      it('should call updateVideoTemplate successfully', function(done) {
+        //uncomment below and update the code to test updateVideoTemplate
+        //instance.updateVideoTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

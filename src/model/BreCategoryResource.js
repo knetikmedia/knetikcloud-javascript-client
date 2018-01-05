@@ -37,7 +37,7 @@
   /**
    * The BreCategoryResource model module.
    * @module model/BreCategoryResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**

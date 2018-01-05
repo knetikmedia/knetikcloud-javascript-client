@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommentResource', 'model/ContributionResource', 'model/DispositionResource', 'model/FlagResource', 'model/IntWrapper', 'model/PageResourceCommentResource', 'model/PageResourceDispositionResource', 'model/PageResourceVideoRelationshipResource', 'model/PageResourceVideoResource', 'model/Result', 'model/StringWrapper', 'model/VideoRelationshipResource', 'model/VideoResource'], factory);
+    define(['ApiClient', 'model/CommentResource', 'model/ContributionResource', 'model/DispositionResource', 'model/FlagResource', 'model/IntWrapper', 'model/PageResourceCommentResource', 'model/PageResourceDispositionResource', 'model/PageResourceTemplateResource', 'model/PageResourceVideoRelationshipResource', 'model/PageResourceVideoResource', 'model/Result', 'model/StringWrapper', 'model/TemplateResource', 'model/VideoRelationshipResource', 'model/VideoResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/CommentResource'), require('../model/ContributionResource'), require('../model/DispositionResource'), require('../model/FlagResource'), require('../model/IntWrapper'), require('../model/PageResourceCommentResource'), require('../model/PageResourceDispositionResource'), require('../model/PageResourceVideoRelationshipResource'), require('../model/PageResourceVideoResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/VideoRelationshipResource'), require('../model/VideoResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/CommentResource'), require('../model/ContributionResource'), require('../model/DispositionResource'), require('../model/FlagResource'), require('../model/IntWrapper'), require('../model/PageResourceCommentResource'), require('../model/PageResourceDispositionResource'), require('../model/PageResourceTemplateResource'), require('../model/PageResourceVideoRelationshipResource'), require('../model/PageResourceVideoResource'), require('../model/Result'), require('../model/StringWrapper'), require('../model/TemplateResource'), require('../model/VideoRelationshipResource'), require('../model/VideoResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.MediaVideosApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CommentResource, root.KnetikCloud.ContributionResource, root.KnetikCloud.DispositionResource, root.KnetikCloud.FlagResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceCommentResource, root.KnetikCloud.PageResourceDispositionResource, root.KnetikCloud.PageResourceVideoRelationshipResource, root.KnetikCloud.PageResourceVideoResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.VideoRelationshipResource, root.KnetikCloud.VideoResource);
+    root.KnetikCloud.MediaVideosApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CommentResource, root.KnetikCloud.ContributionResource, root.KnetikCloud.DispositionResource, root.KnetikCloud.FlagResource, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceCommentResource, root.KnetikCloud.PageResourceDispositionResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.PageResourceVideoRelationshipResource, root.KnetikCloud.PageResourceVideoResource, root.KnetikCloud.Result, root.KnetikCloud.StringWrapper, root.KnetikCloud.TemplateResource, root.KnetikCloud.VideoRelationshipResource, root.KnetikCloud.VideoResource);
   }
-}(this, function(ApiClient, CommentResource, ContributionResource, DispositionResource, FlagResource, IntWrapper, PageResourceCommentResource, PageResourceDispositionResource, PageResourceVideoRelationshipResource, PageResourceVideoResource, Result, StringWrapper, VideoRelationshipResource, VideoResource) {
+}(this, function(ApiClient, CommentResource, ContributionResource, DispositionResource, FlagResource, IntWrapper, PageResourceCommentResource, PageResourceDispositionResource, PageResourceTemplateResource, PageResourceVideoRelationshipResource, PageResourceVideoResource, Result, StringWrapper, TemplateResource, VideoRelationshipResource, VideoResource) {
   'use strict';
 
   /**
    * MediaVideos service.
    * @module api/MediaVideosApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -436,6 +436,56 @@
 
 
     /**
+     * Create a video template
+     * Video Templates define a type of video and the properties they have
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.createVideoTemplateWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = opts['videoTemplateResource'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/media/videos/templates', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create a video template
+     * Video Templates define a type of video and the properties they have
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.createVideoTemplate = function(opts) {
+      return this.createVideoTemplateWithHttpInfo(opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Deletes a video from the system if no resources are attached to it
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -700,6 +750,65 @@
      */
     this.deleteVideoRelationship = function(videoId, id) {
       return this.deleteVideoRelationshipWithHttpInfo(videoId, id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a video template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.cascade The value needed to delete used templates
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteVideoTemplateWithHttpInfo = function(id, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling deleteVideoTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+        'cascade': opts['cascade'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/media/videos/templates/{id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a video template
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.cascade The value needed to delete used templates
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteVideoTemplate = function(id, opts) {
+      return this.deleteVideoTemplateWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -994,6 +1103,112 @@
      */
     this.getVideoRelationships = function(videoId, opts) {
       return this.getVideoRelationshipsWithHttpInfo(videoId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get a single video template
+     * @param {String} id The id of the template
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.getVideoTemplateWithHttpInfo = function(id) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling getVideoTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/media/videos/templates/{id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Get a single video template
+     * @param {String} id The id of the template
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.getVideoTemplate = function(id) {
+      return this.getVideoTemplateWithHttpInfo(id)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List and search video templates
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceTemplateResource} and HTTP response
+     */
+    this.getVideoTemplatesWithHttpInfo = function(opts) {
+      opts = opts || {};
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'size': opts['size'],
+        'page': opts['page'],
+        'order': opts['order'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = PageResourceTemplateResource;
+
+      return this.apiClient.callApi(
+        '/media/videos/templates', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List and search video templates
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.size The number of objects returned per page (default to 25)
+     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:ASC)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceTemplateResource}
+     */
+    this.getVideoTemplates = function(opts) {
+      return this.getVideoTemplatesWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -1389,6 +1604,62 @@
      */
     this.updateVideoRelationship = function(videoId, relationshipId, opts) {
       return this.updateVideoRelationshipWithHttpInfo(videoId, relationshipId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a video template
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
+     */
+    this.updateVideoTemplateWithHttpInfo = function(id, opts) {
+      opts = opts || {};
+      var postBody = opts['videoTemplateResource'];
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling updateVideoTemplate");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = TemplateResource;
+
+      return this.apiClient.callApi(
+        '/media/videos/templates/{id}', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update a video template
+     * @param {String} id The id of the template
+     * @param {Object} opts Optional parameters
+     * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
+     */
+    this.updateVideoTemplate = function(id, opts) {
+      return this.updateVideoTemplateWithHttpInfo(id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

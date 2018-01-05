@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/CommentResource', 'model/ContributionResource', 'model/SimpleReferenceResourcelong', 'model/SimpleReferenceResourcestring', 'model/SimpleUserResource'], factory);
+    define(['ApiClient', 'model/CommentResource', 'model/ContributionResource', 'model/Property', 'model/SimpleReferenceResourcelong', 'model/SimpleReferenceResourcestring', 'model/SimpleUserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./CommentResource'), require('./ContributionResource'), require('./SimpleReferenceResourcelong'), require('./SimpleReferenceResourcestring'), require('./SimpleUserResource'));
+    module.exports = factory(require('../ApiClient'), require('./CommentResource'), require('./ContributionResource'), require('./Property'), require('./SimpleReferenceResourcelong'), require('./SimpleReferenceResourcestring'), require('./SimpleUserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.VideoResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CommentResource, root.KnetikCloud.ContributionResource, root.KnetikCloud.SimpleReferenceResourcelong, root.KnetikCloud.SimpleReferenceResourcestring, root.KnetikCloud.SimpleUserResource);
+    root.KnetikCloud.VideoResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CommentResource, root.KnetikCloud.ContributionResource, root.KnetikCloud.Property, root.KnetikCloud.SimpleReferenceResourcelong, root.KnetikCloud.SimpleReferenceResourcestring, root.KnetikCloud.SimpleUserResource);
   }
-}(this, function(ApiClient, CommentResource, ContributionResource, SimpleReferenceResourcelong, SimpleReferenceResourcestring, SimpleUserResource) {
+}(this, function(ApiClient, CommentResource, ContributionResource, Property, SimpleReferenceResourcelong, SimpleReferenceResourcestring, SimpleUserResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The VideoResource model module.
    * @module model/VideoResource
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -54,6 +54,7 @@
    */
   var exports = function(category, extension, height, length, location, name, width) {
     var _this = this;
+
 
 
 
@@ -82,6 +83,7 @@
 
 
 
+
     _this['width'] = width;
   };
 
@@ -98,6 +100,9 @@
 
       if (data.hasOwnProperty('active')) {
         obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
+      }
+      if (data.hasOwnProperty('additional_properties')) {
+        obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
       }
       if (data.hasOwnProperty('author')) {
         obj['author'] = SimpleReferenceResourcelong.constructFromObject(data['author']);
@@ -165,6 +170,9 @@
       if (data.hasOwnProperty('tags')) {
         obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
       }
+      if (data.hasOwnProperty('template')) {
+        obj['template'] = ApiClient.convertToType(data['template'], 'String');
+      }
       if (data.hasOwnProperty('thumbnail')) {
         obj['thumbnail'] = ApiClient.convertToType(data['thumbnail'], 'String');
       }
@@ -203,6 +211,11 @@
    * @member {Boolean} active
    */
   exports.prototype['active'] = undefined;
+  /**
+   * A map of additional properties, keyed on the property name.  Must match the names and types defined in the template for this item type
+   * @member {Object.<String, module:model/Property>} additional_properties
+   */
+  exports.prototype['additional_properties'] = undefined;
   /**
    * The original artist of the media
    * @member {module:model/SimpleReferenceResourcelong} author
@@ -313,6 +326,11 @@
    * @member {Array.<String>} tags
    */
   exports.prototype['tags'] = undefined;
+  /**
+   * A video template this video is validated against (private). May be null and no validation of additional_properties will be done
+   * @member {String} template
+   */
+  exports.prototype['template'] = undefined;
   /**
    * The country of a thumbnail version. Typically a url
    * @member {String} thumbnail

@@ -91,16 +91,6 @@
         done();
       });
     });
-    describe('searchComments', function() {
-      it('should call searchComments successfully', function(done) {
-        //uncomment below and update the code to test searchComments
-        //instance.searchComments(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
-    });
     describe('updateComment', function() {
       it('should call updateComment successfully', function(done) {
         //uncomment below and update the code to test updateComment

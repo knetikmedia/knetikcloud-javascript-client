@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property additionalProperties (base name: "additional_properties")', function() {
+      // uncomment below and update the code to test the property additionalProperties
+      //var instane = new KnetikCloud.VideoResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property author (base name: "author")', function() {
       // uncomment below and update the code to test the property author
       //var instane = new KnetikCloud.VideoResource();
@@ -191,6 +197,12 @@
 
     it('should have the property tags (base name: "tags")', function() {
       // uncomment below and update the code to test the property tags
+      //var instane = new KnetikCloud.VideoResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property template (base name: "template")', function() {
+      // uncomment below and update the code to test the property template
       //var instane = new KnetikCloud.VideoResource();
       //expect(instance).to.be();
     });

@@ -34,7 +34,7 @@
   /**
    * ContentComments service.
    * @module api/ContentCommentsApi
-   * @version 3.0.8
+   * @version 3.0.9
    */
 
   /**
@@ -261,62 +261,6 @@
      */
     this.getComments = function(context, contextId, opts) {
       return this.getCommentsWithHttpInfo(context, contextId, opts)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Search the comment index
-     * The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The search query
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceCommentResource} and HTTP response
-     */
-    this.searchCommentsWithHttpInfo = function(opts) {
-      opts = opts || {};
-      var postBody = opts['query'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-        'size': opts['size'],
-        'page': opts['page'],
-      };
-      var collectionQueryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = PageResourceCommentResource;
-
-      return this.apiClient.callApi(
-        '/comments/search', 'POST',
-        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType
-      );
-    }
-
-    /**
-     * Search the comment index
-     * The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-     * @param {Object} opts Optional parameters
-     * @param {Object} opts.query The search query
-     * @param {Number} opts.size The number of objects returned per page (default to 25)
-     * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceCommentResource}
-     */
-    this.searchComments = function(opts) {
-      return this.searchCommentsWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

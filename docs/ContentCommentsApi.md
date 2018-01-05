@@ -1,6 +1,6 @@
 # KnetikCloud.ContentCommentsApi
 
-All URIs are relative to *https://sandbox.knetikcloud.com*
+All URIs are relative to *https://devsandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**deleteComment**](ContentCommentsApi.md#deleteComment) | **DELETE** /comments/{id} | Delete a comment
 [**getComment**](ContentCommentsApi.md#getComment) | **GET** /comments/{id} | Return a comment
 [**getComments**](ContentCommentsApi.md#getComments) | **GET** /comments | Returns a page of comments
-[**searchComments**](ContentCommentsApi.md#searchComments) | **POST** /comments/search | Search the comment index
 [**updateComment**](ContentCommentsApi.md#updateComment) | **PUT** /comments/{id}/content | Update a comment
 
 
@@ -206,63 +205,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **context** | **String**| Get comments by context type | 
  **contextId** | **Number**| Get comments by context id | 
- **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
- **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
-
-### Return type
-
-[**PageResourceCommentResource**](PageResourceCommentResource.md)
-
-### Authorization
-
-[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="searchComments"></a>
-# **searchComments**
-> PageResourceCommentResource searchComments(opts)
-
-Search the comment index
-
-The body is an ElasticSearch query json. Please see their &lt;a href&#x3D;&#39;https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html&#39;&gt;documentation&lt;/a&gt; for details on the format and search options
-
-### Example
-```javascript
-var KnetikCloud = require('knetikcloud-sdk');
-var defaultClient = KnetikCloud.ApiClient.instance;
-
-// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
-var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
-oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-// Configure OAuth2 access token for authorization: oauth2_password_grant
-var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
-oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
-
-var apiInstance = new KnetikCloud.ContentCommentsApi();
-
-var opts = { 
-  'query': null, // Object | The search query
-  'size': 25, // Number | The number of objects returned per page
-  'page': 1 // Number | The number of the page returned, starting with 1
-};
-apiInstance.searchComments(opts).then(function(data) {
-  console.log('API called successfully. Returned data: ' + data);
-}, function(error) {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **query** | **Object**| The search query | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
 
