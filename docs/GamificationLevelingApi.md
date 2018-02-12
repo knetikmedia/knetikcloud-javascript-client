@@ -1,6 +1,6 @@
 # KnetikCloud.GamificationLevelingApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > LevelingResource createLevel(opts)
 
 Create a level schema
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -73,6 +75,8 @@ Name | Type | Description  | Notes
 
 Delete a level
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -114,7 +118,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getLevel"></a>
@@ -122,6 +126,8 @@ null (empty response body)
 > LevelingResource getLevel(name)
 
 Retrieve a level
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -164,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getLevelTriggers"></a>
@@ -172,6 +178,8 @@ Name | Type | Description  | Notes
 > [BreTriggerResource] getLevelTriggers()
 
 Get the list of triggers that can be used to trigger a leveling progress update
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -208,7 +216,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getLevels"></a>
@@ -217,7 +225,7 @@ This endpoint does not need any parameter.
 
 List and search levels
 
-Get a list of levels schemas with optional filtering
+Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -267,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLevel"></a>
@@ -275,6 +283,8 @@ Name | Type | Description  | Notes
 > UserLevelingResource getUserLevel(userId, name)
 
 Get a user&#39;s progress for a given level schema
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
 
 ### Example
 ```javascript
@@ -320,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLevels"></a>
@@ -329,7 +339,7 @@ Name | Type | Description  | Notes
 
 Get a user&#39;s progress for all level schemas
 
-Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
 
 ### Example
 ```javascript
@@ -382,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="incrementProgress"></a>
@@ -391,7 +401,7 @@ Name | Type | Description  | Notes
 
 Update or create a leveling progress record for a user
 
-If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -450,7 +460,7 @@ null (empty response body)
 
 Set leveling progress for a user
 
-If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript
@@ -508,6 +518,8 @@ null (empty response body)
 > LevelingResource updateLevel(name, opts)
 
 Update a level
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
 
 ### Example
 ```javascript

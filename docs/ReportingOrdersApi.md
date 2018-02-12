@@ -1,6 +1,6 @@
 # KnetikCloud.ReportingOrdersApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,8 @@ Method | HTTP request | Description
 > PageResourceAggregateInvoiceReportResource getInvoiceReports(currencyCode, opts)
 
 Retrieve invoice counts aggregated by time ranges
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
 
 ### Example
 ```javascript
@@ -70,6 +72,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

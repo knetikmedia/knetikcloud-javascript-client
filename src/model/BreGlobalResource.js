@@ -37,7 +37,7 @@
   /**
    * The BreGlobalResource model module.
    * @module model/BreGlobalResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -45,7 +45,7 @@
    * @alias module:model/BreGlobalResource
    * @class
    * @param key {String} The key for the global. Must be unique when combined with scope names. Usually a single descriptive word like 'purchases' or 'logins'
-   * @param type {String} The variable type the global stores. See the See Bre Variables enpoint for list
+   * @param type {String} The variable type the global stores. See the BRE variables endpoint for list
    */
   var exports = function(key, type) {
     var _this = this;
@@ -140,7 +140,7 @@
    */
   exports.prototype['system_global'] = undefined;
   /**
-   * The variable type the global stores. See the See Bre Variables enpoint for list
+   * The variable type the global stores. See the BRE variables endpoint for list
    * @member {String} type
    */
   exports.prototype['type'] = undefined;

@@ -34,7 +34,7 @@
   /**
    * StoreShoppingCarts service.
    * @module api/StoreShoppingCartsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Adds a custom discount to the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CouponDefinition} opts.customDiscount The details of the discount to add
@@ -92,6 +93,7 @@
 
     /**
      * Adds a custom discount to the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CouponDefinition} opts.customDiscount The details of the discount to add
@@ -107,6 +109,7 @@
 
     /**
      * Adds a discount coupon to the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/SkuRequest} opts.skuRequest The request of the sku
@@ -148,6 +151,7 @@
 
     /**
      * Adds a discount coupon to the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/SkuRequest} opts.skuRequest The request of the sku
@@ -163,7 +167,7 @@
 
     /**
      * Add an item to the cart
-     * Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+     * Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartItemRequest} opts.cartItemRequest The cart item request object
@@ -205,7 +209,7 @@
 
     /**
      * Add an item to the cart
-     * Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment
+     * Currently, carts cannot contain virtual and real currency items at the same time. Furthermore, the API only support a single virtual item at the moment. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartItemRequest} opts.cartItemRequest The cart item request object
@@ -221,7 +225,7 @@
 
     /**
      * Create a cart
-     * You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
+     * You don&#39;t have to have a user to create a cart but the API requires authentication to checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
      * @param {String} opts.currencyCode Set the currency for the cart, by currency code. May be disallowed by site settings.
@@ -259,7 +263,7 @@
 
     /**
      * Create a cart
-     * You don&#39;t have to have a user to create a cart but the API requires authentication to checkout
+     * You don&#39;t have to have a user to create a cart but the API requires authentication to checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.owner Set the owner of a cart. If not specified, defaults to the calling user&#39;s id. If specified and is not the calling user&#39;s id, SHOPPING_CARTS_ADMIN permission is required
      * @param {String} opts.currencyCode Set the currency for the cart, by currency code. May be disallowed by site settings.
@@ -275,6 +279,7 @@
 
     /**
      * Returns the cart with the given GUID
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Cart} and HTTP response
      */
@@ -300,7 +305,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Cart;
 
@@ -313,6 +318,7 @@
 
     /**
      * Returns the cart with the given GUID
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Cart}
      */
@@ -326,6 +332,7 @@
 
     /**
      * Get a list of carts
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterOwnerId Filter by the id of the owner
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -354,7 +361,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCartSummary;
 
@@ -367,6 +374,7 @@
 
     /**
      * Get a list of carts
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterOwnerId Filter by the id of the owner
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -384,6 +392,7 @@
 
     /**
      * Returns whether a cart requires shipping
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CartShippableResponse} and HTTP response
      */
@@ -409,7 +418,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CartShippableResponse;
 
@@ -422,6 +431,7 @@
 
     /**
      * Returns whether a cart requires shipping
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CartShippableResponse}
      */
@@ -435,7 +445,7 @@
 
     /**
      * Get the list of available shipping countries per vendor
-     * Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+     * Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SampleCountriesResponse} and HTTP response
      */
@@ -461,7 +471,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SampleCountriesResponse;
 
@@ -474,7 +484,7 @@
 
     /**
      * Get the list of available shipping countries per vendor
-     * Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable.
+     * Since a cart can have multiple vendors with different shipping options, the countries are broken down by vendors. Please see notes about the response object as the fields are variable. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SampleCountriesResponse}
      */
@@ -488,6 +498,7 @@
 
     /**
      * Removes a discount coupon from the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {String} code The SKU code of the coupon to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -520,7 +531,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -533,6 +544,7 @@
 
     /**
      * Removes a discount coupon from the cart
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {String} code The SKU code of the coupon to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -547,7 +559,7 @@
 
     /**
      * Sets the currency to use for the cart
-     * May be disallowed by site settings.
+     * May be disallowed by site settings. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.currencyCode The code of the currency
@@ -589,7 +601,7 @@
 
     /**
      * Sets the currency to use for the cart
-     * May be disallowed by site settings.
+     * May be disallowed by site settings. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.currencyCode The code of the currency
@@ -605,6 +617,7 @@
 
     /**
      * Sets the owner of a cart if none is set already
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/IntWrapper} opts.userId The id of the user
@@ -646,6 +659,7 @@
 
     /**
      * Sets the owner of a cart if none is set already
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/IntWrapper} opts.userId The id of the user
@@ -661,7 +675,7 @@
 
     /**
      * Changes the quantity of an item already in the cart
-     * A quantity of zero will remove the item from the cart altogether.
+     * A quantity of zero will remove the item from the cart altogether. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartItemRequest} opts.cartItemRequest The cart item request object
@@ -703,7 +717,7 @@
 
     /**
      * Changes the quantity of an item already in the cart
-     * A quantity of zero will remove the item from the cart altogether.
+     * A quantity of zero will remove the item from the cart altogether. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartItemRequest} opts.cartItemRequest The cart item request object
@@ -719,6 +733,7 @@
 
     /**
      * Modifies or sets the order shipping address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartShippingAddressRequest} opts.cartShippingAddressRequest The cart shipping address request object
@@ -760,6 +775,7 @@
 
     /**
      * Modifies or sets the order shipping address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHOPPING_CARTS_ADMIN or owner
      * @param {String} id The id of the cart
      * @param {Object} opts Optional parameters
      * @param {module:model/CartShippingAddressRequest} opts.cartShippingAddressRequest The cart shipping address request object

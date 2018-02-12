@@ -81,6 +81,16 @@
         done();
       });
     });
+    describe('getDirectMessages1', function() {
+      it('should call getDirectMessages1 successfully', function(done) {
+        //uncomment below and update the code to test getDirectMessages1
+        //instance.getDirectMessages1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getUser', function() {
       it('should call getUser successfully', function(done) {
         //uncomment below and update the code to test getUser
@@ -135,6 +145,16 @@
       it('should call passwordReset successfully', function(done) {
         //uncomment below and update the code to test passwordReset
         //instance.passwordReset(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postUserMessage', function() {
+      it('should call postUserMessage successfully', function(done) {
+        //uncomment below and update the code to test postUserMessage
+        //instance.postUserMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

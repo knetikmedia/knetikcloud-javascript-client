@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/Property', 'model/RewardSetResource', 'model/SelectedSettingResource'], factory);
+    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/CoreChallengeActivitySettings', 'model/Property', 'model/RewardSetResource', 'model/SelectedSettingResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./Property'), require('./RewardSetResource'), require('./SelectedSettingResource'));
+    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./CoreChallengeActivitySettings'), require('./Property'), require('./RewardSetResource'), require('./SelectedSettingResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ChallengeActivityResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.Property, root.KnetikCloud.RewardSetResource, root.KnetikCloud.SelectedSettingResource);
+    root.KnetikCloud.ChallengeActivityResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.CoreChallengeActivitySettings, root.KnetikCloud.Property, root.KnetikCloud.RewardSetResource, root.KnetikCloud.SelectedSettingResource);
   }
-}(this, function(ApiClient, ActivityEntitlementResource, Property, RewardSetResource, SelectedSettingResource) {
+}(this, function(ApiClient, ActivityEntitlementResource, CoreChallengeActivitySettings, Property, RewardSetResource, SelectedSettingResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The ChallengeActivityResource model module.
    * @module model/ChallengeActivityResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -50,6 +50,7 @@
     var _this = this;
 
     _this['activity_id'] = activityId;
+
 
 
 
@@ -78,6 +79,9 @@
       }
       if (data.hasOwnProperty('challenge_id')) {
         obj['challenge_id'] = ApiClient.convertToType(data['challenge_id'], 'Number');
+      }
+      if (data.hasOwnProperty('core_settings')) {
+        obj['core_settings'] = CoreChallengeActivitySettings.constructFromObject(data['core_settings']);
       }
       if (data.hasOwnProperty('entitlement')) {
         obj['entitlement'] = ActivityEntitlementResource.constructFromObject(data['entitlement']);
@@ -127,6 +131,11 @@
    * @member {Number} challenge_id
    */
   exports.prototype['challenge_id'] = undefined;
+  /**
+   * Defines core settings about the activity that affect how it can be created/played by users. Values may be left null to inherit from parent activity.
+   * @member {module:model/CoreChallengeActivitySettings} core_settings
+   */
+  exports.prototype['core_settings'] = undefined;
   /**
    * The entitlement item needed to participate in the activity as part of this event. Null indicates free entry. When creating/updating only id is used. Item must be pre-existing
    * @member {module:model/ActivityEntitlementResource} entitlement

@@ -1,6 +1,6 @@
 # KnetikCloud.MediaModerationApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > FlagResource addFlag(opts)
 
 Add a flag
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -69,6 +71,8 @@ Name | Type | Description  | Notes
 
 Delete a flag
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -115,7 +119,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getFlags"></a>
@@ -123,6 +127,8 @@ null (empty response body)
 > PageResourceFlagResource getFlags(opts)
 
 Returns a page of flags
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
 
 ### Example
 ```javascript
@@ -174,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getModerationReport"></a>
@@ -182,6 +188,8 @@ Name | Type | Description  | Notes
 > FlagReportResource getModerationReport(id)
 
 Get a flag report
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
 
 ### Example
 ```javascript
@@ -224,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getModerationReports"></a>
@@ -233,7 +241,7 @@ Name | Type | Description  | Notes
 
 Returns a page of flag reports
 
-Context can be either a free-form string or a pre-defined context name
+Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
 
 ### Example
 ```javascript
@@ -285,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateModerationReport"></a>
@@ -294,7 +302,7 @@ Name | Type | Description  | Notes
 
 Update a flag report
 
-Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
 
 ### Example
 ```javascript

@@ -34,7 +34,7 @@
   /**
    * ContentPolls service.
    * @module api/ContentPollsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add your vote to a poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
      * @param {String} id The poll id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.answerKey The answer key
@@ -92,6 +93,7 @@
 
     /**
      * Add your vote to a poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
      * @param {String} id The poll id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.answerKey The answer key
@@ -107,7 +109,7 @@
 
     /**
      * Create a new poll
-     * Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+     * Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/PollResource} opts.pollResource The poll object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PollResource} and HTTP response
@@ -142,7 +144,7 @@
 
     /**
      * Create a new poll
-     * Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+     * Polls are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/PollResource} opts.pollResource The poll object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PollResource}
@@ -157,7 +159,7 @@
 
     /**
      * Create a poll template
-     * Poll templates define a type of poll and the properties they have
+     * Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.pollTemplateResource The poll template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -192,7 +194,7 @@
 
     /**
      * Create a poll template
-     * Poll templates define a type of poll and the properties they have
+     * Poll templates define a type of poll and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.pollTemplateResource The poll template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -207,6 +209,7 @@
 
     /**
      * Delete an existing poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -232,7 +235,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -245,6 +248,7 @@
 
     /**
      * Delete an existing poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -258,7 +262,7 @@
 
     /**
      * Delete a poll template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -288,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -301,7 +305,7 @@
 
     /**
      * Delete a poll template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -317,6 +321,7 @@
 
     /**
      * Get a single poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PollResource} and HTTP response
      */
@@ -342,7 +347,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PollResource;
 
@@ -355,6 +360,7 @@
 
     /**
      * Get a single poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PollResource}
      */
@@ -368,6 +374,7 @@
 
     /**
      * Get poll answer
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PollResponseResource} and HTTP response
      */
@@ -393,7 +400,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PollResponseResource;
 
@@ -406,6 +413,7 @@
 
     /**
      * Get poll answer
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN or POLLS_USER
      * @param {String} id The poll id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PollResponseResource}
      */
@@ -419,6 +427,7 @@
 
     /**
      * Get a single poll template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -444,7 +453,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -457,6 +466,7 @@
 
     /**
      * Get a single poll template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -470,6 +480,7 @@
 
     /**
      * List and search poll templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -496,7 +507,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -509,6 +520,7 @@
 
     /**
      * List and search poll templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or POLLS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -525,7 +537,7 @@
 
     /**
      * List and search polls
-     * Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterCategory Filter for polls from a specific category by id
      * @param {String} opts.filterTagset Filter for polls with specified tags (separated by comma)
@@ -558,7 +570,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourcePollResource;
 
@@ -571,7 +583,7 @@
 
     /**
      * List and search polls
-     * Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Get a list of polls with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterCategory Filter for polls from a specific category by id
      * @param {String} opts.filterTagset Filter for polls with specified tags (separated by comma)
@@ -591,6 +603,7 @@
 
     /**
      * Update an existing poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {String} id The poll id
      * @param {Object} opts Optional parameters
      * @param {module:model/PollResource} opts.pollResource The poll object
@@ -632,6 +645,7 @@
 
     /**
      * Update an existing poll
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; POLLS_ADMIN
      * @param {String} id The poll id
      * @param {Object} opts Optional parameters
      * @param {module:model/PollResource} opts.pollResource The poll object
@@ -647,6 +661,7 @@
 
     /**
      * Update a poll template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.pollTemplateResource The poll template resource object
@@ -688,6 +703,7 @@
 
     /**
      * Update a poll template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.pollTemplateResource The poll template resource object

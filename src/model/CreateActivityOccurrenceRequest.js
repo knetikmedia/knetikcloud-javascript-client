@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ItemIdRequest', 'model/Participant', 'model/SelectedSettingRequest'], factory);
+    define(['ApiClient', 'model/CoreActivityOccurrenceSettings', 'model/ItemIdRequest', 'model/Participant', 'model/SelectedSettingRequest'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ItemIdRequest'), require('./Participant'), require('./SelectedSettingRequest'));
+    module.exports = factory(require('../ApiClient'), require('./CoreActivityOccurrenceSettings'), require('./ItemIdRequest'), require('./Participant'), require('./SelectedSettingRequest'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.CreateActivityOccurrenceRequest = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ItemIdRequest, root.KnetikCloud.Participant, root.KnetikCloud.SelectedSettingRequest);
+    root.KnetikCloud.CreateActivityOccurrenceRequest = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.CoreActivityOccurrenceSettings, root.KnetikCloud.ItemIdRequest, root.KnetikCloud.Participant, root.KnetikCloud.SelectedSettingRequest);
   }
-}(this, function(ApiClient, ItemIdRequest, Participant, SelectedSettingRequest) {
+}(this, function(ApiClient, CoreActivityOccurrenceSettings, ItemIdRequest, Participant, SelectedSettingRequest) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The CreateActivityOccurrenceRequest model module.
    * @module model/CreateActivityOccurrenceRequest
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -48,6 +48,8 @@
    */
   var exports = function() {
     var _this = this;
+
+
 
 
 
@@ -76,11 +78,17 @@
       if (data.hasOwnProperty('challenge_activity_id')) {
         obj['challenge_activity_id'] = ApiClient.convertToType(data['challenge_activity_id'], 'Number');
       }
+      if (data.hasOwnProperty('core_settings')) {
+        obj['core_settings'] = CoreActivityOccurrenceSettings.constructFromObject(data['core_settings']);
+      }
       if (data.hasOwnProperty('entitlement')) {
         obj['entitlement'] = ItemIdRequest.constructFromObject(data['entitlement']);
       }
       if (data.hasOwnProperty('event_id')) {
         obj['event_id'] = ApiClient.convertToType(data['event_id'], 'Number');
+      }
+      if (data.hasOwnProperty('host')) {
+        obj['host'] = ApiClient.convertToType(data['host'], 'Number');
       }
       if (data.hasOwnProperty('settings')) {
         obj['settings'] = ApiClient.convertToType(data['settings'], [SelectedSettingRequest]);
@@ -123,6 +131,11 @@
    */
   exports.prototype['challenge_activity_id'] = undefined;
   /**
+   * Defines core settings about the activity that affect how it can be created/played by users.
+   * @member {module:model/CoreActivityOccurrenceSettings} core_settings
+   */
+  exports.prototype['core_settings'] = undefined;
+  /**
    * The entitlement item required to enter the occurrence. Required if not part of an event. Must come from the set of entitlement items listed in the activity
    * @member {module:model/ItemIdRequest} entitlement
    */
@@ -132,6 +145,11 @@
    * @member {Number} event_id
    */
   exports.prototype['event_id'] = undefined;
+  /**
+   * The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well
+   * @member {Number} host
+   */
+  exports.prototype['host'] = undefined;
   /**
    * The values selected from the available settings defined for the activity. Ex: difficulty: hard. Can be left out if the activity is played during an event and the settings are already set at the event level. Ex: every monday, difficulty: hard, number of questions: 10, category: sport. Otherwise, the set must exactly match those of the activity.
    * @member {Array.<module:model/SelectedSettingRequest>} settings
@@ -170,6 +188,11 @@
      * @const
      */
     "OPEN": "OPEN",
+    /**
+     * value: "LAUNCHING"
+     * @const
+     */
+    "LAUNCHING": "LAUNCHING",
     /**
      * value: "PLAYING"
      * @const

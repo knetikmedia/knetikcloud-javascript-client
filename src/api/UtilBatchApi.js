@@ -34,7 +34,7 @@
   /**
    * UtilBatch service.
    * @module api/UtilBatchApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Get batch result with token
-     * Tokens expire in 24 hours
+     * Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} token token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BatchReturn>} and HTTP response
      */
@@ -77,7 +77,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [BatchReturn];
 
@@ -90,7 +90,7 @@
 
     /**
      * Get batch result with token
-     * Tokens expire in 24 hours
+     * Tokens expire in 24 hours. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} token token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BatchReturn>}
      */
@@ -104,7 +104,7 @@
 
     /**
      * Request to run API call given the method, content type, path url, and body of request
-     * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+     * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/Batch} opts.batch The batch object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BatchReturn>} and HTTP response
@@ -139,7 +139,7 @@
 
     /**
      * Request to run API call given the method, content type, path url, and body of request
-     * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service
+     * Should the request take longer than one of the alloted timeout parameters, a token will be returned instead, which can be used on the token endpoint in this service. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/Batch} opts.batch The batch object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BatchReturn>}

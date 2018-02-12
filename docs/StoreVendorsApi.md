@@ -1,6 +1,6 @@
 # KnetikCloud.StoreVendorsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > VendorResource createVendor(opts)
 
 Create a vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
 
 ### Example
 ```javascript
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 
 Create a vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -126,6 +128,8 @@ Name | Type | Description  | Notes
 
 Delete a vendor
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -167,7 +171,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteVendorTemplate"></a>
@@ -175,6 +179,8 @@ null (empty response body)
 > deleteVendorTemplate(id, opts)
 
 Delete a vendor template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -221,7 +227,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendor"></a>
@@ -229,6 +235,8 @@ null (empty response body)
 > VendorResource getVendor(id)
 
 Get a single vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -271,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendorTemplate"></a>
@@ -280,7 +288,7 @@ Name | Type | Description  | Notes
 
 Get a single vendor template
 
-Vendor Templates define a type of vendor and the properties they have.
+Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -323,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendorTemplates"></a>
@@ -331,6 +339,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource getVendorTemplates(opts)
 
 List and search vendor templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -350,7 +360,7 @@ var apiInstance = new KnetikCloud.StoreVendorsApi();
 var opts = { 
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
-  'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
 apiInstance.getVendorTemplates(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -366,7 +376,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -378,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getVendors"></a>
@@ -386,6 +396,8 @@ Name | Type | Description  | Notes
 > PageResourceVendorResource getVendors(opts)
 
 List and search vendors
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -435,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateVendor"></a>
@@ -443,6 +455,8 @@ Name | Type | Description  | Notes
 > VendorResource updateVendor(id, opts)
 
 Update a vendor
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
 
 ### Example
 ```javascript
@@ -497,6 +511,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource updateVendorTemplate(id, opts)
 
 Update a vendor template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

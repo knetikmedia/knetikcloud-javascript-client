@@ -34,7 +34,7 @@
   /**
    * StoreBundles service.
    * @module api/StoreBundlesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a bundle item
-     * The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+     * The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/BundleItem} opts.bundleItem The bundle item object
@@ -88,7 +88,7 @@
 
     /**
      * Create a bundle item
-     * The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item.
+     * The SKU for the bundle itself must be unique and there can only be one SKU.  Extra notes for price_override:  The price of all the items (multiplied by the quantity) must equal the price of the bundle.  With individual prices set, items will be processed individually and can be refunded as such.  However, if all prices are set to null, the price of the bundle will be used and will be treated as one item. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/BundleItem} opts.bundleItem The bundle item object
@@ -104,7 +104,7 @@
 
     /**
      * Create a bundle template
-     * Bundle Templates define a type of bundle and the properties they have.
+     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The new bundle template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -139,7 +139,7 @@
 
     /**
      * Create a bundle template
-     * Bundle Templates define a type of bundle and the properties they have.
+     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The new bundle template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -154,6 +154,7 @@
 
     /**
      * Delete a bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Number} id The id of the bundle
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -179,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -192,6 +193,7 @@
 
     /**
      * Delete a bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Number} id The id of the bundle
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -205,6 +207,7 @@
 
     /**
      * Delete a bundle template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -234,7 +237,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -247,6 +250,7 @@
 
     /**
      * Delete a bundle template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -262,6 +266,7 @@
 
     /**
      * Get a single bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the bundle
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BundleItem} and HTTP response
      */
@@ -287,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BundleItem;
 
@@ -300,6 +305,7 @@
 
     /**
      * Get a single bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the bundle
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BundleItem}
      */
@@ -313,7 +319,7 @@
 
     /**
      * Get a single bundle template
-     * Bundle Templates define a type of bundle and the properties they have.
+     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -339,7 +345,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -352,7 +358,7 @@
 
     /**
      * Get a single bundle template
-     * Bundle Templates define a type of bundle and the properties they have.
+     * Bundle Templates define a type of bundle and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -366,6 +372,7 @@
 
     /**
      * List and search bundle templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -392,7 +399,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -405,6 +412,7 @@
 
     /**
      * List and search bundle templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -421,6 +429,7 @@
 
     /**
      * Update a bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Number} id The id of the bundle
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -464,6 +473,7 @@
 
     /**
      * Update a bundle item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {Number} id The id of the bundle
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -480,6 +490,7 @@
 
     /**
      * Update a bundle template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The bundle template resource object
@@ -521,6 +532,7 @@
 
     /**
      * Update a bundle template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BUNDLES_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.bundleTemplateResource The bundle template resource object

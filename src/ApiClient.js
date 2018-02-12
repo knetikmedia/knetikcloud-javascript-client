@@ -33,7 +33,7 @@
 
   /**
    * @module ApiClient
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -47,9 +47,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default https://devsandbox.knetikcloud.com
+     * @default https://sandbox.knetikcloud.com
      */
-    this.basePath = 'https://devsandbox.knetikcloud.com'.replace(/\/+$/, '');
+    this.basePath = 'https://sandbox.knetikcloud.com'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

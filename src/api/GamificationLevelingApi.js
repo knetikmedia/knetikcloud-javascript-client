@@ -34,7 +34,7 @@
   /**
    * GamificationLeveling service.
    * @module api/GamificationLevelingApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a level schema
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.level The level schema definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LevelingResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a level schema
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.level The level schema definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LevelingResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Retrieve a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LevelingResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = LevelingResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Retrieve a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LevelingResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * Get the list of triggers that can be used to trigger a leveling progress update
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BreTriggerResource>} and HTTP response
      */
     this.getLevelTriggersWithHttpInfo = function() {
@@ -219,7 +226,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [BreTriggerResource];
 
@@ -232,6 +239,7 @@
 
     /**
      * Get the list of triggers that can be used to trigger a leveling progress update
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BreTriggerResource>}
      */
     this.getLevelTriggers = function() {
@@ -244,7 +252,7 @@
 
     /**
      * List and search levels
-     * Get a list of levels schemas with optional filtering
+     * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for level schemas whose name contains a given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -273,7 +281,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceLevelingResource;
 
@@ -286,7 +294,7 @@
 
     /**
      * List and search levels
-     * Get a list of levels schemas with optional filtering
+     * Get a list of levels schemas with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for level schemas whose name contains a given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -304,6 +312,7 @@
 
     /**
      * Get a user&#39;s progress for a given level schema
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserLevelingResource} and HTTP response
@@ -336,7 +345,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserLevelingResource;
 
@@ -349,6 +358,7 @@
 
     /**
      * Get a user&#39;s progress for a given level schema
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {String} name The level schema name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserLevelingResource}
@@ -363,7 +373,7 @@
 
     /**
      * Get a user&#39;s progress for all level schemas
-     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for level schemas whose name contains a given string
@@ -399,7 +409,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserLevelingResource;
 
@@ -412,7 +422,7 @@
 
     /**
      * Get a user&#39;s progress for all level schemas
-     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here.
+     * Filtering and sorting is based on the LevelingResource object, not the UserLevelingResource that is returned here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN or self
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for level schemas whose name contains a given string
@@ -431,7 +441,7 @@
 
     /**
      * Update or create a leveling progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
@@ -480,7 +490,7 @@
 
     /**
      * Update or create a leveling progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise the provided value will be added to it. May be negative. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
@@ -497,7 +507,7 @@
 
     /**
      * Set leveling progress for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
@@ -546,7 +556,7 @@
 
     /**
      * Set leveling progress for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated to the provided value. If progress meets or exceeds the level&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {Number} userId The id of the user
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
@@ -563,6 +573,7 @@
 
     /**
      * Update a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.newLevel The level schema definition
@@ -604,6 +615,7 @@
 
     /**
      * Update a level
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LEVELING_ADMIN
      * @param {String} name The level schema name
      * @param {Object} opts Optional parameters
      * @param {module:model/LevelingResource} opts.newLevel The level schema definition

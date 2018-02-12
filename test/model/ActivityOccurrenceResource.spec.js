@@ -63,8 +63,20 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property bans (base name: "bans")', function() {
+      // uncomment below and update the code to test the property bans
+      //var instane = new KnetikCloud.ActivityOccurrenceResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property challengeActivityId (base name: "challenge_activity_id")', function() {
       // uncomment below and update the code to test the property challengeActivityId
+      //var instane = new KnetikCloud.ActivityOccurrenceResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property coreSettings (base name: "core_settings")', function() {
+      // uncomment below and update the code to test the property coreSettings
       //var instane = new KnetikCloud.ActivityOccurrenceResource();
       //expect(instance).to.be();
     });
@@ -83,6 +95,12 @@
 
     it('should have the property eventId (base name: "event_id")', function() {
       // uncomment below and update the code to test the property eventId
+      //var instane = new KnetikCloud.ActivityOccurrenceResource();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property host (base name: "host")', function() {
+      // uncomment below and update the code to test the property host
       //var instane = new KnetikCloud.ActivityOccurrenceResource();
       //expect(instance).to.be();
     });

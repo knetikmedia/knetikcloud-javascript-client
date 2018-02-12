@@ -34,7 +34,7 @@
   /**
    * Taxes service.
    * @module api/TaxesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a country tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CountryTaxResource} opts.taxResource The tax object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CountryTaxResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a country tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CountryTaxResource} opts.taxResource The tax object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CountryTaxResource}
@@ -99,6 +101,7 @@
 
     /**
      * Create a state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {module:model/StateTaxResource} opts.taxResource The tax object
@@ -140,6 +143,7 @@
 
     /**
      * Create a state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {module:model/StateTaxResource} opts.taxResource The tax object
@@ -155,6 +159,7 @@
 
     /**
      * Delete an existing tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -180,7 +185,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -193,6 +198,7 @@
 
     /**
      * Delete an existing tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -206,6 +212,7 @@
 
     /**
      * Delete an existing state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -238,7 +245,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -251,6 +258,7 @@
 
     /**
      * Delete an existing state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -265,6 +273,7 @@
 
     /**
      * Get a single tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CountryTaxResource} and HTTP response
      */
@@ -290,7 +299,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CountryTaxResource;
 
@@ -303,6 +312,7 @@
 
     /**
      * Get a single tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CountryTaxResource}
      */
@@ -316,7 +326,7 @@
 
     /**
      * List and search taxes
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -343,7 +353,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCountryTaxResource;
 
@@ -356,7 +366,7 @@
 
     /**
      * List and search taxes
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -373,6 +383,7 @@
 
     /**
      * Get a single state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StateTaxResource} and HTTP response
@@ -405,7 +416,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = StateTaxResource;
 
@@ -418,6 +429,7 @@
 
     /**
      * Get a single state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StateTaxResource}
@@ -432,7 +444,7 @@
 
     /**
      * List and search taxes across all countries
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -459,7 +471,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceStateTaxResource;
 
@@ -472,7 +484,7 @@
 
     /**
      * List and search taxes across all countries
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -489,7 +501,7 @@
 
     /**
      * List and search taxes within a country
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -523,7 +535,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceStateTaxResource;
 
@@ -536,7 +548,7 @@
 
     /**
      * List and search taxes within a country
-     * Get a list of taxes
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -554,6 +566,7 @@
 
     /**
      * Create or update a tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {module:model/CountryTaxResource} opts.taxResource The tax object
@@ -595,6 +608,7 @@
 
     /**
      * Create or update a tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {Object} opts Optional parameters
      * @param {module:model/CountryTaxResource} opts.taxResource The tax object
@@ -610,6 +624,7 @@
 
     /**
      * Create or update a state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @param {Object} opts Optional parameters
@@ -658,6 +673,7 @@
 
     /**
      * Create or update a state tax
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @param {String} stateCode The code of the state
      * @param {Object} opts Optional parameters

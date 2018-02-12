@@ -17,24 +17,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityResource', 'model/CreateActivityOccurrenceRequest', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource'], factory);
+    define(['ApiClient', 'model/ActivityOccurrenceCreationFailure', 'model/ActivityOccurrenceJoinResult', 'model/ActivityOccurrenceResource', 'model/ActivityOccurrenceResults', 'model/ActivityOccurrenceResultsResource', 'model/ActivityOccurrenceSettingsResource', 'model/ActivityResource', 'model/ActivityUserResource', 'model/CreateActivityOccurrenceRequest', 'model/IntWrapper', 'model/PageResourceActivityOccurrenceResource', 'model/PageResourceBareActivityResource', 'model/PageResourceTemplateResource', 'model/Result', 'model/TemplateResource', 'model/ValueWrapperstring'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityResource'), require('../model/CreateActivityOccurrenceRequest'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'));
+    module.exports = factory(require('../ApiClient'), require('../model/ActivityOccurrenceCreationFailure'), require('../model/ActivityOccurrenceJoinResult'), require('../model/ActivityOccurrenceResource'), require('../model/ActivityOccurrenceResults'), require('../model/ActivityOccurrenceResultsResource'), require('../model/ActivityOccurrenceSettingsResource'), require('../model/ActivityResource'), require('../model/ActivityUserResource'), require('../model/CreateActivityOccurrenceRequest'), require('../model/IntWrapper'), require('../model/PageResourceActivityOccurrenceResource'), require('../model/PageResourceBareActivityResource'), require('../model/PageResourceTemplateResource'), require('../model/Result'), require('../model/TemplateResource'), require('../model/ValueWrapperstring'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityResource, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource);
+    root.KnetikCloud.ActivitiesApi = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityOccurrenceCreationFailure, root.KnetikCloud.ActivityOccurrenceJoinResult, root.KnetikCloud.ActivityOccurrenceResource, root.KnetikCloud.ActivityOccurrenceResults, root.KnetikCloud.ActivityOccurrenceResultsResource, root.KnetikCloud.ActivityOccurrenceSettingsResource, root.KnetikCloud.ActivityResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.CreateActivityOccurrenceRequest, root.KnetikCloud.IntWrapper, root.KnetikCloud.PageResourceActivityOccurrenceResource, root.KnetikCloud.PageResourceBareActivityResource, root.KnetikCloud.PageResourceTemplateResource, root.KnetikCloud.Result, root.KnetikCloud.TemplateResource, root.KnetikCloud.ValueWrapperstring);
   }
-}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityResource, CreateActivityOccurrenceRequest, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, Result, TemplateResource) {
+}(this, function(ApiClient, ActivityOccurrenceCreationFailure, ActivityOccurrenceJoinResult, ActivityOccurrenceResource, ActivityOccurrenceResults, ActivityOccurrenceResultsResource, ActivityOccurrenceSettingsResource, ActivityResource, ActivityUserResource, CreateActivityOccurrenceRequest, IntWrapper, PageResourceActivityOccurrenceResource, PageResourceBareActivityResource, PageResourceTemplateResource, Result, TemplateResource, ValueWrapperstring) {
   'use strict';
 
   /**
    * Activities service.
    * @module api/ActivitiesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -50,7 +50,72 @@
 
 
     /**
+     * Add a user to an occurrence
+     * If called with no body, defaults to the user making the call.
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.test if true, indicates that the user should NOT be added. This can be used to test for eligibility (default to false)
+     * @param {Boolean} opts.bypassRestrictions if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+     * @param {module:model/IntWrapper} opts.userId The id of the user, or null for &#39;caller&#39;
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityOccurrenceResource} and HTTP response
+     */
+    this.addUserWithHttpInfo = function(activityOccurrenceId, opts) {
+      opts = opts || {};
+      var postBody = opts['userId'];
+
+      // verify the required parameter 'activityOccurrenceId' is set
+      if (activityOccurrenceId === undefined || activityOccurrenceId === null) {
+        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling addUser");
+      }
+
+
+      var pathParams = {
+        'activity_occurrence_id': activityOccurrenceId
+      };
+      var queryParams = {
+        'test': opts['test'],
+        'bypass_restrictions': opts['bypassRestrictions'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ActivityOccurrenceResource;
+
+      return this.apiClient.callApi(
+        '/activity-occurrences/{activity_occurrence_id}/users', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Add a user to an occurrence
+     * If called with no body, defaults to the user making the call.
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.test if true, indicates that the user should NOT be added. This can be used to test for eligibility (default to false)
+     * @param {Boolean} opts.bypassRestrictions if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+     * @param {module:model/IntWrapper} opts.userId The id of the user, or null for &#39;caller&#39;
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityOccurrenceResource}
+     */
+    this.addUser = function(activityOccurrenceId, opts) {
+      return this.addUserWithHttpInfo(activityOccurrenceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Create an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityResource} opts.activityResource The activity resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityResource} and HTTP response
@@ -85,6 +150,7 @@
 
     /**
      * Create an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityResource} opts.activityResource The activity resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityResource}
@@ -99,7 +165,7 @@
 
     /**
      * Create a new activity occurrence. Ex: start a game
-     * Has to enforce extra rules if not used as an admin
+     * Has to enforce extra rules if not used as an admin. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings (default to false)
      * @param {module:model/CreateActivityOccurrenceRequest} opts.activityOccurrenceResource The activity occurrence object
@@ -136,7 +202,7 @@
 
     /**
      * Create a new activity occurrence. Ex: start a game
-     * Has to enforce extra rules if not used as an admin
+     * Has to enforce extra rules if not used as an admin. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.test if true, indicates that the occurrence should NOT be created. This can be used to test for eligibility and valid settings (default to false)
      * @param {module:model/CreateActivityOccurrenceRequest} opts.activityOccurrenceResource The activity occurrence object
@@ -152,7 +218,7 @@
 
     /**
      * Create a activity template
-     * Activity Templates define a type of activity and the properties they have
+     * Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -187,7 +253,7 @@
 
     /**
      * Create a activity template
-     * Activity Templates define a type of activity and the properties they have
+     * Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -202,6 +268,7 @@
 
     /**
      * Delete an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} id The id of the activity
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -227,7 +294,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -240,6 +307,7 @@
 
     /**
      * Delete an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} id The id of the activity
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -253,7 +321,7 @@
 
     /**
      * Delete a activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -283,7 +351,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -296,7 +364,7 @@
 
     /**
      * Delete a activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -312,6 +380,7 @@
 
     /**
      * List activity definitions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterTemplate Filter for activities that are templates, or specifically not if false
      * @param {String} opts.filterName Filter for activities that have a name starting with specified string
@@ -344,7 +413,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBareActivityResource;
 
@@ -357,6 +426,7 @@
 
     /**
      * List activity definitions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterTemplate Filter for activities that are templates, or specifically not if false
      * @param {String} opts.filterName Filter for activities that have a name starting with specified string
@@ -376,6 +446,7 @@
 
     /**
      * Get a single activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the activity
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityResource} and HTTP response
      */
@@ -401,7 +472,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ActivityResource;
 
@@ -414,6 +485,7 @@
 
     /**
      * Get a single activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the activity
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityResource}
      */
@@ -427,6 +499,7 @@
 
     /**
      * Load a single activity occurrence details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityOccurrenceResource} and HTTP response
      */
@@ -452,7 +525,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ActivityOccurrenceResource;
 
@@ -465,6 +538,7 @@
 
     /**
      * Load a single activity occurrence details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityOccurrenceResource}
      */
@@ -478,6 +552,7 @@
 
     /**
      * Get a single activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -503,7 +578,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -516,6 +591,7 @@
 
     /**
      * Get a single activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -529,6 +605,7 @@
 
     /**
      * List and search activity templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -555,7 +632,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -568,6 +645,7 @@
 
     /**
      * List and search activity templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -584,9 +662,10 @@
 
     /**
      * List activity occurrences
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterActivity Filter for occurrences of the given activity ID
-     * @param {String} opts.filterStatus Filter for occurrences of the given activity ID
+     * @param {String} opts.filterStatus Filter for occurrences in the given status
      * @param {Number} opts.filterEvent Filter for occurrences played during the given event
      * @param {Number} opts.filterChallenge Filter for occurrences played within the given challenge
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -618,7 +697,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceActivityOccurrenceResource;
 
@@ -631,9 +710,10 @@
 
     /**
      * List activity occurrences
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterActivity Filter for occurrences of the given activity ID
-     * @param {String} opts.filterStatus Filter for occurrences of the given activity ID
+     * @param {String} opts.filterStatus Filter for occurrences in the given status
      * @param {Number} opts.filterEvent Filter for occurrences played during the given event
      * @param {Number} opts.filterChallenge Filter for occurrences played within the given challenge
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -650,7 +730,76 @@
 
 
     /**
+     * Remove a user from an occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {String} userId The id of the user, or &#39;me&#39;
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.ban if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin (default to false)
+     * @param {Boolean} opts.bypassRestrictions if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.removeUserWithHttpInfo = function(activityOccurrenceId, userId, opts) {
+      opts = opts || {};
+      var postBody = null;
+
+      // verify the required parameter 'activityOccurrenceId' is set
+      if (activityOccurrenceId === undefined || activityOccurrenceId === null) {
+        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling removeUser");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling removeUser");
+      }
+
+
+      var pathParams = {
+        'activity_occurrence_id': activityOccurrenceId,
+        'user_id': userId
+      };
+      var queryParams = {
+        'ban': opts['ban'],
+        'bypass_restrictions': opts['bypassRestrictions'],
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/activity-occurrences/{activity_occurrence_id}/users/{user_id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Remove a user from an occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {String} userId The id of the user, or &#39;me&#39;
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} opts.ban if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin (default to false)
+     * @param {Boolean} opts.bypassRestrictions if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN (default to false)
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.removeUser = function(activityOccurrenceId, userId, opts) {
+      return this.removeUserWithHttpInfo(activityOccurrenceId, userId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Sets the status of an activity occurrence to FINISHED and logs metrics
+     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceResultsResource} opts.activityOccurrenceResults The activity occurrence object
@@ -692,6 +841,7 @@
 
     /**
      * Sets the status of an activity occurrence to FINISHED and logs metrics
+     * In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityOccurrenceResultsResource} opts.activityOccurrenceResults The activity occurrence object
@@ -706,7 +856,128 @@
 
 
     /**
+     * Sets the settings of an activity occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ActivityOccurrenceSettingsResource} opts.settings The new settings
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityOccurrenceResource} and HTTP response
+     */
+    this.setActivityOccurrenceSettingsWithHttpInfo = function(activityOccurrenceId, opts) {
+      opts = opts || {};
+      var postBody = opts['settings'];
+
+      // verify the required parameter 'activityOccurrenceId' is set
+      if (activityOccurrenceId === undefined || activityOccurrenceId === null) {
+        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling setActivityOccurrenceSettings");
+      }
+
+
+      var pathParams = {
+        'activity_occurrence_id': activityOccurrenceId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ActivityOccurrenceResource;
+
+      return this.apiClient.callApi(
+        '/activity-occurrences/{activity_occurrence_id}/settings', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Sets the settings of an activity occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ActivityOccurrenceSettingsResource} opts.settings The new settings
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityOccurrenceResource}
+     */
+    this.setActivityOccurrenceSettings = function(activityOccurrenceId, opts) {
+      return this.setActivityOccurrenceSettingsWithHttpInfo(activityOccurrenceId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Set a user&#39;s status within an occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {String} userId The id of the user
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.status The new status
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ActivityUserResource} and HTTP response
+     */
+    this.setUserStatusWithHttpInfo = function(activityOccurrenceId, userId, opts) {
+      opts = opts || {};
+      var postBody = opts['status'];
+
+      // verify the required parameter 'activityOccurrenceId' is set
+      if (activityOccurrenceId === undefined || activityOccurrenceId === null) {
+        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling setUserStatus");
+      }
+
+      // verify the required parameter 'userId' is set
+      if (userId === undefined || userId === null) {
+        throw new Error("Missing the required parameter 'userId' when calling setUserStatus");
+      }
+
+
+      var pathParams = {
+        'activity_occurrence_id': activityOccurrenceId,
+        'user_id': userId
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = ActivityUserResource;
+
+      return this.apiClient.callApi(
+        '/activity-occurrences/{activity_occurrence_id}/users/{user_id}/status', 'PUT',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Set a user&#39;s status within an occurrence
+     * @param {Number} activityOccurrenceId The id of the activity occurrence
+     * @param {String} userId The id of the user
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.status The new status
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ActivityUserResource}
+     */
+    this.setUserStatus = function(activityOccurrenceId, userId, opts) {
+      return this.setUserStatusWithHttpInfo(activityOccurrenceId, userId, opts)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Update an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} id The id of the activity
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityResource} opts.activityResource The activity resource object
@@ -748,6 +1019,7 @@
 
     /**
      * Update an activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
      * @param {Number} id The id of the activity
      * @param {Object} opts Optional parameters
      * @param {module:model/ActivityResource} opts.activityResource The activity resource object
@@ -762,20 +1034,20 @@
 
 
     /**
-     * Updated the status of an activity occurrence
-     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+     * Update the status of an activity occurrence
+     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
-     * @param {String} opts.activityOccurrenceStatus The activity occurrence status object
+     * @param {module:model/ValueWrapperstring} opts.activityOccurrenceStatus The activity occurrence status object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.updateActivityOccurrenceWithHttpInfo = function(activityOccurrenceId, opts) {
+    this.updateActivityOccurrenceStatusWithHttpInfo = function(activityOccurrenceId, opts) {
       opts = opts || {};
       var postBody = opts['activityOccurrenceStatus'];
 
       // verify the required parameter 'activityOccurrenceId' is set
       if (activityOccurrenceId === undefined || activityOccurrenceId === null) {
-        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrence");
+        throw new Error("Missing the required parameter 'activityOccurrenceId' when calling updateActivityOccurrenceStatus");
       }
 
 
@@ -804,15 +1076,15 @@
     }
 
     /**
-     * Updated the status of an activity occurrence
-     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+     * Update the status of an activity occurrence
+     * If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
      * @param {Number} activityOccurrenceId The id of the activity occurrence
      * @param {Object} opts Optional parameters
-     * @param {String} opts.activityOccurrenceStatus The activity occurrence status object
+     * @param {module:model/ValueWrapperstring} opts.activityOccurrenceStatus The activity occurrence status object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    this.updateActivityOccurrence = function(activityOccurrenceId, opts) {
-      return this.updateActivityOccurrenceWithHttpInfo(activityOccurrenceId, opts)
+    this.updateActivityOccurrenceStatus = function(activityOccurrenceId, opts) {
+      return this.updateActivityOccurrenceStatusWithHttpInfo(activityOccurrenceId, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -821,6 +1093,7 @@
 
     /**
      * Update an activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object
@@ -862,6 +1135,7 @@
 
     /**
      * Update an activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.activityTemplateResource The activity template resource object

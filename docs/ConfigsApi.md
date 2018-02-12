@@ -1,6 +1,6 @@
 # KnetikCloud.ConfigsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > Config createConfig(opts)
 
 Create a new config
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete an existing config
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -109,7 +113,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getConfig"></a>
@@ -118,7 +122,7 @@ null (empty response body)
 
 Get a single config
 
-Only configs that are public readable will be shown without admin access
+Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -161,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getConfigs"></a>
@@ -169,6 +173,8 @@ Name | Type | Description  | Notes
 > PageResourceConfig getConfigs(opts)
 
 List and search configs
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -189,7 +195,7 @@ var opts = {
   'filterSearch': "filterSearch_example", // String | Filter for configs whose name contains the given string
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned
-  'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
 apiInstance.getConfigs(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -206,7 +212,7 @@ Name | Type | Description  | Notes
  **filterSearch** | **String**| Filter for configs whose name contains the given string | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -218,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateConfig"></a>
@@ -226,6 +232,8 @@ Name | Type | Description  | Notes
 > updateConfig(name, opts)
 
 Update an existing config
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
 
 ### Example
 ```javascript

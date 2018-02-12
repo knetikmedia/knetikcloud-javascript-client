@@ -34,7 +34,7 @@
   /**
    * PaymentsOptimal service.
    * @module api/PaymentsOptimalApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Initiate silent post with Optimal
-     * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+     * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/OptimalPaymentRequest} opts.request The payment request to initiate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Initiate silent post with Optimal
-     * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details.
+     * Will return the url for a hosted payment endpoint to post to. See Optimal documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; OPTIMAL_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/OptimalPaymentRequest} opts.request The payment request to initiate
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}

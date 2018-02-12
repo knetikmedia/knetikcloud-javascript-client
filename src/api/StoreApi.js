@@ -34,7 +34,7 @@
   /**
    * Store service.
    * @module api/StoreApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create an item template
-     * Item Templates define a type of item and the properties they have.
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The new item template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItemTemplateResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create an item template
-     * Item Templates define a type of item and the properties they have.
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The new item template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItemTemplateResource}
@@ -101,7 +101,7 @@
 
     /**
      * Create a store item
-     * SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+     * SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/StoreItem} opts.storeItem The store item object
@@ -138,7 +138,7 @@
 
     /**
      * Create a store item
-     * SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints.
+     * SKUs have to be unique in the entire store. If a duplicate SKU is found, a 400 error is generated and the response will have a \&quot;parameters\&quot; field that is a list of duplicates. A duplicate is an object like {item_id, offending_sku_list}. Ex:&lt;br /&gt; {..., parameters: [[{item: 1, skus: [\&quot;SKU-1\&quot;]}]]}&lt;br /&gt; If an item is brand new and has duplicate SKUs within itself, the item ID will be 0.  Item subclasses are not allowed here, you will have to use their respective endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/StoreItem} opts.storeItem The store item object
@@ -154,6 +154,7 @@
 
     /**
      * Delete an item template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -183,7 +184,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -196,6 +197,7 @@
 
     /**
      * Delete an item template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -211,6 +213,7 @@
 
     /**
      * Delete a store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Number} id The id of the item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -236,7 +239,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -249,6 +252,7 @@
 
     /**
      * Delete a store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Number} id The id of the item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -262,6 +266,7 @@
 
     /**
      * List available item behaviors
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BehaviorDefinitionResource>} and HTTP response
      */
     this.getBehaviorsWithHttpInfo = function() {
@@ -280,7 +285,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [BehaviorDefinitionResource];
 
@@ -293,6 +298,7 @@
 
     /**
      * List available item behaviors
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BehaviorDefinitionResource>}
      */
     this.getBehaviors = function() {
@@ -305,7 +311,7 @@
 
     /**
      * Get a single item template
-     * Item Templates define a type of item and the properties they have.
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItemTemplateResource} and HTTP response
      */
@@ -331,7 +337,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = StoreItemTemplateResource;
 
@@ -344,7 +350,7 @@
 
     /**
      * Get a single item template
-     * Item Templates define a type of item and the properties they have.
+     * Item Templates define a type of item and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItemTemplateResource}
      */
@@ -358,6 +364,7 @@
 
     /**
      * List and search item templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -384,7 +391,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceStoreItemTemplateResource;
 
@@ -397,6 +404,7 @@
 
     /**
      * List and search item templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -413,6 +421,7 @@
 
     /**
      * Get a single store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreItem} and HTTP response
      */
@@ -438,7 +447,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = StoreItem;
 
@@ -451,6 +460,7 @@
 
     /**
      * Get a single store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreItem}
      */
@@ -464,7 +474,7 @@
 
     /**
      * List and search store items
-     * If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+     * If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterNameSearch Filter for items whose name starts with a given string.
      * @param {String} opts.filterUniqueKey Filter for items whose unique_key is a given string.
@@ -519,7 +529,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceStoreItem;
 
@@ -532,7 +542,7 @@
 
     /**
      * List and search store items
-     * If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase.
+     * If called without permission STORE_ADMIN the only items marked displayable, whose start and end date are null or appropriate to the current date, and whose geo policy allows the caller&#39;s country will be returned. Similarly skus will be filtered, possibly resulting in an item returned with no skus the user can purchase. br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterNameSearch Filter for items whose name starts with a given string.
      * @param {String} opts.filterUniqueKey Filter for items whose unique_key is a given string.
@@ -563,7 +573,7 @@
 
     /**
      * One-step purchase and pay for a single SKU item from a user&#39;s wallet
-     * Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+     * Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuickBuyRequest} opts.quickBuyRequest Quick buy details
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvoiceResource} and HTTP response
@@ -598,7 +608,7 @@
 
     /**
      * One-step purchase and pay for a single SKU item from a user&#39;s wallet
-     * Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted
+     * Used to create and automatically pay an invoice for a single unit of a single SKU from a user&#39;s wallet. SKU must be priced in virtual currency and must not be an item that requires shipping. PAYMENTS_ADMIN permission is required if user ID is specified and is not the ID of the currently logged in user. If invoice price does not match expected price, purchase is aborted. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_USER and owner, or PAYMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuickBuyRequest} opts.quickBuyRequest Quick buy details
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvoiceResource}
@@ -613,6 +623,7 @@
 
     /**
      * Update an item template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The item template resource object
@@ -654,6 +665,7 @@
 
     /**
      * Update an item template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/StoreItemTemplateResource} opts.itemTemplateResource The item template resource object
@@ -669,6 +681,7 @@
 
     /**
      * Update a store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Number} id The id of the item
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -712,6 +725,7 @@
 
     /**
      * Update a store item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; STORE_ADMIN
      * @param {Number} id The id of the item
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)

@@ -34,7 +34,7 @@
   /**
    * Objects service.
    * @module api/ObjectsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is to be part of
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -94,6 +95,7 @@
 
     /**
      * Create an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is to be part of
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -110,7 +112,7 @@
 
     /**
      * Create an object template
-     * Object templates define a type of entitlement and the properties they have
+     * Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -145,7 +147,7 @@
 
     /**
      * Create an object template
-     * Object templates define a type of entitlement and the properties they have
+     * Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -160,6 +162,7 @@
 
     /**
      * Delete an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -192,7 +195,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -205,6 +208,7 @@
 
     /**
      * Delete an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -219,7 +223,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -249,7 +253,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -262,7 +266,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -278,6 +282,7 @@
 
     /**
      * Get a single object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ObjectResource} and HTTP response
@@ -310,7 +315,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ObjectResource;
 
@@ -323,6 +328,7 @@
 
     /**
      * Get a single object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ObjectResource}
@@ -337,6 +343,7 @@
 
     /**
      * List and search objects
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template to get objects for
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -370,7 +377,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceObjectResource;
 
@@ -383,6 +390,7 @@
 
     /**
      * List and search objects
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} templateId The id of the template to get objects for
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -400,6 +408,7 @@
 
     /**
      * Get a single entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -425,7 +434,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -438,6 +447,7 @@
 
     /**
      * Get a single entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -451,6 +461,7 @@
 
     /**
      * List and search entitlement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -477,7 +488,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -490,6 +501,7 @@
 
     /**
      * List and search entitlement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -506,6 +518,7 @@
 
     /**
      * Update an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @param {Object} opts Optional parameters
@@ -556,6 +569,7 @@
 
     /**
      * Update an object
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {String} templateId The id of the template this object is part of
      * @param {Number} objectId The id of the object
      * @param {Object} opts Optional parameters
@@ -573,6 +587,7 @@
 
     /**
      * Update an entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The updated template
@@ -614,6 +629,7 @@
 
     /**
      * Update an entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The updated template

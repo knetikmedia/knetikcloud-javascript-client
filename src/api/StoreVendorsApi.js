@@ -34,7 +34,7 @@
   /**
    * StoreVendors service.
    * @module api/StoreVendorsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/VendorResource} opts.vendor The vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VendorResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/VendorResource} opts.vendor The vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VendorResource}
@@ -99,7 +101,7 @@
 
     /**
      * Create a vendor template
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The new vendor template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -134,7 +136,7 @@
 
     /**
      * Create a vendor template
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The new vendor template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -149,6 +151,7 @@
 
     /**
      * Delete a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Number} id The id of the vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -174,7 +177,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -187,6 +190,7 @@
 
     /**
      * Delete a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Number} id The id of the vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -200,6 +204,7 @@
 
     /**
      * Delete a vendor template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -229,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -242,6 +247,7 @@
 
     /**
      * Delete a vendor template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -257,6 +263,7 @@
 
     /**
      * Get a single vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VendorResource} and HTTP response
      */
@@ -282,7 +289,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = VendorResource;
 
@@ -295,6 +302,7 @@
 
     /**
      * Get a single vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the vendor
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VendorResource}
      */
@@ -308,7 +316,7 @@
 
     /**
      * Get a single vendor template
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -334,7 +342,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -347,7 +355,7 @@
 
     /**
      * Get a single vendor template
-     * Vendor Templates define a type of vendor and the properties they have.
+     * Vendor Templates define a type of vendor and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -361,10 +369,11 @@
 
     /**
      * List and search vendor templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceItemTemplateResource} and HTTP response
      */
     this.getVendorTemplatesWithHttpInfo = function(opts) {
@@ -387,7 +396,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -400,10 +409,11 @@
 
     /**
      * List and search vendor templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceItemTemplateResource}
      */
     this.getVendorTemplates = function(opts) {
@@ -416,6 +426,7 @@
 
     /**
      * List and search vendors
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filters vendors by name starting with the text provided in the filter
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -444,7 +455,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceVendorResource;
 
@@ -457,6 +468,7 @@
 
     /**
      * List and search vendors
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filters vendors by name starting with the text provided in the filter
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -474,6 +486,7 @@
 
     /**
      * Update a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Number} id The id of the vendor
      * @param {Object} opts Optional parameters
      * @param {module:model/VendorResource} opts.vendor The vendor
@@ -515,6 +528,7 @@
 
     /**
      * Update a vendor
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VENDORS_ADMIN
      * @param {Number} id The id of the vendor
      * @param {Object} opts Optional parameters
      * @param {module:model/VendorResource} opts.vendor The vendor
@@ -530,6 +544,7 @@
 
     /**
      * Update a vendor template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The vendor template resource object
@@ -571,6 +586,7 @@
 
     /**
      * Update a vendor template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.vendorTemplateResource The vendor template resource object

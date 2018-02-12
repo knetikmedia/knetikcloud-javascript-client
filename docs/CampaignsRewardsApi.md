@@ -1,6 +1,6 @@
 # KnetikCloud.CampaignsRewardsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > RewardSetResource createRewardSet(opts)
 
 Create a reward set
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete a reward set
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -109,7 +113,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRewardSet"></a>
@@ -117,6 +121,8 @@ null (empty response body)
 > RewardSetResource getRewardSet(id)
 
 Get a single reward set
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getRewardSets"></a>
@@ -167,6 +173,8 @@ Name | Type | Description  | Notes
 > PageResourceRewardSetResource getRewardSets(opts)
 
 List and search reward sets
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -214,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateRewardSet"></a>
@@ -222,6 +230,8 @@ Name | Type | Description  | Notes
 > RewardSetResource updateRewardSet(id, opts)
 
 Update a reward set
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
 
 ### Example
 ```javascript

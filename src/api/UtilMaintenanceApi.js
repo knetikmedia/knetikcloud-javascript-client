@@ -34,7 +34,7 @@
   /**
    * UtilMaintenance service.
    * @module api/UtilMaintenanceApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Delete maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.deleteMaintenanceWithHttpInfo = function() {
@@ -69,7 +70,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -82,6 +83,7 @@
 
     /**
      * Delete maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.deleteMaintenance = function() {
@@ -94,7 +96,7 @@
 
     /**
      * Get current maintenance info
-     * Get current maintenance info. 404 if no maintenance.
+     * Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Maintenance} and HTTP response
      */
     this.getMaintenanceWithHttpInfo = function() {
@@ -113,7 +115,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Maintenance;
 
@@ -126,7 +128,7 @@
 
     /**
      * Get current maintenance info
-     * Get current maintenance info. 404 if no maintenance.
+     * Get current maintenance info. 404 if no maintenance. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Maintenance}
      */
     this.getMaintenance = function() {
@@ -139,6 +141,7 @@
 
     /**
      * Set current maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Maintenance} opts.maintenance The maintenance object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -173,6 +176,7 @@
 
     /**
      * Set current maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Maintenance} opts.maintenance The maintenance object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -187,6 +191,7 @@
 
     /**
      * Update current maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Maintenance} opts.maintenance The maintenance object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -221,6 +226,7 @@
 
     /**
      * Update current maintenance info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MAINTENANCE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Maintenance} opts.maintenance The maintenance object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

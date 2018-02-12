@@ -34,7 +34,7 @@
   /**
    * AuthPermissions service.
    * @module api/AuthPermissionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/PermissionResource} opts.permissionResource The permission resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PermissionResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a new permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/PermissionResource} opts.permissionResource The permission resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PermissionResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.force If true, removes permission assigned to roles
@@ -128,7 +131,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -141,6 +144,7 @@
 
     /**
      * Delete a permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.force If true, removes permission assigned to roles
@@ -156,6 +160,7 @@
 
     /**
      * Get a single permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PermissionResource} and HTTP response
      */
@@ -181,7 +186,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PermissionResource;
 
@@ -194,6 +199,7 @@
 
     /**
      * Get a single permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PermissionResource}
      */
@@ -207,6 +213,7 @@
 
     /**
      * List and search permissions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -233,7 +240,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourcePermissionResource;
 
@@ -246,6 +253,7 @@
 
     /**
      * List and search permissions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -262,6 +270,7 @@
 
     /**
      * Update a permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @param {Object} opts Optional parameters
      * @param {module:model/PermissionResource} opts.permissionResource The permission resource object
@@ -303,6 +312,7 @@
 
     /**
      * Update a permission
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
      * @param {String} permission The permission value
      * @param {Object} opts Optional parameters
      * @param {module:model/PermissionResource} opts.permissionResource The permission resource object

@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient'], factory);
+    define(['ApiClient', 'model/BreActionLog'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'));
+    module.exports = factory(require('../ApiClient'), require('./BreActionLog'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.BreRuleLog = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.BreRuleLog = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.BreActionLog);
   }
-}(this, function(ApiClient) {
+}(this, function(ApiClient, BreActionLog) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The BreRuleLog model module.
    * @module model/BreRuleLog
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -47,6 +47,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -67,6 +68,9 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('actions')) {
+        obj['actions'] = ApiClient.convertToType(data['actions'], [BreActionLog]);
+      }
       if (data.hasOwnProperty('ran')) {
         obj['ran'] = ApiClient.convertToType(data['ran'], 'Boolean');
       }
@@ -103,6 +107,11 @@
   var discriminatorValue = 'BreRuleLog';
 
 
+  /**
+   * The actions of the BRE rule
+   * @member {Array.<module:model/BreActionLog>} actions
+   */
+  exports.prototype['actions'] = undefined;
   /**
    * Whether the rule ran
    * @member {Boolean} ran

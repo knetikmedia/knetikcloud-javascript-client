@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineActions service.
    * @module api/BRERuleEngineActionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get a list of available actions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterCategory Filter for actions that are within a specific category
      * @param {String} opts.filterName Filter for actions that have names containing the given string
@@ -79,7 +80,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ActionResource];
 
@@ -92,6 +93,7 @@
 
     /**
      * Get a list of available actions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_ACTIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterCategory Filter for actions that are within a specific category
      * @param {String} opts.filterName Filter for actions that have names containing the given string

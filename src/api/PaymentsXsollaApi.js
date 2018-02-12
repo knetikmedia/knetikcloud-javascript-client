@@ -34,7 +34,7 @@
   /**
    * PaymentsXsolla service.
    * @module api/PaymentsXsollaApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a payment token that should be used to forward the user to Xsolla so they can complete payment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/XsollaPaymentRequest} opts.request The payment request to be sent to XSolla
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a payment token that should be used to forward the user to Xsolla so they can complete payment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; XSOLLA_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/XsollaPaymentRequest} opts.request The payment request to be sent to XSolla
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}

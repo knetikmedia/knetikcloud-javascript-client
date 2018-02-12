@@ -1,11 +1,11 @@
 # KnetikCloud.BRERuleEngineExpressionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getBREExpression**](BRERuleEngineExpressionsApi.md#getBREExpression) | **GET** /bre/expressions/{type} | Lookup a specific expression
-[**getBREExpressions**](BRERuleEngineExpressionsApi.md#getBREExpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions.
+[**getBREExpressions**](BRERuleEngineExpressionsApi.md#getBREExpressions) | **GET** /bre/expressions | Get a list of supported expressions to use in conditions or actions
 [**getExpressionAsText**](BRERuleEngineExpressionsApi.md#getExpressionAsText) | **POST** /bre/expressions | Returns the textual representation of an expression
 
 
@@ -14,6 +14,8 @@ Method | HTTP request | Description
 > ExpressionResource getBREExpression(type)
 
 Lookup a specific expression
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```javascript
@@ -56,16 +58,16 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREExpressions"></a>
 # **getBREExpressions**
 > [ExpressionResource] getBREExpressions(opts)
 
-Get a list of supported expressions to use in conditions or actions.
+Get a list of supported expressions to use in conditions or actions
 
-Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```javascript
@@ -109,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getExpressionAsText"></a>
@@ -117,6 +119,8 @@ Name | Type | Description  | Notes
 > StringWrapper getExpressionAsText(opts)
 
 Returns the textual representation of an expression
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
 
 ### Example
 ```javascript

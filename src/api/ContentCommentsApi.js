@@ -34,7 +34,7 @@
   /**
    * ContentComments service.
    * @module api/ContentCommentsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add a new comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CommentResource} opts.commentResource The comment to be added
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommentResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Add a new comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CommentResource} opts.commentResource The comment to be added
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommentResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Return a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CommentResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CommentResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Return a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CommentResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * Returns a page of comments
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} context Get comments by context type
      * @param {Number} contextId Get comments by context id
      * @param {Object} opts Optional parameters
@@ -239,7 +246,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCommentResource;
 
@@ -252,6 +259,7 @@
 
     /**
      * Returns a page of comments
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} context Get comments by context type
      * @param {Number} contextId Get comments by context id
      * @param {Object} opts Optional parameters
@@ -269,6 +277,7 @@
 
     /**
      * Update a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Number} id The comment id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.content The comment content
@@ -310,6 +319,7 @@
 
     /**
      * Update a comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
      * @param {Number} id The comment id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.content The comment content

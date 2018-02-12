@@ -34,7 +34,7 @@
   /**
    * SocialFacebook service.
    * @module api/SocialFacebookApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Link facebook account
-     * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+     * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-facebook user token
      * @param {Object} opts Optional parameters
      * @param {module:model/FacebookToken} opts.facebookToken The token from facebook
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Link facebook account
-     * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired.
+     * Links the current user account to a facebook account, using the acccess token from facebook. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-facebook user token
      * @param {Object} opts Optional parameters
      * @param {module:model/FacebookToken} opts.facebookToken The token from facebook
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

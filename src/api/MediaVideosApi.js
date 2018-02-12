@@ -34,7 +34,7 @@
   /**
    * MediaVideos service.
    * @module api/MediaVideosApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Adds a user to a video&#39;s whitelist
-     * Whitelisted users can view video regardless of privacy setting.
+     * Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/IntWrapper} opts.userId The user id
@@ -93,7 +93,7 @@
 
     /**
      * Adds a user to a video&#39;s whitelist
-     * Whitelisted users can view video regardless of privacy setting.
+     * Whitelisted users can view video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/IntWrapper} opts.userId The user id
@@ -109,6 +109,7 @@
 
     /**
      * Adds a new video in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoResource} opts.videoResource The video object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VideoResource} and HTTP response
@@ -143,6 +144,7 @@
 
     /**
      * Adds a new video in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoResource} opts.videoResource The video object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VideoResource}
@@ -157,6 +159,7 @@
 
     /**
      * Add a new video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id 
      * @param {Object} opts Optional parameters
      * @param {module:model/CommentResource} opts.commentResource The comment object
@@ -198,6 +201,7 @@
 
     /**
      * Add a new video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id 
      * @param {Object} opts Optional parameters
      * @param {module:model/CommentResource} opts.commentResource The comment object
@@ -213,6 +217,7 @@
 
     /**
      * Adds a contributor to a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/ContributionResource} opts.contributionResource The contribution object
@@ -254,6 +259,7 @@
 
     /**
      * Adds a contributor to a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/ContributionResource} opts.contributionResource The contribution object
@@ -269,6 +275,7 @@
 
     /**
      * Add a new flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.reason The flag reason
@@ -310,6 +317,7 @@
 
     /**
      * Add a new flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.reason The flag reason
@@ -325,6 +333,7 @@
 
     /**
      * Adds one or more existing videos as related to this one
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoRelationshipResource} opts.videoRelationshipResource The video relationship object 
@@ -366,6 +375,7 @@
 
     /**
      * Adds one or more existing videos as related to this one
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoRelationshipResource} opts.videoRelationshipResource The video relationship object 
@@ -381,6 +391,7 @@
 
     /**
      * Create a video disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/DispositionResource} opts.dispositionResource The disposition object
@@ -422,6 +433,7 @@
 
     /**
      * Create a video disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/DispositionResource} opts.dispositionResource The disposition object
@@ -437,7 +449,7 @@
 
     /**
      * Create a video template
-     * Video Templates define a type of video and the properties they have
+     * Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -472,7 +484,7 @@
 
     /**
      * Create a video template
-     * Video Templates define a type of video and the properties they have
+     * Video Templates define a type of video and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -487,6 +499,7 @@
 
     /**
      * Deletes a video from the system if no resources are attached to it
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -512,7 +525,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -525,6 +538,7 @@
 
     /**
      * Deletes a video from the system if no resources are attached to it
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -538,6 +552,7 @@
 
     /**
      * Delete a video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -570,7 +585,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -583,6 +598,7 @@
 
     /**
      * Delete a video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The comment id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -597,6 +613,7 @@
 
     /**
      * Delete a video disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} dispositionId The disposition id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -622,7 +639,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -635,6 +652,7 @@
 
     /**
      * Delete a video disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} dispositionId The disposition id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -648,6 +666,7 @@
 
     /**
      * Delete a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -673,7 +692,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -686,6 +705,7 @@
 
     /**
      * Delete a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -699,6 +719,7 @@
 
     /**
      * Delete a video&#39;s relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The relationship id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -731,7 +752,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -744,6 +765,7 @@
 
     /**
      * Delete a video&#39;s relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The relationship id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -758,7 +780,7 @@
 
     /**
      * Delete a video template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -788,7 +810,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -801,7 +823,7 @@
 
     /**
      * Delete a video template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -817,6 +839,7 @@
 
     /**
      * Get user videos
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} userId The user id
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeFlagged Skip videos that have been flagged by the current user (default to true)
@@ -850,7 +873,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceVideoResource;
 
@@ -863,6 +886,7 @@
 
     /**
      * Get user videos
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} userId The user id
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeFlagged Skip videos that have been flagged by the current user (default to true)
@@ -880,6 +904,7 @@
 
     /**
      * Loads a specific video details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VideoResource} and HTTP response
      */
@@ -905,7 +930,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = VideoResource;
 
@@ -918,6 +943,7 @@
 
     /**
      * Loads a specific video details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VideoResource}
      */
@@ -931,6 +957,7 @@
 
     /**
      * Returns a page of comments for a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -962,7 +989,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCommentResource;
 
@@ -975,6 +1002,7 @@
 
     /**
      * Returns a page of comments for a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -991,6 +1019,7 @@
 
     /**
      * Returns a page of dispositions for a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -1022,7 +1051,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceDispositionResource;
 
@@ -1035,6 +1064,7 @@
 
     /**
      * Returns a page of dispositions for a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -1051,6 +1081,7 @@
 
     /**
      * Returns a page of video relationships
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -1082,7 +1113,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceVideoRelationshipResource;
 
@@ -1095,6 +1126,7 @@
 
     /**
      * Returns a page of video relationships
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} videoId The video id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -1111,6 +1143,7 @@
 
     /**
      * Get a single video template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -1136,7 +1169,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -1149,6 +1182,7 @@
 
     /**
      * Get a single video template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -1162,6 +1196,7 @@
 
     /**
      * List and search video templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1188,7 +1223,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -1201,6 +1236,7 @@
 
     /**
      * List and search video templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or VIDEOS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1217,6 +1253,7 @@
 
     /**
      * Search videos using the documented filters
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeFlagged Skip videos that have been flagged by the current user (default to true)
      * @param {Number} opts.filterVideosByUploader Filter for videos by uploader id
@@ -1267,7 +1304,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceVideoResource;
 
@@ -1280,6 +1317,7 @@
 
     /**
      * Search videos using the documented filters
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeFlagged Skip videos that have been flagged by the current user (default to true)
      * @param {Number} opts.filterVideosByUploader Filter for videos by uploader id
@@ -1308,7 +1346,7 @@
 
     /**
      * Removes a user from a video&#39;s whitelist
-     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The user id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1341,7 +1379,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -1354,7 +1392,7 @@
 
     /**
      * Removes a user from a video&#39;s whitelist
-     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting.
+     * Remove the user with the id given in the path from the whitelist of users that can view this video regardless of privacy setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The user id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -1369,6 +1407,7 @@
 
     /**
      * Removes a contributor from a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The contributor id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1401,7 +1440,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -1414,6 +1453,7 @@
 
     /**
      * Removes a contributor from a video
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The contributor id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -1428,6 +1468,7 @@
 
     /**
      * Modifies a video&#39;s details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoResource} opts.videoResource The video object
@@ -1469,6 +1510,7 @@
 
     /**
      * Modifies a video&#39;s details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} id The video id
      * @param {Object} opts Optional parameters
      * @param {module:model/VideoResource} opts.videoResource The video object
@@ -1484,6 +1526,7 @@
 
     /**
      * Update a video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The comment id
      * @param {Object} opts Optional parameters
@@ -1532,6 +1575,7 @@
 
     /**
      * Update a video comment
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} id The comment id
      * @param {Object} opts Optional parameters
@@ -1548,6 +1592,7 @@
 
     /**
      * Update a video&#39;s relationship details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} relationshipId The relationship id
      * @param {Object} opts Optional parameters
@@ -1596,6 +1641,7 @@
 
     /**
      * Update a video&#39;s relationship details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; VIDEOS_USER or VIDEOS_ADMIN
      * @param {Number} videoId The video id
      * @param {Number} relationshipId The relationship id
      * @param {Object} opts Optional parameters
@@ -1612,6 +1658,7 @@
 
     /**
      * Update a video template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
@@ -1653,6 +1700,7 @@
 
     /**
      * Update a video template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.videoTemplateResource The video template resource object
@@ -1668,6 +1716,7 @@
 
     /**
      * Increment a video&#39;s view count
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -1706,6 +1755,7 @@
 
     /**
      * Increment a video&#39;s view count
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The video id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */

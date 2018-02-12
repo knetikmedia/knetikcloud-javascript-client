@@ -34,7 +34,7 @@
   /**
    * AmazonWebServicesS3 service.
    * @module api/AmazonWebServicesS3Api
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Get a temporary signed S3 URL for download
-     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.bucket S3 bucket name
      * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
@@ -78,7 +78,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = 'String';
 
@@ -91,7 +91,7 @@
 
     /**
      * Get a temporary signed S3 URL for download
-     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details.
+     * To give access to files in your own S3 account, you will need to grant KnetikcCloud access to the file by adjusting your bucket policy accordingly. See S3 documentation for details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.bucket S3 bucket name
      * @param {String} opts.path The path to the file relative the bucket (the s3 object key)
@@ -108,7 +108,7 @@
 
     /**
      * Get a signed S3 URL for upload
-     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_USER or S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filename The file name
      * @param {String} opts.contentType The content type
@@ -133,7 +133,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AmazonS3Activity;
 
@@ -146,7 +146,7 @@
 
     /**
      * Get a signed S3 URL for upload
-     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after.
+     * Requires the file name and file content type (i.e., &#39;video/mpeg&#39;). Make a PUT to the resulting url to upload the file and use the cdn_url to retrieve it after. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; S3_USER or S3_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filename The file name
      * @param {String} opts.contentType The content type

@@ -34,7 +34,7 @@
   /**
    * GamificationTrivia service.
    * @module api/GamificationTriviaApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add an answer to a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/AnswerResource} opts.answer The new answer
@@ -92,6 +93,7 @@
 
     /**
      * Add an answer to a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/AnswerResource} opts.answer The new answer
@@ -107,6 +109,7 @@
 
     /**
      * Add a tag to a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.tag The new tag
@@ -148,6 +151,7 @@
 
     /**
      * Add a tag to a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.tag The new tag
@@ -163,7 +167,7 @@
 
     /**
      * Add a tag to a batch of questions
-     * All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+     * All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.tag The tag to add
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
@@ -214,7 +218,7 @@
 
     /**
      * Add a tag to a batch of questions
-     * All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+     * All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.tag The tag to add
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
@@ -237,7 +241,7 @@
 
     /**
      * Create an import job
-     * Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+     * Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ImportJobResource} opts.request The new import job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImportJobResource} and HTTP response
@@ -272,7 +276,7 @@
 
     /**
      * Create an import job
-     * Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+     * Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ImportJobResource} opts.request The new import job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImportJobResource}
@@ -287,6 +291,7 @@
 
     /**
      * Create a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question The new question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionResource} and HTTP response
@@ -321,6 +326,7 @@
 
     /**
      * Create a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question The new question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionResource}
@@ -335,7 +341,7 @@
 
     /**
      * Create a question template
-     * Question templates define a type of question and the properties they have
+     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionTemplateResource} and HTTP response
@@ -370,7 +376,7 @@
 
     /**
      * Create a question template
-     * Question templates define a type of question and the properties they have
+     * Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionTemplateResource}
@@ -385,7 +391,7 @@
 
     /**
      * Delete an import job
-     * Also deletes all questions that were imported by it
+     * Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -411,7 +417,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -424,7 +430,7 @@
 
     /**
      * Delete an import job
-     * Also deletes all questions that were imported by it
+     * Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -438,6 +444,7 @@
 
     /**
      * Delete a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -463,7 +470,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -476,6 +483,7 @@
 
     /**
      * Delete a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -489,6 +497,7 @@
 
     /**
      * Remove an answer from a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -521,7 +530,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -534,6 +543,7 @@
 
     /**
      * Remove an answer from a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -548,7 +558,7 @@
 
     /**
      * Delete a question template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -578,7 +588,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -591,7 +601,7 @@
 
     /**
      * Delete a question template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -607,6 +617,7 @@
 
     /**
      * Get an import job
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImportJobResource} and HTTP response
      */
@@ -632,7 +643,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ImportJobResource;
 
@@ -645,6 +656,7 @@
 
     /**
      * Get an import job
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImportJobResource}
      */
@@ -658,6 +670,7 @@
 
     /**
      * Get a list of import job
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterVendor Filter for jobs by vendor id
      * @param {String} opts.filterCategory Filter for jobs by category id
@@ -692,7 +705,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceImportJobResource;
 
@@ -705,6 +718,7 @@
 
     /**
      * Get a list of import job
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterVendor Filter for jobs by vendor id
      * @param {String} opts.filterCategory Filter for jobs by category id
@@ -725,6 +739,7 @@
 
     /**
      * Get a single question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionResource} and HTTP response
      */
@@ -750,7 +765,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = QuestionResource;
 
@@ -763,6 +778,7 @@
 
     /**
      * Get a single question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionResource}
      */
@@ -776,6 +792,7 @@
 
     /**
      * Get an answer for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AnswerResource} and HTTP response
@@ -808,7 +825,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AnswerResource;
 
@@ -821,6 +838,7 @@
 
     /**
      * Get an answer for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AnswerResource}
@@ -835,6 +853,7 @@
 
     /**
      * List the answers available for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AnswerResource>} and HTTP response
      */
@@ -860,7 +879,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [AnswerResource];
 
@@ -873,6 +892,7 @@
 
     /**
      * List the answers available for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AnswerResource>}
      */
@@ -886,7 +906,7 @@
 
     /**
      * List question deltas in ascending order of updated date
-     * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+     * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since Timestamp in seconds
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DeltaResource>} and HTTP response
@@ -909,7 +929,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [DeltaResource];
 
@@ -922,7 +942,7 @@
 
     /**
      * List question deltas in ascending order of updated date
-     * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+     * The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.since Timestamp in seconds
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DeltaResource>}
@@ -937,6 +957,7 @@
 
     /**
      * List the tags for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
      */
@@ -962,7 +983,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
 
@@ -975,6 +996,7 @@
 
     /**
      * List the tags for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}
      */
@@ -988,6 +1010,7 @@
 
     /**
      * Get a single question template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/QuestionTemplateResource} and HTTP response
      */
@@ -1013,7 +1036,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = QuestionTemplateResource;
 
@@ -1026,6 +1049,7 @@
 
     /**
      * Get a single question template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/QuestionTemplateResource}
      */
@@ -1039,6 +1063,7 @@
 
     /**
      * List and search question templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1065,7 +1090,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceQuestionTemplateResource;
 
@@ -1078,6 +1103,7 @@
 
     /**
      * List and search question templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1094,6 +1120,7 @@
 
     /**
      * List and search questions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1136,7 +1163,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceQuestionResource;
 
@@ -1149,6 +1176,7 @@
 
     /**
      * List and search questions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1173,7 +1201,7 @@
 
     /**
      * Count questions based on filters
-     * This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+     * This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
      * @param {String} opts.filterIdset Filter for documents whose id is in the comma separated list provided
@@ -1208,7 +1236,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = 'Number';
 
@@ -1221,7 +1249,7 @@
 
     /**
      * Count questions based on filters
-     * This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+     * This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
      * @param {String} opts.filterIdset Filter for documents whose id is in the comma separated list provided
@@ -1242,7 +1270,7 @@
 
     /**
      * Start processing an import job
-     * Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+     * Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @param {Boolean} publishNow Whether the new questions should be published live immediately
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ImportJobResource} and HTTP response
@@ -1288,7 +1316,7 @@
 
     /**
      * Start processing an import job
-     * Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+     * Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @param {Boolean} publishNow Whether the new questions should be published live immediately
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ImportJobResource}
@@ -1303,6 +1331,7 @@
 
     /**
      * Remove a tag from a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -1335,7 +1364,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -1348,6 +1377,7 @@
 
     /**
      * Remove a tag from a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {String} tag The tag to remove
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -1362,7 +1392,7 @@
 
     /**
      * Remove a tag from a batch of questions
-     * ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+     * ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} tag The tag to remove
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
@@ -1406,7 +1436,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = 'Number';
 
@@ -1419,7 +1449,7 @@
 
     /**
      * Remove a tag from a batch of questions
-     * ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+     * ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} tag The tag to remove
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
@@ -1442,7 +1472,7 @@
 
     /**
      * List and search tags by the beginning of the string
-     * For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+     * For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for tags starting with the given text
      * @param {String} opts.filterCategory Filter for tags on questions from a specific category
@@ -1469,7 +1499,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
 
@@ -1482,7 +1512,7 @@
 
     /**
      * List and search tags by the beginning of the string
-     * For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+     * For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for tags starting with the given text
      * @param {String} opts.filterCategory Filter for tags on questions from a specific category
@@ -1499,7 +1529,7 @@
 
     /**
      * Update an import job
-     * Changes should be made before process is started for there to be any effect.
+     * Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @param {Object} opts Optional parameters
      * @param {module:model/ImportJobResource} opts.request The updated job
@@ -1541,7 +1571,7 @@
 
     /**
      * Update an import job
-     * Changes should be made before process is started for there to be any effect.
+     * Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Number} id The id of the job
      * @param {Object} opts Optional parameters
      * @param {module:model/ImportJobResource} opts.request The updated job
@@ -1557,6 +1587,7 @@
 
     /**
      * Update a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question The updated question
@@ -1598,6 +1629,7 @@
 
     /**
      * Update a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} id The id of the question
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question The updated question
@@ -1613,6 +1645,7 @@
 
     /**
      * Update an answer for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @param {Object} opts Optional parameters
@@ -1661,6 +1694,7 @@
 
     /**
      * Update an answer for a question
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {String} questionId The id of the question
      * @param {String} id The id of the answer
      * @param {Object} opts Optional parameters
@@ -1677,6 +1711,7 @@
 
     /**
      * Update a question template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
@@ -1718,6 +1753,7 @@
 
     /**
      * Update a question template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionTemplateResource} opts.questionTemplateResource The question template resource object
@@ -1733,7 +1769,7 @@
 
     /**
      * Bulk update questions
-     * Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+     * Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question New values for a set of question fields
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string
@@ -1782,7 +1818,7 @@
 
     /**
      * Bulk update questions
-     * Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+     * Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/QuestionResource} opts.question New values for a set of question fields
      * @param {String} opts.filterSearch Filter for documents whose question, answers or tags contains provided string

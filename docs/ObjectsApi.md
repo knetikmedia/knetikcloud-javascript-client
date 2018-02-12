@@ -1,6 +1,6 @@
 # KnetikCloud.ObjectsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,6 +21,8 @@ Method | HTTP request | Description
 > ObjectResource createObjectItem(templateId, opts)
 
 Create an object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
 
 ### Example
 ```javascript
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
 
 Create an object template
 
-Object templates define a type of entitlement and the properties they have
+Object templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -131,6 +133,8 @@ Name | Type | Description  | Notes
 
 Delete an object
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -175,7 +179,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteObjectTemplate"></a>
@@ -184,7 +188,7 @@ null (empty response body)
 
 Delete an entitlement template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -231,7 +235,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectItem"></a>
@@ -239,6 +243,8 @@ null (empty response body)
 > ObjectResource getObjectItem(templateId, objectId)
 
 Get a single object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -284,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectItems"></a>
@@ -292,6 +298,8 @@ Name | Type | Description  | Notes
 > PageResourceObjectResource getObjectItems(templateId, opts)
 
 List and search objects
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -342,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectTemplate"></a>
@@ -350,6 +358,8 @@ Name | Type | Description  | Notes
 > ItemTemplateResource getObjectTemplate(id)
 
 Get a single entitlement template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```javascript
@@ -392,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getObjectTemplates"></a>
@@ -400,6 +410,8 @@ Name | Type | Description  | Notes
 > PageResourceItemTemplateResource getObjectTemplates(opts)
 
 List and search entitlement templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
 
 ### Example
 ```javascript
@@ -447,7 +459,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateObjectItem"></a>
@@ -455,6 +467,8 @@ Name | Type | Description  | Notes
 > updateObjectItem(templateId, objectId, opts)
 
 Update an object
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
 
 ### Example
 ```javascript
@@ -514,6 +528,8 @@ null (empty response body)
 > ItemTemplateResource updateObjectTemplate(id, opts)
 
 Update an entitlement template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

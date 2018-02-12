@@ -34,7 +34,7 @@
   /**
    * UsersFriendships service.
    * @module api/UsersFriendshipsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Add a friend
-     * As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+     * As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Number} id The id of the user to befriend
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -97,7 +97,7 @@
 
     /**
      * Add a friend
-     * As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship.
+     * As a user, either creates or confirm a pending request. As an admin, call this endpoint twice while inverting the IDs to create a confirmed friendship. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Number} id The id of the user to befriend
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -112,6 +112,7 @@
 
     /**
      * Get friends list
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterUsername Filter for friends with the given username
@@ -147,7 +148,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSimpleUserResource;
 
@@ -160,6 +161,7 @@
 
     /**
      * Get friends list
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterUsername Filter for friends with the given username
@@ -178,7 +180,7 @@
 
     /**
      * Returns the invite token
-     * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+     * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
@@ -204,7 +206,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = 'String';
 
@@ -217,7 +219,7 @@
 
     /**
      * Returns the invite token
-     * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request flow instead if confirmation is required
+     * This is a unique invite token that allows direct connection to the request user.  Exposing that token presents privacy issues if the token is leaked. Use friend request. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)flow instead if confirmation is required
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
@@ -231,7 +233,7 @@
 
     /**
      * Get pending invites
-     * Invites that the specified user received
+     * Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -263,7 +265,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSimpleUserResource;
 
@@ -276,7 +278,7 @@
 
     /**
      * Get pending invites
-     * Invites that the specified user received
+     * Invites that the specified user received. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39;
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -293,7 +295,7 @@
 
     /**
      * Redeem friendship token
-     * Immediately connects the requested user with the user mapped by the provided invite token
+     * Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.token The invite token
@@ -335,7 +337,7 @@
 
     /**
      * Redeem friendship token
-     * Immediately connects the requested user with the user mapped by the provided invite token
+     * Immediately connects the requested user with the user mapped by the provided invite token. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Object} opts Optional parameters
      * @param {module:model/StringWrapper} opts.token The invite token
@@ -351,6 +353,7 @@
 
     /**
      * Remove or decline a friend
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Number} id The id of the user to befriend
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -383,7 +386,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -396,6 +399,7 @@
 
     /**
      * Remove or decline a friend
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; FRIENDSHIPS_ADMIN or (FRIENDSHIPS_USER and owner)
      * @param {String} userId The id of the user or &#39;me&#39; if logged in
      * @param {Number} id The id of the user to befriend
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

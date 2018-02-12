@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineVariables service.
    * @module api/BRERuleEngineVariablesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Get a list of variable types available
-     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VariableTypeResource>} and HTTP response
      */
     this.getBREVariableTypesWithHttpInfo = function() {
@@ -70,7 +70,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [VariableTypeResource];
 
@@ -83,7 +83,7 @@
 
     /**
      * Get a list of variable types available
-     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing.
+     * Types include integer, string, user and invoice. These are used to qualify trigger parameters and action variables with strong typing. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VariableTypeResource>}
      */
     this.getBREVariableTypes = function() {
@@ -96,7 +96,7 @@
 
     /**
      * List valid values for a type
-     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      * @param {String} name The name of the type
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter results by those with names starting with this string
@@ -130,7 +130,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSimpleReferenceResourceobject;
 
@@ -143,7 +143,7 @@
 
     /**
      * List valid values for a type
-     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here.
+     * Used to lookup users to fill in a user constant for example. Only types marked as enumerable are suppoorted here. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_VARIABLES_USER
      * @param {String} name The name of the type
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter results by those with names starting with this string

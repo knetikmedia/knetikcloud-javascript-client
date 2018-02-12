@@ -34,7 +34,7 @@
   /**
    * AuthRoles service.
    * @module api/AuthRolesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/RoleResource} opts.roleResource The role resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RoleResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a new role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/RoleResource} opts.roleResource The role resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RoleResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.force If true, removes role from users/clients
@@ -128,7 +131,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -141,6 +144,7 @@
 
     /**
      * Delete a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.force If true, removes role from users/clients
@@ -156,6 +160,7 @@
 
     /**
      * Get roles for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RoleResource>} and HTTP response
      */
@@ -181,7 +186,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [RoleResource];
 
@@ -194,6 +199,7 @@
 
     /**
      * Get roles for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RoleResource>}
      */
@@ -207,6 +213,7 @@
 
     /**
      * Get a single role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RoleResource} and HTTP response
      */
@@ -232,7 +239,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = RoleResource;
 
@@ -245,6 +252,7 @@
 
     /**
      * Get a single role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RoleResource}
      */
@@ -258,6 +266,7 @@
 
     /**
      * List and search roles
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for roles that have a name starting with specified string
      * @param {String} opts.filterRole Filter for roles that have a role starting with specified string
@@ -288,7 +297,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceRoleResource;
 
@@ -301,6 +310,7 @@
 
     /**
      * List and search roles
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for roles that have a name starting with specified string
      * @param {String} opts.filterRole Filter for roles that have a role starting with specified string
@@ -319,6 +329,7 @@
 
     /**
      * Get roles for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RoleResource>} and HTTP response
      */
@@ -344,7 +355,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [RoleResource];
 
@@ -357,6 +368,7 @@
 
     /**
      * Get roles for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RoleResource>}
      */
@@ -370,6 +382,7 @@
 
     /**
      * Set roles for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.rolesList The list of unique roles
@@ -411,6 +424,7 @@
 
     /**
      * Set roles for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} clientKey The client key
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.rolesList The list of unique roles
@@ -426,6 +440,7 @@
 
     /**
      * Set permissions for a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.permissionsList The list of unique permissions
@@ -467,6 +482,7 @@
 
     /**
      * Set permissions for a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.permissionsList The list of unique permissions
@@ -482,6 +498,7 @@
 
     /**
      * Set roles for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.rolesList The list of unique roles
@@ -523,6 +540,7 @@
 
     /**
      * Set roles for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.rolesList The list of unique roles
@@ -538,6 +556,7 @@
 
     /**
      * Update a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {module:model/RoleResource} opts.roleResource The role resource object
@@ -579,6 +598,7 @@
 
     /**
      * Update a role
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ROLES_ADMIN
      * @param {String} role The role value
      * @param {Object} opts Optional parameters
      * @param {module:model/RoleResource} opts.roleResource The role resource object

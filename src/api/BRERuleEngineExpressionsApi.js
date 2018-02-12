@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineExpressions service.
    * @module api/BRERuleEngineExpressionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Lookup a specific expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {String} type Specifiy the type of expression as returned by the listing endpoint
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ExpressionResource} and HTTP response
      */
@@ -76,7 +77,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ExpressionResource;
 
@@ -89,6 +90,7 @@
 
     /**
      * Lookup a specific expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {String} type Specifiy the type of expression as returned by the listing endpoint
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ExpressionResource}
      */
@@ -101,8 +103,8 @@
 
 
     /**
-     * Get a list of supported expressions to use in conditions or actions.
-     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+     * Get a list of supported expressions to use in conditions or actions
+     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterTypeGroup Filter for expressions by type group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ExpressionResource>} and HTTP response
@@ -125,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [ExpressionResource];
 
@@ -137,8 +139,8 @@
     }
 
     /**
-     * Get a list of supported expressions to use in conditions or actions.
-     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule.
+     * Get a list of supported expressions to use in conditions or actions
+     * Each resource contains a type and a definition that are read-only, all the other fields must be provided when using the expression in a rule. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.filterTypeGroup Filter for expressions by type group
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ExpressionResource>}
@@ -153,6 +155,7 @@
 
     /**
      * Returns the textual representation of an expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/ExpressionResource} opts.expression The expression resource to be converted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StringWrapper} and HTTP response
@@ -187,6 +190,7 @@
 
     /**
      * Returns the textual representation of an expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EXPRESSIONS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/ExpressionResource} opts.expression The expression resource to be converted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StringWrapper}

@@ -37,7 +37,7 @@
   /**
    * The GroupResource model module.
    * @module model/GroupResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -131,7 +131,7 @@
    */
   exports.prototype['additional_properties'] = undefined;
   /**
-   * A description of the group. Max 250 characters
+   * A description of the group
    * @member {String} description
    */
   exports.prototype['description'] = undefined;

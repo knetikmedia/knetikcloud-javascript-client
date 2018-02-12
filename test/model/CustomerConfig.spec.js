@@ -69,12 +69,6 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property io (base name: "io")', function() {
-      // uncomment below and update the code to test the property io
-      //var instane = new KnetikCloud.CustomerConfig();
-      //expect(instance).to.be();
-    });
-
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
       //var instane = new KnetikCloud.CustomerConfig();

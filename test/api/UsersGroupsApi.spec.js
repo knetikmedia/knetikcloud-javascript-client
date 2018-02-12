@@ -131,6 +131,16 @@
         done();
       });
     });
+    describe('disableGroupNotification', function() {
+      it('should call disableGroupNotification successfully', function(done) {
+        //uncomment below and update the code to test disableGroupNotification
+        //instance.disableGroupNotification(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getGroup', function() {
       it('should call getGroup successfully', function(done) {
         //uncomment below and update the code to test getGroup
@@ -191,6 +201,16 @@
         done();
       });
     });
+    describe('getGroupMessages', function() {
+      it('should call getGroupMessages successfully', function(done) {
+        //uncomment below and update the code to test getGroupMessages
+        //instance.getGroupMessages(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('getGroupTemplate', function() {
       it('should call getGroupTemplate successfully', function(done) {
         //uncomment below and update the code to test getGroupTemplate
@@ -225,6 +245,16 @@
       it('should call listGroups successfully', function(done) {
         //uncomment below and update the code to test listGroups
         //instance.listGroups(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('postGroupMessage', function() {
+      it('should call postGroupMessage successfully', function(done) {
+        //uncomment below and update the code to test postGroupMessage
+        //instance.postGroupMessage(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -1,6 +1,6 @@
 # KnetikCloud.ContentCommentsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > CommentResource addComment(opts)
 
 Add a new comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete a comment
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -109,7 +113,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComment"></a>
@@ -117,6 +121,8 @@ null (empty response body)
 > CommentResource getComment(id)
 
 Return a comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getComments"></a>
@@ -167,6 +173,8 @@ Name | Type | Description  | Notes
 > PageResourceCommentResource getComments(context, contextId, opts)
 
 Returns a page of comments
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -218,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateComment"></a>
@@ -226,6 +234,8 @@ Name | Type | Description  | Notes
 > updateComment(id, opts)
 
 Update a comment
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; COMMENTS_USER or COMMENTS_ADMIN
 
 ### Example
 ```javascript

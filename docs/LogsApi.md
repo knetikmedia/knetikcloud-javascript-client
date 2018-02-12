@@ -1,6 +1,6 @@
 # KnetikCloud.LogsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,6 +18,8 @@ Method | HTTP request | Description
 > addUserLog(opts)
 
 Add a user log entry
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; owner
 
 ### Example
 ```javascript
@@ -70,6 +72,8 @@ null (empty response body)
 
 Get an existing BRE event log entry by id
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -111,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREEventLogs"></a>
@@ -119,6 +123,8 @@ Name | Type | Description  | Notes
 > PageResourceBreEventLog getBREEventLogs(opts)
 
 Returns a list of BRE event log entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```javascript
@@ -141,7 +147,8 @@ var opts = {
   'filterEventId': "filterEventId_example", // String | Filter event logs by request id
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
-  'order': "id:DESC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  'order': "id:DESC", // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  'filterRuleId': "filterRuleId_example" // String | Filter event logs by request id
 };
 apiInstance.getBREEventLogs(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -161,6 +168,7 @@ Name | Type | Description  | Notes
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
+ **filterRuleId** | **String**| Filter event logs by request id | [optional] 
 
 ### Return type
 
@@ -172,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREForwardLog"></a>
@@ -180,6 +188,8 @@ Name | Type | Description  | Notes
 > ForwardLog getBREForwardLog(id)
 
 Get an existing forward log entry by id
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```javascript
@@ -222,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getBREForwardLogs"></a>
@@ -230,6 +240,8 @@ Name | Type | Description  | Notes
 > PageResourceForwardLog getBREForwardLogs(opts)
 
 Returns a list of forward log entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
 
 ### Example
 ```javascript
@@ -250,6 +262,7 @@ var opts = {
   'filterStartDate': "filterStartDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'filterEndDate': "filterEndDate_example", // String | A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
   'filterStatusCode': 56, // Number | Filter forward logs by http status code
+  'filterUrl': 56, // Number | Filter forward logs by URL starting with...
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
   'order': "id:DESC" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
@@ -269,6 +282,7 @@ Name | Type | Description  | Notes
  **filterStartDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
  **filterEndDate** | **String**| A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE). | [optional] 
  **filterStatusCode** | **Number**| Filter forward logs by http status code | [optional] 
+ **filterUrl** | **Number**| Filter forward logs by URL starting with... | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
  **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to id:DESC]
@@ -283,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLog"></a>
@@ -291,6 +305,8 @@ Name | Type | Description  | Notes
 > UserActionLog getUserLog(id)
 
 Returns a user log entry by id
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -333,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserLogs"></a>
@@ -341,6 +357,8 @@ Name | Type | Description  | Notes
 > PageResourceUserActionLog getUserLogs(opts)
 
 Returns a page of user logs entries
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -392,6 +410,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

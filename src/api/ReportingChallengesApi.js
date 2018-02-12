@@ -34,7 +34,7 @@
   /**
    * ReportingChallenges service.
    * @module api/ReportingChallengesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Retrieve a challenge event leaderboard details
-     * Lists all leaderboard entries with additional user details
+     * Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterEvent A sepecific challenge event id
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -80,7 +80,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeEventParticipantResource;
 
@@ -93,7 +93,7 @@
 
     /**
      * Retrieve a challenge event leaderboard details
-     * Lists all leaderboard entries with additional user details
+     * Lists all leaderboard entries with additional user details. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterEvent A sepecific challenge event id
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -111,7 +111,7 @@
 
     /**
      * Retrieve a challenge event participant details
-     * Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+     * Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterEvent A sepecific challenge event id
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -140,7 +140,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeEventParticipantResource;
 
@@ -153,7 +153,7 @@
 
     /**
      * Retrieve a challenge event participant details
-     * Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation
+     * Lists all user submitted scores sorted by value, including those that do not apear in the leaderboard due to value or aggregation. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterEvent A sepecific challenge event id
      * @param {Number} opts.size The number of objects returned per page (default to 25)

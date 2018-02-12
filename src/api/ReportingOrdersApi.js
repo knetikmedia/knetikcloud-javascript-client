@@ -34,7 +34,7 @@
   /**
    * ReportingOrders service.
    * @module api/ReportingOrdersApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Retrieve invoice counts aggregated by time ranges
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
      * @param {String} currencyCode The code for a currency to get sales data for
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.granularity The time duration to aggregate by (default to day)
@@ -92,7 +93,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceAggregateInvoiceReportResource;
 
@@ -105,6 +106,7 @@
 
     /**
      * Retrieve invoice counts aggregated by time ranges
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_ORDERS_ADMIN
      * @param {String} currencyCode The code for a currency to get sales data for
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.granularity The time duration to aggregate by (default to day)

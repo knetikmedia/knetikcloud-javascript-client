@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineGlobals service.
    * @module api/BRERuleEngineGlobalsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a global definition
-     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreGlobalResource} opts.breGlobalResource The BRE global resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreGlobalResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a global definition
-     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use.
+     * Once created you can then use in a custom rule. Note that global definitions cannot be modified or deleted if in use. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreGlobalResource} opts.breGlobalResource The BRE global resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreGlobalResource}
@@ -101,7 +101,7 @@
 
     /**
      * Delete a global
-     * May fail if there are existing rules against it. Cannot delete core globals
+     * May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {String} id The id of the global definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -127,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -140,7 +140,7 @@
 
     /**
      * Delete a global
-     * May fail if there are existing rules against it. Cannot delete core globals
+     * May fail if there are existing rules against it. Cannot delete core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {String} id The id of the global definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -154,6 +154,7 @@
 
     /**
      * Get a single global definition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      * @param {String} id The id of the global definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreGlobalResource} and HTTP response
      */
@@ -179,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BreGlobalResource;
 
@@ -192,6 +193,7 @@
 
     /**
      * Get a single global definition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      * @param {String} id The id of the global definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreGlobalResource}
      */
@@ -205,6 +207,7 @@
 
     /**
      * List global definitions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterSystem Filter for globals that are system globals when true, or not when false. Leave off for both mixed
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -231,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBreGlobalResource;
 
@@ -244,6 +247,7 @@
 
     /**
      * List global definitions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_USER
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterSystem Filter for globals that are system globals when true, or not when false. Leave off for both mixed
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -260,7 +264,7 @@
 
     /**
      * Update a global definition
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {String} id The id of the global definition
      * @param {Object} opts Optional parameters
      * @param {module:model/BreGlobalResource} opts.breGlobalResource The BRE global resource object
@@ -302,7 +306,7 @@
 
     /**
      * Update a global definition
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core globals. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_GLOBALS_ADMIN
      * @param {String} id The id of the global definition
      * @param {Object} opts Optional parameters
      * @param {module:model/BreGlobalResource} opts.breGlobalResource The BRE global resource object

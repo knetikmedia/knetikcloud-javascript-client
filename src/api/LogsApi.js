@@ -34,7 +34,7 @@
   /**
    * Logs service.
    * @module api/LogsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add a user log entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
      * @param {Object} opts Optional parameters
      * @param {module:model/UserActionLog} opts.logEntry The user log entry to be added
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Add a user log entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; owner
      * @param {Object} opts Optional parameters
      * @param {module:model/UserActionLog} opts.logEntry The user log entry to be added
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -99,6 +101,7 @@
 
     /**
      * Get an existing BRE event log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {String} id The BRE event log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreEventLog} and HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BreEventLog;
 
@@ -137,6 +140,7 @@
 
     /**
      * Get an existing BRE event log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {String} id The BRE event log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreEventLog}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Returns a list of BRE event log entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEventName Filter event logs by event name
@@ -157,6 +162,7 @@
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
+     * @param {String} opts.filterRuleId Filter event logs by request id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceBreEventLog} and HTTP response
      */
     this.getBREEventLogsWithHttpInfo = function(opts) {
@@ -173,6 +179,7 @@
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
+        'filter_rule_id': opts['filterRuleId'],
       };
       var collectionQueryParams = {
       };
@@ -182,7 +189,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBreEventLog;
 
@@ -195,6 +202,7 @@
 
     /**
      * Returns a list of BRE event log entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEventName Filter event logs by event name
@@ -202,6 +210,7 @@
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
+     * @param {String} opts.filterRuleId Filter event logs by request id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceBreEventLog}
      */
     this.getBREEventLogs = function(opts) {
@@ -214,6 +223,7 @@
 
     /**
      * Get an existing forward log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {String} id The forward log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ForwardLog} and HTTP response
      */
@@ -239,7 +249,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ForwardLog;
 
@@ -252,6 +262,7 @@
 
     /**
      * Get an existing forward log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {String} id The forward log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ForwardLog}
      */
@@ -265,10 +276,12 @@
 
     /**
      * Returns a list of forward log entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {Number} opts.filterStatusCode Filter forward logs by http status code
+     * @param {Number} opts.filterUrl Filter forward logs by URL starting with...
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
@@ -285,6 +298,7 @@
         'filter_start_date': opts['filterStartDate'],
         'filter_end_date': opts['filterEndDate'],
         'filter_status_code': opts['filterStatusCode'],
+        'filter_url': opts['filterUrl'],
         'size': opts['size'],
         'page': opts['page'],
         'order': opts['order'],
@@ -297,7 +311,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceForwardLog;
 
@@ -310,10 +324,12 @@
 
     /**
      * Returns a list of forward log entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the log start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the log end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {Number} opts.filterStatusCode Filter forward logs by http status code
+     * @param {Number} opts.filterUrl Filter forward logs by URL starting with...
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
      * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to id:DESC)
@@ -329,6 +345,7 @@
 
     /**
      * Returns a user log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
      * @param {String} id The user log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserActionLog} and HTTP response
      */
@@ -354,7 +371,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserActionLog;
 
@@ -367,6 +384,7 @@
 
     /**
      * Returns a user log entry by id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
      * @param {String} id The user log entry id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserActionLog}
      */
@@ -380,6 +398,7 @@
 
     /**
      * Returns a page of user logs entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterUser Filter for actions taken by a specific user by id
      * @param {String} opts.filterActionName Filter for actions of a specific name
@@ -410,7 +429,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserActionLog;
 
@@ -423,6 +442,7 @@
 
     /**
      * Returns a page of user logs entries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; LOGS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterUser Filter for actions taken by a specific user by id
      * @param {String} opts.filterActionName Filter for actions of a specific name

@@ -75,6 +75,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property coreSettings (base name: "core_settings")', function() {
+      // uncomment below and update the code to test the property coreSettings
+      //var instane = new KnetikCloud.ChallengeActivityResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property entitlement (base name: "entitlement")', function() {
       // uncomment below and update the code to test the property entitlement
       //var instane = new KnetikCloud.ChallengeActivityResource();

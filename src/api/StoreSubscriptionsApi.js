@@ -34,7 +34,7 @@
   /**
    * StoreSubscriptions service.
    * @module api/StoreSubscriptionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Creates a subscription item and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionResource} opts.subscriptionResource The subscription to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Creates a subscription item and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionResource} opts.subscriptionResource The subscription to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionResource}
@@ -99,7 +101,7 @@
 
     /**
      * Create a subscription template
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The new subscription template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionTemplateResource} and HTTP response
@@ -134,7 +136,7 @@
 
     /**
      * Create a subscription template
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The new subscription template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionTemplateResource}
@@ -149,7 +151,7 @@
 
     /**
      * Delete a subscription plan
-     * Must not be locked or a migration target
+     * Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Number} id The id of the subscription
      * @param {String} planId The id of the plan
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -182,7 +184,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -195,7 +197,7 @@
 
     /**
      * Delete a subscription plan
-     * Must not be locked or a migration target
+     * Must not be locked or a migration target. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Number} id The id of the subscription
      * @param {String} planId The id of the plan
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -210,6 +212,7 @@
 
     /**
      * Delete a subscription template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -239,7 +242,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -252,6 +255,7 @@
 
     /**
      * Delete a subscription template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -267,6 +271,7 @@
 
     /**
      * Retrieve a single subscription item and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the subscription
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionResource} and HTTP response
      */
@@ -292,7 +297,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SubscriptionResource;
 
@@ -305,6 +310,7 @@
 
     /**
      * Retrieve a single subscription item and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the subscription
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionResource}
      */
@@ -318,7 +324,7 @@
 
     /**
      * Get a single subscription template
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SubscriptionTemplateResource} and HTTP response
      */
@@ -344,7 +350,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SubscriptionTemplateResource;
 
@@ -357,7 +363,7 @@
 
     /**
      * Get a single subscription template
-     * Subscription Templates define a type of subscription and the properties they have.
+     * Subscription Templates define a type of subscription and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SubscriptionTemplateResource}
      */
@@ -371,6 +377,7 @@
 
     /**
      * List and search subscription templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -397,7 +404,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSubscriptionTemplateResource;
 
@@ -410,6 +417,7 @@
 
     /**
      * List and search subscription templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SUBSCRIPTIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -426,6 +434,7 @@
 
     /**
      * List available subscription items and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -452,7 +461,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSubscriptionResource;
 
@@ -465,6 +474,7 @@
 
     /**
      * List available subscription items and associated plans
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -481,6 +491,7 @@
 
     /**
      * Processes subscriptions and charge dues
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     this.processSubscriptionsWithHttpInfo = function() {
@@ -512,6 +523,7 @@
 
     /**
      * Processes subscriptions and charge dues
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     this.processSubscriptions = function() {
@@ -524,7 +536,7 @@
 
     /**
      * Updates a subscription item and associated plans
-     * Will not remove plans left out
+     * Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Number} id The id of the subscription
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionResource} opts.subscriptionResource The subscription resource object
@@ -566,7 +578,7 @@
 
     /**
      * Updates a subscription item and associated plans
-     * Will not remove plans left out
+     * Will not remove plans left out. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SUBSCRIPTIONS_ADMIN
      * @param {Number} id The id of the subscription
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionResource} opts.subscriptionResource The subscription resource object
@@ -582,6 +594,7 @@
 
     /**
      * Update a subscription template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The subscription template resource object
@@ -623,6 +636,7 @@
 
     /**
      * Update a subscription template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/SubscriptionTemplateResource} opts.subscriptionTemplateResource The subscription template resource object

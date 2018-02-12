@@ -34,7 +34,7 @@
   /**
    * PaymentsPayPalClassic service.
    * @module api/PaymentsPayPalClassicApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a PayPal Classic billing agreement for the user
-     * Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+     * Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreateBillingAgreementRequest} opts.request The request to create a PayPal billing agreement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a PayPal Classic billing agreement for the user
-     * Returns the token that should be used to forward the user to PayPal so they can accept the agreement.
+     * Returns the token that should be used to forward the user to PayPal so they can accept the agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreateBillingAgreementRequest} opts.request The request to create a PayPal billing agreement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
@@ -101,7 +101,7 @@
 
     /**
      * Create a payment token for PayPal express checkout
-     * Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+     * Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreatePayPalPaymentRequest} opts.request The request to create a PayPal payment token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create a payment token for PayPal express checkout
-     * Returns the token that should be used to forward the user to PayPal so they can complete the checkout.
+     * Returns the token that should be used to forward the user to PayPal so they can complete the checkout. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/CreatePayPalPaymentRequest} opts.request The request to create a PayPal payment token
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
@@ -151,7 +151,7 @@
 
     /**
      * Finalizes a billing agreement after the user has accepted through PayPal
-     * Returns the ID of the new payment method created for the user for the billing agreement.
+     * Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizeBillingAgreementRequest} opts.request The request to finalize a PayPal billing agreement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'Number'} and HTTP response
@@ -186,7 +186,7 @@
 
     /**
      * Finalizes a billing agreement after the user has accepted through PayPal
-     * Returns the ID of the new payment method created for the user for the billing agreement.
+     * Returns the ID of the new payment method created for the user for the billing agreement. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizeBillingAgreementRequest} opts.request The request to finalize a PayPal billing agreement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'Number'}
@@ -201,7 +201,7 @@
 
     /**
      * Finalizes a payment after the user has completed checkout with PayPal
-     * The invoice will be marked paid/failed by asynchronous IPN callback.
+     * The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizePayPalPaymentRequest} opts.request The request to finalize the payment
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -236,7 +236,7 @@
 
     /**
      * Finalizes a payment after the user has completed checkout with PayPal
-     * The invoice will be marked paid/failed by asynchronous IPN callback.
+     * The invoice will be marked paid/failed by asynchronous IPN callback. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYPAL_CLASSIC_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FinalizePayPalPaymentRequest} opts.request The request to finalize the payment
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

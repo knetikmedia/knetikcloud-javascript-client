@@ -1,6 +1,6 @@
 # KnetikCloud.ReportingUsageApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,8 @@ Method | HTTP request | Description
 > PageResourceUsageInfo getUsageByDay(startDate, endDate, opts)
 
 Returns aggregated endpoint usage information by day
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsageByHour"></a>
@@ -82,6 +84,8 @@ Name | Type | Description  | Notes
 > PageResourceUsageInfo getUsageByHour(startDate, endDate, opts)
 
 Returns aggregated endpoint usage information by hour
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -139,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsageByMinute"></a>
@@ -147,6 +151,8 @@ Name | Type | Description  | Notes
 > PageResourceUsageInfo getUsageByMinute(startDate, endDate, opts)
 
 Returns aggregated endpoint usage information by minute
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -204,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsageByMonth"></a>
@@ -212,6 +218,8 @@ Name | Type | Description  | Notes
 > PageResourceUsageInfo getUsageByMonth(startDate, endDate, opts)
 
 Returns aggregated endpoint usage information by month
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -269,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsageByYear"></a>
@@ -277,6 +285,8 @@ Name | Type | Description  | Notes
 > PageResourceUsageInfo getUsageByYear(startDate, endDate, opts)
 
 Returns aggregated endpoint usage information by year
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -334,7 +344,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsageEndpoints"></a>
@@ -342,6 +352,8 @@ Name | Type | Description  | Notes
 > [&#39;String&#39;] getUsageEndpoints(startDate, endDate)
 
 Returns list of endpoints called (method and url)
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
 
 ### Example
 ```javascript
@@ -387,6 +399,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

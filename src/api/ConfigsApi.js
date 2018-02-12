@@ -34,7 +34,7 @@
   /**
    * Configs service.
    * @module api/ConfigsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Config} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a new config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOPICS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Config}
@@ -99,6 +101,7 @@
 
     /**
      * Delete an existing config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {String} name The config name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete an existing config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {String} name The config name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,7 +154,7 @@
 
     /**
      * Get a single config
-     * Only configs that are public readable will be shown without admin access
+     * Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} name The config name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Config} and HTTP response
      */
@@ -176,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Config;
 
@@ -189,7 +193,7 @@
 
     /**
      * Get a single config
-     * Only configs that are public readable will be shown without admin access
+     * Only configs that are public readable will be shown without admin access. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} name The config name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Config}
      */
@@ -203,11 +207,12 @@
 
     /**
      * List and search configs
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for configs whose name contains the given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceConfig} and HTTP response
      */
     this.getConfigsWithHttpInfo = function(opts) {
@@ -231,7 +236,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceConfig;
 
@@ -244,11 +249,12 @@
 
     /**
      * List and search configs
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for configs whose name contains the given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
-     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] (default to 1)
+     * @param {String} opts.order A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceConfig}
      */
     this.getConfigs = function(opts) {
@@ -261,6 +267,7 @@
 
     /**
      * Update an existing config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {String} name The config name
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object
@@ -302,6 +309,7 @@
 
     /**
      * Update an existing config
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CONFIGS_ADMIN
      * @param {String} name The config name
      * @param {Object} opts Optional parameters
      * @param {module:model/Config} opts.config The config object

@@ -34,7 +34,7 @@
   /**
    * Locations service.
    * @module api/LocationsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get a list of countries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CountryResource>} and HTTP response
      */
     this.getCountriesWithHttpInfo = function() {
@@ -69,7 +70,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [CountryResource];
 
@@ -82,6 +83,7 @@
 
     /**
      * Get a list of countries
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CountryResource>}
      */
     this.getCountries = function() {
@@ -94,7 +96,7 @@
 
     /**
      * Get the iso3 code of your country
-     * Determined by geo ip location
+     * Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
     this.getCountryByGeoLocationWithHttpInfo = function() {
@@ -113,7 +115,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = 'String';
 
@@ -126,7 +128,7 @@
 
     /**
      * Get the iso3 code of your country
-     * Determined by geo ip location
+     * Determined by geo ip location. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
     this.getCountryByGeoLocation = function() {
@@ -139,6 +141,7 @@
 
     /**
      * Get a list of a country&#39;s states
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/StateResource>} and HTTP response
      */
@@ -164,7 +167,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [StateResource];
 
@@ -177,6 +180,7 @@
 
     /**
      * Get a list of a country&#39;s states
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} countryCodeIso3 The iso3 code of the country
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/StateResource>}
      */
@@ -190,7 +194,7 @@
 
     /**
      * Get the currency information of your country
-     * Determined by geo ip location, currency to country mapping and a fallback setting
+     * Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CurrencyResource} and HTTP response
      */
     this.getCurrencyByGeoLocationWithHttpInfo = function() {
@@ -209,7 +213,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CurrencyResource;
 
@@ -222,7 +226,7 @@
 
     /**
      * Get the currency information of your country
-     * Determined by geo ip location, currency to country mapping and a fallback setting
+     * Determined by geo ip location, currency to country mapping and a fallback setting. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CurrencyResource}
      */
     this.getCurrencyByGeoLocation = function() {

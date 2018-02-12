@@ -34,7 +34,7 @@
   /**
    * UsersAddresses service.
    * @module api/UsersAddressesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/SavedAddressResource} opts.savedAddressResource The new address
@@ -92,6 +93,7 @@
 
     /**
      * Create a new address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/SavedAddressResource} opts.savedAddressResource The new address
@@ -107,6 +109,7 @@
 
     /**
      * Delete an address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -139,7 +142,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -152,6 +155,7 @@
 
     /**
      * Delete an address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -166,6 +170,7 @@
 
     /**
      * Get a single address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SavedAddressResource} and HTTP response
@@ -198,7 +203,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SavedAddressResource;
 
@@ -211,6 +216,7 @@
 
     /**
      * Get a single address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SavedAddressResource}
@@ -225,6 +231,7 @@
 
     /**
      * List and search addresses
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -258,7 +265,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSavedAddressResource;
 
@@ -271,6 +278,7 @@
 
     /**
      * List and search addresses
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -288,6 +296,7 @@
 
     /**
      * Update an address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @param {Object} opts Optional parameters
@@ -336,6 +345,7 @@
 
     /**
      * Update an address
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
      * @param {String} userId The id of the user
      * @param {Number} id The id of the address
      * @param {Object} opts Optional parameters

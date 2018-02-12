@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineEvents service.
    * @module api/BRERuleEngineEventsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Fire a new event, based on an existing trigger
-     * Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id
+     * Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/BreEvent} opts.breEvent The BRE event object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Fire a new event, based on an existing trigger
-     * Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id
+     * Parameters within the event must match names and types from the trigger. Actual rule execution is asynchornous.  Returns request id, which will be used as the event id. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_EVENTS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/BreEvent} opts.breEvent The BRE event object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}

@@ -1,6 +1,6 @@
 # KnetikCloud.TaxesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > CountryTaxResource createCountryTax(opts)
 
 Create a country tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript
@@ -73,6 +75,8 @@ Name | Type | Description  | Notes
 > StateTaxResource createStateTax(countryCodeIso3, opts)
 
 Create a state tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript
@@ -128,6 +132,8 @@ Name | Type | Description  | Notes
 
 Delete an existing tax
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -169,7 +175,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteStateTax"></a>
@@ -177,6 +183,8 @@ null (empty response body)
 > deleteStateTax(countryCodeIso3, stateCode)
 
 Delete an existing state tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript
@@ -222,7 +230,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCountryTax"></a>
@@ -230,6 +238,8 @@ null (empty response body)
 > CountryTaxResource getCountryTax(countryCodeIso3)
 
 Get a single tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -272,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCountryTaxes"></a>
@@ -281,7 +291,7 @@ Name | Type | Description  | Notes
 
 List and search taxes
 
-Get a list of taxes
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript
@@ -329,7 +339,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getStateTax"></a>
@@ -337,6 +347,8 @@ Name | Type | Description  | Notes
 > StateTaxResource getStateTax(countryCodeIso3, stateCode)
 
 Get a single state tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -382,7 +394,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getStateTaxesForCountries"></a>
@@ -391,7 +403,7 @@ Name | Type | Description  | Notes
 
 List and search taxes across all countries
 
-Get a list of taxes
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -439,7 +451,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getStateTaxesForCountry"></a>
@@ -448,7 +460,7 @@ Name | Type | Description  | Notes
 
 List and search taxes within a country
 
-Get a list of taxes
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -499,7 +511,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateCountryTax"></a>
@@ -507,6 +519,8 @@ Name | Type | Description  | Notes
 > CountryTaxResource updateCountryTax(countryCodeIso3, opts)
 
 Create or update a tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript
@@ -561,6 +575,8 @@ Name | Type | Description  | Notes
 > StateTaxResource updateStateTax(countryCodeIso3, stateCode, opts)
 
 Create or update a state tax
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TAX_ADMIN
 
 ### Example
 ```javascript

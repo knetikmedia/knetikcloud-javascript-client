@@ -34,7 +34,7 @@
   /**
    * UtilSecurity service.
    * @module api/UtilSecurityApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Returns the authentication log for a user
-     * A log entry is recorded everytime a user requests a new token. Standard pagination available
+     * A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId The user id
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -80,7 +80,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceLocationLogResource;
 
@@ -93,7 +93,7 @@
 
     /**
      * Returns the authentication log for a user
-     * A log entry is recorded everytime a user requests a new token. Standard pagination available
+     * A log entry is recorded everytime a user requests a new token. Standard pagination available. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.userId The user id
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -111,6 +111,7 @@
 
     /**
      * Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenDetailsResource} and HTTP response
      */
     this.getUserTokenDetailsWithHttpInfo = function() {
@@ -129,7 +130,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TokenDetailsResource;
 
@@ -142,6 +143,7 @@
 
     /**
      * Returns the authentication token details. Use /users endpoint for detailed user&#39;s info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SECURITY_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenDetailsResource}
      */
     this.getUserTokenDetails = function() {

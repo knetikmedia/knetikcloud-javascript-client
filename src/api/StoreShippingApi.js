@@ -34,7 +34,7 @@
   /**
    * StoreShipping service.
    * @module api/StoreShippingApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a shipping item
-     * A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+     * A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/ShippingItem} opts.shippingItem The shipping item object
@@ -88,7 +88,7 @@
 
     /**
      * Create a shipping item
-     * A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store.
+     * A shipping item represents a shipping option and cost. SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/ShippingItem} opts.shippingItem The shipping item object
@@ -154,6 +154,7 @@
 
     /**
      * Delete a shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Number} id The id of the shipping item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -179,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -192,6 +193,7 @@
 
     /**
      * Delete a shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Number} id The id of the shipping item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -205,6 +207,7 @@
 
     /**
      * Delete a shipping template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -234,7 +237,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -247,6 +250,7 @@
 
     /**
      * Delete a shipping template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -262,6 +266,7 @@
 
     /**
      * Get a single shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the shipping item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ShippingItem} and HTTP response
      */
@@ -287,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ShippingItem;
 
@@ -300,6 +305,7 @@
 
     /**
      * Get a single shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the shipping item
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ShippingItem}
      */
@@ -313,7 +319,7 @@
 
     /**
      * Get a single shipping template
-     * Shipping Templates define a type of shipping and the properties they have.
+     * Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -339,7 +345,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -352,7 +358,7 @@
 
     /**
      * Get a single shipping template
-     * Shipping Templates define a type of shipping and the properties they have.
+     * Shipping Templates define a type of shipping and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -366,6 +372,7 @@
 
     /**
      * List and search shipping templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -392,7 +399,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -405,6 +412,7 @@
 
     /**
      * List and search shipping templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or SHIPPING_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -421,6 +429,7 @@
 
     /**
      * Update a shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Number} id The id of the shipping item
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -464,6 +473,7 @@
 
     /**
      * Update a shipping item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; SHIPPING_ADMIN
      * @param {Number} id The id of the shipping item
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -480,6 +490,7 @@
 
     /**
      * Update a shipping template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.shippingTemplateResource The shipping template resource object
@@ -521,6 +532,7 @@
 
     /**
      * Update a shipping template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.shippingTemplateResource The shipping template resource object

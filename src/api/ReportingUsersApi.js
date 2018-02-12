@@ -34,7 +34,7 @@
   /**
    * ReportingUsers service.
    * @module api/ReportingUsersApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Get user registration info
-     * Get user registration counts grouped by time range
+     * Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.granularity The time duration to aggregate by (default to day)
      * @param {Number} opts.startDate The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time
@@ -82,7 +82,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceAggregateCountResource;
 
@@ -95,7 +95,7 @@
 
     /**
      * Get user registration info
-     * Get user registration counts grouped by time range
+     * Get user registration counts grouped by time range. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; REPORTING_USER_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/String} opts.granularity The time duration to aggregate by (default to day)
      * @param {Number} opts.startDate The start of the time range to aggregate, unix timestamp in seconds. Default is beginning of time

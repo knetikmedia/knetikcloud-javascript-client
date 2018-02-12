@@ -34,7 +34,7 @@
   /**
    * AuthClients service.
    * @module api/AuthClientsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ClientResource} opts.clientResource The client resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClientResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a new client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ClientResource} opts.clientResource The client resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClientResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Get a single client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ClientResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ClientResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Get a single client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ClientResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * List available client grant types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GrantTypeResource>} and HTTP response
      */
     this.getClientGrantTypesWithHttpInfo = function() {
@@ -219,7 +226,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [GrantTypeResource];
 
@@ -232,6 +239,7 @@
 
     /**
      * List available client grant types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GrantTypeResource>}
      */
     this.getClientGrantTypes = function() {
@@ -244,6 +252,7 @@
 
     /**
      * List and search clients
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -270,7 +279,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceClientResource;
 
@@ -283,6 +292,7 @@
 
     /**
      * List and search clients
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -299,6 +309,7 @@
 
     /**
      * Set grant types for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.grantList A list of unique grant types
@@ -340,6 +351,7 @@
 
     /**
      * Set grant types for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.grantList A list of unique grant types
@@ -355,6 +367,7 @@
 
     /**
      * Set redirect uris for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.redirectList A list of unique redirect uris
@@ -396,6 +409,7 @@
 
     /**
      * Set redirect uris for a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/String>} opts.redirectList A list of unique redirect uris
@@ -411,6 +425,7 @@
 
     /**
      * Update a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {module:model/ClientResource} opts.clientResource The client resource object
@@ -452,6 +467,7 @@
 
     /**
      * Update a client
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
      * @param {String} clientKey The key of the client
      * @param {Object} opts Optional parameters
      * @param {module:model/ClientResource} opts.clientResource The client resource object

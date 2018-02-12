@@ -37,7 +37,7 @@
   /**
    * The DeviceResource model module.
    * @module model/DeviceResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -163,12 +163,12 @@ exports.discriminatorField = 'device_type';
    */
   exports.prototype['description'] = undefined;
   /**
-   * The type of device. Use mobile to specifically register mobile devices. This particular type will be used to send and receive notifications
+   * The type of device. Use mobile_device to specifically register mobile devices. This particular type will be used to send and receive notifications
    * @member {String} device_type
    */
   exports.prototype['device_type'] = undefined;
   /**
-   * The unique ID for this device
+   * The unique ID for this device. Cannot be changed after creation. Default: random
    * @member {String} id
    */
   exports.prototype['id'] = undefined;

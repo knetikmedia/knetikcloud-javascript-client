@@ -1,6 +1,6 @@
 # KnetikCloud.ContentArticlesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Create a new article
 
-Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
 
 ### Example
 ```javascript
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 Create an article template
 
-Article Templates define a type of article and the properties they have
+Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -128,6 +128,8 @@ Name | Type | Description  | Notes
 
 Delete an existing article
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -169,7 +171,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteArticleTemplate"></a>
@@ -178,7 +180,7 @@ null (empty response body)
 
 Delete an article template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -225,7 +227,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArticle"></a>
@@ -233,6 +235,8 @@ null (empty response body)
 > ArticleResource getArticle(id)
 
 Get a single article
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -275,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArticleTemplate"></a>
@@ -283,6 +287,8 @@ Name | Type | Description  | Notes
 > TemplateResource getArticleTemplate(id)
 
 Get a single article template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```javascript
@@ -325,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArticleTemplates"></a>
@@ -333,6 +339,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getArticleTemplates(opts)
 
 List and search article templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
 
 ### Example
 ```javascript
@@ -380,7 +388,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getArticles"></a>
@@ -389,7 +397,7 @@ Name | Type | Description  | Notes
 
 List and search articles
 
-Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -449,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateArticle"></a>
@@ -457,6 +465,8 @@ Name | Type | Description  | Notes
 > ArticleResource updateArticle(id, opts)
 
 Update an existing article
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
 
 ### Example
 ```javascript
@@ -511,6 +521,8 @@ Name | Type | Description  | Notes
 > TemplateResource updateArticleTemplate(id, opts)
 
 Update an article template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

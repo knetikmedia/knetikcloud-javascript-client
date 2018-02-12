@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/ActivityUserResource', 'model/SelectedSettingResource'], factory);
+    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/ActivityUserResource', 'model/CoreActivityOccurrenceSettings', 'model/SelectedSettingResource', 'model/SimpleUserResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./ActivityUserResource'), require('./SelectedSettingResource'));
+    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./ActivityUserResource'), require('./CoreActivityOccurrenceSettings'), require('./SelectedSettingResource'), require('./SimpleUserResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ActivityOccurrenceResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.SelectedSettingResource);
+    root.KnetikCloud.ActivityOccurrenceResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.ActivityUserResource, root.KnetikCloud.CoreActivityOccurrenceSettings, root.KnetikCloud.SelectedSettingResource, root.KnetikCloud.SimpleUserResource);
   }
-}(this, function(ApiClient, ActivityEntitlementResource, ActivityUserResource, SelectedSettingResource) {
+}(this, function(ApiClient, ActivityEntitlementResource, ActivityUserResource, CoreActivityOccurrenceSettings, SelectedSettingResource, SimpleUserResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The ActivityOccurrenceResource model module.
    * @module model/ActivityOccurrenceResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,9 @@
     var _this = this;
 
     _this['activity_id'] = activityId;
+
+
+
 
 
 
@@ -79,8 +82,14 @@
       if (data.hasOwnProperty('activity_id')) {
         obj['activity_id'] = ApiClient.convertToType(data['activity_id'], 'Number');
       }
+      if (data.hasOwnProperty('bans')) {
+        obj['bans'] = ApiClient.convertToType(data['bans'], ['Number']);
+      }
       if (data.hasOwnProperty('challenge_activity_id')) {
         obj['challenge_activity_id'] = ApiClient.convertToType(data['challenge_activity_id'], 'Number');
+      }
+      if (data.hasOwnProperty('core_settings')) {
+        obj['core_settings'] = CoreActivityOccurrenceSettings.constructFromObject(data['core_settings']);
       }
       if (data.hasOwnProperty('created_date')) {
         obj['created_date'] = ApiClient.convertToType(data['created_date'], 'Number');
@@ -90,6 +99,9 @@
       }
       if (data.hasOwnProperty('event_id')) {
         obj['event_id'] = ApiClient.convertToType(data['event_id'], 'Number');
+      }
+      if (data.hasOwnProperty('host')) {
+        obj['host'] = SimpleUserResource.constructFromObject(data['host']);
       }
       if (data.hasOwnProperty('id')) {
         obj['id'] = ApiClient.convertToType(data['id'], 'Number');
@@ -139,10 +151,20 @@
    */
   exports.prototype['activity_id'] = undefined;
   /**
+   * The ids of banned users that cannot join the occurrence. See occurrence-user delete endpoint
+   * @member {Array.<Number>} bans
+   */
+  exports.prototype['bans'] = undefined;
+  /**
    * The id of the challenge activity (as part of the event, required if eventId set)
    * @member {Number} challenge_activity_id
    */
   exports.prototype['challenge_activity_id'] = undefined;
+  /**
+   * Defines core settings about the activity occurrence that affect how it behaves in the system. Validated against core settings in activity/challenge-activity.
+   * @member {module:model/CoreActivityOccurrenceSettings} core_settings
+   */
+  exports.prototype['core_settings'] = undefined;
   /**
    * The date this occurrence was created, unix timestamp in seconds
    * @member {Number} created_date
@@ -158,6 +180,11 @@
    * @member {Number} event_id
    */
   exports.prototype['event_id'] = undefined;
+  /**
+   * The host of the occurrence, if not a participant (will be left out of users array). Must be the caller that creates the occurrence unless admin. Requires activity/challenge to allow host_option of 'non_player' if not admin as well
+   * @member {module:model/SimpleUserResource} host
+   */
+  exports.prototype['host'] = undefined;
   /**
    * The id of the activity occurrence
    * @member {Number} id
@@ -243,6 +270,11 @@
      * @const
      */
     "OPEN": "OPEN",
+    /**
+     * value: "LAUNCHING"
+     * @const
+     */
+    "LAUNCHING": "LAUNCHING",
     /**
      * value: "PLAYING"
      * @const

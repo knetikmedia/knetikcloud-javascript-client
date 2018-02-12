@@ -34,7 +34,7 @@
   /**
    * TemplatesProperties service.
    * @module api/TemplatesPropertiesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get details for a template property type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} type type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PropertyFieldListResource} and HTTP response
      */
@@ -76,7 +77,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PropertyFieldListResource;
 
@@ -89,6 +90,7 @@
 
     /**
      * Get details for a template property type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} type type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PropertyFieldListResource}
      */
@@ -102,6 +104,7 @@
 
     /**
      * List template property types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PropertyFieldListResource>} and HTTP response
      */
     this.getTemplatePropertyTypesWithHttpInfo = function() {
@@ -120,7 +123,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [PropertyFieldListResource];
 
@@ -133,6 +136,7 @@
 
     /**
      * List template property types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PropertyFieldListResource>}
      */
     this.getTemplatePropertyTypes = function() {

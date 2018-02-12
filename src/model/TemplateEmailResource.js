@@ -37,7 +37,7 @@
   /**
    * The TemplateEmailResource model module.
    * @module model/TemplateEmailResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -52,6 +52,7 @@
 
 
     _this['recipients'] = recipients;
+
     _this['template_key'] = templateKey;
 
   };
@@ -72,6 +73,9 @@
       }
       if (data.hasOwnProperty('recipients')) {
         obj['recipients'] = ApiClient.convertToType(data['recipients'], ['Number']);
+      }
+      if (data.hasOwnProperty('subject')) {
+        obj['subject'] = ApiClient.convertToType(data['subject'], 'String');
       }
       if (data.hasOwnProperty('template_key')) {
         obj['template_key'] = ApiClient.convertToType(data['template_key'], 'String');
@@ -107,6 +111,11 @@
    * @member {Array.<Number>} recipients
    */
   exports.prototype['recipients'] = undefined;
+  /**
+   * The subject for email
+   * @member {String} subject
+   */
+  exports.prototype['subject'] = undefined;
   /**
    * The key for the template
    * @member {String} template_key

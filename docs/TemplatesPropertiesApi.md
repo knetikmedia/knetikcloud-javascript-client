@@ -1,6 +1,6 @@
 # KnetikCloud.TemplatesPropertiesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,6 +13,8 @@ Method | HTTP request | Description
 > PropertyFieldListResource getTemplatePropertyType(type)
 
 Get details for a template property type
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTemplatePropertyTypes"></a>
@@ -63,6 +65,8 @@ Name | Type | Description  | Notes
 > [PropertyFieldListResource] getTemplatePropertyTypes()
 
 List template property types
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -99,6 +103,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

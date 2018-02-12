@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/AvailableSettingResource', 'model/Property', 'model/RewardSetResource'], factory);
+    define(['ApiClient', 'model/ActivityEntitlementResource', 'model/AvailableSettingResource', 'model/CoreActivitySettings', 'model/Property', 'model/RewardSetResource'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./AvailableSettingResource'), require('./Property'), require('./RewardSetResource'));
+    module.exports = factory(require('../ApiClient'), require('./ActivityEntitlementResource'), require('./AvailableSettingResource'), require('./CoreActivitySettings'), require('./Property'), require('./RewardSetResource'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.ActivityResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.AvailableSettingResource, root.KnetikCloud.Property, root.KnetikCloud.RewardSetResource);
+    root.KnetikCloud.ActivityResource = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.ActivityEntitlementResource, root.KnetikCloud.AvailableSettingResource, root.KnetikCloud.CoreActivitySettings, root.KnetikCloud.Property, root.KnetikCloud.RewardSetResource);
   }
-}(this, function(ApiClient, ActivityEntitlementResource, AvailableSettingResource, Property, RewardSetResource) {
+}(this, function(ApiClient, ActivityEntitlementResource, AvailableSettingResource, CoreActivitySettings, Property, RewardSetResource) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The ActivityResource model module.
    * @module model/ActivityResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -46,10 +46,10 @@
    * @alias module:model/ActivityResource
    * @class
    * @param name {String} The user friendly name of that resource
-   * @param type {String} The type of the activity
    */
-  var exports = function(name, type) {
+  var exports = function(name) {
     var _this = this;
+
 
 
 
@@ -64,7 +64,7 @@
 
 
 
-    _this['type'] = type;
+
 
 
   };
@@ -82,6 +82,9 @@
 
       if (data.hasOwnProperty('additional_properties')) {
         obj['additional_properties'] = ApiClient.convertToType(data['additional_properties'], {'String': Property});
+      }
+      if (data.hasOwnProperty('core_settings')) {
+        obj['core_settings'] = CoreActivitySettings.constructFromObject(data['core_settings']);
       }
       if (data.hasOwnProperty('created_date')) {
         obj['created_date'] = ApiClient.convertToType(data['created_date'], 'Number');
@@ -151,6 +154,11 @@
    * @member {Object.<String, module:model/Property>} additional_properties
    */
   exports.prototype['additional_properties'] = undefined;
+  /**
+   * Defines core settings about the activity that affect how it can be created/played by users.
+   * @member {module:model/CoreActivitySettings} core_settings
+   */
+  exports.prototype['core_settings'] = undefined;
   /**
    * The date/time this resource was created in seconds since unix epoch
    * @member {Number} created_date

@@ -34,7 +34,7 @@
   /**
    * UtilHealth service.
    * @module api/UtilHealthApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get health info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     this.getHealthWithHttpInfo = function() {
@@ -69,7 +70,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = Object;
 
@@ -82,6 +83,7 @@
 
     /**
      * Get health info
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     this.getHealth = function() {

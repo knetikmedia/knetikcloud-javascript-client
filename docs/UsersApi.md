@@ -1,18 +1,20 @@
 # KnetikCloud.UsersApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addUserTag**](UsersApi.md#addUserTag) | **POST** /users/{user_id}/tags | Add a tag to a user
 [**createUserTemplate**](UsersApi.md#createUserTemplate) | **POST** /users/templates | Create a user template
 [**deleteUserTemplate**](UsersApi.md#deleteUserTemplate) | **DELETE** /users/templates/{id} | Delete a user template
+[**getDirectMessages1**](UsersApi.md#getDirectMessages1) | **GET** /users/users/{recipient_id}/messages | Get a list of direct messages with this user
 [**getUser**](UsersApi.md#getUser) | **GET** /users/{id} | Get a single user
 [**getUserTags**](UsersApi.md#getUserTags) | **GET** /users/{user_id}/tags | List tags for a user
 [**getUserTemplate**](UsersApi.md#getUserTemplate) | **GET** /users/templates/{id} | Get a single user template
 [**getUserTemplates**](UsersApi.md#getUserTemplates) | **GET** /users/templates | List and search user templates
 [**getUsers**](UsersApi.md#getUsers) | **GET** /users | List and search users
 [**passwordReset**](UsersApi.md#passwordReset) | **PUT** /users/{id}/password-reset | Choose a new password after a reset
+[**postUserMessage**](UsersApi.md#postUserMessage) | **POST** /users/{recipient_id}/messages | Send a user message
 [**registerUser**](UsersApi.md#registerUser) | **POST** /users | Register a new user
 [**removeUserTag**](UsersApi.md#removeUserTag) | **DELETE** /users/{user_id}/tags/{tag} | Remove a tag from a user
 [**setPassword**](UsersApi.md#setPassword) | **PUT** /users/{id}/password | Set a user&#39;s password
@@ -27,6 +29,8 @@ Method | HTTP request | Description
 > addUserTag(userId, tag)
 
 Add a tag to a user
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
 
 ### Example
 ```javascript
@@ -81,7 +85,7 @@ null (empty response body)
 
 Create a user template
 
-User Templates define a type of user and the properties they have
+User Templates define a type of user and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -134,7 +138,7 @@ Name | Type | Description  | Notes
 
 Delete a user template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -181,7 +185,65 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="getDirectMessages1"></a>
+# **getDirectMessages1**
+> PageResourceChatMessageResource getDirectMessages1(recipientId, opts)
+
+Get a list of direct messages with this user
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.UsersApi();
+
+var recipientId = 56; // Number | The user id
+
+var opts = { 
+  'size': 25, // Number | The number of objects returned per page
+  'page': 1 // Number | The number of the page returned, starting with 1
+};
+apiInstance.getDirectMessages1(recipientId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipientId** | **Number**| The user id | 
+ **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
+ **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
+
+### Return type
+
+[**PageResourceChatMessageResource**](PageResourceChatMessageResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUser"></a>
@@ -190,7 +252,7 @@ null (empty response body)
 
 Get a single user
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -233,7 +295,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserTags"></a>
@@ -241,6 +303,8 @@ Name | Type | Description  | Notes
 > [&#39;String&#39;] getUserTags(userId)
 
 List tags for a user
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
 
 ### Example
 ```javascript
@@ -283,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserTemplate"></a>
@@ -291,6 +355,8 @@ Name | Type | Description  | Notes
 > TemplateResource getUserTemplate(id)
 
 Get a single user template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```javascript
@@ -333,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserTemplates"></a>
@@ -341,6 +407,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getUserTemplates(opts)
 
 List and search user templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or USERS_ADMIN
 
 ### Example
 ```javascript
@@ -388,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUsers"></a>
@@ -397,7 +465,7 @@ Name | Type | Description  | Notes
 
 List and search users
 
-Additional private info is included as USERS_ADMIN
+Additional private info is included as USERS_ADMIN. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -469,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="passwordReset"></a>
@@ -478,7 +546,7 @@ Name | Type | Description  | Notes
 
 Choose a new password after a reset
 
-Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Finish resetting a user&#39;s password using the secret provided from the password-reset endpoint.  Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -528,13 +596,58 @@ null (empty response body)
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="postUserMessage"></a>
+# **postUserMessage**
+> ChatMessageResource postUserMessage(recipientId, opts)
+
+Send a user message
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+
+var apiInstance = new KnetikCloud.UsersApi();
+
+var recipientId = 56; // Number | The user id
+
+var opts = { 
+  'chatMessageRequest': new KnetikCloud.ChatMessageRequest() // ChatMessageRequest | The chat message request
+};
+apiInstance.postUserMessage(recipientId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipientId** | **Number**| The user id | 
+ **chatMessageRequest** | [**ChatMessageRequest**](ChatMessageRequest.md)| The chat message request | [optional] 
+
+### Return type
+
+[**ChatMessageResource**](ChatMessageResource.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="registerUser"></a>
 # **registerUser**
 > UserResource registerUser(opts)
 
 Register a new user
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -587,6 +700,8 @@ Name | Type | Description  | Notes
 
 Remove a tag from a user
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -631,7 +746,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setPassword"></a>
@@ -640,7 +755,7 @@ null (empty response body)
 
 Set a user&#39;s password
 
-Password should be in plain text and will be encrypted on receipt. Use SSL for security.
+Password should be in plain text and will be encrypted on receipt. Use SSL for security. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or (USERS_USER and owner)
 
 ### Example
 ```javascript
@@ -696,7 +811,7 @@ null (empty response body)
 
 Reset a user&#39;s password
 
-A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit
+A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -748,7 +863,7 @@ null (empty response body)
 
 Reset a user&#39;s password without user id
 
-A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number
+A reset code will be generated and a &#39;forgot_password&#39; BRE event will be fired with that code.  The default system rule will send an email to the selected user if an email service has been setup. You can modify that rule in BRE to send an SMS instead or any other type of notification as you see fit.  Must submit their email, username, or mobile phone number. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -801,7 +916,7 @@ null (empty response body)
 
 Update a user
 
-Password will not be edited on this endpoint, use password specific endpoints.
+Password will not be edited on this endpoint, use password specific endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -856,6 +971,8 @@ null (empty response body)
 > TemplateResource updateUserTemplate(id, opts)
 
 Update a user template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

@@ -1,6 +1,6 @@
 # KnetikCloud.AuthClientsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,6 +19,8 @@ Method | HTTP request | Description
 > ClientResource createClient(opts)
 
 Create a new client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript
@@ -71,6 +73,8 @@ Name | Type | Description  | Notes
 
 Delete a client
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -112,7 +116,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClient"></a>
@@ -120,6 +124,8 @@ null (empty response body)
 > ClientResource getClient(clientKey)
 
 Get a single client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript
@@ -162,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClientGrantTypes"></a>
@@ -170,6 +176,8 @@ Name | Type | Description  | Notes
 > [GrantTypeResource] getClientGrantTypes()
 
 List available client grant types
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript
@@ -206,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getClients"></a>
@@ -214,6 +222,8 @@ This endpoint does not need any parameter.
 > PageResourceClientResource getClients(opts)
 
 List and search clients
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript
@@ -261,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setClientGrantTypes"></a>
@@ -269,6 +279,8 @@ Name | Type | Description  | Notes
 > setClientGrantTypes(clientKey, opts)
 
 Set grant types for a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript
@@ -324,6 +336,8 @@ null (empty response body)
 
 Set redirect uris for a client
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -377,6 +391,8 @@ null (empty response body)
 > ClientResource updateClient(clientKey, opts)
 
 Update a client
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CLIENTS_ADMIN
 
 ### Example
 ```javascript

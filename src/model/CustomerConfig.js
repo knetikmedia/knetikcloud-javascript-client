@@ -17,18 +17,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/DatabaseConfig', 'model/IOConfig', 'model/S3Config'], factory);
+    define(['ApiClient', 'model/DatabaseConfig', 'model/S3Config'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./DatabaseConfig'), require('./IOConfig'), require('./S3Config'));
+    module.exports = factory(require('../ApiClient'), require('./DatabaseConfig'), require('./S3Config'));
   } else {
     // Browser globals (root is window)
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.CustomerConfig = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DatabaseConfig, root.KnetikCloud.IOConfig, root.KnetikCloud.S3Config);
+    root.KnetikCloud.CustomerConfig = factory(root.KnetikCloud.ApiClient, root.KnetikCloud.DatabaseConfig, root.KnetikCloud.S3Config);
   }
-}(this, function(ApiClient, DatabaseConfig, IOConfig, S3Config) {
+}(this, function(ApiClient, DatabaseConfig, S3Config) {
   'use strict';
 
 
@@ -37,7 +37,7 @@
   /**
    * The CustomerConfig model module.
    * @module model/CustomerConfig
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -47,7 +47,6 @@
    */
   var exports = function() {
     var _this = this;
-
 
 
 
@@ -71,9 +70,6 @@
       }
       if (data.hasOwnProperty('database')) {
         obj['database'] = DatabaseConfig.constructFromObject(data['database']);
-      }
-      if (data.hasOwnProperty('io')) {
-        obj['io'] = IOConfig.constructFromObject(data['io']);
       }
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -107,10 +103,6 @@
    * @member {module:model/DatabaseConfig} database
    */
   exports.prototype['database'] = undefined;
-  /**
-   * @member {module:model/IOConfig} io
-   */
-  exports.prototype['io'] = undefined;
   /**
    * @member {String} name
    */

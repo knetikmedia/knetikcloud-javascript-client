@@ -26,7 +26,7 @@
     if (!root.KnetikCloud) {
       root.KnetikCloud = {};
     }
-    root.KnetikCloud.IOConfig = factory(root.KnetikCloud.ApiClient);
+    root.KnetikCloud.ValueWrapperstring = factory(root.KnetikCloud.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -35,47 +35,35 @@
 
 
   /**
-   * The IOConfig model module.
-   * @module model/IOConfig
-   * @version 3.0.9
+   * The ValueWrapperstring model module.
+   * @module model/ValueWrapperstring
+   * @version 3.0.8
    */
 
   /**
-   * Constructs a new <code>IOConfig</code>.
-   * @alias module:model/IOConfig
+   * Constructs a new <code>ValueWrapperstring</code>.
+   * @alias module:model/ValueWrapperstring
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
-
-
   };
 
   /**
-   * Constructs a <code>IOConfig</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ValueWrapperstring</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/IOConfig} obj Optional instance to populate.
-   * @return {module:model/IOConfig} The populated <code>IOConfig</code> instance.
+   * @param {module:model/ValueWrapperstring} obj Optional instance to populate.
+   * @return {module:model/ValueWrapperstring} The populated <code>ValueWrapperstring</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('customer')) {
-        obj['customer'] = ApiClient.convertToType(data['customer'], 'String');
-      }
-      if (data.hasOwnProperty('enabled')) {
-        obj['enabled'] = ApiClient.convertToType(data['enabled'], 'Boolean');
-      }
-      if (data.hasOwnProperty('environment')) {
-        obj['environment'] = ApiClient.convertToType(data['environment'], 'String');
-      }
-      if (data.hasOwnProperty('product')) {
-        obj['product'] = ApiClient.convertToType(data['product'], 'String');
+      if (data.hasOwnProperty('value')) {
+        obj['value'] = ApiClient.convertToType(data['value'], 'String');
       }
     }
     return obj;
@@ -92,26 +80,36 @@
 		  exports.parent.registerChild(child, discriminatorValue);
   }
   
-  var discriminatorValue = 'IOConfig';
+  var discriminatorValue = 'ValueWrapper«string»';
 
 
   /**
-   * @member {String} customer
+   * @member {module:model/ValueWrapperstring.ValueEnum} value
    */
-  exports.prototype['customer'] = undefined;
-  /**
-   * @member {Boolean} enabled
-   */
-  exports.prototype['enabled'] = undefined;
-  /**
-   * @member {String} environment
-   */
-  exports.prototype['environment'] = undefined;
-  /**
-   * @member {String} product
-   */
-  exports.prototype['product'] = undefined;
+  exports.prototype['value'] = undefined;
 
+
+  /**
+   * Allowed values for the <code>value</code> property.
+   * @enum {String}
+   * @readonly
+   */
+  exports.ValueEnum = {
+    /**
+     * value: "pending"
+     * @const
+     */
+    "pending": "pending",
+    /**
+     * value: "read"
+     * @const
+     */
+    "read": "read",
+    /**
+     * value: "hidden"
+     * @const
+     */
+    "hidden": "hidden"  };
 
 
   return exports;

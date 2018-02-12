@@ -1,6 +1,6 @@
 # KnetikCloud.UsersRelationshipsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > UserRelationshipResource createUserRelationship(opts)
 
 Create a user relationship
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete a user relationship
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -109,7 +113,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserRelationship"></a>
@@ -117,6 +121,8 @@ null (empty response body)
 > UserRelationshipResource getUserRelationship(id)
 
 Get a user relationship
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```javascript
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getUserRelationships"></a>
@@ -167,6 +173,8 @@ Name | Type | Description  | Notes
 > PageResourceUserRelationshipResource getUserRelationships(opts)
 
 Get a list of user relationships
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
 
 ### Example
 ```javascript
@@ -214,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateUserRelationship"></a>
@@ -222,6 +230,8 @@ Name | Type | Description  | Notes
 > UserRelationshipResource updateUserRelationship(id, opts)
 
 Update a user relationship
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
 
 ### Example
 ```javascript

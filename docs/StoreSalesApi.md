@@ -1,6 +1,6 @@
 # KnetikCloud.StoreSalesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > CatalogSale createCatalogSale(opts)
 
 Create a sale
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete a sale
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -109,7 +113,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCatalogSale"></a>
@@ -117,6 +121,8 @@ null (empty response body)
 > CatalogSale getCatalogSale(id)
 
 Get a single sale
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
 
 ### Example
 ```javascript
@@ -159,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCatalogSales"></a>
@@ -167,6 +173,8 @@ Name | Type | Description  | Notes
 > PageResourceCatalogSale getCatalogSales(opts)
 
 List and search sales
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_USER or SALES_ADMIN
 
 ### Example
 ```javascript
@@ -214,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateCatalogSale"></a>
@@ -222,6 +230,8 @@ Name | Type | Description  | Notes
 > CatalogSale updateCatalogSale(id, opts)
 
 Update a sale
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; SALES_ADMIN
 
 ### Example
 ```javascript

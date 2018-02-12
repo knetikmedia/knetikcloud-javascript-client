@@ -34,7 +34,7 @@
   /**
    * Currencies service.
    * @module api/CurrenciesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CurrencyResource} opts.currency The currency object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CurrencyResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CurrencyResource} opts.currency The currency object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CurrencyResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {String} code The currency code
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {String} code The currency code
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * List and search currencies
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterDefault Filter for the one currency that is set as default (true), or all that are not (false)
      * @param {Boolean} opts.filterEnabledCurrencies Filter for alternate currencies setup explicitely in system config
@@ -182,7 +187,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCurrencyResource;
 
@@ -195,6 +200,7 @@
 
     /**
      * List and search currencies
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterDefault Filter for the one currency that is set as default (true), or all that are not (false)
      * @param {Boolean} opts.filterEnabledCurrencies Filter for alternate currencies setup explicitely in system config
@@ -214,6 +220,7 @@
 
     /**
      * Get a single currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} code The currency code
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CurrencyResource} and HTTP response
      */
@@ -239,7 +246,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CurrencyResource;
 
@@ -252,6 +259,7 @@
 
     /**
      * Get a single currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} code The currency code
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CurrencyResource}
      */
@@ -265,6 +273,7 @@
 
     /**
      * Update a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {String} code The currency code
      * @param {Object} opts Optional parameters
      * @param {module:model/CurrencyResource} opts.currency The currency object
@@ -306,6 +315,7 @@
 
     /**
      * Update a currency
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CURRENCIES_ADMIN
      * @param {String} code The currency code
      * @param {Object} opts Optional parameters
      * @param {module:model/CurrencyResource} opts.currency The currency object

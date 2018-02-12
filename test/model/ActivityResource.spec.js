@@ -63,6 +63,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property coreSettings (base name: "core_settings")', function() {
+      // uncomment below and update the code to test the property coreSettings
+      //var instane = new KnetikCloud.ActivityResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property createdDate (base name: "created_date")', function() {
       // uncomment below and update the code to test the property createdDate
       //var instane = new KnetikCloud.ActivityResource();

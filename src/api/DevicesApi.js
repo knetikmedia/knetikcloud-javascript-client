@@ -34,7 +34,7 @@
   /**
    * Devices service.
    * @module api/DevicesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add device users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {Array.<module:model/SimpleUserResource>} userResources userResources
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeviceResource} and HTTP response
@@ -95,6 +96,7 @@
 
     /**
      * Add device users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {Array.<module:model/SimpleUserResource>} userResources userResources
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeviceResource}
@@ -109,6 +111,7 @@
 
     /**
      * Create a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {module:model/DeviceResource} device device
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeviceResource} and HTTP response
      */
@@ -146,6 +149,7 @@
 
     /**
      * Create a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {module:model/DeviceResource} device device
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeviceResource}
      */
@@ -159,7 +163,7 @@
 
     /**
      * Create a device template
-     * Device Templates define a type of device and the properties they have
+     * Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -194,7 +198,7 @@
 
     /**
      * Create a device template
-     * Device Templates define a type of device and the properties they have
+     * Device Templates define a type of device and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -209,6 +213,7 @@
 
     /**
      * Delete a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -234,7 +239,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -247,6 +252,7 @@
 
     /**
      * Delete a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -260,7 +266,7 @@
 
     /**
      * Delete an device template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -290,7 +296,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -303,7 +309,7 @@
 
     /**
      * Delete an device template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -319,6 +325,7 @@
 
     /**
      * Delete a device user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id The id of the device
      * @param {Number} userId The user id of the device user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -351,7 +358,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -364,6 +371,7 @@
 
     /**
      * Delete a device user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id The id of the device
      * @param {Number} userId The user id of the device user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -378,6 +386,7 @@
 
     /**
      * Delete all device users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id The id of the device
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterId Filter for device users to delete with a user id in a given comma separated list of ids
@@ -407,7 +416,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -420,6 +429,7 @@
 
     /**
      * Delete all device users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id The id of the device
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterId Filter for device users to delete with a user id in a given comma separated list of ids
@@ -435,6 +445,7 @@
 
     /**
      * Get a single device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeviceResource} and HTTP response
      */
@@ -460,7 +471,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DeviceResource;
 
@@ -473,6 +484,7 @@
 
     /**
      * Get a single device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or owner
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeviceResource}
      */
@@ -486,6 +498,7 @@
 
     /**
      * Get a single device template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; description
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -511,7 +524,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -524,6 +537,7 @@
 
     /**
      * Get a single device template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; description
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -537,6 +551,7 @@
 
     /**
      * List and search device templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -563,7 +578,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -576,6 +591,7 @@
 
     /**
      * List and search device templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or DEVICES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -592,7 +608,7 @@
 
     /**
      * List and search devices
-     * Get a list of devices with optional filtering
+     * Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterMake Filter for devices with specified make
      * @param {String} opts.filterModel Filter for devices with specified model
@@ -631,7 +647,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceDeviceResource;
 
@@ -644,7 +660,7 @@
 
     /**
      * List and search devices
-     * Get a list of devices with optional filtering
+     * Get a list of devices with optional filtering. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; DEVICES_ADMIN or user
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterMake Filter for devices with specified make
      * @param {String} opts.filterModel Filter for devices with specified model
@@ -667,6 +683,7 @@
 
     /**
      * Update a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
      * @param {module:model/DeviceResource} device device
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DeviceResource} and HTTP response
@@ -711,6 +728,7 @@
 
     /**
      * Update a device
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CUSTOMERS_ADMIN
      * @param {module:model/DeviceResource} device device
      * @param {String} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DeviceResource}
@@ -725,6 +743,7 @@
 
     /**
      * Update an device template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object
@@ -766,6 +785,7 @@
 
     /**
      * Update an device template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.deviceTemplateResource The device template resource object

@@ -34,7 +34,7 @@
   /**
    * UsersRelationships service.
    * @module api/UsersRelationshipsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserRelationshipResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserRelationshipResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Get a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserRelationshipResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserRelationshipResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Get a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserRelationshipResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * Get a list of user relationships
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -227,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserRelationshipResource;
 
@@ -240,6 +247,7 @@
 
     /**
      * Get a list of user relationships
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_USER or RELATIONSHIPS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned (default to 1)
@@ -256,6 +264,7 @@
 
     /**
      * Update a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship
@@ -297,6 +306,7 @@
 
     /**
      * Update a user relationship
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; RELATIONSHIPS_ADMIN
      * @param {Number} id The id of the relationship
      * @param {Object} opts Optional parameters
      * @param {module:model/UserRelationshipResource} opts.relationship The new relationship

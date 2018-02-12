@@ -34,7 +34,7 @@
   /**
    * CampaignsRewards service.
    * @module api/CampaignsRewardsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/RewardSetResource} opts.rewardSetResource The reward set resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RewardSetResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/RewardSetResource} opts.rewardSetResource The reward set resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RewardSetResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Number} id The reward id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Number} id The reward id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Get a single reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The reward id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RewardSetResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = RewardSetResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Get a single reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The reward id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RewardSetResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * List and search reward sets
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -227,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceRewardSetResource;
 
@@ -240,6 +247,7 @@
 
     /**
      * List and search reward sets
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -256,6 +264,7 @@
 
     /**
      * Update a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Number} id The reward id
      * @param {Object} opts Optional parameters
      * @param {module:model/RewardSetResource} opts.rewardSetResource The reward set resource object
@@ -297,6 +306,7 @@
 
     /**
      * Update a reward set
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; REWARDS_ADMIN
      * @param {Number} id The reward id
      * @param {Object} opts Optional parameters
      * @param {module:model/RewardSetResource} opts.rewardSetResource The reward set resource object

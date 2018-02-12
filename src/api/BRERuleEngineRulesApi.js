@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineRules service.
    * @module api/BRERuleEngineRulesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a rule
-     * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+     * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreRule} opts.breRule The BRE rule object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreRule} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a rule
-     * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/
+     * Rules define which actions to run when a given event verifies the specified condition. Full list of predicates and other type of expressions can be found at GET /bre/expressions/. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreRule} opts.breRule The BRE rule object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreRule}
@@ -101,7 +101,7 @@
 
     /**
      * Delete a rule
-     * May fail if there are existing rules against it. Cannot delete core rules
+     * May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -127,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -140,7 +140,7 @@
 
     /**
      * Delete a rule
-     * May fail if there are existing rules against it. Cannot delete core rules
+     * May fail if there are existing rules against it. Cannot delete core rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -154,6 +154,7 @@
 
     /**
      * Returns a string representation of the provided expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Expressionobject} opts.expression The expression
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
@@ -188,6 +189,7 @@
 
     /**
      * Returns a string representation of the provided expression
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/Expressionobject} opts.expression The expression
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
@@ -202,6 +204,7 @@
 
     /**
      * Get a single rule
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreRule} and HTTP response
      */
@@ -227,7 +230,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BreRule;
 
@@ -240,6 +243,7 @@
 
     /**
      * Get a single rule
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreRule}
      */
@@ -253,6 +257,7 @@
 
     /**
      * List rules
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for rules containing the given name
      * @param {Boolean} opts.filterEnabled Filter for rules by active status, null for both (default to null)
@@ -289,7 +294,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBreRule;
 
@@ -302,6 +307,7 @@
 
     /**
      * List rules
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for rules containing the given name
      * @param {Boolean} opts.filterEnabled Filter for rules by active status, null for both (default to null)
@@ -323,7 +329,7 @@
 
     /**
      * Enable or disable a rule
-     * This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+     * This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @param {Object} opts Optional parameters
      * @param {module:model/BooleanResource} opts.enabled The boolean value
@@ -365,7 +371,7 @@
 
     /**
      * Enable or disable a rule
-     * This is helpful for turning off systems rules which cannot be deleted or modified otherwise
+     * This is helpful for turning off systems rules which cannot be deleted or modified otherwise. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @param {Object} opts Optional parameters
      * @param {module:model/BooleanResource} opts.enabled The boolean value
@@ -381,7 +387,7 @@
 
     /**
      * Update a rule
-     * Cannot update system rules
+     * Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @param {Object} opts Optional parameters
      * @param {module:model/BreRule} opts.breRule The BRE rule object
@@ -423,7 +429,7 @@
 
     /**
      * Update a rule
-     * Cannot update system rules
+     * Cannot update system rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_RULES_ADMIN
      * @param {String} id The id of the rule
      * @param {Object} opts Optional parameters
      * @param {module:model/BreRule} opts.breRule The BRE rule object

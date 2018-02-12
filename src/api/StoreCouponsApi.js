@@ -34,7 +34,7 @@
   /**
    * StoreCoupons service.
    * @module api/StoreCouponsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a coupon item
-     * SKUs have to be unique in the entire store.
+     * SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/CouponItem} opts.couponItem The coupon item object
@@ -88,7 +88,7 @@
 
     /**
      * Create a coupon item
-     * SKUs have to be unique in the entire store.
+     * SKUs have to be unique in the entire store. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/CouponItem} opts.couponItem The coupon item object
@@ -104,7 +104,7 @@
 
     /**
      * Create a coupon template
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.couponTemplateResource The new coupon template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -139,7 +139,7 @@
 
     /**
      * Create a coupon template
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.couponTemplateResource The new coupon template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -154,6 +154,7 @@
 
     /**
      * Delete a coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -179,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -192,6 +193,7 @@
 
     /**
      * Delete a coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -205,6 +207,7 @@
 
     /**
      * Delete a coupon template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -234,7 +237,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -247,6 +250,7 @@
 
     /**
      * Delete a coupon template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade force deleting the template if it&#39;s attached to other objects, cascade &#x3D; detach
@@ -262,6 +266,7 @@
 
     /**
      * Get a single coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CouponItem} and HTTP response
      */
@@ -287,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CouponItem;
 
@@ -300,6 +305,7 @@
 
     /**
      * Get a single coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CouponItem}
      */
@@ -313,6 +319,7 @@
 
     /**
      * Get a coupon by sku
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} sku A sku of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CouponItem} and HTTP response
      */
@@ -338,7 +345,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CouponItem;
 
@@ -351,6 +358,7 @@
 
     /**
      * Get a coupon by sku
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} sku A sku of the coupon
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CouponItem}
      */
@@ -364,7 +372,7 @@
 
     /**
      * Get a single coupon template
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -390,7 +398,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -403,7 +411,7 @@
 
     /**
      * Get a single coupon template
-     * Coupon Templates define a type of coupon and the properties they have.
+     * Coupon Templates define a type of coupon and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -417,6 +425,7 @@
 
     /**
      * List and search coupon templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -443,7 +452,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -456,6 +465,7 @@
 
     /**
      * List and search coupon templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or COUPONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -472,6 +482,7 @@
 
     /**
      * Update a coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -515,6 +526,7 @@
 
     /**
      * Update a coupon item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; COUPONS_ADMIN
      * @param {Number} id The id of the coupon
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -531,6 +543,7 @@
 
     /**
      * Update a coupon template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.couponTemplateResource The coupon template resource object
@@ -572,6 +585,7 @@
 
     /**
      * Update a coupon template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.couponTemplateResource The coupon template resource object

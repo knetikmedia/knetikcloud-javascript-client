@@ -34,7 +34,7 @@
   /**
    * Campaigns service.
    * @module api/CampaignsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add a challenge to a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The id of the campaign
      * @param {Object} opts Optional parameters
      * @param {Number} opts.challengeId The id of the challenge
@@ -92,6 +93,7 @@
 
     /**
      * Add a challenge to a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The id of the campaign
      * @param {Object} opts Optional parameters
      * @param {Number} opts.challengeId The id of the challenge
@@ -107,6 +109,7 @@
 
     /**
      * Create a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CampaignResource} opts.campaignResource The campaign resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignResource} and HTTP response
@@ -141,6 +144,7 @@
 
     /**
      * Create a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CampaignResource} opts.campaignResource The campaign resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignResource}
@@ -155,7 +159,7 @@
 
     /**
      * Create a campaign template
-     * Campaign Templates define a type of campaign and the properties they have
+     * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -190,7 +194,7 @@
 
     /**
      * Create a campaign template
-     * Campaign Templates define a type of campaign and the properties they have
+     * Campaign Templates define a type of campaign and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -205,6 +209,7 @@
 
     /**
      * Delete a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The campaign id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -230,7 +235,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -243,6 +248,7 @@
 
     /**
      * Delete a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The campaign id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -256,7 +262,7 @@
 
     /**
      * Delete a campaign template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -286,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -299,7 +305,7 @@
 
     /**
      * Delete a campaign template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -315,6 +321,7 @@
 
     /**
      * Returns a single campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The campaign id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CampaignResource} and HTTP response
      */
@@ -340,7 +347,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CampaignResource;
 
@@ -353,6 +360,7 @@
 
     /**
      * Returns a single campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The campaign id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CampaignResource}
      */
@@ -366,6 +374,7 @@
 
     /**
      * List the challenges associated with a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The campaign id
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -403,7 +412,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeResource;
 
@@ -416,6 +425,7 @@
 
     /**
      * List the challenges associated with a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The campaign id
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -435,6 +445,7 @@
 
     /**
      * Get a single campaign template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -460,7 +471,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -473,6 +484,7 @@
 
     /**
      * Get a single campaign template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -486,6 +498,7 @@
 
     /**
      * List and search campaign templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -512,7 +525,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -525,6 +538,7 @@
 
     /**
      * List and search campaign templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CAMPAIGNS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -541,6 +555,7 @@
 
     /**
      * List and search campaigns
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActive Filter for campaigns that are active
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -569,7 +584,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCampaignResource;
 
@@ -582,6 +597,7 @@
 
     /**
      * List and search campaigns
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActive Filter for campaigns that are active
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -599,6 +615,7 @@
 
     /**
      * Remove a challenge from a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} campaignId The campaign id
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -631,7 +648,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -644,6 +661,7 @@
 
     /**
      * Remove a challenge from a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} campaignId The campaign id
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -658,6 +676,7 @@
 
     /**
      * Update a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The campaign id
      * @param {Object} opts Optional parameters
      * @param {module:model/CampaignResource} opts.campaignResource The campaign resource object
@@ -699,6 +718,7 @@
 
     /**
      * Update a campaign
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CAMPAIGNS_ADMIN
      * @param {Number} id The campaign id
      * @param {Object} opts Optional parameters
      * @param {module:model/CampaignResource} opts.campaignResource The campaign resource object
@@ -714,6 +734,7 @@
 
     /**
      * Update an campaign template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object
@@ -755,6 +776,7 @@
 
     /**
      * Update an campaign template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.campaignTemplateResource The campaign template resource object

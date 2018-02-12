@@ -1,6 +1,6 @@
 # KnetikCloud.UsersAddressesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > SavedAddressResource createAddress(userId, opts)
 
 Create a new address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -71,6 +73,8 @@ Name | Type | Description  | Notes
 
 Delete an address
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -115,7 +119,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAddress"></a>
@@ -123,6 +127,8 @@ null (empty response body)
 > SavedAddressResource getAddress(userId, id)
 
 Get a single address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -168,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getAddresses"></a>
@@ -176,6 +182,8 @@ Name | Type | Description  | Notes
 > PageResourceSavedAddressResource getAddresses(userId, opts)
 
 List and search addresses
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```javascript
@@ -226,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateAddress"></a>
@@ -234,6 +242,8 @@ Name | Type | Description  | Notes
 > SavedAddressResource updateAddress(userId, id, opts)
 
 Update an address
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_ADMIN or owner
 
 ### Example
 ```javascript

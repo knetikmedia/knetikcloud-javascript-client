@@ -34,7 +34,7 @@
   /**
    * SocialGoogle service.
    * @module api/SocialGoogleApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Link google account
-     * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+     * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
      * @param {Object} opts Optional parameters
      * @param {module:model/GoogleToken} opts.googleToken The token from google
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Link google account
-     * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired.
+     * Links the current user account to a google account, using the acccess token from google. Can also be used to update the access token after it has expired. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; Non-google user token
      * @param {Object} opts Optional parameters
      * @param {module:model/GoogleToken} opts.googleToken The token from google
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}

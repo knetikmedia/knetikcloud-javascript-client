@@ -31,7 +31,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new KnetikCloud.IOConfig();
+    instance = new KnetikCloud.WebsocketSendMessageEvent();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,34 +50,22 @@
       object[property] = value;
   }
 
-  describe('IOConfig', function() {
-    it('should create an instance of IOConfig', function() {
-      // uncomment below and update the code to test IOConfig
-      //var instane = new KnetikCloud.IOConfig();
-      //expect(instance).to.be.a(KnetikCloud.IOConfig);
+  describe('WebsocketSendMessageEvent', function() {
+    it('should create an instance of WebsocketSendMessageEvent', function() {
+      // uncomment below and update the code to test WebsocketSendMessageEvent
+      //var instane = new KnetikCloud.WebsocketSendMessageEvent();
+      //expect(instance).to.be.a(KnetikCloud.WebsocketSendMessageEvent);
     });
 
-    it('should have the property customer (base name: "customer")', function() {
-      // uncomment below and update the code to test the property customer
-      //var instane = new KnetikCloud.IOConfig();
+    it('should have the property content (base name: "content")', function() {
+      // uncomment below and update the code to test the property content
+      //var instane = new KnetikCloud.WebsocketSendMessageEvent();
       //expect(instance).to.be();
     });
 
-    it('should have the property enabled (base name: "enabled")', function() {
-      // uncomment below and update the code to test the property enabled
-      //var instane = new KnetikCloud.IOConfig();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property environment (base name: "environment")', function() {
-      // uncomment below and update the code to test the property environment
-      //var instane = new KnetikCloud.IOConfig();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property product (base name: "product")', function() {
-      // uncomment below and update the code to test the property product
-      //var instane = new KnetikCloud.IOConfig();
+    it('should have the property usernames (base name: "usernames")', function() {
+      // uncomment below and update the code to test the property usernames
+      //var instane = new KnetikCloud.WebsocketSendMessageEvent();
       //expect(instance).to.be();
     });
 

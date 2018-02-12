@@ -37,7 +37,7 @@
   /**
    * The BareActivityResource model module.
    * @module model/BareActivityResource
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -45,9 +45,8 @@
    * @alias module:model/BareActivityResource
    * @class
    * @param name {String} The user friendly name of that resource
-   * @param type {String} The type of the activity
    */
-  var exports = function(name, type) {
+  var exports = function(name) {
     var _this = this;
 
 
@@ -57,7 +56,7 @@
     _this['name'] = name;
 
 
-    _this['type'] = type;
+
 
 
   };

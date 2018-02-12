@@ -1,9 +1,10 @@
 # KnetikCloud.ActivitiesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUser**](ActivitiesApi.md#addUser) | **POST** /activity-occurrences/{activity_occurrence_id}/users | Add a user to an occurrence
 [**createActivity**](ActivitiesApi.md#createActivity) | **POST** /activities | Create an activity
 [**createActivityOccurrence**](ActivitiesApi.md#createActivityOccurrence) | **POST** /activity-occurrences | Create a new activity occurrence. Ex: start a game
 [**createActivityTemplate**](ActivitiesApi.md#createActivityTemplate) | **POST** /activities/templates | Create a activity template
@@ -15,17 +16,82 @@ Method | HTTP request | Description
 [**getActivityTemplate**](ActivitiesApi.md#getActivityTemplate) | **GET** /activities/templates/{id} | Get a single activity template
 [**getActivityTemplates**](ActivitiesApi.md#getActivityTemplates) | **GET** /activities/templates | List and search activity templates
 [**listActivityOccurrences**](ActivitiesApi.md#listActivityOccurrences) | **GET** /activity-occurrences | List activity occurrences
+[**removeUser**](ActivitiesApi.md#removeUser) | **DELETE** /activity-occurrences/{activity_occurrence_id}/users/{user_id} | Remove a user from an occurrence
 [**setActivityOccurrenceResults**](ActivitiesApi.md#setActivityOccurrenceResults) | **POST** /activity-occurrences/{activity_occurrence_id}/results | Sets the status of an activity occurrence to FINISHED and logs metrics
+[**setActivityOccurrenceSettings**](ActivitiesApi.md#setActivityOccurrenceSettings) | **PUT** /activity-occurrences/{activity_occurrence_id}/settings | Sets the settings of an activity occurrence
+[**setUserStatus**](ActivitiesApi.md#setUserStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/users/{user_id}/status | Set a user&#39;s status within an occurrence
 [**updateActivity**](ActivitiesApi.md#updateActivity) | **PUT** /activities/{id} | Update an activity
-[**updateActivityOccurrence**](ActivitiesApi.md#updateActivityOccurrence) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Updated the status of an activity occurrence
+[**updateActivityOccurrenceStatus**](ActivitiesApi.md#updateActivityOccurrenceStatus) | **PUT** /activity-occurrences/{activity_occurrence_id}/status | Update the status of an activity occurrence
 [**updateActivityTemplate**](ActivitiesApi.md#updateActivityTemplate) | **PUT** /activities/templates/{id} | Update an activity template
 
+
+<a name="addUser"></a>
+# **addUser**
+> ActivityOccurrenceResource addUser(activityOccurrenceId, opts)
+
+Add a user to an occurrence
+
+If called with no body, defaults to the user making the call.
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.ActivitiesApi();
+
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+
+var opts = { 
+  'test': false, // Boolean | if true, indicates that the user should NOT be added. This can be used to test for eligibility
+  'bypassRestrictions': false, // Boolean | if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN
+  'userId': new KnetikCloud.IntWrapper() // IntWrapper | The id of the user, or null for 'caller'
+};
+apiInstance.addUser(activityOccurrenceId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
+ **test** | **Boolean**| if true, indicates that the user should NOT be added. This can be used to test for eligibility | [optional] [default to false]
+ **bypassRestrictions** | **Boolean**| if true, indicates that restrictions such as max player count should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+ **userId** | [**IntWrapper**](IntWrapper.md)| The id of the user, or null for &#39;caller&#39; | [optional] 
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="createActivity"></a>
 # **createActivity**
 > ActivityResource createActivity(opts)
 
 Create an activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -78,7 +144,7 @@ Name | Type | Description  | Notes
 
 Create a new activity occurrence. Ex: start a game
 
-Has to enforce extra rules if not used as an admin
+Has to enforce extra rules if not used as an admin. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_USER or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -133,7 +199,7 @@ Name | Type | Description  | Notes
 
 Create a activity template
 
-Activity Templates define a type of activity and the properties they have
+Activity Templates define a type of activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -186,6 +252,8 @@ Name | Type | Description  | Notes
 
 Delete an activity
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -227,7 +295,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteActivityTemplate"></a>
@@ -236,7 +304,7 @@ null (empty response body)
 
 Delete a activity template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -283,7 +351,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivities"></a>
@@ -291,6 +359,8 @@ null (empty response body)
 > PageResourceBareActivityResource getActivities(opts)
 
 List activity definitions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -344,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivity"></a>
@@ -352,6 +422,8 @@ Name | Type | Description  | Notes
 > ActivityResource getActivity(id)
 
 Get a single activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -394,7 +466,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityOccurrenceDetails"></a>
@@ -402,6 +474,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResource getActivityOccurrenceDetails(activityOccurrenceId)
 
 Load a single activity occurrence details
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -444,7 +518,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityTemplate"></a>
@@ -452,6 +526,8 @@ Name | Type | Description  | Notes
 > TemplateResource getActivityTemplate(id)
 
 Get a single activity template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -494,7 +570,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getActivityTemplates"></a>
@@ -502,6 +578,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getActivityTemplates(opts)
 
 List and search activity templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -549,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="listActivityOccurrences"></a>
@@ -557,6 +635,8 @@ Name | Type | Description  | Notes
 > PageResourceActivityOccurrenceResource listActivityOccurrences(opts)
 
 List activity occurrences
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -575,7 +655,7 @@ var apiInstance = new KnetikCloud.ActivitiesApi();
 
 var opts = { 
   'filterActivity': "filterActivity_example", // String | Filter for occurrences of the given activity ID
-  'filterStatus': "filterStatus_example", // String | Filter for occurrences of the given activity ID
+  'filterStatus': "filterStatus_example", // String | Filter for occurrences in the given status
   'filterEvent': 56, // Number | Filter for occurrences played during the given event
   'filterChallenge': 56, // Number | Filter for occurrences played within the given challenge
   'size': 25, // Number | The number of objects returned per page
@@ -595,7 +675,7 @@ apiInstance.listActivityOccurrences(opts).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filterActivity** | **String**| Filter for occurrences of the given activity ID | [optional] 
- **filterStatus** | **String**| Filter for occurrences of the given activity ID | [optional] 
+ **filterStatus** | **String**| Filter for occurrences in the given status | [optional] 
  **filterEvent** | **Number**| Filter for occurrences played during the given event | [optional] 
  **filterChallenge** | **Number**| Filter for occurrences played within the given challenge | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
@@ -612,7 +692,66 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="removeUser"></a>
+# **removeUser**
+> removeUser(activityOccurrenceId, userId, opts)
+
+Remove a user from an occurrence
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.ActivitiesApi();
+
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+
+var userId = "userId_example"; // String | The id of the user, or 'me'
+
+var opts = { 
+  'ban': false, // Boolean | if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin
+  'bypassRestrictions': false // Boolean | if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN
+};
+apiInstance.removeUser(activityOccurrenceId, userId, opts).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
+ **userId** | **String**| The id of the user, or &#39;me&#39; | 
+ **ban** | **Boolean**| if true, indicates that the user should not be allowed to re-join. Can only be set by host or admin | [optional] [default to false]
+ **bypassRestrictions** | **Boolean**| if true, indicates that restrictions such as current status should be ignored. Can only be used with ACTIVITIES_ADMIN | [optional] [default to false]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="setActivityOccurrenceResults"></a>
@@ -620,6 +759,8 @@ Name | Type | Description  | Notes
 > ActivityOccurrenceResults setActivityOccurrenceResults(activityOccurrenceId, opts)
 
 Sets the status of an activity occurrence to FINISHED and logs metrics
+
+In addition to user permissions requirements there is security based on the core_settings.results_trust setting.
 
 ### Example
 ```javascript
@@ -669,11 +810,124 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="setActivityOccurrenceSettings"></a>
+# **setActivityOccurrenceSettings**
+> ActivityOccurrenceResource setActivityOccurrenceSettings(activityOccurrenceId, opts)
+
+Sets the settings of an activity occurrence
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.ActivitiesApi();
+
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+
+var opts = { 
+  'settings': new KnetikCloud.ActivityOccurrenceSettingsResource() // ActivityOccurrenceSettingsResource | The new settings
+};
+apiInstance.setActivityOccurrenceSettings(activityOccurrenceId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
+ **settings** | [**ActivityOccurrenceSettingsResource**](ActivityOccurrenceSettingsResource.md)| The new settings | [optional] 
+
+### Return type
+
+[**ActivityOccurrenceResource**](ActivityOccurrenceResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="setUserStatus"></a>
+# **setUserStatus**
+> ActivityUserResource setUserStatus(activityOccurrenceId, userId, opts)
+
+Set a user&#39;s status within an occurrence
+
+### Example
+```javascript
+var KnetikCloud = require('knetikcloud-sdk');
+var defaultClient = KnetikCloud.ApiClient.instance;
+
+// Configure OAuth2 access token for authorization: oauth2_client_credentials_grant
+var oauth2_client_credentials_grant = defaultClient.authentications['oauth2_client_credentials_grant'];
+oauth2_client_credentials_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+// Configure OAuth2 access token for authorization: oauth2_password_grant
+var oauth2_password_grant = defaultClient.authentications['oauth2_password_grant'];
+oauth2_password_grant.accessToken = 'YOUR ACCESS TOKEN';
+
+var apiInstance = new KnetikCloud.ActivitiesApi();
+
+var activityOccurrenceId = 789; // Number | The id of the activity occurrence
+
+var userId = "userId_example"; // String | The id of the user
+
+var opts = { 
+  'status': "status_example" // String | The new status
+};
+apiInstance.setUserStatus(activityOccurrenceId, userId, opts).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
+ **userId** | **String**| The id of the user | 
+ **status** | **String**| The new status | [optional] 
+
+### Return type
+
+[**ActivityUserResource**](ActivityUserResource.md)
+
+### Authorization
+
+[oauth2_client_credentials_grant](../README.md#oauth2_client_credentials_grant), [oauth2_password_grant](../README.md#oauth2_password_grant)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="updateActivity"></a>
 # **updateActivity**
 > ActivityResource updateActivity(id, opts)
 
 Update an activity
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ACTIVITIES_ADMIN
 
 ### Example
 ```javascript
@@ -723,13 +977,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="updateActivityOccurrence"></a>
-# **updateActivityOccurrence**
-> updateActivityOccurrence(activityOccurrenceId, opts)
+<a name="updateActivityOccurrenceStatus"></a>
+# **updateActivityOccurrenceStatus**
+> updateActivityOccurrenceStatus(activityOccurrenceId, opts)
 
-Updated the status of an activity occurrence
+Update the status of an activity occurrence
 
-If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Aternatively, see results endpoint to finish and record all metrics at once.
+If setting to &#39;FINISHED&#39; reward will be run based on current metrics that have been recorded already. Alternatively, see results endpoint to finish and record all metrics at once. Can be called by non-host participants if non_host_status_control is true
 
 ### Example
 ```javascript
@@ -749,9 +1003,9 @@ var apiInstance = new KnetikCloud.ActivitiesApi();
 var activityOccurrenceId = 789; // Number | The id of the activity occurrence
 
 var opts = { 
-  'activityOccurrenceStatus': "activityOccurrenceStatus_example" // String | The activity occurrence status object
+  'activityOccurrenceStatus': new KnetikCloud.ValueWrapperstring() // ValueWrapperstring | The activity occurrence status object
 };
-apiInstance.updateActivityOccurrence(activityOccurrenceId, opts).then(function() {
+apiInstance.updateActivityOccurrenceStatus(activityOccurrenceId, opts).then(function() {
   console.log('API called successfully.');
 }, function(error) {
   console.error(error);
@@ -764,7 +1018,7 @@ apiInstance.updateActivityOccurrence(activityOccurrenceId, opts).then(function()
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **activityOccurrenceId** | **Number**| The id of the activity occurrence | 
- **activityOccurrenceStatus** | **String**| The activity occurrence status object | [optional] 
+ **activityOccurrenceStatus** | [**ValueWrapperstring**](ValueWrapperstring.md)| The activity occurrence status object | [optional] 
 
 ### Return type
 
@@ -784,6 +1038,8 @@ null (empty response body)
 > TemplateResource updateActivityTemplate(id, opts)
 
 Update an activity template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

@@ -1,6 +1,6 @@
 # KnetikCloud.CategoriesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,6 +22,8 @@ Method | HTTP request | Description
 > CategoryResource createCategory(opts)
 
 Create a new category
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
 
 ### Example
 ```javascript
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 Create a category template
 
-Templates define a type of category and the properties they have
+Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -127,6 +129,8 @@ Name | Type | Description  | Notes
 
 Delete an existing category
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -168,7 +172,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteCategoryTemplate"></a>
@@ -177,7 +181,7 @@ null (empty response body)
 
 Delete a category template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -224,7 +228,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategories"></a>
@@ -232,6 +236,8 @@ null (empty response body)
 > PageResourceCategoryResource getCategories(opts)
 
 List and search categories with optional filters
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -283,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategory"></a>
@@ -291,6 +297,8 @@ Name | Type | Description  | Notes
 > CategoryResource getCategory(id)
 
 Get a single category
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -333,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategoryTemplate"></a>
@@ -341,6 +349,8 @@ Name | Type | Description  | Notes
 > TemplateResource getCategoryTemplate(id)
 
 Get a single category template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```javascript
@@ -383,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getCategoryTemplates"></a>
@@ -391,6 +401,8 @@ Name | Type | Description  | Notes
 > PageResourceTemplateResource getCategoryTemplates(opts)
 
 List and search category templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
 
 ### Example
 ```javascript
@@ -438,7 +450,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getTags"></a>
@@ -446,6 +458,8 @@ Name | Type | Description  | Notes
 > PageResourcestring getTags(opts)
 
 List all trivia tags in the system
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -491,7 +505,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateCategory"></a>
@@ -499,6 +513,8 @@ Name | Type | Description  | Notes
 > CategoryResource updateCategory(id, opts)
 
 Update an existing category
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
 
 ### Example
 ```javascript
@@ -553,6 +569,8 @@ Name | Type | Description  | Notes
 > TemplateResource updateCategoryTemplate(id, opts)
 
 Update a category template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript

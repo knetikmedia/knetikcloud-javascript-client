@@ -34,7 +34,7 @@
   /**
    * ReportingUsage service.
    * @module api/ReportingUsageApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Returns aggregated endpoint usage information by day
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -95,7 +96,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUsageInfo;
 
@@ -108,6 +109,7 @@
 
     /**
      * Returns aggregated endpoint usage information by day
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -128,6 +130,7 @@
 
     /**
      * Returns aggregated endpoint usage information by hour
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -172,7 +175,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUsageInfo;
 
@@ -185,6 +188,7 @@
 
     /**
      * Returns aggregated endpoint usage information by hour
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -205,6 +209,7 @@
 
     /**
      * Returns aggregated endpoint usage information by minute
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -249,7 +254,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUsageInfo;
 
@@ -262,6 +267,7 @@
 
     /**
      * Returns aggregated endpoint usage information by minute
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -282,6 +288,7 @@
 
     /**
      * Returns aggregated endpoint usage information by month
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -326,7 +333,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUsageInfo;
 
@@ -339,6 +346,7 @@
 
     /**
      * Returns aggregated endpoint usage information by month
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -359,6 +367,7 @@
 
     /**
      * Returns aggregated endpoint usage information by year
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -403,7 +412,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUsageInfo;
 
@@ -416,6 +425,7 @@
 
     /**
      * Returns aggregated endpoint usage information by year
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @param {Object} opts Optional parameters
@@ -436,6 +446,7 @@
 
     /**
      * Returns list of endpoints called (method and url)
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<'String'>} and HTTP response
@@ -468,7 +479,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ['String'];
 
@@ -481,6 +492,7 @@
 
     /**
      * Returns list of endpoints called (method and url)
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USAGE_ADMIN
      * @param {Number} startDate The beginning of the range being requested, unix timestamp in seconds
      * @param {Number} endDate The ending of the range being requested, unix timestamp in seconds
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<'String'>}

@@ -34,7 +34,7 @@
   /**
    * UsersSubscriptions service.
    * @module api/UsersSubscriptionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get details about a user&#39;s subscription
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InventorySubscriptionResource} and HTTP response
@@ -83,7 +84,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = InventorySubscriptionResource;
 
@@ -96,6 +97,7 @@
 
     /**
      * Get details about a user&#39;s subscription
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InventorySubscriptionResource}
@@ -110,6 +112,7 @@
 
     /**
      * Get details about a user&#39;s subscriptions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InventorySubscriptionResource>} and HTTP response
      */
@@ -135,7 +138,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [InventorySubscriptionResource];
 
@@ -148,6 +151,7 @@
 
     /**
      * Get details about a user&#39;s subscriptions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InventorySubscriptionResource>}
      */
@@ -161,6 +165,7 @@
 
     /**
      * Reactivate a subscription and charge fee
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -209,6 +214,7 @@
 
     /**
      * Reactivate a subscription and charge fee
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -225,6 +231,7 @@
 
     /**
      * Set a new date to bill a subscription on
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Number} billDate The new bill date. Unix timestamp in seconds
@@ -276,6 +283,7 @@
 
     /**
      * Set a new date to bill a subscription on
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Number} billDate The new bill date. Unix timestamp in seconds
@@ -291,7 +299,7 @@
 
     /**
      * Set the payment method to use for a subscription
-     * May send null to use floating default
+     * May send null to use floating default. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -340,7 +348,7 @@
 
     /**
      * Set the payment method to use for a subscription
-     * May send null to use floating default
+     * May send null to use floating default. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -357,7 +365,7 @@
 
     /**
      * Set the status of a subscription
-     * Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+     * Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {module:model/StringWrapper} status The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;)
@@ -409,7 +417,7 @@
 
     /**
      * Set the status of a subscription
-     * Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases
+     * Note that the new status may be blocked if the system is not configured to allow the current status to be changed to the new, to enforce proper flow. The default options for statuses are shown below but may be altered for special use cases. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN or owner
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {module:model/StringWrapper} status The new status for the subscription. Actual options may differ from the indicated set if the invoice status type data has been altered.  Allowable values: (&#39;current&#39;, &#39;canceled&#39;, &#39;stopped&#39;, &#39;payment_failed&#39;, &#39;suspended&#39;)
@@ -425,6 +433,7 @@
 
     /**
      * Set a new subscription plan for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -473,6 +482,7 @@
 
     /**
      * Set a new subscription plan for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -489,7 +499,7 @@
 
     /**
      * Set a new subscription price for a user
-     * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+     * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters
@@ -538,7 +548,7 @@
 
     /**
      * Set a new subscription price for a user
-     * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint.
+     * This new price will be what the user is charged at the begining of each new period. This override is specific to the current subscription and will not carry over if they end and later re-subscribe. It will persist if the plan is changed using the setUserSubscriptionPlan endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; USERS_SUBSCRIPTIONS_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} inventoryId The id of the user&#39;s inventory
      * @param {Object} opts Optional parameters

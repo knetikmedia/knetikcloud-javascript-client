@@ -34,7 +34,7 @@
   /**
    * Categories service.
    * @module api/CategoriesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CategoryResource} opts.category The category to create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CategoryResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Create a new category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/CategoryResource} opts.category The category to create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CategoryResource}
@@ -99,7 +101,7 @@
 
     /**
      * Create a category template
-     * Templates define a type of category and the properties they have
+     * Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The template to create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -134,7 +136,7 @@
 
     /**
      * Create a category template
-     * Templates define a type of category and the properties they have
+     * Templates define a type of category and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The template to create
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -149,6 +151,7 @@
 
     /**
      * Delete an existing category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {String} id The id of the category to be deleted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -174,7 +177,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -187,6 +190,7 @@
 
     /**
      * Delete an existing category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {String} id The id of the category to be deleted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -200,7 +204,7 @@
 
     /**
      * Delete a category template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -230,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -243,7 +247,7 @@
 
     /**
      * Delete a category template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -259,6 +263,7 @@
 
     /**
      * List and search categories with optional filters
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for categories whose names begin with provided string
      * @param {Boolean} opts.filterActive Filter for categories that are specifically active or inactive
@@ -289,7 +294,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceCategoryResource;
 
@@ -302,6 +307,7 @@
 
     /**
      * List and search categories with optional filters
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterSearch Filter for categories whose names begin with provided string
      * @param {Boolean} opts.filterActive Filter for categories that are specifically active or inactive
@@ -320,6 +326,7 @@
 
     /**
      * Get a single category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the category to retrieve
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CategoryResource} and HTTP response
      */
@@ -345,7 +352,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = CategoryResource;
 
@@ -358,6 +365,7 @@
 
     /**
      * Get a single category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The id of the category to retrieve
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CategoryResource}
      */
@@ -371,6 +379,7 @@
 
     /**
      * Get a single category template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -396,7 +405,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -409,6 +418,7 @@
 
     /**
      * Get a single category template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -422,6 +432,7 @@
 
     /**
      * List and search category templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -448,7 +459,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -461,6 +472,7 @@
 
     /**
      * List and search category templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CATEGORIES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -477,6 +489,7 @@
 
     /**
      * List all trivia tags in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -501,7 +514,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourcestring;
 
@@ -514,6 +527,7 @@
 
     /**
      * List all trivia tags in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -529,6 +543,7 @@
 
     /**
      * Update an existing category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {String} id The id of the category
      * @param {Object} opts Optional parameters
      * @param {module:model/CategoryResource} opts.category The category to update
@@ -570,6 +585,7 @@
 
     /**
      * Update an existing category
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CATEGORIES_ADMIN
      * @param {String} id The id of the category
      * @param {Object} opts Optional parameters
      * @param {module:model/CategoryResource} opts.category The category to update
@@ -585,6 +601,7 @@
 
     /**
      * Update a category template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The updated template information
@@ -626,6 +643,7 @@
 
     /**
      * Update a category template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The updated template information

@@ -34,7 +34,7 @@
   /**
    * MediaArtists service.
    * @module api/MediaArtistsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Adds a new artist in the system
-     * Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+     * Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/ArtistResource} opts.artistResource The new artist
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ArtistResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Adds a new artist in the system
-     * Adds a new artist in the system. Use specific media contributions endpoint to add contributions
+     * Adds a new artist in the system. Use specific media contributions endpoint to add contributions. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/ArtistResource} opts.artistResource The new artist
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ArtistResource}
@@ -101,7 +101,7 @@
 
     /**
      * Create an artist template
-     * Artist Templates define a type of artist and the properties they have
+     * Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.artistTemplateResource The artist template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create an artist template
-     * Artist Templates define a type of artist and the properties they have
+     * Artist Templates define a type of artist and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.artistTemplateResource The artist template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -151,6 +151,7 @@
 
     /**
      * Removes an artist from the system IF no resources are attached to it
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
      * @param {Number} id The artist id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -176,7 +177,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -189,6 +190,7 @@
 
     /**
      * Removes an artist from the system IF no resources are attached to it
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
      * @param {Number} id The artist id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -202,7 +204,7 @@
 
     /**
      * Delete an artist template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -232,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -245,7 +247,7 @@
 
     /**
      * Delete an artist template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -261,6 +263,7 @@
 
     /**
      * Loads a specific artist details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The artist id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.showContributions The number of contributions to show fetch
@@ -290,7 +293,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ArtistResource;
 
@@ -303,6 +306,7 @@
 
     /**
      * Loads a specific artist details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The artist id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.showContributions The number of contributions to show fetch
@@ -318,6 +322,7 @@
 
     /**
      * Get a single artist template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -343,7 +348,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -356,6 +361,7 @@
 
     /**
      * Get a single artist template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -369,6 +375,7 @@
 
     /**
      * List and search artist templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -395,7 +402,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -408,6 +415,7 @@
 
     /**
      * List and search artist templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTISTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -424,6 +432,7 @@
 
     /**
      * Search for artists
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterArtistsByName Filter for artists which name *STARTS* with the given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -452,7 +461,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceArtistResource;
 
@@ -465,6 +474,7 @@
 
     /**
      * Search for artists
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterArtistsByName Filter for artists which name *STARTS* with the given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -482,6 +492,7 @@
 
     /**
      * Modifies an artist details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
      * @param {Number} id The artist id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArtistResource} opts.artistResource The new artist
@@ -523,6 +534,7 @@
 
     /**
      * Modifies an artist details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTISTS_ADMIN
      * @param {Number} id The artist id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArtistResource} opts.artistResource The new artist
@@ -538,6 +550,7 @@
 
     /**
      * Update an artist template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.artistTemplateResource The artist template resource object
@@ -579,6 +592,7 @@
 
     /**
      * Update an artist template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.artistTemplateResource The artist template resource object

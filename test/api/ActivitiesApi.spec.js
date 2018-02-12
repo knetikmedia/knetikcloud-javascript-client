@@ -51,6 +51,16 @@
   }
 
   describe('ActivitiesApi', function() {
+    describe('addUser', function() {
+      it('should call addUser successfully', function(done) {
+        //uncomment below and update the code to test addUser
+        //instance.addUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('createActivity', function() {
       it('should call createActivity successfully', function(done) {
         //uncomment below and update the code to test createActivity
@@ -161,10 +171,40 @@
         done();
       });
     });
+    describe('removeUser', function() {
+      it('should call removeUser successfully', function(done) {
+        //uncomment below and update the code to test removeUser
+        //instance.removeUser(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('setActivityOccurrenceResults', function() {
       it('should call setActivityOccurrenceResults successfully', function(done) {
         //uncomment below and update the code to test setActivityOccurrenceResults
         //instance.setActivityOccurrenceResults(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('setActivityOccurrenceSettings', function() {
+      it('should call setActivityOccurrenceSettings successfully', function(done) {
+        //uncomment below and update the code to test setActivityOccurrenceSettings
+        //instance.setActivityOccurrenceSettings(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('setUserStatus', function() {
+      it('should call setUserStatus successfully', function(done) {
+        //uncomment below and update the code to test setUserStatus
+        //instance.setUserStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -181,10 +221,10 @@
         done();
       });
     });
-    describe('updateActivityOccurrence', function() {
-      it('should call updateActivityOccurrence successfully', function(done) {
-        //uncomment below and update the code to test updateActivityOccurrence
-        //instance.updateActivityOccurrence(function(error) {
+    describe('updateActivityOccurrenceStatus', function() {
+      it('should call updateActivityOccurrenceStatus successfully', function(done) {
+        //uncomment below and update the code to test updateActivityOccurrenceStatus
+        //instance.updateActivityOccurrenceStatus(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

@@ -34,7 +34,7 @@
   /**
    * UsersInventory service.
    * @module api/UsersInventoryApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Adds an item to the user inventory
-     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/UserInventoryAddRequest} opts.userInventoryAddRequest The user inventory add request object
@@ -93,7 +93,7 @@
 
     /**
      * Adds an item to the user inventory
-     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time
+     * The inventory is fulfilled asynchronously UNLESS the invoice is explicitely skipped. Depending on the use case, it might require the client to verify that the entitlement was added after the fact or configure a BRE rule to get a notification in real time. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {module:model/UserInventoryAddRequest} opts.userInventoryAddRequest The user inventory add request object
@@ -109,7 +109,7 @@
 
     /**
      * Check for access to an item without consuming
-     * Useful for pre-check and accounts for all various buisness rules
+     * Useful for pre-check and accounts for all various buisness rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the user to check for or &#39;me&#39; for logged in user
      * @param {Number} itemId The id of the item
      * @param {Object} opts Optional parameters
@@ -146,7 +146,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -159,7 +159,7 @@
 
     /**
      * Check for access to an item without consuming
-     * Useful for pre-check and accounts for all various buisness rules
+     * Useful for pre-check and accounts for all various buisness rules. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the user to check for or &#39;me&#39; for logged in user
      * @param {Number} itemId The id of the item
      * @param {Object} opts Optional parameters
@@ -176,6 +176,7 @@
 
     /**
      * Create an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/EntitlementItem} opts.entitlementItem The entitlement item object
@@ -212,6 +213,7 @@
 
     /**
      * Create an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
      * @param {module:model/EntitlementItem} opts.entitlementItem The entitlement item object
@@ -227,7 +229,7 @@
 
     /**
      * Create an entitlement template
-     * Entitlement templates define a type of entitlement and the properties they have
+     * Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
@@ -262,7 +264,7 @@
 
     /**
      * Create an entitlement template
-     * Entitlement templates define a type of entitlement and the properties they have
+     * Entitlement templates define a type of entitlement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The entitlement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
@@ -277,6 +279,7 @@
 
     /**
      * Delete an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} entitlementId The id of the entitlement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -302,7 +305,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -315,6 +318,7 @@
 
     /**
      * Delete an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} entitlementId The id of the entitlement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -328,7 +332,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -358,7 +362,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -371,7 +375,7 @@
 
     /**
      * Delete an entitlement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -387,6 +391,7 @@
 
     /**
      * Get a single entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} entitlementId The id of the entitlement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EntitlementItem} and HTTP response
      */
@@ -412,7 +417,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = EntitlementItem;
 
@@ -425,6 +430,7 @@
 
     /**
      * Get a single entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} entitlementId The id of the entitlement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EntitlementItem}
      */
@@ -438,6 +444,7 @@
 
     /**
      * List and search entitlement items
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTemplate Filter for entitlements using a specified template
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -466,7 +473,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceEntitlementItem;
 
@@ -479,6 +486,7 @@
 
     /**
      * List and search entitlement items
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTemplate Filter for entitlements using a specified template
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -496,6 +504,7 @@
 
     /**
      * Get a single entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ItemTemplateResource} and HTTP response
      */
@@ -521,7 +530,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ItemTemplateResource;
 
@@ -534,6 +543,7 @@
 
     /**
      * Get a single entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ItemTemplateResource}
      */
@@ -547,6 +557,7 @@
 
     /**
      * List and search entitlement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -573,7 +584,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceItemTemplateResource;
 
@@ -586,6 +597,7 @@
 
     /**
      * List and search entitlement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -602,6 +614,7 @@
 
     /**
      * List the user inventory entries for a given user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
@@ -645,7 +658,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserInventoryResource;
 
@@ -658,6 +671,7 @@
 
     /**
      * List the user inventory entries for a given user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {Number} id The id of the user
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
@@ -680,7 +694,8 @@
 
     /**
      * Get an inventory entry
-     * @param {Number} userId The id of the inventory owner or &#39;me&#39; for the logged in user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+     * @param {String} userId The id of the inventory owner or &#39;me&#39; for the logged in user
      * @param {Number} id The id of the user inventory
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserInventoryResource} and HTTP response
      */
@@ -712,7 +727,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserInventoryResource;
 
@@ -725,7 +740,8 @@
 
     /**
      * Get an inventory entry
-     * @param {Number} userId The id of the inventory owner or &#39;me&#39; for the logged in user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
+     * @param {String} userId The id of the inventory owner or &#39;me&#39; for the logged in user
      * @param {Number} id The id of the user inventory
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserInventoryResource}
      */
@@ -739,6 +755,7 @@
 
     /**
      * List the log entries for this inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the inventory owner or &#39;me&#39; for the logged in user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -777,7 +794,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserItemLogResource;
 
@@ -790,6 +807,7 @@
 
     /**
      * List the log entries for this inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the inventory owner or &#39;me&#39; for the logged in user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -807,6 +825,7 @@
 
     /**
      * List the user inventory entries for all users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -843,7 +862,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserInventoryResource;
 
@@ -856,6 +875,7 @@
 
     /**
      * List the user inventory entries for all users
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.inactive If true, accepts inactive user inventories (default to false)
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -877,6 +897,7 @@
 
     /**
      * Grant an entitlement
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user to grant the entitlement to
      * @param {module:model/EntitlementGrantRequest} grantRequest grantRequest
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -921,6 +942,7 @@
 
     /**
      * Grant an entitlement
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user to grant the entitlement to
      * @param {module:model/EntitlementGrantRequest} grantRequest grantRequest
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -935,6 +957,7 @@
 
     /**
      * Update an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} entitlementId The id of the entitlement
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -978,6 +1001,7 @@
 
     /**
      * Update an entitlement item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} entitlementId The id of the entitlement
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.cascade Whether to cascade group changes, such as in the limited gettable behavior. A 400 error will return otherwise if the group is already in use with different values. (default to false)
@@ -994,6 +1018,7 @@
 
     /**
      * Update an entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The updated template
@@ -1035,6 +1060,7 @@
 
     /**
      * Update an entitlement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/ItemTemplateResource} opts.template The updated template
@@ -1050,6 +1076,7 @@
 
     /**
      * Set the behavior data for an inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1098,6 +1125,7 @@
 
     /**
      * Set the behavior data for an inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1114,7 +1142,7 @@
 
     /**
      * Set the expiration date
-     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId user_id
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1163,7 +1191,7 @@
 
     /**
      * Set the expiration date
-     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill)
+     * Will change the current grace period for a subscription but not the bill date (possibly even ending before having the chance to re-bill). &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId user_id
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1180,6 +1208,7 @@
 
     /**
      * Set the status for an inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1228,6 +1257,7 @@
 
     /**
      * Set the status for an inventory entry
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN
      * @param {Number} userId The id of the user
      * @param {Number} id The id of the user inventory
      * @param {Object} opts Optional parameters
@@ -1244,6 +1274,7 @@
 
     /**
      * Use an item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the user to check for or &#39;me&#39; for logged in user
      * @param {Number} itemId The id of the item
      * @param {Object} opts Optional parameters
@@ -1295,6 +1326,7 @@
 
     /**
      * Use an item
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; INVENTORY_ADMIN or owner
      * @param {String} userId The id of the user to check for or &#39;me&#39; for logged in user
      * @param {Number} itemId The id of the item
      * @param {Object} opts Optional parameters

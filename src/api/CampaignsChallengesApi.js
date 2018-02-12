@@ -34,7 +34,7 @@
   /**
    * CampaignsChallenges service.
    * @module api/CampaignsChallengesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a challenge
-     * Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+     * Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeResource} opts.challengeResource The challenge resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChallengeResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a challenge
-     * Challenges do not run on their own.  They must be added to a campaign before events will spawn.
+     * Challenges do not run on their own.  They must be added to a campaign before events will spawn. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeResource} opts.challengeResource The challenge resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChallengeResource}
@@ -101,6 +101,7 @@
 
     /**
      * Create a challenge activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeActivityResource} opts.challengeActivityResource The challenge activity resource object
@@ -144,6 +145,7 @@
 
     /**
      * Create a challenge activity
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeActivityResource} opts.challengeActivityResource The challenge activity resource object
@@ -160,7 +162,7 @@
 
     /**
      * Create a challenge activity template
-     * Challenge Activity Templates define a type of challenge activity and the properties they have
+     * Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeActivityTemplateResource The challengeActivity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -195,7 +197,7 @@
 
     /**
      * Create a challenge activity template
-     * Challenge Activity Templates define a type of challenge activity and the properties they have
+     * Challenge Activity Templates define a type of challenge activity and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeActivityTemplateResource The challengeActivity template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -210,7 +212,7 @@
 
     /**
      * Create a challenge template
-     * Challenge Templates define a type of challenge and the properties they have
+     * Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeTemplateResource The challenge template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -245,7 +247,7 @@
 
     /**
      * Create a challenge template
-     * Challenge Templates define a type of challenge and the properties they have
+     * Challenge Templates define a type of challenge and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeTemplateResource The challenge template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -260,6 +262,7 @@
 
     /**
      * Delete a challenge
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -285,7 +288,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -298,6 +301,7 @@
 
     /**
      * Delete a challenge
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -311,7 +315,7 @@
 
     /**
      * Delete a challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -344,7 +348,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -357,7 +361,7 @@
 
     /**
      * Delete a challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -372,7 +376,7 @@
 
     /**
      * Delete a challenge activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -402,7 +406,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -415,7 +419,7 @@
 
     /**
      * Delete a challenge activity template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -431,6 +435,7 @@
 
     /**
      * Delete a challenge event
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge event id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -456,7 +461,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -469,6 +474,7 @@
 
     /**
      * Delete a challenge event
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge event id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -482,7 +488,7 @@
 
     /**
      * Delete a challenge template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -512,7 +518,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -525,7 +531,7 @@
 
     /**
      * Delete a challenge template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -541,6 +547,7 @@
 
     /**
      * Retrieve a challenge
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChallengeResource} and HTTP response
      */
@@ -566,7 +573,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChallengeResource;
 
@@ -579,6 +586,7 @@
 
     /**
      * Retrieve a challenge
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChallengeResource}
      */
@@ -592,6 +600,7 @@
 
     /**
      * List and search challenge activities
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -625,7 +634,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBareChallengeActivityResource;
 
@@ -638,6 +647,7 @@
 
     /**
      * List and search challenge activities
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -655,7 +665,7 @@
 
     /**
      * Get a single challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChallengeActivityResource} and HTTP response
@@ -688,7 +698,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChallengeActivityResource;
 
@@ -701,7 +711,7 @@
 
     /**
      * Get a single challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChallengeActivityResource}
@@ -716,6 +726,7 @@
 
     /**
      * Get a single challenge activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -741,7 +752,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -754,6 +765,7 @@
 
     /**
      * Get a single challenge activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -767,6 +779,7 @@
 
     /**
      * List and search challenge activity templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -793,7 +806,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -806,6 +819,7 @@
 
     /**
      * List and search challenge activity templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -822,6 +836,7 @@
 
     /**
      * Retrieve a single challenge event details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge event id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ChallengeEventResource} and HTTP response
      */
@@ -847,7 +862,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ChallengeEventResource;
 
@@ -860,6 +875,7 @@
 
     /**
      * Retrieve a single challenge event details
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The challenge event id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ChallengeEventResource}
      */
@@ -873,6 +889,7 @@
 
     /**
      * Retrieve a list of challenge events
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -907,7 +924,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeEventResource;
 
@@ -920,6 +937,7 @@
 
     /**
      * Retrieve a list of challenge events
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the event start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
      * @param {String} opts.filterEndDate A comma separated string without spaces.  First value is the operator to search on, second value is the event end date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -940,6 +958,7 @@
 
     /**
      * Get a single challenge template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -965,7 +984,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -978,6 +997,7 @@
 
     /**
      * Get a single challenge template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -991,6 +1011,7 @@
 
     /**
      * List and search challenge templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1017,7 +1038,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -1030,6 +1051,7 @@
 
     /**
      * List and search challenge templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or CHALLENGES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -1046,6 +1068,7 @@
 
     /**
      * Retrieve a list of challenges
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveCampaign Filter for challenges that are tied to active campaigns
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -1078,7 +1101,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceChallengeResource;
 
@@ -1091,6 +1114,7 @@
 
     /**
      * Retrieve a list of challenges
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveCampaign Filter for challenges that are tied to active campaigns
      * @param {String} opts.filterStartDate A comma separated string without spaces.  First value is the operator to search on, second value is the challenge start date, a unix timestamp in seconds.  Allowed operators: (GT, LT, EQ, GOE, LOE).
@@ -1110,7 +1134,7 @@
 
     /**
      * Update a challenge
-     * If the challenge is a copy, changes will propagate to all the related challenges
+     * If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeResource} opts.challengeResource The challenge resource object
@@ -1152,7 +1176,7 @@
 
     /**
      * Update a challenge
-     * If the challenge is a copy, changes will propagate to all the related challenges
+     * If the challenge is a copy, changes will propagate to all the related challenges. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge id
      * @param {Object} opts Optional parameters
      * @param {module:model/ChallengeResource} opts.challengeResource The challenge resource object
@@ -1168,7 +1192,7 @@
 
     /**
      * Update a challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
@@ -1219,7 +1243,7 @@
 
     /**
      * Update a challenge activity
-     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge
+     * A challenge can have multiple instances of the same activity and thus the id used is of the specific entry within the challenge. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; CHALLENGES_ADMIN
      * @param {Number} id The challenge_activity id
      * @param {Number} challengeId The challenge id
      * @param {Object} opts Optional parameters
@@ -1237,6 +1261,7 @@
 
     /**
      * Update an challenge activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeActivityTemplateResource The challengeActivity template resource object
@@ -1278,6 +1303,7 @@
 
     /**
      * Update an challenge activity template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeActivityTemplateResource The challengeActivity template resource object
@@ -1293,6 +1319,7 @@
 
     /**
      * Update a challenge template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeTemplateResource The challenge template resource object
@@ -1334,6 +1361,7 @@
 
     /**
      * Update a challenge template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.challengeTemplateResource The challenge template resource object

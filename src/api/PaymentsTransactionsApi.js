@@ -34,7 +34,7 @@
   /**
    * PaymentsTransactions service.
    * @module api/PaymentsTransactionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Get the details for a single transaction
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      * @param {Number} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TransactionResource} and HTTP response
      */
@@ -76,7 +77,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TransactionResource;
 
@@ -89,6 +90,7 @@
 
     /**
      * Get the details for a single transaction
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      * @param {Number} id id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TransactionResource}
      */
@@ -102,6 +104,7 @@
 
     /**
      * List and search transactions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterInvoice Filter for transactions from a specific invoice
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -130,7 +133,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTransactionResource;
 
@@ -143,6 +146,7 @@
 
     /**
      * List and search transactions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TRANSACTIONS_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterInvoice Filter for transactions from a specific invoice
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -160,7 +164,7 @@
 
     /**
      * Refund a payment transaction, in full or in part
-     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      * @param {Number} id The id of the transaction to refund
      * @param {Object} opts Optional parameters
      * @param {module:model/RefundRequest} opts.request Request containing refund details
@@ -202,7 +206,7 @@
 
     /**
      * Refund a payment transaction, in full or in part
-     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds.
+     * Will not allow for refunding more than the full amount even with multiple partial refunds. Money is refunded to the payment method used to make the original payment. Payment method must support refunds. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      * @param {Number} id The id of the transaction to refund
      * @param {Object} opts Optional parameters
      * @param {module:model/RefundRequest} opts.request Request containing refund details

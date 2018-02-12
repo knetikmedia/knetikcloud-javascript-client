@@ -34,7 +34,7 @@
   /**
    * BRERuleEngineTriggers service.
    * @module api/BRERuleEngineTriggersApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a trigger
-     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreTriggerResource} opts.breTriggerResource The BRE trigger resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreTriggerResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a trigger
-     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services
+     * Customer added triggers will not be fired automatically or have rules associated with them by default. Custom rules must be added to get use from the trigger and it must then be fired from the outside. See the Bre Event services. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/BreTriggerResource} opts.breTriggerResource The BRE trigger resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreTriggerResource}
@@ -101,7 +101,7 @@
 
     /**
      * Delete a trigger
-     * May fail if there are existing rules against it. Cannot delete core triggers
+     * May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {String} eventName The trigger event name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -127,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -140,7 +140,7 @@
 
     /**
      * Delete a trigger
-     * May fail if there are existing rules against it. Cannot delete core triggers
+     * May fail if there are existing rules against it. Cannot delete core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {String} eventName The trigger event name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -154,6 +154,7 @@
 
     /**
      * Get a single trigger
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      * @param {String} eventName The trigger event name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BreTriggerResource} and HTTP response
      */
@@ -179,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = BreTriggerResource;
 
@@ -192,6 +193,7 @@
 
     /**
      * Get a single trigger
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      * @param {String} eventName The trigger event name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BreTriggerResource}
      */
@@ -205,6 +207,7 @@
 
     /**
      * List triggers
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterSystem Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
      * @param {module:model/String} opts.filterCategory Filter for triggers that are within a specific category
@@ -239,7 +242,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceBreTriggerResource;
 
@@ -252,6 +255,7 @@
 
     /**
      * List triggers
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_USER
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterSystem Filter for triggers that are system triggers when true, or not when false. Leave off for both mixed
      * @param {module:model/String} opts.filterCategory Filter for triggers that are within a specific category
@@ -272,7 +276,7 @@
 
     /**
      * Update a trigger
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {String} eventName The trigger event name
      * @param {Object} opts Optional parameters
      * @param {module:model/BreTriggerResource} opts.breTriggerResource The BRE trigger resource object
@@ -314,7 +318,7 @@
 
     /**
      * Update a trigger
-     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers
+     * May fail if new parameters mismatch requirements of existing rules. Cannot update core triggers. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; BRE_RULE_ENGINE_TRIGGERS_ADMIN
      * @param {String} eventName The trigger event name
      * @param {Object} opts Optional parameters
      * @param {module:model/BreTriggerResource} opts.breTriggerResource The BRE trigger resource object

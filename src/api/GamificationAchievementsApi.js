@@ -34,7 +34,7 @@
   /**
    * GamificationAchievements service.
    * @module api/GamificationAchievementsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a new achievement definition
-     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
+     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/AchievementDefinitionResource} opts.achievement The achievement definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AchievementDefinitionResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a new achievement definition
-     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API.
+     * If the definition contains a trigger event name, a BRE rule is created, so that tracking logic is executed when the triggering event occurs. If no trigger event name is specified, the user&#39;s achievement status must manually be updated via the API. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/AchievementDefinitionResource} opts.achievement The achievement definition
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AchievementDefinitionResource}
@@ -101,7 +101,7 @@
 
     /**
      * Create an achievement template
-     * Achievement templates define a type of achievement and the properties they have
+     * Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The achievement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create an achievement template
-     * Achievement templates define a type of achievement and the properties they have
+     * Achievement templates define a type of achievement and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The achievement template to be created
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -151,7 +151,7 @@
 
     /**
      * Delete an achievement definition
-     * Will also disable the associated generated rule, if any.
+     * Will also disable the associated generated rule, if any. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -177,7 +177,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -190,7 +190,7 @@
 
     /**
      * Delete an achievement definition
-     * Will also disable the associated generated rule, if any.
+     * Will also disable the associated generated rule, if any. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -204,7 +204,7 @@
 
     /**
      * Delete an achievement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -234,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -247,7 +247,7 @@
 
     /**
      * Delete an achievement template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -263,6 +263,7 @@
 
     /**
      * Get a single achievement definition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      * @param {String} name The name of the achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AchievementDefinitionResource} and HTTP response
      */
@@ -288,7 +289,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = AchievementDefinitionResource;
 
@@ -301,6 +302,7 @@
 
     /**
      * Get a single achievement definition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      * @param {String} name The name of the achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AchievementDefinitionResource}
      */
@@ -314,6 +316,7 @@
 
     /**
      * Get a single achievement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -339,7 +342,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -352,6 +355,7 @@
 
     /**
      * Get a single achievement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -365,6 +369,7 @@
 
     /**
      * List and search achievement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -391,7 +396,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -404,6 +409,7 @@
 
     /**
      * List and search achievement templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -420,6 +426,7 @@
 
     /**
      * Get the list of triggers that can be used to trigger an achievement progress update
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BreTriggerResource>} and HTTP response
      */
     this.getAchievementTriggersWithHttpInfo = function() {
@@ -438,7 +445,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [BreTriggerResource];
 
@@ -451,6 +458,7 @@
 
     /**
      * Get the list of triggers that can be used to trigger an achievement progress update
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BreTriggerResource>}
      */
     this.getAchievementTriggers = function() {
@@ -463,6 +471,7 @@
 
     /**
      * Get all achievement definitions in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTagset Filter for achievements with specified tags (separated by comma)
      * @param {String} opts.filterName Filter for achievements whose name contains a string
@@ -497,7 +506,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceAchievementDefinitionResource;
 
@@ -510,6 +519,7 @@
 
     /**
      * Get all achievement definitions in the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN or ACHIEVEMENTS_USER
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterTagset Filter for achievements with specified tags (separated by comma)
      * @param {String} opts.filterName Filter for achievements whose name contains a string
@@ -530,7 +540,7 @@
 
     /**
      * Get a list of derived achievements
-     * Used by other services that depend on achievements
+     * Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the derived achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AchievementDefinitionResource>} and HTTP response
      */
@@ -556,7 +566,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [AchievementDefinitionResource];
 
@@ -569,7 +579,7 @@
 
     /**
      * Get a list of derived achievements
-     * Used by other services that depend on achievements
+     * Used by other services that depend on achievements.  &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the derived achievement
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AchievementDefinitionResource>}
      */
@@ -583,7 +593,7 @@
 
     /**
      * Retrieve progress on a given achievement for a given user
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserAchievementGroupResource} and HTTP response
@@ -616,7 +626,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = UserAchievementGroupResource;
 
@@ -629,7 +639,7 @@
 
     /**
      * Retrieve progress on a given achievement for a given user
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserAchievementGroupResource}
@@ -644,7 +654,7 @@
 
     /**
      * Retrieve progress on achievements for a given user
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
@@ -682,7 +692,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserAchievementGroupResource;
 
@@ -695,7 +705,7 @@
 
     /**
      * Retrieve progress on achievements for a given user
-     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get a single poll&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
@@ -715,7 +725,7 @@
 
     /**
      * Retrieve progress on a given achievement for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
@@ -753,7 +763,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserAchievementGroupResource;
 
@@ -766,7 +776,7 @@
 
     /**
      * Retrieve progress on a given achievement for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
@@ -786,7 +796,7 @@
 
     /**
      * Retrieve progress on achievements for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
@@ -817,7 +827,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceUserAchievementGroupResource;
 
@@ -830,7 +840,7 @@
 
     /**
      * Retrieve progress on achievements for all users
-     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed.
+     * Assets will not be filled in on the resources returned. Use &#39;Get single achievement progress for user&#39; to retrieve the full resource with assets for a given user as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterAchievementDerived Filter for achievements that are derived from other services
      * @param {String} opts.filterAchievementTagset Filter for achievements with specified tags (separated by comma)
@@ -849,7 +859,7 @@
 
     /**
      * Increment an achievement progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
@@ -898,7 +908,7 @@
 
     /**
      * Increment an achievement progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and the provided value added to the existing progress. May be negative. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
@@ -915,7 +925,7 @@
 
     /**
      * Set an achievement progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
@@ -964,7 +974,7 @@
 
     /**
      * Set an achievement progress record for a user
-     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;.
+     * If no progress record yet exists for the user, it will be created. Otherwise it will be updated and progress set to the provided value. If progress meets or exceeds the achievement&#39;s max_value it will be marked as earned and a BRE event will be triggered for the &lt;code&gt;BreAchievementEarnedTrigger&lt;/code&gt;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {Number} userId The user&#39;s id
      * @param {String} achievementName The achievement&#39;s name
      * @param {Object} opts Optional parameters
@@ -981,7 +991,7 @@
 
     /**
      * Update an achievement definition
-     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the achievement
      * @param {Object} opts Optional parameters
      * @param {module:model/AchievementDefinitionResource} opts.achievement The achievement definition
@@ -1023,7 +1033,7 @@
 
     /**
      * Update an achievement definition
-     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version.
+     * The existing generated rule, if any, will be deleted. A new rule will be created if a trigger event name is specified in the new version. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ACHIEVEMENTS_ADMIN
      * @param {String} name The name of the achievement
      * @param {Object} opts Optional parameters
      * @param {module:model/AchievementDefinitionResource} opts.achievement The achievement definition
@@ -1039,6 +1049,7 @@
 
     /**
      * Update an achievement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The updated template
@@ -1080,6 +1091,7 @@
 
     /**
      * Update an achievement template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.template The updated template

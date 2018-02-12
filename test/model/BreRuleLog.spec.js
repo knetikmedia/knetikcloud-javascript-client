@@ -57,6 +57,12 @@
       //expect(instance).to.be.a(KnetikCloud.BreRuleLog);
     });
 
+    it('should have the property actions (base name: "actions")', function() {
+      // uncomment below and update the code to test the property actions
+      //var instane = new KnetikCloud.BreRuleLog();
+      //expect(instance).to.be();
+    });
+
     it('should have the property ran (base name: "ran")', function() {
       // uncomment below and update the code to test the property ran
       //var instane = new KnetikCloud.BreRuleLog();

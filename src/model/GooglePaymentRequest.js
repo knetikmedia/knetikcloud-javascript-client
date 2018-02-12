@@ -37,7 +37,7 @@
   /**
    * The GooglePaymentRequest model module.
    * @module model/GooglePaymentRequest
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**

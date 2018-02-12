@@ -34,7 +34,7 @@
   /**
    * PaymentsFattMerchant service.
    * @module api/PaymentsFattMerchantApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create or update a FattMerchant payment method for a user
-     * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+     * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FattMerchantPaymentMethodRequest} opts.request Request containing payment method information for user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentMethodResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create or update a FattMerchant payment method for a user
-     * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints.
+     * Stores customer information and creates a payment method that can be used to pay invoices through the payments endpoints. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; FATTMERCHANT_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {module:model/FattMerchantPaymentMethodRequest} opts.request Request containing payment method information for user
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentMethodResource}

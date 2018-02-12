@@ -1,6 +1,6 @@
 # KnetikCloud.AuthPermissionsApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,6 +16,8 @@ Method | HTTP request | Description
 > PermissionResource createPermission(opts)
 
 Create a new permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```javascript
@@ -68,6 +70,8 @@ Name | Type | Description  | Notes
 
 Delete a permission
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -113,7 +117,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPermission"></a>
@@ -121,6 +125,8 @@ null (empty response body)
 > PermissionResource getPermission(permission)
 
 Get a single permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```javascript
@@ -163,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPermissions"></a>
@@ -171,6 +177,8 @@ Name | Type | Description  | Notes
 > PageResourcePermissionResource getPermissions(opts)
 
 List and search permissions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```javascript
@@ -218,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updatePermission"></a>
@@ -226,6 +234,8 @@ Name | Type | Description  | Notes
 > PermissionResource updatePermission(permission, opts)
 
 Update a permission
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; PERMISSIONS_ADMIN
 
 ### Example
 ```javascript

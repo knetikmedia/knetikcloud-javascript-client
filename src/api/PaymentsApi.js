@@ -34,7 +34,7 @@
   /**
    * Payments service.
    * @module api/PaymentsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Create a new payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being created
      * @param {Object} opts Optional parameters
      * @param {module:model/PaymentMethodResource} opts.paymentMethod Payment method being created
@@ -92,6 +93,7 @@
 
     /**
      * Create a new payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being created
      * @param {Object} opts Optional parameters
      * @param {module:model/PaymentMethodResource} opts.paymentMethod Payment method being created
@@ -107,6 +109,7 @@
 
     /**
      * Delete an existing payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being updated
      * @param {Number} id ID of the payment method being deleted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -139,7 +142,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -152,6 +155,7 @@
 
     /**
      * Delete an existing payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being updated
      * @param {Number} id ID of the payment method being deleted
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -166,6 +170,7 @@
 
     /**
      * Get a single payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being retrieved
      * @param {Number} id ID of the payment method being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentMethodResource} and HTTP response
@@ -198,7 +203,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PaymentMethodResource;
 
@@ -211,6 +216,7 @@
 
     /**
      * Get a single payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being retrieved
      * @param {Number} id ID of the payment method being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentMethodResource}
@@ -225,6 +231,7 @@
 
     /**
      * Get a single payment method type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id ID of the payment method type being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentMethodTypeResource} and HTTP response
      */
@@ -250,7 +257,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PaymentMethodTypeResource;
 
@@ -263,6 +270,7 @@
 
     /**
      * Get a single payment method type
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id ID of the payment method type being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentMethodTypeResource}
      */
@@ -276,6 +284,7 @@
 
     /**
      * Get all payment method types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for payment method types whose name matches a given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -304,7 +313,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourcePaymentMethodTypeResource;
 
@@ -317,6 +326,7 @@
 
     /**
      * Get all payment method types
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for payment method types whose name matches a given string
      * @param {Number} opts.size The number of objects returned per page (default to 25)
@@ -334,6 +344,7 @@
 
     /**
      * Get all payment methods for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment methods are being retrieved
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for payment methods whose name starts with a given string
@@ -375,7 +386,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [PaymentMethodResource];
 
@@ -388,6 +399,7 @@
 
     /**
      * Get all payment methods for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment methods are being retrieved
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterName Filter for payment methods whose name starts with a given string
@@ -409,6 +421,7 @@
 
     /**
      * Authorize payment of an invoice for later capture
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/PaymentAuthorizationResource} opts.request Payment authorization request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PaymentAuthorizationResource} and HTTP response
@@ -443,6 +456,7 @@
 
     /**
      * Authorize payment of an invoice for later capture
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or PAYMENTS_USER
      * @param {Object} opts Optional parameters
      * @param {module:model/PaymentAuthorizationResource} opts.request Payment authorization request
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PaymentAuthorizationResource}
@@ -457,6 +471,7 @@
 
     /**
      * Capture an existing invoice payment authorization
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      * @param {Number} id ID of the payment authorization to capture
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -495,6 +510,7 @@
 
     /**
      * Capture an existing invoice payment authorization
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN
      * @param {Number} id ID of the payment authorization to capture
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -508,6 +524,7 @@
 
     /**
      * Update an existing payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being updated
      * @param {Number} id ID of the payment method being updated
      * @param {Object} opts Optional parameters
@@ -556,6 +573,7 @@
 
     /**
      * Update an existing payment method for a user
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; PAYMENTS_ADMIN or owner
      * @param {Number} userId ID of the user for whom the payment method is being updated
      * @param {Number} id ID of the payment method being updated
      * @param {Object} opts Optional parameters

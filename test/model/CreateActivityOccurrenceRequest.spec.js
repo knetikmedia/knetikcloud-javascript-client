@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property coreSettings (base name: "core_settings")', function() {
+      // uncomment below and update the code to test the property coreSettings
+      //var instane = new KnetikCloud.CreateActivityOccurrenceRequest();
+      //expect(instance).to.be();
+    });
+
     it('should have the property entitlement (base name: "entitlement")', function() {
       // uncomment below and update the code to test the property entitlement
       //var instane = new KnetikCloud.CreateActivityOccurrenceRequest();
@@ -77,6 +83,12 @@
 
     it('should have the property eventId (base name: "event_id")', function() {
       // uncomment below and update the code to test the property eventId
+      //var instane = new KnetikCloud.CreateActivityOccurrenceRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property host (base name: "host")', function() {
+      // uncomment below and update the code to test the property host
       //var instane = new KnetikCloud.CreateActivityOccurrenceRequest();
       //expect(instance).to.be();
     });

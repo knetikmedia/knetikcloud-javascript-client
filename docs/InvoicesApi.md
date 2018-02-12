@@ -1,6 +1,6 @@
 # KnetikCloud.InvoicesApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 Create an invoice
 
-Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor.
+Create an invoice(s) by providing a cart GUID. Note that there may be multiple invoices created, one per vendor. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER or INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -78,6 +78,8 @@ Name | Type | Description  | Notes
 
 Lists available fulfillment statuses
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -113,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getInvoice"></a>
@@ -121,6 +123,8 @@ This endpoint does not need any parameter.
 > InvoiceResource getInvoice(id)
 
 Retrieve an invoice
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -163,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getInvoiceLogs"></a>
@@ -171,6 +175,8 @@ Name | Type | Description  | Notes
 > PageResourceInvoiceLogEntry getInvoiceLogs(id, opts)
 
 List invoice logs
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -219,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getInvoices"></a>
@@ -228,7 +234,7 @@ Name | Type | Description  | Notes
 
 Retrieve invoices
 
-Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices.
+Without INVOICES_ADMIN permission the results are automatically filtered for only the logged in user&#39;s invoices. It is recomended however that filter_user be added to avoid issues for admin users accidentally getting additional invoices. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -262,7 +268,7 @@ var opts = {
   'filterSku': "filterSku_example", // String | Filters invoices by item sku
   'size': 25, // Number | The number of objects returned per page
   'page': 1, // Number | The number of the page returned, starting with 1
-  'order': "1" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
+  'order': "order_example" // String | A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC]
 };
 apiInstance.getInvoices(opts).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -292,7 +298,7 @@ Name | Type | Description  | Notes
  **filterSku** | **String**| Filters invoices by item sku | [optional] 
  **size** | **Number**| The number of objects returned per page | [optional] [default to 25]
  **page** | **Number**| The number of the page returned, starting with 1 | [optional] [default to 1]
- **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] [default to 1]
+ **order** | **String**| A comma separated list of sorting requirements in priority order, each entry matching PROPERTY_NAME:[ASC|DESC] | [optional] 
 
 ### Return type
 
@@ -304,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getPaymentStatuses"></a>
@@ -312,6 +318,8 @@ Name | Type | Description  | Notes
 > [&#39;String&#39;] getPaymentStatuses()
 
 Lists available payment statuses
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
 
 ### Example
 ```javascript
@@ -348,7 +356,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="payInvoice"></a>
@@ -356,6 +364,8 @@ This endpoint does not need any parameter.
 > payInvoice(id, opts)
 
 Pay an invoice using a saved payment method
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -411,7 +421,7 @@ null (empty response body)
 
 Set the fulfillment status of a bundled invoice item
 
-This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -472,6 +482,8 @@ null (empty response body)
 
 Set the external reference of an invoice
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -526,7 +538,7 @@ null (empty response body)
 
 Set the fulfillment status of an invoice item
 
-This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which.
+This allows external fulfillment systems to report success or failure. Fulfillment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -584,6 +596,8 @@ null (empty response body)
 
 Set the order notes of an invoice
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -638,7 +652,7 @@ null (empty response body)
 
 Set the payment status of an invoice
 
-This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which.
+This may trigger fulfillment if setting the status to &#39;paid&#39;. This is mainly intended to support external payment systems that cannot be incorporated into the payment method system. Payment status changes are restricted by a specific flow determining which status can lead to which. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_ADMIN
 
 ### Example
 ```javascript
@@ -693,6 +707,8 @@ null (empty response body)
 > updateBillingInfo(id, opts)
 
 Set or update billing info
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; INVOICES_USER and owner, or INVOICES_ADMIN
 
 ### Example
 ```javascript

@@ -37,7 +37,7 @@
   /**
    * The Config model module.
    * @module model/Config
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -97,7 +97,7 @@
 
 
   /**
-   * The description of the config.  Max 140 characters
+   * The description of the config.  Max 255 characters
    * @member {String} description
    */
   exports.prototype['description'] = undefined;

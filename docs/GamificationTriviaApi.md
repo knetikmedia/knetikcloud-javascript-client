@@ -1,6 +1,6 @@
 # KnetikCloud.GamificationTriviaApi
 
-All URIs are relative to *https://devsandbox.knetikcloud.com*
+All URIs are relative to *https://sandbox.knetikcloud.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -41,6 +41,8 @@ Method | HTTP request | Description
 > AnswerResource addQuestionAnswers(questionId, opts)
 
 Add an answer to a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -96,6 +98,8 @@ Name | Type | Description  | Notes
 
 Add a tag to a question
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -150,7 +154,7 @@ null (empty response body)
 
 Add a tag to a batch of questions
 
-All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated.
+All questions that dont&#39;t have the tag and match filters will have it added. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -219,7 +223,7 @@ Name | Type | Description  | Notes
 
 Create an import job
 
-Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint.
+Set up a job to import a set of trivia questions from a cvs file at a remote url. the file will be validated asynchronously but will not be processed until started manually with the process endpoint. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -272,6 +276,8 @@ Name | Type | Description  | Notes
 
 Create a question
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -323,7 +329,7 @@ Name | Type | Description  | Notes
 
 Create a question template
 
-Question templates define a type of question and the properties they have
+Question templates define a type of question and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -376,7 +382,7 @@ Name | Type | Description  | Notes
 
 Delete an import job
 
-Also deletes all questions that were imported by it
+Also deletes all questions that were imported by it. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -419,7 +425,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteQuestion"></a>
@@ -427,6 +433,8 @@ null (empty response body)
 > deleteQuestion(id)
 
 Delete a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -469,7 +477,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteQuestionAnswers"></a>
@@ -477,6 +485,8 @@ null (empty response body)
 > deleteQuestionAnswers(questionId, id)
 
 Remove an answer from a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -522,7 +532,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="deleteQuestionTemplate"></a>
@@ -531,7 +541,7 @@ null (empty response body)
 
 Delete a question template
 
-If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
 
 ### Example
 ```javascript
@@ -578,7 +588,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getImportJob"></a>
@@ -586,6 +596,8 @@ null (empty response body)
 > ImportJobResource getImportJob(id)
 
 Get an import job
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -628,7 +640,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getImportJobs"></a>
@@ -636,6 +648,8 @@ Name | Type | Description  | Notes
 > PageResourceImportJobResource getImportJobs(opts)
 
 Get a list of import job
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -691,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestion"></a>
@@ -699,6 +713,8 @@ Name | Type | Description  | Notes
 > QuestionResource getQuestion(id)
 
 Get a single question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -741,7 +757,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionAnswer"></a>
@@ -749,6 +765,8 @@ Name | Type | Description  | Notes
 > AnswerResource getQuestionAnswer(questionId, id)
 
 Get an answer for a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -794,7 +812,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionAnswers"></a>
@@ -802,6 +820,8 @@ Name | Type | Description  | Notes
 > [AnswerResource] getQuestionAnswers(questionId)
 
 List the answers available for a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -844,7 +864,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionDeltas"></a>
@@ -853,7 +873,7 @@ Name | Type | Description  | Notes
 
 List question deltas in ascending order of updated date
 
-The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps
+The &#39;since&#39; parameter is important to avoid getting a full list of all questions. Implementors should make sure they pass the updated date of the last resource loaded, not the date of the last request, in order to avoid gaps. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -897,7 +917,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionTags"></a>
@@ -905,6 +925,8 @@ Name | Type | Description  | Notes
 > [&#39;String&#39;] getQuestionTags(id)
 
 List the tags for a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -947,7 +969,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionTemplate"></a>
@@ -955,6 +977,8 @@ Name | Type | Description  | Notes
 > QuestionTemplateResource getQuestionTemplate(id)
 
 Get a single question template
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -997,7 +1021,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionTemplates"></a>
@@ -1005,6 +1029,8 @@ Name | Type | Description  | Notes
 > PageResourceQuestionTemplateResource getQuestionTemplates(opts)
 
 List and search question templates
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1052,7 +1078,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestions"></a>
@@ -1060,6 +1086,8 @@ Name | Type | Description  | Notes
 > PageResourceQuestionResource getQuestions(opts)
 
 List and search questions
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1123,7 +1151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="getQuestionsCount"></a>
@@ -1132,7 +1160,7 @@ Name | Type | Description  | Notes
 
 Count questions based on filters
 
-This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes
+This is also provided by the list endpoint so you don&#39;t need to call this for pagination purposes. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1188,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="processImportJob"></a>
@@ -1197,7 +1225,7 @@ Name | Type | Description  | Notes
 
 Start processing an import job
 
-Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;.
+Will process the CSV file and add new questions asynchronously. The status of the job must be &#39;VALID&#39;. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1252,6 +1280,8 @@ Name | Type | Description  | Notes
 
 Remove a tag from a question
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -1296,7 +1326,7 @@ null (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="removeTagToQuestionsBatch"></a>
@@ -1305,7 +1335,7 @@ null (empty response body)
 
 Remove a tag from a batch of questions
 
-ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated.
+ll questions that have the tag and match filters will have it removed. The returned number is the number of questions updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1366,7 +1396,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="searchQuestionTags"></a>
@@ -1375,7 +1405,7 @@ Name | Type | Description  | Notes
 
 List and search tags by the beginning of the string
 
-For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead.
+For performance reasons, search &amp; category filters are mutually exclusive. If category is specified, search filter will be ignored in order to do fast matches for typeahead. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1423,7 +1453,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="updateImportJob"></a>
@@ -1432,7 +1462,7 @@ Name | Type | Description  | Notes
 
 Update an import job
 
-Changes should be made before process is started for there to be any effect.
+Changes should be made before process is started for there to be any effect. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1488,6 +1518,8 @@ Name | Type | Description  | Notes
 
 Update a question
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -1541,6 +1573,8 @@ Name | Type | Description  | Notes
 > updateQuestionAnswer(questionId, id, opts)
 
 Update an answer for a question
+
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript
@@ -1599,6 +1633,8 @@ null (empty response body)
 
 Update a question template
 
+&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
+
 ### Example
 ```javascript
 var KnetikCloud = require('knetikcloud-sdk');
@@ -1653,7 +1689,7 @@ Name | Type | Description  | Notes
 
 Bulk update questions
 
-Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated.
+Will update all questions that match filters used (or all questions in system if no filters used). Body should match a question resource with only those properties you wish to set. Null values will be ignored. Returned number is how many were updated. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TRIVIA_ADMIN
 
 ### Example
 ```javascript

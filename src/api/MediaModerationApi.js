@@ -34,7 +34,7 @@
   /**
    * MediaModeration service.
    * @module api/MediaModerationApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/FlagResource} opts.flagResource The flag resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FlagResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Add a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {module:model/FlagResource} opts.flagResource The flag resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FlagResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {String} opts.contextName The name of the context
      * @param {String} opts.contextId The id of the context
@@ -125,7 +128,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -138,6 +141,7 @@
 
     /**
      * Delete a flag
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {String} opts.contextName The name of the context
      * @param {String} opts.contextId The id of the context
@@ -154,6 +158,7 @@
 
     /**
      * Returns a page of flags
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter by flag context
      * @param {String} opts.filterContextId Filter by flag context ID
@@ -184,7 +189,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceFlagResource;
 
@@ -197,6 +202,7 @@
 
     /**
      * Returns a page of flags
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN or owner
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter by flag context
      * @param {String} opts.filterContextId Filter by flag context ID
@@ -215,6 +221,7 @@
 
     /**
      * Get a flag report
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Number} id The flag report id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/FlagReportResource} and HTTP response
      */
@@ -240,7 +247,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = FlagReportResource;
 
@@ -253,6 +260,7 @@
 
     /**
      * Get a flag report
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Number} id The flag report id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/FlagReportResource}
      */
@@ -266,7 +274,7 @@
 
     /**
      * Returns a page of flag reports
-     * Context can be either a free-form string or a pre-defined context name
+     * Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeResolved Ignore resolved context (default to true)
      * @param {String} opts.filterContext Filter by moderation context
@@ -297,7 +305,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceFlagReportResource;
 
@@ -310,7 +318,7 @@
 
     /**
      * Returns a page of flag reports
-     * Context can be either a free-form string or a pre-defined context name
+     * Context can be either a free-form string or a pre-defined context name. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.excludeResolved Ignore resolved context (default to true)
      * @param {String} opts.filterContext Filter by moderation context
@@ -329,7 +337,7 @@
 
     /**
      * Update a flag report
-     * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+     * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Number} id The flag report id
      * @param {Object} opts Optional parameters
      * @param {module:model/FlagReportResource} opts.flagReportResource The new flag report
@@ -371,7 +379,7 @@
 
     /**
      * Update a flag report
-     * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason.
+     * Lets you set the resolution of a report. Resolution types is {banned,ignore} in case of &#39;banned&#39; you will need to pass the reason. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; MODERATION_ADMIN
      * @param {Number} id The flag report id
      * @param {Object} opts Optional parameters
      * @param {module:model/FlagReportResource} opts.flagReportResource The new flag report

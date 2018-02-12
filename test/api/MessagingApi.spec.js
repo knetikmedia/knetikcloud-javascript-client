@@ -51,6 +51,66 @@
   }
 
   describe('MessagingApi', function() {
+    describe('compileMessageTemplate', function() {
+      it('should call compileMessageTemplate successfully', function(done) {
+        //uncomment below and update the code to test compileMessageTemplate
+        //instance.compileMessageTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('createMessageTemplate', function() {
+      it('should call createMessageTemplate successfully', function(done) {
+        //uncomment below and update the code to test createMessageTemplate
+        //instance.createMessageTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteMessageTemplate', function() {
+      it('should call deleteMessageTemplate successfully', function(done) {
+        //uncomment below and update the code to test deleteMessageTemplate
+        //instance.deleteMessageTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getMessageTemplate', function() {
+      it('should call getMessageTemplate successfully', function(done) {
+        //uncomment below and update the code to test getMessageTemplate
+        //instance.getMessageTemplate(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getMessageTemplates', function() {
+      it('should call getMessageTemplates successfully', function(done) {
+        //uncomment below and update the code to test getMessageTemplates
+        //instance.getMessageTemplates(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('sendMessage1', function() {
+      it('should call sendMessage1 successfully', function(done) {
+        //uncomment below and update the code to test sendMessage1
+        //instance.sendMessage1(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('sendRawEmail', function() {
       it('should call sendRawEmail successfully', function(done) {
         //uncomment below and update the code to test sendRawEmail
@@ -105,6 +165,26 @@
       it('should call sendTemplatedSMS successfully', function(done) {
         //uncomment below and update the code to test sendTemplatedSMS
         //instance.sendTemplatedSMS(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('sendWebsocket', function() {
+      it('should call sendWebsocket successfully', function(done) {
+        //uncomment below and update the code to test sendWebsocket
+        //instance.sendWebsocket(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateMessageTemplate', function() {
+      it('should call updateMessageTemplate successfully', function(done) {
+        //uncomment below and update the code to test updateMessageTemplate
+        //instance.updateMessageTemplate(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

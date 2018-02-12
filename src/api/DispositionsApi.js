@@ -34,7 +34,7 @@
   /**
    * Dispositions service.
    * @module api/DispositionsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Add a new disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/DispositionResource} opts.disposition The new disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DispositionResource} and HTTP response
@@ -85,6 +86,7 @@
 
     /**
      * Add a new disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and user, or DISPOSITIONS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/DispositionResource} opts.disposition The new disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DispositionResource}
@@ -99,6 +101,7 @@
 
     /**
      * Delete a disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
      * @param {Number} id The id of the disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -124,7 +127,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -137,6 +140,7 @@
 
     /**
      * Delete a disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; DISPOSITIONS_USER and owner, or DISPOSITIONS_ADMIN
      * @param {Number} id The id of the disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -150,6 +154,7 @@
 
     /**
      * Returns a disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DispositionResource} and HTTP response
      */
@@ -175,7 +180,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = DispositionResource;
 
@@ -188,6 +193,7 @@
 
     /**
      * Returns a disposition
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Number} id The id of the disposition record
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DispositionResource}
      */
@@ -201,6 +207,7 @@
 
     /**
      * Returns a list of disposition counts
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -225,7 +232,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [DispositionCount];
 
@@ -238,6 +245,7 @@
 
     /**
      * Returns a list of disposition counts
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -253,6 +261,7 @@
 
     /**
      * Returns a page of dispositions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;
@@ -283,7 +292,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceDispositionResource;
 
@@ -296,6 +305,7 @@
 
     /**
      * Returns a page of dispositions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterContext Filter for dispositions within a context type (games, articles, polls, etc). Optionally with a specific id like filter_context&#x3D;video:47
      * @param {String} opts.filterOwner Filter for dispositions from a specific user by id or &#39;me&#39;

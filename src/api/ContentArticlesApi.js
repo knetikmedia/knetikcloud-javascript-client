@@ -34,7 +34,7 @@
   /**
    * ContentArticles service.
    * @module api/ContentArticlesApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,7 +51,7 @@
 
     /**
      * Create a new article
-     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The new article
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ArticleResource} and HTTP response
@@ -86,7 +86,7 @@
 
     /**
      * Create a new article
-     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.
+     * Articles are blobs of text with titles, a category and assets. Formatting and display of the text is in the hands of the front end.&lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions:&lt;/b&gt; ARTICLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The new article
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ArticleResource}
@@ -101,7 +101,7 @@
 
     /**
      * Create an article template
-     * Article Templates define a type of article and the properties they have
+     * Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.articleTemplateResource The article template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
@@ -136,7 +136,7 @@
 
     /**
      * Create an article template
-     * Article Templates define a type of article and the properties they have
+     * Article Templates define a type of article and the properties they have. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.articleTemplateResource The article template resource object
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
@@ -151,6 +151,7 @@
 
     /**
      * Delete an existing article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -176,7 +177,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -189,6 +190,7 @@
 
     /**
      * Delete an existing article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -202,7 +204,7 @@
 
     /**
      * Delete an article template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -232,7 +234,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -245,7 +247,7 @@
 
     /**
      * Delete an article template
-     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects
+     * If cascade &#x3D; &#39;detach&#39;, it will force delete the template even if it&#39;s attached to other objects. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {String} opts.cascade The value needed to delete used templates
@@ -261,6 +263,7 @@
 
     /**
      * Get a single article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ArticleResource} and HTTP response
      */
@@ -286,7 +289,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = ArticleResource;
 
@@ -299,6 +302,7 @@
 
     /**
      * Get a single article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {String} id The article id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ArticleResource}
      */
@@ -312,6 +316,7 @@
 
     /**
      * Get a single article template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TemplateResource} and HTTP response
      */
@@ -337,7 +342,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = TemplateResource;
 
@@ -350,6 +355,7 @@
 
     /**
      * Get a single article template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
      * @param {String} id The id of the template
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TemplateResource}
      */
@@ -363,6 +369,7 @@
 
     /**
      * List and search article templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -389,7 +396,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceTemplateResource;
 
@@ -402,6 +409,7 @@
 
     /**
      * List and search article templates
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN or ARTICLES_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -418,7 +426,7 @@
 
     /**
      * List and search articles
-     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
@@ -457,7 +465,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceArticleResource;
 
@@ -470,7 +478,7 @@
 
     /**
      * List and search articles
-     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed.
+     * Get a list of articles with optional filtering. Assets will not be filled in on the resources returned. Use &#39;Get a single article&#39; to retrieve the full resource with assets for a given item as needed. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; ANY
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.filterActiveOnly Filter for articles that are active (true) or inactive (false)
      * @param {String} opts.filterCategory Filter for articles from a specific category by id
@@ -493,6 +501,7 @@
 
     /**
      * Update an existing article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
      * @param {String} id The article id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The article object
@@ -534,6 +543,7 @@
 
     /**
      * Update an existing article
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; ARTICLES_ADMIN
      * @param {String} id The article id
      * @param {Object} opts Optional parameters
      * @param {module:model/ArticleResource} opts.articleResource The article object
@@ -549,6 +559,7 @@
 
     /**
      * Update an article template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.articleTemplateResource The article template resource object
@@ -590,6 +601,7 @@
 
     /**
      * Update an article template
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TEMPLATE_ADMIN
      * @param {String} id The id of the template
      * @param {Object} opts Optional parameters
      * @param {module:model/TemplateResource} opts.articleTemplateResource The article template resource object

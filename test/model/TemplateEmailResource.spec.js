@@ -69,6 +69,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property subject (base name: "subject")', function() {
+      // uncomment below and update the code to test the property subject
+      //var instane = new KnetikCloud.TemplateEmailResource();
+      //expect(instance).to.be();
+    });
+
     it('should have the property templateKey (base name: "template_key")', function() {
       // uncomment below and update the code to test the property templateKey
       //var instane = new KnetikCloud.TemplateEmailResource();

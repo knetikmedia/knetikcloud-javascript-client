@@ -34,7 +34,7 @@
   /**
    * PaymentsWallets service.
    * @module api/PaymentsWalletsApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Returns the user&#39;s wallet for the given currency code
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallet is being retrieved
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SimpleWallet} and HTTP response
@@ -83,7 +84,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = SimpleWallet;
 
@@ -96,6 +97,7 @@
 
     /**
      * Returns the user&#39;s wallet for the given currency code
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallet is being retrieved
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SimpleWallet}
@@ -110,6 +112,7 @@
 
     /**
      * Retrieve a user&#39;s wallet transactions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallet transactions are being retrieved
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @param {Object} opts Optional parameters
@@ -158,7 +161,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceWalletTransactionResource;
 
@@ -171,6 +174,7 @@
 
     /**
      * Retrieve a user&#39;s wallet transactions
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallet transactions are being retrieved
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @param {Object} opts Optional parameters
@@ -193,6 +197,7 @@
 
     /**
      * List all of a user&#39;s wallets
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallets are being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SimpleWallet>} and HTTP response
      */
@@ -218,7 +223,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = [SimpleWallet];
 
@@ -231,6 +236,7 @@
 
     /**
      * List all of a user&#39;s wallets
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN or owner
      * @param {Number} userId The ID of the user for whom wallets are being retrieved
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SimpleWallet>}
      */
@@ -244,6 +250,7 @@
 
     /**
      * Retrieves a summation of wallet balances by currency code
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PageResourceWalletTotalResponse} and HTTP response
      */
     this.getWalletBalancesWithHttpInfo = function() {
@@ -262,7 +269,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceWalletTotalResponse;
 
@@ -275,6 +282,7 @@
 
     /**
      * Retrieves a summation of wallet balances by currency code
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PageResourceWalletTotalResponse}
      */
     this.getWalletBalances = function() {
@@ -287,6 +295,7 @@
 
     /**
      * Retrieve wallet transactions across the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterInvoice Filter for transactions from a specific invoice
      * @param {String} opts.filterType Filter for transactions with specified type
@@ -329,7 +338,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceWalletTransactionResource;
 
@@ -342,6 +351,7 @@
 
     /**
      * Retrieve wallet transactions across the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.filterInvoice Filter for transactions from a specific invoice
      * @param {String} opts.filterType Filter for transactions with specified type
@@ -366,6 +376,7 @@
 
     /**
      * Retrieve a list of wallets across the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -392,7 +403,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceSimpleWallet;
 
@@ -405,6 +416,7 @@
 
     /**
      * Retrieve a list of wallets across the system
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {Number} opts.size The number of objects returned per page (default to 25)
      * @param {Number} opts.page The number of the page returned, starting with 1 (default to 1)
@@ -421,6 +433,7 @@
 
     /**
      * Updates the balance for a user&#39;s wallet
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Number} userId The ID of the user for whom wallet is being modified
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @param {Object} opts Optional parameters
@@ -469,6 +482,7 @@
 
     /**
      * Updates the balance for a user&#39;s wallet
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; WALLETS_ADMIN
      * @param {Number} userId The ID of the user for whom wallet is being modified
      * @param {String} currencyCode Currency code of the user&#39;s wallet
      * @param {Object} opts Optional parameters

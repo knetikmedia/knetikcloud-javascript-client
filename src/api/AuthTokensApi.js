@@ -34,7 +34,7 @@
   /**
    * AuthTokens service.
    * @module api/AuthTokensApi
-   * @version 3.0.9
+   * @version 3.0.8
    */
 
   /**
@@ -51,6 +51,7 @@
 
     /**
      * Delete tokens by username, client id, or both
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.username The username of the user
      * @param {String} opts.clientId The id of the client
@@ -75,7 +76,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = null;
 
@@ -88,6 +89,7 @@
 
     /**
      * Delete tokens by username, client id, or both
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.username The username of the user
      * @param {String} opts.clientId The id of the client
@@ -103,6 +105,7 @@
 
     /**
      * Get a single token by username and client id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {String} username The username of the user
      * @param {String} clientId The id of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/OauthAccessTokenResource} and HTTP response
@@ -135,7 +138,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = OauthAccessTokenResource;
 
@@ -148,6 +151,7 @@
 
     /**
      * Get a single token by username and client id
+     * &lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {String} username The username of the user
      * @param {String} clientId The id of the client
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/OauthAccessTokenResource}
@@ -162,7 +166,7 @@
 
     /**
      * List usernames and client ids
-     * Token value not shown
+     * Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterClientId Filters for token whose client id matches provided string
      * @param {String} opts.filterUsername Filters for token whose username matches provided string
@@ -193,7 +197,7 @@
       };
 
       var authNames = ['oauth2_client_credentials_grant', 'oauth2_password_grant'];
-      var contentTypes = ['application/json'];
+      var contentTypes = [];
       var accepts = ['application/json'];
       var returnType = PageResourceOauthAccessTokenResource;
 
@@ -206,7 +210,7 @@
 
     /**
      * List usernames and client ids
-     * Token value not shown
+     * Token value not shown. &lt;br&gt;&lt;br&gt;&lt;b&gt;Permissions Needed:&lt;/b&gt; TOKENS_ADMIN
      * @param {Object} opts Optional parameters
      * @param {String} opts.filterClientId Filters for token whose client id matches provided string
      * @param {String} opts.filterUsername Filters for token whose username matches provided string
